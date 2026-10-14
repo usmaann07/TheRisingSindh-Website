@@ -79,7 +79,7 @@ export function GlobalBridgeSection({ onOpenModal }: GlobalBridgeProps) {
 
         {/* Closing Card */}
         <div className="sand-card p-8 sm:p-12 max-w-3xl mx-auto text-center">
-          <p className="font-serif text-xl sm:text-2xl font-normal text-stone-900 leading-relaxed italic">
+          <p className="font-serif text-xl sm:text-2xl font-normal text-stone-900 leading-relaxed">
             “{t.globalBridge.closing}”
           </p>
           <div className="mt-6">

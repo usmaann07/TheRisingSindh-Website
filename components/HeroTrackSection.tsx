@@ -31,7 +31,7 @@ export function HeroTrackSection() {
               {t.heroTrack.title}
             </h2>
 
-            <p className="font-serif text-lg italic text-[#d97706]">
+            <p className="font-serif text-lg text-[#d97706]">
               {t.heroTrack.subtitle}
             </p>
 
@@ -74,7 +74,7 @@ export function HeroTrackSection() {
                 <Flame className="w-4 h-4 text-[#d97706]" />
                 <span>{t.heroTrack.heroOath.title}</span>
               </div>
-              <p className="font-serif text-base sm:text-lg font-normal text-stone-900 italic leading-relaxed">
+              <p className="font-serif text-base sm:text-lg font-normal text-stone-900 leading-relaxed">
                 {t.heroTrack.heroOath.text}
               </p>
             </div>

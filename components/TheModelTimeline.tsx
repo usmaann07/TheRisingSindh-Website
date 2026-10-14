@@ -70,7 +70,7 @@ export function TheModelTimeline({ onOpenModal }: TheModelTimelineProps) {
           <h2 className="font-serif text-4xl sm:text-6xl font-normal text-stone-900 tracking-tight leading-[1.08]">
             {t.theModel.title}
           </h2>
-          <p className="mt-4 text-base sm:text-lg font-serif italic text-[#d97706]">
+          <p className="mt-4 text-base sm:text-lg font-serif text-[#d97706]">
             {t.theModel.openingPromise}
           </p>
           <p className="mt-2 text-xs sm:text-sm text-stone-600 max-w-2xl mx-auto leading-relaxed">

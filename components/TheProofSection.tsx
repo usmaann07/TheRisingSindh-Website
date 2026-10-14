@@ -128,7 +128,7 @@ export function TheProofSection() {
           transition={{ duration: 0.75 }}
           className="sand-card p-8 sm:p-12 max-w-4xl mx-auto text-center border-2 border-amber-200/60 shadow-xl bg-gradient-to-b from-[#fdfbf9] to-[#f7f2ed]"
         >
-          <p className="font-serif text-xl sm:text-2xl font-normal text-stone-900 leading-relaxed italic">
+          <p className="font-serif text-xl sm:text-2xl font-normal text-stone-900 leading-relaxed">
             {t.theProof.founderQuote.quote}
           </p>
           <div className="mt-6 pt-5 border-t border-amber-200/50 flex flex-col items-center">

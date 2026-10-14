@@ -101,7 +101,7 @@ export function TheMovementSection({ onOpenModal }: TheMovementProps) {
 
         {/* Invitation CTA */}
         <div className="text-center max-w-2xl mx-auto">
-          <p className="font-serif text-xl sm:text-2xl font-normal text-stone-900 mb-6 leading-relaxed italic">
+          <p className="font-serif text-xl sm:text-2xl font-normal text-stone-900 mb-6 leading-relaxed">
             “{t.theMovement.invitation}”
           </p>
           <button

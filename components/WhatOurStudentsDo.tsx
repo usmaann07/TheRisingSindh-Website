@@ -49,7 +49,7 @@ export function WhatOurStudentsDo() {
                   {step.task}
                 </h4>
               </div>
-              <p className="text-xs text-stone-500 pt-4 mt-4 border-t border-stone-100 italic">
+              <p className="text-xs text-stone-500 pt-4 mt-4 border-t border-stone-100">
                 {step.contrast}
               </p>
             </button>

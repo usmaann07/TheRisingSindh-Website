@@ -45,7 +45,7 @@ export function HeroSection({ onOpenModal }: HeroSectionProps) {
                 className="font-serif text-5xl sm:text-6xl lg:text-[clamp(4rem,5vw,5.5rem)] font-normal tracking-tight text-white leading-[1.05]"
               >
                 {t.hero.title}<br />
-                <span className="italic font-light text-stone-200">{t.hero.highlight}</span>
+                <span className="font-light text-stone-200">{t.hero.highlight}</span>
               </motion.h1>
 
               {/* Elegant Body Paragraph */}

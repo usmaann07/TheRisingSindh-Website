@@ -24,7 +24,7 @@ export function ProblemStrip() {
           </div>
           <h2 className="font-serif text-3xl sm:text-5xl font-normal text-stone-900 tracking-tight leading-tight">
             {t.common.problemStripTitle}<br />
-            <span className="italic font-light">{t.common.problemStripHighlight}</span>
+            <span className="font-light">{t.common.problemStripHighlight}</span>
           </h2>
         </motion.div>
 
@@ -60,7 +60,7 @@ export function ProblemStrip() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="md:col-span-7 sand-card p-8 sm:p-10 flex flex-col justify-between hover:shadow-xl transition-all"
+            className="md:col-span-7 sand-card p-8 sm:p-10 flex flex-col gap-8 hover:shadow-xl transition-all"
           >
             <div>
               <h3 className="font-serif text-2xl sm:text-3xl font-normal text-stone-900">
@@ -71,7 +71,7 @@ export function ProblemStrip() {
               </p>
             </div>
 
-            <div className="my-8 py-6 px-8 rounded-2xl bg-[#f4efea] border border-stone-200/80 flex items-center justify-center gap-8">
+            <div className="w-full py-6 px-8 rounded-2xl bg-[#f4efea] border border-stone-200/80 flex items-center justify-center gap-8">
               <div className="w-16 h-16 rounded-2xl bg-[#161412] text-white flex items-center justify-center font-bold text-sm shadow-md">
                 {t.common.aiLab}
               </div>

@@ -1,0 +1,135 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-serif: var(--font-playfair-display);
+  --font-sans: var(--font-plus-jakarta);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+  }
+
+  :root {
+    --sand-bg: #f4efea;
+    --sand-surface: #ffffff;
+    --sand-subtle: #eae3db;
+    --dark-hero: #161412;
+    --amber-btn: #d97706;
+  }
+
+  body {
+    background-color: var(--sand-bg);
+    color: #1c1917;
+    font-family: var(--font-plus-jakarta);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: clip;
+  }
+
+  /* RTL typography for Sindhi & Urdu */
+  [dir="rtl"] {
+    font-family: "Noto Nastaliq Urdu", "Noto Sans Arabic", Tahoma, sans-serif;
+  }
+}
+
+/* Fluted glass background for architectural hero */
+.bg-fluted-glass {
+  background-image: 
+    repeating-linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.03) 0px,
+      rgba(255, 255, 255, 0.03) 12px,
+      rgba(0, 0, 0, 0.15) 12px,
+      rgba(0, 0, 0, 0.15) 24px
+    );
+}
+
+/* Warm ambient glow */
+.amber-glow {
+  background: radial-gradient(circle at 60% 40%, rgba(217, 119, 6, 0.18) 0%, rgba(22, 20, 18, 0) 70%);
+}
+
+/* Architectural Notch on section transition (like Screenshot) */
+.architectural-notch {
+  clip-path: polygon(0 0, calc(100% - 90px) 0, 100% 40px, 100% 100%, 0 100%);
+}
+
+@keyframes rising-enter {
+  from {
+    opacity: var(--rise-enter-opacity, 1);
+    transform: translate3d(0, var(--rise-enter-translate-y, 0), 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@utility animate-in {
+  animation: rising-enter var(--tw-duration, 150ms) ease-out both;
+}
+
+@utility fade-in {
+  --rise-enter-opacity: 0;
+}
+
+@utility slide-in-from-top-2 {
+  --rise-enter-translate-y: -0.5rem;
+}
+
+@utility slide-in-from-top-3 {
+  --rise-enter-translate-y: -0.75rem;
+}
+
+@utility slide-in-from-bottom-2 {
+  --rise-enter-translate-y: 0.5rem;
+}
+
+/* Webflow-style Amber Pill Button with Separate Arrow Box */
+.btn-amber-arrow {
+  display: inline-flex;
+  align-items: center;
+  background-color: #d97706;
+  color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  font-weight: 600;
+  font-size: 0.875rem;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 14px rgba(217, 119, 6, 0.25);
+}
+
+.btn-amber-arrow:hover {
+  background-color: #b45309;
+  transform: translateY(-1px);
+}
+
+.btn-amber-arrow .btn-text {
+  padding: 0.75rem 1.25rem;
+}
+
+.btn-amber-arrow .btn-arrow-box {
+  padding: 0.75rem;
+  background-color: rgba(0, 0, 0, 0.15);
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Warm linen card */
+.sand-card {
+  background: #ffffff;
+  border: 1px solid rgba(28, 25, 23, 0.06);
+  border-radius: 20px;
+  box-shadow: 0 2px 10px -2px rgba(28, 25, 23, 0.03);
+  transition: all 0.3s ease;
+}
+
+.sand-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(28, 25, 23, 0.12);
+  box-shadow: 0 10px 25px -5px rgba(28, 25, 23, 0.06);
+}

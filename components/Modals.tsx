@@ -169,7 +169,7 @@ export function ActionModal({ isOpen, onClose, type }: ModalProps) {
                       setFormData({ ...formData, phone: e.target.value });
                       if (errorMessage) setErrorMessage("");
                     }}
-                    className={`w-full ${isRTL ? "pr-9 pl-3.5" : "pl-9 pr-3.5"} py-2.5 rounded-xl bg-white/5 border border-white/10 text-white placeholder-stone-500 focus:outline-none focus:border-[#d97706]`}
+                    className={`w-full ${isRTL ? "pe-9 ps-3.5" : "ps-9 pe-3.5"} py-2.5 rounded-xl bg-white/5 border border-white/10 text-white placeholder-stone-500 focus:outline-none focus:border-[#d97706]`}
                   />
                 </div>
               </div>

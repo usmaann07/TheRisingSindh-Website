@@ -102,7 +102,7 @@ export function SehwanCampusSection({ onOpenModal }: SehwanCampusProps) {
                 aria-pressed={selectedTrack === idx}
                 key={idx}
                 onClick={() => setSelectedTrack(selectedTrack === idx ? null : idx)}
-                className={`w-full text-left p-6 rounded-2xl bg-[#f4efea] border border-stone-200/80 hover:border-[#d97706]/40 transition-all cursor-pointer ${
+                className={`w-full text-start p-6 rounded-2xl bg-[#f4efea] border border-stone-200/80 hover:border-[#d97706]/40 transition-all cursor-pointer ${
                   selectedTrack === idx ? "border-[#d97706] shadow-sm bg-amber-50/20" : ""
                 }`}
               >

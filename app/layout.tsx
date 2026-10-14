@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Plus_Jakarta_Sans } from "next/font/google";
+import {
+  Noto_Naskh_Arabic,
+  Noto_Nastaliq_Urdu,
+  Playfair_Display,
+  Plus_Jakarta_Sans
+} from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/lib/language-context";
 
@@ -12,6 +17,18 @@ const playfair = Playfair_Display({
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
   variable: "--font-plus-jakarta",
+  display: "swap"
+});
+
+const notoNaskhArabic = Noto_Naskh_Arabic({
+  subsets: ["arabic"],
+  variable: "--font-noto-naskh-arabic",
+  display: "swap"
+});
+
+const notoNastaliqUrdu = Noto_Nastaliq_Urdu({
+  subsets: ["arabic"],
+  variable: "--font-noto-nastaliq-urdu",
   display: "swap"
 });
 
@@ -85,7 +102,10 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className={`${playfair.variable} ${plusJakarta.variable}`}>
+    <html
+      lang="en"
+      className={`${playfair.variable} ${plusJakarta.variable} ${notoNaskhArabic.variable} ${notoNastaliqUrdu.variable}`}
+    >
       <head>
         <script
           type="application/ld+json"

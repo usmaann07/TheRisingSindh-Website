@@ -47,7 +47,7 @@ export function HeroTrackSection() {
                   aria-pressed={selectedPillar === idx}
                   key={idx}
                   onClick={() => setSelectedPillar(selectedPillar === idx ? null : idx)}
-                  className={`w-full text-left sand-card p-5 cursor-pointer transition-all ${
+                  className={`w-full text-start sand-card p-5 cursor-pointer transition-all ${
                     selectedPillar === idx ? "border-[#d97706] shadow-md bg-stone-50/50" : ""
                   }`}
                 >
@@ -69,7 +69,7 @@ export function HeroTrackSection() {
             </div>
 
             {/* The Hero Oath at Class 9 */}
-            <div className="sand-card p-6 border-l-4 border-l-[#d97706]">
+            <div className="sand-card p-6 border-s-4 border-s-[#d97706]">
               <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#d97706] mb-1.5">
                 <Flame className="w-4 h-4 text-[#d97706]" />
                 <span>{t.heroTrack.heroOath.title}</span>

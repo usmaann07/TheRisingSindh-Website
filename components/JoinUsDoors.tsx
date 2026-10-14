@@ -10,7 +10,7 @@ interface JoinUsDoorsProps {
 }
 
 export function JoinUsDoors({ onOpenModal }: JoinUsDoorsProps) {
-  const { t, isRTL, language } = useLanguage();
+  const { t, language } = useLanguage();
   const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   const getWhatsAppMessage = () => {
@@ -57,7 +57,7 @@ export function JoinUsDoors({ onOpenModal }: JoinUsDoorsProps) {
             transition={{ duration: 0.65, delay: 0.1 }}
             whileHover={{ y: -5 }}
             onClick={() => onOpenModal("campus-visit")}
-            className="sand-card w-full text-left p-8 sm:p-10 cursor-pointer flex flex-col justify-between min-h-[260px] group hover:shadow-xl transition-all"
+            className="sand-card w-full text-start p-8 sm:p-10 cursor-pointer flex flex-col justify-between min-h-[260px] group hover:shadow-xl transition-all"
           >
             <div>
               <span className="text-[11px] font-semibold text-[#d97706] uppercase tracking-wider block mb-2">{t.common.forParentsBadge}</span>
@@ -86,7 +86,7 @@ export function JoinUsDoors({ onOpenModal }: JoinUsDoorsProps) {
             transition={{ duration: 0.65, delay: 0.2 }}
             whileHover={{ y: -5 }}
             onClick={() => onOpenModal("build-day")}
-            className="w-full text-left p-8 sm:p-10 rounded-[20px] bg-[#161412] text-white cursor-pointer flex flex-col justify-between min-h-[260px] group shadow-xl hover:border-[#d97706]/40 border border-transparent transition-all"
+            className="w-full text-start p-8 sm:p-10 rounded-[20px] bg-[#161412] text-white cursor-pointer flex flex-col justify-between min-h-[260px] group shadow-xl hover:border-[#d97706]/40 border border-transparent transition-all"
           >
             <div>
               <span className="text-[11px] font-semibold text-[#d97706] uppercase tracking-wider block mb-2">{t.common.forStudentsBadge}</span>
@@ -112,7 +112,7 @@ export function JoinUsDoors({ onOpenModal }: JoinUsDoorsProps) {
             type="button"
             aria-haspopup="dialog"
             onClick={() => onOpenModal("teach")}
-            className="sand-card w-full text-left p-6 cursor-pointer flex items-center justify-between group"
+            className="sand-card w-full text-start p-6 cursor-pointer flex items-center justify-between group"
           >
             <div>
               <div className="font-serif text-lg font-normal text-stone-900">{t.common.forTeachersBadge}</div>
@@ -127,7 +127,7 @@ export function JoinUsDoors({ onOpenModal }: JoinUsDoorsProps) {
             type="button"
             aria-haspopup="dialog"
             onClick={() => onOpenModal("lab-bench")}
-            className="sand-card w-full text-left p-6 cursor-pointer flex items-center justify-between group"
+            className="sand-card w-full text-start p-6 cursor-pointer flex items-center justify-between group"
           >
             <div>
               <div className="font-serif text-lg font-normal text-stone-900">{t.common.forBuildersBadge}</div>
@@ -169,7 +169,7 @@ export function JoinUsDoors({ onOpenModal }: JoinUsDoorsProps) {
               >
                 <button
                   onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
-                  className={`w-full p-5 ${isRTL ? "text-right" : "text-left"} flex items-center justify-between gap-4 font-serif text-base font-normal text-stone-900 hover:text-[#d97706] transition-colors cursor-pointer`}
+                  className="w-full p-5 text-start flex items-center justify-between gap-4 font-serif text-base font-normal text-stone-900 hover:text-[#d97706] transition-colors cursor-pointer"
                 >
                   <span>{faq.question}</span>
                   <ChevronDown

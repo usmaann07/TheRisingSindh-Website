@@ -55,7 +55,7 @@ export function TheMovementSection({ onOpenModal }: TheMovementProps) {
           </div>
 
           {/* 3: Build Here, Stay Here */}
-          <div className="sand-card p-8 sm:p-10 border-l-4 border-l-[#d97706]">
+          <div className="sand-card p-8 sm:p-10 border-s-4 border-s-[#d97706]">
             <div className="flex items-center gap-3 mb-3 text-[#d97706]">
               <Heart className="w-5 h-5 text-[#d97706]" />
               <h3 className="font-serif text-2xl font-normal text-stone-900">

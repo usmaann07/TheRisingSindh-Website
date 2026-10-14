@@ -42,7 +42,7 @@ export function HeroSection({ onOpenModal }: HeroSectionProps) {
                 initial={{ opacity: 0, y: 25 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="font-serif text-5xl sm:text-7xl lg:text-[76px] font-normal tracking-tight text-white leading-[1.05]"
+                className="font-serif text-5xl sm:text-6xl lg:text-[clamp(4rem,5vw,5.5rem)] font-normal tracking-tight text-white leading-[1.05]"
               >
                 {t.hero.title}<br />
                 <span className="italic font-light text-stone-200">{t.hero.highlight}</span>
@@ -67,9 +67,9 @@ export function HeroSection({ onOpenModal }: HeroSectionProps) {
               >
                 <button
                   onClick={() => onOpenModal("campus-visit")}
-                  className="inline-flex items-center rounded-full bg-gradient-to-r from-[#d97706] to-[#b45309] hover:from-[#b45309] hover:to-[#92400e] text-white font-semibold text-sm sm:text-base border border-amber-400/40 hover:scale-[1.03] active:scale-[0.98] transition-all duration-200 cursor-pointer overflow-hidden p-1.5 pl-6 group shadow-none"
+                  className="inline-flex items-center rounded-full bg-gradient-to-r from-[#d97706] to-[#b45309] hover:from-[#b45309] hover:to-[#92400e] text-white font-semibold text-sm sm:text-base border border-amber-400/40 hover:scale-[1.03] active:scale-[0.98] transition-all duration-200 cursor-pointer overflow-hidden p-1.5 ps-6 group shadow-none"
                 >
-                  <span className="py-2 pr-3 tracking-wide">
+                  <span className="py-2 pe-3 tracking-wide">
                     {t.nav.bookVisit}
                   </span>
                   <span className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-black/25 flex items-center justify-center group-hover:bg-black/40 transition-colors shrink-0">
@@ -130,7 +130,7 @@ export function HeroSection({ onOpenModal }: HeroSectionProps) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="border-l border-stone-300/80 pl-6 group"
+                className="border-s border-stone-300/80 ps-6 group"
               >
                 <div className="font-serif text-3xl sm:text-4xl font-normal text-stone-900 tracking-tight group-hover:text-[#d97706] transition-colors">
                   10.9%
@@ -149,7 +149,7 @@ export function HeroSection({ onOpenModal }: HeroSectionProps) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="border-l border-stone-300/80 pl-6 group"
+                className="border-s border-stone-300/80 ps-6 group"
               >
                 <div className="font-serif text-3xl sm:text-4xl font-normal text-stone-900 tracking-tight group-hover:text-[#d97706] transition-colors">
                   3rd / 30
@@ -168,7 +168,7 @@ export function HeroSection({ onOpenModal }: HeroSectionProps) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="border-l border-stone-300/80 pl-6 group"
+                className="border-s border-stone-300/80 ps-6 group"
               >
                 <div className="font-serif text-3xl sm:text-4xl font-normal text-stone-900 tracking-tight group-hover:text-[#d97706] transition-colors">
                   100%

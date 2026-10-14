@@ -220,7 +220,7 @@ export function Navbar({ onOpenModal }: NavbarProps) {
         <div 
           dir={isRTL ? "rtl" : "ltr"}
           id="mobile-navigation"
-          className="xl:hidden max-w-6xl mx-auto mt-3 bg-[#161412]/95 backdrop-blur-2xl border border-white/12 rounded-3xl p-5 sm:p-6 text-white pointer-events-auto shadow-2xl animate-in slide-in-from-top-3 duration-200"
+          className="xl:hidden max-w-6xl max-h-[calc(100dvh-6rem)] overflow-y-auto mx-auto mt-3 bg-[#161412]/95 backdrop-blur-2xl border border-white/12 rounded-3xl p-5 sm:p-6 text-white pointer-events-auto shadow-2xl animate-in slide-in-from-top-3 duration-200"
         >
           <div className="flex flex-col space-y-4 text-sm font-medium">
             <div className="flex justify-end pb-3 border-b border-white/10">

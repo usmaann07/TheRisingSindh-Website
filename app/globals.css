@@ -17,6 +17,33 @@
     --sand-subtle: #eae3db;
     --dark-hero: #161412;
     --amber-btn: #d97706;
+
+    --text-xs: clamp(0.75rem, 0.72rem + 0.08vw, 0.875rem);
+    --text-xs--line-height: 1.55;
+    --text-sm: clamp(0.875rem, 0.84rem + 0.1vw, 1rem);
+    --text-sm--line-height: 1.6;
+    --text-base: clamp(1rem, 0.96rem + 0.15vw, 1.125rem);
+    --text-base--line-height: 1.65;
+    --text-lg: clamp(1.125rem, 1.06rem + 0.2vw, 1.25rem);
+    --text-lg--line-height: 1.6;
+    --text-xl: clamp(1.25rem, 1.16rem + 0.3vw, 1.5rem);
+    --text-xl--line-height: 1.45;
+    --text-2xl: clamp(1.5rem, 1.4rem + 0.4vw, 1.875rem);
+    --text-2xl--line-height: 1.4;
+    --text-3xl: clamp(1.875rem, 1.72rem + 0.6vw, 2.5rem);
+    --text-3xl--line-height: 1.3;
+    --text-4xl: clamp(2.25rem, 2rem + 0.9vw, 3.5rem);
+    --text-4xl--line-height: 1.2;
+    --text-5xl: clamp(3rem, 2.6rem + 1.1vw, 4.5rem);
+    --text-5xl--line-height: 1.15;
+    --text-6xl: clamp(3.75rem, 3.3rem + 1.5vw, 5.5rem);
+    --text-6xl--line-height: 1.1;
+    --text-7xl: clamp(4.5rem, 4rem + 1.8vw, 6rem);
+    --text-7xl--line-height: 1.08;
+    --text-8xl: clamp(6rem, 5.25rem + 2.2vw, 7.5rem);
+    --text-8xl--line-height: 1.05;
+    --text-9xl: clamp(8rem, 7rem + 2.5vw, 9.5rem);
+    --text-9xl--line-height: 1;
   }
 
   body {
@@ -26,11 +53,111 @@
     -webkit-font-smoothing: antialiased;
     overflow-x: clip;
   }
+}
 
-  /* RTL typography for Sindhi & Urdu */
-  [dir="rtl"] {
-    font-family: "Noto Nastaliq Urdu", "Noto Sans Arabic", Tahoma, sans-serif;
-  }
+/* Grow Tailwind text utilities gently with the viewport, with bounded sizes. */
+.max-w-7xl {
+  max-width: min(90rem, calc(100% - clamp(2rem, 6vw, 5rem)));
+}
+
+/* Give Arabic-script languages roomier type without changing English sizing. */
+:root:is([lang="sd"], [lang="ur"]) {
+  --text-xs: clamp(0.875rem, 0.84rem + 0.1vw, 1rem);
+  --text-xs--line-height: 1.7;
+  --text-sm: clamp(1rem, 0.96rem + 0.15vw, 1.125rem);
+  --text-sm--line-height: 1.75;
+  --text-base: clamp(1.125rem, 1.05rem + 0.2vw, 1.25rem);
+  --text-base--line-height: 1.8;
+  --text-lg: clamp(1.25rem, 1.16rem + 0.3vw, 1.5rem);
+  --text-lg--line-height: 1.75;
+  --text-xl: clamp(1.375rem, 1.28rem + 0.35vw, 1.625rem);
+  --text-xl--line-height: 1.65;
+  --text-2xl: clamp(1.625rem, 1.5rem + 0.5vw, 2rem);
+  --text-2xl--line-height: 1.5;
+  --text-3xl: clamp(2rem, 1.8rem + 0.7vw, 2.75rem);
+  --text-3xl--line-height: 1.4;
+  --text-4xl: clamp(2.375rem, 2.15rem + 0.9vw, 3.5rem);
+  --text-4xl--line-height: 1.35;
+  --text-5xl: clamp(3rem, 2.7rem + 1.1vw, 4.5rem);
+  --text-5xl--line-height: 1.3;
+  --text-6xl: clamp(3.75rem, 3.35rem + 1.4vw, 5.5rem);
+  --text-6xl--line-height: 1.25;
+  --text-7xl: clamp(4.5rem, 4rem + 1.7vw, 6rem);
+  --text-7xl--line-height: 1.2;
+  --text-8xl: clamp(6rem, 5.25rem + 2vw, 7.5rem);
+  --text-8xl--line-height: 1.2;
+  --text-9xl: clamp(8rem, 7rem + 2.5vw, 9.5rem);
+  --text-9xl--line-height: 1.2;
+}
+
+:root[lang="sd"] body {
+  font-family: var(--font-noto-naskh-arabic), var(--font-plus-jakarta), sans-serif;
+}
+
+:root[lang="ur"] body {
+  font-family:
+    var(--font-noto-nastaliq-urdu),
+    var(--font-noto-naskh-arabic),
+    var(--font-plus-jakarta),
+    sans-serif;
+}
+
+:root[dir="rtl"] :is(.font-serif, .font-sans, .font-mono) {
+  font-family: var(--font-noto-naskh-arabic), sans-serif;
+}
+
+:root[lang="ur"][dir="rtl"] :is(.font-serif, .font-sans, .font-mono) {
+  font-family:
+    var(--font-noto-nastaliq-urdu),
+    var(--font-noto-naskh-arabic),
+    sans-serif;
+}
+
+:root:is([lang="sd"], [lang="ur"]) :is(h1, h2, h3, h4) {
+  line-height: 1.55;
+}
+
+:root[lang="ur"] :is(h1, h2, h3, h4) {
+  line-height: 1.9;
+}
+
+:root :is([class~="text-[9px]"], [class~="text-[10px]"], [class~="text-[11px]"]) {
+  font-size: clamp(0.75rem, 0.72rem + 0.08vw, 0.875rem);
+  line-height: 1.6;
+}
+
+:root:is([lang="sd"], [lang="ur"])
+  :is([class~="text-[9px]"], [class~="text-[10px]"], [class~="text-[11px]"]) {
+  font-size: clamp(0.8125rem, 0.78rem + 0.1vw, 0.9375rem);
+  line-height: 1.7;
+}
+
+:root[dir="rtl"] :is(.text-left, .text-right) {
+  text-align: start;
+}
+
+:root[dir="rtl"] :is(.tracking-tighter, .tracking-tight, .tracking-normal, .tracking-wide, .tracking-wider, .tracking-widest) {
+  letter-spacing: normal;
+}
+
+:root[dir="rtl"] .lucide-arrow-up-right {
+  transform: scaleX(-1);
+}
+
+:root[dir="rtl"] :is(input, select, textarea) {
+  min-height: 3rem;
+  line-height: 1.8;
+  text-align: start;
+}
+
+:root[dir="rtl"] input[type="tel"] {
+  direction: ltr;
+  text-align: left;
+}
+
+:root:is([lang="sd"], [lang="ur"]) .btn-amber-arrow {
+  font-size: 1rem;
+  line-height: 1.8;
 }
 
 /* Fluted glass background for architectural hero */
@@ -113,7 +240,7 @@
 .btn-amber-arrow .btn-arrow-box {
   padding: 0.75rem;
   background-color: rgba(0, 0, 0, 0.15);
-  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  border-inline-start: 1px solid rgba(255, 255, 255, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;

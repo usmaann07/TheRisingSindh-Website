@@ -32,7 +32,7 @@ export function WhatOurStudentsDo() {
               aria-pressed={activeStep === idx}
               key={idx}
               onClick={() => setActiveStep(idx)}
-              className={`w-full text-left sand-card p-8 flex flex-col justify-between cursor-pointer ${
+              className={`w-full text-start sand-card p-8 flex flex-col justify-between cursor-pointer ${
                 activeStep === idx
                   ? "border-[#d97706] shadow-lg -translate-y-1"
                   : ""
@@ -66,7 +66,7 @@ export function WhatOurStudentsDo() {
           </div>
 
           <div className="overflow-x-auto">
-            <table className={`w-full ${isRTL ? "text-right" : "text-left"} border-collapse text-xs sm:text-sm`}>
+            <table className="w-full text-start border-collapse text-xs sm:text-sm">
               <thead>
                 <tr className="border-b border-stone-200">
                   <th className={`py-3 px-4 font-serif text-stone-600 font-normal text-base bg-stone-50 ${isRTL ? "rounded-tr-xl" : "rounded-tl-xl"} w-1/2`}>
@@ -80,9 +80,11 @@ export function WhatOurStudentsDo() {
               <tbody className="divide-y divide-stone-100">
                 {t.whatStudentsDo.comparison.rows.map((row, idx) => (
                   <tr key={idx} className="hover:bg-stone-50/40 transition-colors">
-                    <td className="py-3.5 px-4 text-stone-500 flex items-start gap-2">
-                      <X className="w-4 h-4 text-stone-400 shrink-0 mt-0.5" />
-                      <span>{row.typical}</span>
+                    <td className="py-3.5 px-4 text-stone-500">
+                      <div className="flex items-start gap-2">
+                        <X className="w-4 h-4 text-stone-400 shrink-0 mt-0.5" />
+                        <span>{row.typical}</span>
+                      </div>
                     </td>
                     <td className="py-3.5 px-4 text-stone-900 font-medium">
                       <div className="flex items-start gap-2">

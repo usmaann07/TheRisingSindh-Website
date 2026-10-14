@@ -5,7 +5,7 @@ import { MapPin, Mail, ShieldCheck, Heart } from "lucide-react";
 import { useLanguage } from "@/lib/language-context";
 
 export function Footer() {
-  const { t } = useLanguage();
+  const { t, isRTL } = useLanguage();
 
   return (
     <footer className="bg-[#161412] text-stone-400 pt-16 pb-12 border-t border-white/10">
@@ -25,7 +25,7 @@ export function Footer() {
 
       {/* Main Footer Links */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 pb-12 border-b border-white/10">
+        <div className={`grid grid-cols-1 ${isRTL ? "md:grid-cols-2 lg:grid-cols-4" : "md:grid-cols-4"} gap-8 pb-12 border-b border-white/10`}>
           {/* Col 1 */}
           <div className="space-y-3">
             <div className="flex items-center gap-2.5">
@@ -40,8 +40,8 @@ export function Footer() {
             <p className="text-xs text-stone-500 leading-relaxed font-normal">
               {t.meta.positioning}
             </p>
-            <div className="flex items-center gap-1.5 text-xs text-stone-500 pt-1">
-              <MapPin className="w-3.5 h-3.5" />
+            <div className="flex min-w-0 items-center gap-1.5 text-xs text-stone-500 pt-1">
+              <MapPin className="w-3.5 h-3.5 shrink-0" />
               <span>{t.common.sehwanLocation}</span>
             </div>
           </div>
@@ -82,9 +82,9 @@ export function Footer() {
             <p className="text-xs text-stone-500 leading-relaxed font-normal">
               {t.footer.governanceNote}
             </p>
-            <div className="flex items-center gap-1.5 text-xs text-stone-500 pt-1">
-              <Mail className="w-3.5 h-3.5" />
-              <span>admissions@therisingsindh.com</span>
+            <div className="flex min-w-0 items-center gap-1.5 text-xs text-stone-500 pt-1">
+              <Mail className="w-3.5 h-3.5 shrink-0" />
+              <span dir="ltr" className="break-all">admissions@therisingsindh.com</span>
             </div>
           </div>
         </div>

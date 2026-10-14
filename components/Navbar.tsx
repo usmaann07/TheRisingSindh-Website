@@ -49,7 +49,7 @@ export function Navbar({ onOpenModal }: NavbarProps) {
           {/* Logo - Sized & Aligned */}
           <Link href="#home" className="flex items-center gap-2.5 sm:gap-3 group shrink-0">
             <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#d97706] to-[#b45309] flex items-center justify-center text-white font-bold text-xs sm:text-sm shadow-md group-hover:scale-105 transition-transform shrink-0">
-              RS
+              TRS
             </div>
             <div className="flex flex-col">
               <span className="font-serif text-base sm:text-lg font-normal tracking-tight text-white leading-none whitespace-nowrap">

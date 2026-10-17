@@ -62,6 +62,11 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     document.documentElement.dir = language === "sd" || language === "ur" ? "rtl" : "ltr";
     document.documentElement.lang = language;
+    document.title = contentMap[language].meta.title;
+    document.querySelector('meta[name="description"]')?.setAttribute(
+      "content",
+      contentMap[language].meta.description
+    );
   }, [language]);
 
   const isRTL = language === "sd" || language === "ur";

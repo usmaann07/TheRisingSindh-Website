@@ -108,8 +108,8 @@ export function SMEEnterpriseSection({ onOpenModal }: SMEEnterpriseProps) {
               </p>
             </div>
             <div className="mt-6 pt-4 border-t border-stone-200/80 flex items-center justify-between text-xs text-stone-500">
-              <span className="font-mono text-[#d97706] font-semibold">Small & Medium Enterprises</span>
-              <span>Sindh Local Economy</span>
+              <span className="font-mono text-[#d97706] font-semibold">{t.common.smallMediumEnterprises}</span>
+              <span>{t.common.sindhLocalEconomy}</span>
             </div>
           </motion.div>
 
@@ -134,8 +134,8 @@ export function SMEEnterpriseSection({ onOpenModal }: SMEEnterpriseProps) {
               </p>
             </div>
             <div className="mt-6 pt-4 border-t border-stone-200/80 flex items-center justify-between text-xs text-stone-500">
-              <span className="font-mono text-[#d97706] font-semibold">Real-World Practice</span>
-              <span>Vocational Career Pathways</span>
+              <span className="font-mono text-[#d97706] font-semibold">{t.common.realWorldPractice}</span>
+              <span>{t.common.vocationalCareerPathways}</span>
             </div>
           </motion.div>
         </div>

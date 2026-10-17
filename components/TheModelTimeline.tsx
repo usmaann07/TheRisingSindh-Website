@@ -9,7 +9,7 @@ interface TheModelTimelineProps {
 }
 
 export function TheModelTimeline({ onOpenModal }: TheModelTimelineProps) {
-  const { t, isRTL } = useLanguage();
+  const { t, isRTL, language } = useLanguage();
   const [selectedGrade, setSelectedGrade] = useState(0);
 
   const stages = t.theModel.timelineStages;
@@ -19,9 +19,9 @@ export function TheModelTimeline({ onOpenModal }: TheModelTimelineProps) {
     const printWindow = window.open("", "_blank");
     if (printWindow) {
       printWindow.document.write(`
-        <html>
+        <html lang="${language}" dir="${isRTL ? "rtl" : "ltr"}">
           <head>
-            <title>The Rising Sindh - Nursery to Matric Curriculum Course Map</title>
+            <title>${t.nav.curriculumMap} | The Rising Sindh</title>
             <style>
               body { font-family: system-ui, sans-serif; padding: 40px; color: #1c1917; line-height: 1.6; }
               h1 { color: #d97706; margin-bottom: 8px; }
@@ -33,16 +33,16 @@ export function TheModelTimeline({ onOpenModal }: TheModelTimelineProps) {
             </style>
           </head>
           <body>
-            <h1>The Rising Sindh · Course Map</h1>
-            <p><strong>Nursery to Matric</strong>: Two-Layer Synchronized Architecture (Sindh Board Core + The Future Layer)</p>
+            <h1>The Rising Sindh · ${t.nav.curriculumMap}</h1>
+            <p>${t.nav.curriculumMapSub}</p>
             <hr/>
             ${stages
               .map(
                 (s) => `
               <div class="stage">
                 <div class="stage-title">${s.grade} <span class="tag">${s.milestone}</span></div>
-                <div class="pillar"><strong>Computing & AI:</strong> ${s.computing}</div>
-                <div class="pillar"><strong>Entrepreneurship:</strong> ${s.entrepreneurship}</div>
+                <div class="pillar"><strong>${t.common.computingPillarTitle}:</strong> ${s.computing}</div>
+                <div class="pillar"><strong>${t.common.entrepreneurshipPillarTitle}:</strong> ${s.entrepreneurship}</div>
               </div>
             `
               )

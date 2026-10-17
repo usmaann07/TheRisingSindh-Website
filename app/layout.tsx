@@ -108,6 +108,29 @@ export default function RootLayout({
     >
       <head>
         <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (() => {
+                const navigation = performance.getEntriesByType("navigation")[0];
+                if (navigation?.type !== "reload") return;
+
+                history.scrollRestoration = "manual";
+                if (window.location.hash) {
+                  history.replaceState(history.state, "", window.location.pathname + window.location.search);
+                }
+                window.scrollTo(0, 0);
+                window.addEventListener("pageshow", () => {
+                  window.scrollTo(0, 0);
+                  requestAnimationFrame(() => {
+                    window.scrollTo(0, 0);
+                  });
+                  window.setTimeout(() => window.scrollTo(0, 0), 100);
+                }, { once: true });
+              })();
+            `
+          }}
+        />
+        <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaJsonLd) }}
         />

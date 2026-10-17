@@ -56,6 +56,7 @@ export function Footer() {
               <li><a href="#the-model" className="hover:text-white transition-colors">{t.nav.theModel}</a></li>
               <li><a href="#what-our-students-do" className="hover:text-white transition-colors">{t.nav.whatStudentsDo}</a></li>
               <li><a href="#the-proof" className="hover:text-white transition-colors">{t.nav.theProof}</a></li>
+              <li><a href="#global-bridge" className="hover:text-white transition-colors">{t.nav.globalBridge}</a></li>
               <li><a href="#sehwan-campus" className="hover:text-white transition-colors">{t.nav.sehwanCampus}</a></li>
             </ul>
           </div>
@@ -67,7 +68,8 @@ export function Footer() {
             </h4>
             <ul className="space-y-2 text-xs text-stone-400">
               <li><a href="#the-model" className="hover:text-white transition-colors">{t.common.nurseryMatricBise}</a></li>
-              <li><a href="#hero-track" className="hover:text-white transition-colors">{t.common.heroTrackGorakhTreks}</a></li>
+              <li><a href="#personality-grooming" className="hover:text-white transition-colors">{t.common.heroTrackGorakhTreks}</a></li>
+              <li><a href="#student-incubator" className="hover:text-white transition-colors">{t.nav.studentIncubator}</a></li>
               <li><a href="#sehwan-campus" className="hover:text-white transition-colors">{t.common.eveningCommunityAcademy}</a></li>
               <li><a href="#sehwan-campus" className="hover:text-white transition-colors">{t.common.innovationLabBuilders}</a></li>
               <li><a href="#join-us" className="hover:text-white transition-colors">{t.common.saturdayBuildDays}</a></li>

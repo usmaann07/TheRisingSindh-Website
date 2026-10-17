@@ -1,11 +1,12 @@
 "use client";
 
 import React from "react";
-import { Users, Plane, FileCheck, ArrowUpRight } from "lucide-react";
+import { Users, Plane, FileCheck, ArrowUpRight, GraduationCap, Globe, CheckCircle2 } from "lucide-react";
+import { motion } from "framer-motion";
 import { useLanguage } from "@/lib/language-context";
 
 interface GlobalBridgeProps {
-  onOpenModal: (type: "lab-bench") => void;
+  onOpenModal: (type: "lab-bench" | "campus-visit") => void;
 }
 
 export function GlobalBridgeSection({ onOpenModal }: GlobalBridgeProps) {
@@ -25,10 +26,19 @@ export function GlobalBridgeSection({ onOpenModal }: GlobalBridgeProps) {
   };
 
   return (
-    <section id="global-bridge" className="py-20 md:py-28 bg-[#f4efea] text-[#1c1917] border-b border-[#eae3db]">
+    <section id="global-bridge" className="py-20 md:py-28 bg-[#f4efea] text-[#1c1917] border-b border-[#eae3db] overflow-hidden relative">
+      <span id="scholarships" className="sr-only" aria-hidden="true">Scholarships</span>
+      <span id="international-trips" className="sr-only" aria-hidden="true">International Educational Trips</span>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center max-w-4xl mx-auto mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.7 }}
+          className="text-center max-w-4xl mx-auto mb-16"
+        >
           <div className="flex items-center justify-center gap-2 text-[11px] font-semibold tracking-widest text-[#d97706] uppercase mb-2">
             <span className="w-1.5 h-1.5 rounded-full bg-[#d97706]" />
             <span>{t.globalBridge.badge}</span>
@@ -36,16 +46,20 @@ export function GlobalBridgeSection({ onOpenModal }: GlobalBridgeProps) {
           <h2 className="font-serif text-4xl sm:text-6xl font-normal text-stone-900 tracking-tight leading-[1.08]">
             {t.globalBridge.title}
           </h2>
-          <p className="mt-4 text-sm sm:text-base text-stone-600 max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-4 text-sm sm:text-base text-stone-600 max-w-2xl mx-auto leading-relaxed font-normal">
             {t.globalBridge.subtitle}
           </p>
-        </div>
+        </motion.div>
 
-        {/* 3 Lanes */}
+        {/* 3 Global Lanes */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
           {t.globalBridge.lanes.map((lane, idx) => (
-            <div
+            <motion.div
               key={idx}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.65, delay: idx * 0.12 }}
               className="sand-card p-8 flex flex-col justify-between"
             >
               <div>
@@ -69,20 +83,123 @@ export function GlobalBridgeSection({ onOpenModal }: GlobalBridgeProps) {
                 </p>
               </div>
 
-              <div className="pt-6 mt-6 border-t border-stone-100 flex items-center justify-between text-xs font-semibold text-stone-700">
+              <div className="pt-6 mt-6 border-t border-stone-200/80 flex items-center justify-between text-xs font-semibold text-stone-700">
                 <span>{t.common.directVentureTrack}</span>
                 <ArrowUpRight className="w-4 h-4 text-[#d97706]" />
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
+
+        {/* Prominent Highlighting: Scholarships & International Educational Trips Showcase */}
+        {t.globalBridge.scholarshipHighlight && t.globalBridge.internationalTripsHighlight && (
+          <div className="mb-16">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              
+              {/* Highlight Card 1: Scholarships for Deserving & Talented Students */}
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.7 }}
+                className="sand-card p-8 sm:p-10 flex flex-col justify-between border-s-4 border-s-[#d97706] shadow-sm hover:shadow-md transition-shadow"
+              >
+                <div>
+                  <div className="flex items-center gap-2.5 mb-3">
+                    <div className="p-2.5 rounded-xl bg-amber-500/15 border border-[#d97706]/30">
+                      <GraduationCap className="w-6 h-6 text-[#d97706]" />
+                    </div>
+                    <span className="text-xs font-mono font-semibold text-[#d97706] uppercase tracking-wider">
+                      {t.globalBridge.scholarshipHighlight.badge}
+                    </span>
+                  </div>
+
+                  <h3 className="font-serif text-2xl sm:text-3xl font-normal text-stone-900 tracking-tight mb-2">
+                    {t.globalBridge.scholarshipHighlight.title}
+                  </h3>
+
+                  <p className="font-serif text-base text-[#d97706] mb-3">
+                    {t.globalBridge.scholarshipHighlight.subtitle}
+                  </p>
+
+                  <p className="text-xs sm:text-sm text-stone-600 leading-relaxed font-normal mb-6">
+                    {t.globalBridge.scholarshipHighlight.description}
+                  </p>
+
+                  <div className="space-y-2.5 pt-2 border-t border-stone-200/70">
+                    {t.globalBridge.scholarshipHighlight.points.map((pt, pIdx) => (
+                      <div key={pIdx} className="flex items-start gap-2 text-xs text-stone-700">
+                        <CheckCircle2 className="w-4 h-4 text-[#d97706] shrink-0 mt-0.5" />
+                        <span>{pt}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="mt-8 pt-4 border-t border-stone-200/80 bg-amber-50/60 p-4 rounded-xl">
+                  <p className="font-serif text-xs sm:text-sm italic text-stone-800">
+                    “{t.globalBridge.scholarshipHighlight.valueProposition}”
+                  </p>
+                </div>
+              </motion.div>
+
+              {/* Highlight Card 2: International Educational Trips & Cultural Exposure */}
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.7, delay: 0.1 }}
+                className="sand-card p-8 sm:p-10 flex flex-col justify-between border-s-4 border-s-[#d97706] shadow-sm hover:shadow-md transition-shadow"
+              >
+                <div>
+                  <div className="flex items-center gap-2.5 mb-3">
+                    <div className="p-2.5 rounded-xl bg-amber-500/15 border border-[#d97706]/30">
+                      <Globe className="w-6 h-6 text-[#d97706]" />
+                    </div>
+                    <span className="text-xs font-mono font-semibold text-[#d97706] uppercase tracking-wider">
+                      {t.globalBridge.internationalTripsHighlight.badge}
+                    </span>
+                  </div>
+
+                  <h3 className="font-serif text-2xl sm:text-3xl font-normal text-stone-900 tracking-tight mb-2">
+                    {t.globalBridge.internationalTripsHighlight.title}
+                  </h3>
+
+                  <p className="font-serif text-base text-[#d97706] mb-3">
+                    {t.globalBridge.internationalTripsHighlight.subtitle}
+                  </p>
+
+                  <p className="text-xs sm:text-sm text-stone-600 leading-relaxed font-normal mb-6">
+                    {t.globalBridge.internationalTripsHighlight.description}
+                  </p>
+
+                  <div className="space-y-2.5 pt-2 border-t border-stone-200/70">
+                    {t.globalBridge.internationalTripsHighlight.points.map((pt, pIdx) => (
+                      <div key={pIdx} className="flex items-start gap-2 text-xs text-stone-700">
+                        <CheckCircle2 className="w-4 h-4 text-[#d97706] shrink-0 mt-0.5" />
+                        <span>{pt}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="mt-8 pt-4 border-t border-stone-200/80 bg-amber-50/60 p-4 rounded-xl">
+                  <p className="font-serif text-xs sm:text-sm italic text-stone-800">
+                    “{t.globalBridge.internationalTripsHighlight.valueProposition}”
+                  </p>
+                </div>
+              </motion.div>
+
+            </div>
+          </div>
+        )}
 
         {/* Closing Card */}
         <div className="sand-card p-8 sm:p-12 max-w-3xl mx-auto text-center">
           <p className="font-serif text-xl sm:text-2xl font-normal text-stone-900 leading-relaxed">
             “{t.globalBridge.closing}”
           </p>
-          <div className="mt-6">
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
             <button
               onClick={() => onOpenModal("lab-bench")}
               className="btn-amber-arrow cursor-pointer group"
@@ -93,6 +210,12 @@ export function GlobalBridgeSection({ onOpenModal }: GlobalBridgeProps) {
               <span className="btn-arrow-box group-hover:bg-black/25 transition-colors">
                 <ArrowUpRight className="w-4 h-4 text-white" />
               </span>
+            </button>
+            <button
+              onClick={() => onOpenModal("campus-visit")}
+              className="px-5 py-3 rounded-full bg-white border border-stone-300 hover:border-[#d97706] text-stone-800 text-xs font-semibold transition-all hover:bg-stone-50 cursor-pointer"
+            >
+              {t.nav.bookVisit}
             </button>
           </div>
         </div>

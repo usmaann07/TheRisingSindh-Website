@@ -8,6 +8,7 @@ import { ProblemStrip } from "@/components/ProblemStrip";
 import { FourEngines } from "@/components/FourEngines";
 import { WhatOurStudentsDo } from "@/components/WhatOurStudentsDo";
 import { TheModelTimeline } from "@/components/TheModelTimeline";
+import { SMEEnterpriseSection } from "@/components/SMEEnterpriseSection";
 import { HeroTrackSection } from "@/components/HeroTrackSection";
 import { TheProofSection } from "@/components/TheProofSection";
 import { GlobalBridgeSection } from "@/components/GlobalBridgeSection";
@@ -57,13 +58,16 @@ export default function Home() {
         {/* Nursery to Matric Two-Layer Curriculum Interactive Timeline & Download Action */}
         <TheModelTimeline onOpenModal={handleOpenModal} />
 
-        {/* The Hero Track: Character, Gorakh Survival Treks & Hero Oath */}
+        {/* SMEs & Real Enterprises: Practical Industry Learning & Local Workshops */}
+        <SMEEnterpriseSection onOpenModal={handleOpenModal} />
+
+        {/* Personality Grooming: Character, Communication, Life Skills & Mountain Trekking */}
         <HeroTrackSection />
 
         {/* The Proof: Founder Precedent from Sehwan to Silicon Valley with Video Proof */}
         <TheProofSection />
 
-        {/* Global Bridge: Three Lanes (JV, Accelerator Exposure, US Entity & Patents) */}
+        {/* Global Bridge: Three Lanes, Scholarships & International Educational Trips */}
         <GlobalBridgeSection onOpenModal={handleOpenModal} />
 
         {/* The Movement: Sindh Renaissance, Moenjodaro & Build Here Stay Here */}

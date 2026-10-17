@@ -42,10 +42,10 @@ export function Navbar({ onOpenModal }: NavbarProps) {
   };
 
   return (
-    <header className="fixed top-4 sm:top-6 left-0 right-0 z-50 px-4 sm:px-6 pointer-events-none">
-      <div className="max-w-7xl mx-auto flex items-center justify-between pointer-events-auto">
+    <header className="fixed top-4 sm:top-6 left-0 right-0 z-50 px-3 sm:px-6 pointer-events-none">
+      <div className="max-w-[1440px] w-full mx-auto flex items-center justify-between pointer-events-auto">
         {/* Floating Centered Pill Navbar with Perfect Internal Alignment & Clean Subtle Shadow */}
-        <div className="w-full bg-[#161412]/92 backdrop-blur-xl border border-white/12 rounded-full px-4 sm:px-6 py-3 sm:py-3.5 shadow-lg shadow-black/25 flex items-center justify-between gap-3 md:gap-4 lg:gap-6 text-white transition-all duration-200">
+        <div className="w-full bg-[#161412]/92 backdrop-blur-xl border border-white/12 rounded-full px-3.5 sm:px-5 2xl:px-6 py-2 sm:py-2.5 shadow-lg shadow-black/25 flex items-center justify-between gap-2 xl:gap-2.5 2xl:gap-4 text-white transition-all duration-200">
           {/* Logo - Sized & Aligned */}
           <Link href="#home" className="flex items-center gap-2.5 sm:gap-3 group shrink-0">
             <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#d97706] to-[#b45309] flex items-center justify-center text-white font-bold text-xs sm:text-sm shadow-md group-hover:scale-105 transition-transform shrink-0">
@@ -55,7 +55,7 @@ export function Navbar({ onOpenModal }: NavbarProps) {
               <span className="font-serif text-base sm:text-lg font-normal tracking-tight text-white leading-none whitespace-nowrap">
                 The Rising Sindh
               </span>
-              <span className="text-[9px] uppercase tracking-widest text-[#d97706] font-mono mt-0.5 hidden xl:block whitespace-nowrap">
+              <span className="text-[9px] uppercase tracking-widest text-[#d97706] font-mono mt-0.5 hidden 2xl:block whitespace-nowrap">
                 {t.common.brandSubtitle}
               </span>
             </div>
@@ -65,7 +65,7 @@ export function Navbar({ onOpenModal }: NavbarProps) {
           <nav className="hidden xl:flex items-center gap-0.5 2xl:gap-1.5 text-[11px] 2xl:text-xs font-medium text-stone-300 shrink">
             <a
               href="#why-we-exist"
-              className="px-1.5 2xl:px-2 py-1.5 rounded-lg text-stone-300 hover:text-[#f59e0b] hover:bg-[#d97706]/15 transition-all whitespace-nowrap"
+              className="px-1.5 2xl:px-2 py-1 rounded-lg text-stone-300 hover:text-[#f59e0b] hover:bg-[#d97706]/15 transition-all whitespace-nowrap"
             >
               {t.nav.whyWeExist}
             </a>
@@ -97,7 +97,7 @@ export function Navbar({ onOpenModal }: NavbarProps) {
                     </div>
                   </a>
                   <a
-                    href="#hero-track"
+                    href="#personality-grooming"
                     onClick={() => setModelDropdownOpen(false)}
                     className="flex items-start gap-2.5 p-2.5 rounded-xl hover:bg-[#d97706]/15 transition-colors text-stone-200 hover:text-[#f59e0b]"
                   >
@@ -108,7 +108,7 @@ export function Navbar({ onOpenModal }: NavbarProps) {
                     </div>
                   </a>
                   <a
-                    href="#sehwan-campus"
+                    href="#student-incubator"
                     onClick={() => setModelDropdownOpen(false)}
                     className="flex items-start gap-2.5 p-2.5 rounded-xl hover:bg-[#d97706]/15 transition-colors text-stone-200 hover:text-[#f59e0b]"
                   >
@@ -135,37 +135,43 @@ export function Navbar({ onOpenModal }: NavbarProps) {
 
             <a
               href="#what-our-students-do"
-              className="px-1.5 2xl:px-2 py-1.5 rounded-lg text-stone-300 hover:text-[#f59e0b] hover:bg-[#d97706]/15 transition-all whitespace-nowrap"
+              className="px-1.5 2xl:px-2 py-1 rounded-lg text-stone-300 hover:text-[#f59e0b] hover:bg-[#d97706]/15 transition-all whitespace-nowrap"
             >
               {t.nav.whatStudentsDo}
             </a>
             <a
               href="#the-proof"
-              className="px-1.5 2xl:px-2 py-1.5 rounded-lg text-stone-300 hover:text-[#f59e0b] hover:bg-[#d97706]/15 transition-all whitespace-nowrap"
+              className="px-1.5 2xl:px-2 py-1 rounded-lg text-stone-300 hover:text-[#f59e0b] hover:bg-[#d97706]/15 transition-all whitespace-nowrap"
             >
               {t.nav.theProof}
             </a>
             <a
+              href="#global-bridge"
+              className="px-1.5 2xl:px-2 py-1 rounded-lg text-stone-300 hover:text-[#f59e0b] hover:bg-[#d97706]/15 transition-all whitespace-nowrap"
+            >
+              {t.nav.globalBridge}
+            </a>
+            <a
               href="#sehwan-campus"
-              className="px-1.5 2xl:px-2 py-1.5 rounded-lg text-stone-300 hover:text-[#f59e0b] hover:bg-[#d97706]/15 transition-all whitespace-nowrap"
+              className="px-1.5 2xl:px-2 py-1 rounded-lg text-stone-300 hover:text-[#f59e0b] hover:bg-[#d97706]/15 transition-all whitespace-nowrap"
             >
               {t.nav.sehwanCampus}
             </a>
             <a
               href="#the-movement"
-              className="px-1.5 2xl:px-2 py-1.5 rounded-lg text-stone-300 hover:text-[#f59e0b] hover:bg-[#d97706]/15 transition-all whitespace-nowrap"
+              className="px-1.5 2xl:px-2 py-1 rounded-lg text-stone-300 hover:text-[#f59e0b] hover:bg-[#d97706]/15 transition-all whitespace-nowrap"
             >
               {t.nav.theMovement}
             </a>
           </nav>
 
           {/* Right Action & Multilingual Switcher - Guaranteed Inside Pill */}
-          <div className="flex items-center gap-2.5 sm:gap-3 shrink-0">
+          <div className="flex items-center gap-2 2xl:gap-3 shrink-0">
             {/* Language Switcher */}
-            <div className="hidden xl:flex items-center bg-white/10 p-0.5 sm:p-1 rounded-full text-[10px] 2xl:text-xs font-medium text-stone-300 border border-white/5">
+            <div className="hidden xl:flex items-center bg-white/10 p-0.5 rounded-full text-[10px] 2xl:text-xs font-medium text-stone-300 border border-white/5 shrink-0">
               <button
                 onClick={() => handleLangChange("sd")}
-                className={`px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full transition-all cursor-pointer ${
+                className={`px-2 py-0.5 2xl:px-2.5 2xl:py-1 rounded-full transition-all cursor-pointer ${
                   language === "sd" ? "bg-white text-stone-900 font-bold shadow-xs" : "hover:text-[#f59e0b] hover:bg-[#d97706]/15"
                 }`}
                 title="سنڌي ٻولي"
@@ -174,7 +180,7 @@ export function Navbar({ onOpenModal }: NavbarProps) {
               </button>
               <button
                 onClick={() => handleLangChange("ur")}
-                className={`px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full transition-all cursor-pointer ${
+                className={`px-2 py-0.5 2xl:px-2.5 2xl:py-1 rounded-full transition-all cursor-pointer ${
                   language === "ur" ? "bg-white text-stone-900 font-bold shadow-xs" : "hover:text-[#f59e0b] hover:bg-[#d97706]/15"
                 }`}
                 title="اردو زبان"
@@ -183,7 +189,7 @@ export function Navbar({ onOpenModal }: NavbarProps) {
               </button>
               <button
                 onClick={() => handleLangChange("en")}
-                className={`px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full transition-all cursor-pointer ${
+                className={`px-2 py-0.5 2xl:px-2.5 2xl:py-1 rounded-full transition-all cursor-pointer ${
                   language === "en" ? "bg-white text-stone-900 font-bold shadow-xs" : "hover:text-[#f59e0b] hover:bg-[#d97706]/15"
                 }`}
                 title="English"
@@ -195,10 +201,10 @@ export function Navbar({ onOpenModal }: NavbarProps) {
             {/* Amber Action Button - Soft Orange Glow on Hover */}
             <button
               onClick={() => onOpenModal("campus-visit")}
-              className="hidden xl:flex px-2.5 2xl:px-4 py-2 rounded-full bg-[#d97706] hover:bg-[#ea580c] hover:shadow-[0_0_15px_rgba(234,88,12,0.5)] text-white text-[10px] 2xl:text-xs font-semibold items-center gap-1.5 transition-all hover:scale-102 cursor-pointer whitespace-nowrap shrink-0"
+              className="hidden xl:flex px-3 2xl:px-4 py-1.5 sm:py-2 rounded-full bg-[#d97706] hover:bg-[#ea580c] hover:shadow-[0_0_15px_rgba(234,88,12,0.5)] text-white text-[11px] 2xl:text-xs font-semibold items-center gap-1.5 transition-all hover:scale-102 cursor-pointer whitespace-nowrap shrink-0"
             >
               <span>{t.nav.bookVisit}</span>
-              <ArrowUpRight className="w-3.5 h-3.5" />
+              <ArrowUpRight className="w-3.5 h-3.5 shrink-0" />
             </button>
 
             {/* Mobile / Tablet Hamburger Toggle */}
@@ -270,11 +276,18 @@ export function Navbar({ onOpenModal }: NavbarProps) {
               <span className="text-[10px] text-[#d97706] font-mono">BISE</span>
             </a>
             <a
-              href="#hero-track"
+              href="#personality-grooming"
               onClick={() => setMobileMenuOpen(false)}
               className="py-1 text-stone-300 hover:text-white border-b border-white/5"
             >
               {t.nav.theHeroTrackNav}
+            </a>
+            <a
+              href="#student-incubator"
+              onClick={() => setMobileMenuOpen(false)}
+              className="py-1 text-stone-300 hover:text-white border-b border-white/5"
+            >
+              {t.nav.studentIncubator}
             </a>
             <a
               href="#what-our-students-do"
@@ -289,6 +302,13 @@ export function Navbar({ onOpenModal }: NavbarProps) {
               className="py-1 text-stone-300 hover:text-white border-b border-white/5"
             >
               {t.nav.theProof}
+            </a>
+            <a
+              href="#global-bridge"
+              onClick={() => setMobileMenuOpen(false)}
+              className="py-1 text-stone-300 hover:text-white border-b border-white/5"
+            >
+              {t.nav.globalBridge}
             </a>
             <a
               href="#sehwan-campus"

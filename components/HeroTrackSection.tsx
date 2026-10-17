@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { Mic, Users, Mountain, Shield, Flame, Check } from "lucide-react";
+import { MessageSquare, ShieldCheck, Mountain, Users, Flame, Check } from "lucide-react";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/lib/language-context";
 
@@ -10,8 +10,24 @@ export function HeroTrackSection() {
   const { t } = useLanguage();
   const [selectedPillar, setSelectedPillar] = useState<number | null>(null);
 
+  const getPillarIcon = (idx: number) => {
+    switch (idx) {
+      case 0:
+        return <MessageSquare className="w-4 h-4 text-[#d97706]" />;
+      case 1:
+        return <ShieldCheck className="w-4 h-4 text-[#d97706]" />;
+      case 2:
+        return <Mountain className="w-4 h-4 text-[#d97706]" />;
+      case 3:
+        return <Users className="w-4 h-4 text-[#d97706]" />;
+      default:
+        return <ShieldCheck className="w-4 h-4 text-[#d97706]" />;
+    }
+  };
+
   return (
-    <section id="hero-track" className="py-20 md:py-28 bg-[#f4efea] text-[#1c1917] border-b border-[#eae3db] overflow-hidden">
+    <section id="personality-grooming" className="py-20 md:py-28 bg-[#f4efea] text-[#1c1917] border-b border-[#eae3db] overflow-hidden relative">
+      <span id="hero-track" className="sr-only" aria-hidden="true">Personality Grooming</span>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Column */}
@@ -53,10 +69,7 @@ export function HeroTrackSection() {
                 >
                   <div className="flex items-center justify-between mb-1.5">
                     <div className="flex items-center gap-2 font-serif text-base font-normal text-stone-900">
-                      {idx === 0 && <Mic className="w-4 h-4 text-[#d97706]" />}
-                      {idx === 1 && <Users className="w-4 h-4 text-[#d97706]" />}
-                      {idx === 2 && <Mountain className="w-4 h-4 text-[#d97706]" />}
-                      {idx === 3 && <Shield className="w-4 h-4 text-[#d97706]" />}
+                      {getPillarIcon(idx)}
                       <span>{feat.title}</span>
                     </div>
                     {selectedPillar === idx && <Check className="w-3.5 h-3.5 text-[#d97706]" />}
@@ -68,7 +81,7 @@ export function HeroTrackSection() {
               ))}
             </div>
 
-            {/* The Hero Oath at Class 9 */}
+            {/* The Student Character Pledge at Class 9 */}
             <div className="sand-card p-6 border-s-4 border-s-[#d97706]">
               <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#d97706] mb-1.5">
                 <Flame className="w-4 h-4 text-[#d97706]" />
@@ -91,14 +104,14 @@ export function HeroTrackSection() {
             <div className="rounded-[24px] overflow-hidden shadow-xl border border-stone-300/80 bg-white p-2">
               <Image
                 src="/images/hero-track.jpg"
-                alt="Students on Gorakh Hills survival trek"
+                alt="Students on mountain trekking expedition across Sindh"
                 width={600}
                 height={450}
                 className="w-full h-auto rounded-[18px] object-cover"
               />
               <div className="p-4 flex items-center justify-between text-xs text-stone-600">
                 <span className="font-serif text-sm font-normal text-stone-900">{t.common.gorakhTrekTitle}</span>
-                <span className="text-[#d97706] font-mono">{t.common.elevation5688}</span>
+                <span className="text-[#d97706] font-mono text-[11px] font-semibold">{t.common.elevation5688}</span>
               </div>
             </div>
           </motion.div>

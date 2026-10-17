@@ -227,6 +227,30 @@ export interface SiteContent {
       desc: string;
     }[];
   };
+  smeEnterprises: {
+    badge: string;
+    title: string;
+    subtitle: string;
+    whatIsSmeTitle: string;
+    whatIsSmeDesc: string;
+    whyConnectTitle: string;
+    whyConnectDesc: string;
+    learningOutcomesTitle: string;
+    learningOutcomes: {
+      title: string;
+      desc: string;
+    }[];
+    examplesTitle: string;
+    examplesSubtitle: string;
+    examples: {
+      id: string;
+      title: string;
+      role: string;
+      businessDoes: string;
+      studentsLearn: string;
+      tags: string[];
+    }[];
+  };
   heroTrack: {
     badge: string;
     title: string;
@@ -270,6 +294,22 @@ export interface SiteContent {
       description: string;
     }[];
     closing: string;
+    scholarshipHighlight: {
+      badge: string;
+      title: string;
+      subtitle: string;
+      description: string;
+      points: string[];
+      valueProposition: string;
+    };
+    internationalTripsHighlight: {
+      badge: string;
+      title: string;
+      subtitle: string;
+      description: string;
+      points: string[];
+      valueProposition: string;
+    };
   };
   theMovement: {
     badge: string;
@@ -358,11 +398,11 @@ export const contentMap: Record<Language, SiteContent> = {
       theMovement: "The Movement",
       joinUs: "Join Us",
       visitCampus: "Visit a Campus",
-      bookVisit: "Book a campus visit",
+      bookVisit: "Book Campus Visit",
       curriculumMap: "Curriculum Map",
       curriculumMapSub: "Nursery to Matric BISE + Future Layer",
-      theHeroTrackNav: "The Hero Track",
-      theHeroTrackNavSub: "Speech, grooming & Gorakh Hill treks",
+      theHeroTrackNav: "Personality Grooming",
+      theHeroTrackNavSub: "Character, communication & mountain trekking across Sindh",
       studentIncubator: "Student Incubator",
       studentIncubatorSub: "Registered companies by Class 8",
       eveningAcademyNav: "Evening Academy",
@@ -406,7 +446,7 @@ export const contentMap: Record<Language, SiteContent> = {
       validationName: "Please enter your full name.",
       validationPhone: "Please enter a valid phone or WhatsApp number (minimum 10 digits).",
       nextSeatsLimited: "Next intake is limited by classrooms, not ambition.",
-      elevation5688: "5,688 ft Elevation",
+      elevation5688: "Buddo · Bhago Torho · Karoonjhar",
       makersInnovationHub: "Makers & Innovation Hub",
       sehwanSharifLabel: "Sehwan Sharif",
       whySehwanTitle: "Why Sehwan",
@@ -425,7 +465,7 @@ export const contentMap: Record<Language, SiteContent> = {
       craftedWithPride: "Crafted with pride in Sindh",
       forSindhFuture: "For the builders of tomorrow",
       nurseryMatricBise: "Nursery–Matric BISE Scheme",
-      heroTrackGorakhTreks: "The Hero Track & Gorakh Treks",
+      heroTrackGorakhTreks: "Personality Grooming & Mountain Trekking",
       eveningCommunityAcademy: "Evening Community Academy",
       innovationLabBuilders: "Innovation Lab for Builders",
       saturdayBuildDays: "Saturday Build Days",
@@ -462,7 +502,7 @@ export const contentMap: Record<Language, SiteContent> = {
       instantProofSub: "By Matric, every student has shipped an AI automation, kept company accounts, and pitched on stage.",
       noMarketObsolescenceTitle: "No market obsolescence",
       noMarketObsolescenceDesc: "Starting at six, children master computing and entrepreneurship alongside the board syllabus. By sixteen, the gap is ten years of practice.",
-      gorakhTrekTitle: "Gorakh Hills Survival Trek",
+      gorakhTrekTitle: "Sindh Mountain Trekking Expeditions",
       investorPrecedent: "THE INVESTOR PRECEDENT",
       lanePrefix: "LANE",
       directVentureTrack: "Direct Venture Track",
@@ -545,7 +585,7 @@ export const contentMap: Record<Language, SiteContent> = {
     theTurn: {
       badge: "The Turn",
       title: "So we stopped waiting for the system — and built the school the future would build.",
-      description: "Full Sindh scheme of studies — English, Urdu, Sindhi, the complete BISE Matric group, taught interactively and protected (~80% in board years). On top of it, the Future Layer: Computing & AI from Class 1. Entrepreneurship as a subject. A real registered company by Class 8. The Hero Track for confidence and character.",
+      description: "Full Sindh scheme of studies — English, Urdu, Sindhi, the complete BISE Matric group, taught interactively and protected (~80% in board years). On top of it, the Future Layer: Computing & AI from Class 1. Entrepreneurship as a subject. A real registered company by Class 8. Personality Grooming for confidence and character.",
       breakdown: [
         {
           title: "Sindh Board Core",
@@ -573,16 +613,16 @@ export const contentMap: Record<Language, SiteContent> = {
         },
         {
           id: "hero",
-          title: "The Hero Track",
-          role: "Character & Courage",
-          description: "Speech, grooming, resilience, Gorakh Hill survival treks. Courage on the timetable, not the noticeboard.",
+          title: "Personality Grooming",
+          role: "Character & Life Skills",
+          description: "Practical character and behaviour development: discipline, ethics, communication (listening and clear expression), social manners, confidence, teamwork, and mountain trekking across Sindh.",
           highlight: "2 Periods Weekly"
         },
         {
           id: "incubator",
-          title: "The Incubator",
-          role: "Real Companies",
-          description: "Class 8–10 registered ventures with NIC/ORIC mentors, real customers, balance sheets and annual demo days.",
+          title: "SMEs & Student Incubator",
+          role: "Real Companies & Industry",
+          description: "Connecting students with Small & Medium Enterprises (SMEs) — from soap manufacturing units and mobile repair shops to footwear workshops — learning production, customer service, and real commerce.",
           highlight: "Class 8 to 10"
         },
         {
@@ -675,19 +715,19 @@ export const contentMap: Record<Language, SiteContent> = {
         {
           grade: "Classes 6–7",
           computing: "Python programming, mobile app development (App Inventor), IoT sensors, honest AI prompting.",
-          entrepreneurship: "Business Model Canvas, batch production runs sold at city stalls, accounting ledgers.",
+          entrepreneurship: "Business Model Canvas, batch production runs with local SME workshops (soap units & footwear), accounting ledgers.",
           milestone: "Python & live public sales"
         },
         {
           grade: "Class 8",
           computing: "Web development, APIs, supervised AI-agent workflows, 3D design & 3D printing.",
-          entrepreneurship: "A real registered student company, selling to real customers all term.",
+          entrepreneurship: "A real registered student company operating alongside local enterprises (soap, mobile repairs, footwear), selling to real customers all term.",
           milestone: "Legally registered enterprise"
         },
         {
           grade: "Classes 9–10",
           computing: "Sindh Board Computer Science + an AI automation built for an active family business.",
-          entrepreneurship: "MVP semester in campus incubator; demo day pitch judged by NIC/ORIC venture guests.",
+          entrepreneurship: "MVP semester in campus incubator solving practical industry challenges for local SMEs; demo day pitch judged by NIC/ORIC venture guests.",
           milestone: "BISE Matric + Live Portfolio"
         }
       ],
@@ -714,32 +754,104 @@ export const contentMap: Record<Language, SiteContent> = {
         }
       ]
     },
+    smeEnterprises: {
+      badge: "Vocational & Practical Learning",
+      title: "Connecting Education with Real Businesses & Local Industries",
+      subtitle: "Understanding Small & Medium-sized Enterprises (SMEs) through hands-on learning, practical trades, and real workplace experience.",
+      whatIsSmeTitle: "What Are SMEs (Small & Medium-sized Enterprises)?",
+      whatIsSmeDesc: "SMEs are the small and medium-sized independent businesses, workshops, repair centers, and local manufacturing units that form the true economic backbone of Sindh. They are not distant corporate entities; they are the hardworking local enterprises found across our communities — producing everyday goods, providing vital technical repairs, and employing skilled local craftspeople and technicians.",
+      whyConnectTitle: "Why Connect Education with Local Industry?",
+      whyConnectDesc: "Textbooks alone cannot teach how real-world commerce and production work. By partnering with local SMEs and operating hands-on student enterprises, students observe how real products are made, diagnose technical problems, interact respectfully with paying customers, understand business challenges, and develop practical vocational skills. This bridges academic learning with practical life, opening students' eyes to genuine career paths, technical trades, and future entrepreneurship.",
+      learningOutcomesTitle: "What Students Learn From Real Enterprises",
+      learningOutcomes: [
+        {
+          title: "Product Manufacturing & Production Processes",
+          desc: "Understanding raw material sourcing, formula measuring, assembly workflows, batch scheduling, quality control, and safety protocols in production."
+        },
+        {
+          title: "Mobile Repair & Practical Technical Skills",
+          desc: "Diagnosing electronic faults, circuit micro-soldering, touchscreen and battery replacement, component testing, and technical hardware troubleshooting."
+        },
+        {
+          title: "Customer Service & Understanding Needs",
+          desc: "Listening attentively to customer requirements, respectful communication, handling repair inquiries, estimating fair pricing, and building customer trust."
+        },
+        {
+          title: "Teamwork, Quality Control & Problem-Solving",
+          desc: "Collaborating across production roles, maintaining consistent quality standards, and resolving daily workshop bottlenecks through mutual cooperation."
+        },
+        {
+          title: "How Local Businesses Operate",
+          desc: "Understanding cash flow, basic bookkeeping, inventory management, supplier relations, overhead costs, and local bazaar economics."
+        },
+        {
+          title: "Entrepreneurship & Career Opportunities",
+          desc: "Discovering vocational career pathways, identifying unaddressed community needs, and building the practical confidence to launch viable independent ventures."
+        }
+      ],
+      examplesTitle: "Practical Examples of Local Enterprises Studied by Our Students",
+      examplesSubtitle: "Real businesses across Sindh where students explore hands-on manufacturing, technical repair services, and commercial operations.",
+      examples: [
+        {
+          id: "soap-making",
+          title: "Small Soap-Making Units",
+          role: "Manufacturing & Formulation",
+          businessDoes: "Small soap-making units source natural oils, lye, fragrances, and herbal ingredients to formulate, mold, cure, stamp, and package cleansing bars and washing soaps for local distributors and bazaars.",
+          studentsLearn: "Students learn chemical measuring, batch production processes, packaging design, hygiene regulations, quality testing, and unit cost calculation to understand consumer goods manufacturing.",
+          tags: ["Chemical Formulation", "Batch Production", "Packaging & Quality", "Unit Costing"]
+        },
+        {
+          id: "mobile-repair",
+          title: "Mobile Phone Repair Shops",
+          role: "Technical Hardware & Service",
+          businessDoes: "Local mobile repair technicians troubleshoot motherboard faults, replace broken screens, solder charging ports, recover data, and provide software updates for smartphones.",
+          studentsLearn: "Students acquire practical technical repair skills, master multimeter diagnostics, learn electronic circuit handling, and practice direct customer service by diagnosing customer issues and providing transparent repair estimates.",
+          tags: ["Circuit Soldering", "Hardware Diagnostics", "Customer Service", "Technical Troubleshooting"]
+        },
+        {
+          id: "footwear-manufacturing",
+          title: "Small Chappal & Footwear Units",
+          role: "Leathercraft & Assembly",
+          businessDoes: "Footwear craft workshops select raw leather, cut precise sole and strap patterns, perform durable hand-stitching, mold rubber soles, and polish traditional Sindhi and modern footwear for retail bazaars.",
+          studentsLearn: "Students learn end-to-end footwear manufacturing, material grading, assembly line teamwork, durability inspection, artisan craftsmanship, inventory handling, and pricing products for market stalls.",
+          tags: ["Leather Crafting", "Pattern Cutting", "Durability Standards", "Bazaar Distribution"]
+        },
+        {
+          id: "local-workshops",
+          title: "Local Mechanical & Craft Workshops in Sindh",
+          role: "Fabrication & Vocational Trades",
+          businessDoes: "Small regional workshops — including motorcycle mechanical garages, traditional Ajrak block-printing units, metal fabrication shops, and wood carpentry businesses — provide essential fabrication and repair services across Sindh.",
+          studentsLearn: "Students observe how local businesses operate day-to-day, practice workshop safety, develop mechanical and vocational problem-solving skills, appreciate indigenous Sindhi crafts, and discover viable future employment and business opportunities.",
+          tags: ["Mechanical Maintenance", "Vocational Skills", "Local Trade Operations", "Entrepreneurial Pathways"]
+        }
+      ]
+    },
     heroTrack: {
-      badge: "The Character Pillar",
-      title: "The Hero Track",
-      subtitle: "Courage, speech, and resilience on the timetable, not the noticeboard.",
-      description: "Inspired by the world's best founder-training playbooks, rebuilt for Sindh: two timetabled periods weekly for grooming and presentation, public speaking from Nursery circle-time to Class 10 keynote training on a real stage; sell-to-strangers challenges in city markets; survival weeks from school-ground camps to Gorakh Hill treks.",
+      badge: "The Character & Behaviour Pillar",
+      title: "Personality Grooming",
+      subtitle: "Developing character, behaviour, confidence, and essential life skills for school, family life, society, and future careers.",
+      description: "Personality Grooming is not merely speech training. It is the intentional development of students' character, conduct, confidence, and everyday life skills. We systematically build discipline and personal responsibility; uncompromising ethics, honesty, and integrity; communication skills centered on active listening and expressing thoughts with clarity and mutual respect; polite social manners in society; resilience to overcome setbacks; and empathy, teamwork, and sound leadership decision-making that serve students in school, at home, and in their future professions.",
       features: [
         {
-          title: "Stage & Speech (Weekly)",
-          desc: "From Nursery circle-time stories to Class 10 TED-style keynotes under bright lights."
+          title: "Communication & Respectful Expression",
+          desc: "Not just public speaking: students master active listening, conversational courtesy, clear and respectful expression, and confident presentations from Nursery circle-time to senior stage keynotes."
         },
         {
-          title: "Market Sell-to-Strangers",
-          desc: "Face-to-face persuasion in Sehwan bazaars, learning to take 'no' and pitch with respect."
+          title: "Discipline, Ethics & Social Manners",
+          desc: "Instilling honesty, integrity, personal accountability, and respectful behaviour at home, in the classroom, and throughout society."
         },
         {
-          title: "Gorakh Hill Survival Weeks",
-          desc: "Rigorous high-altitude trekking, teamwork under pressure, wilderness safety and resilience."
+          title: "Mountain Trekking Expeditions",
+          desc: "Challenging expeditions across Sindh's mountain ranges — including Buddo Jabal, Bhago Torho, Karoonjhar Mountains, and beyond. Students build physical fitness, self-confidence, resilience against hardship, close teamwork, outdoor survival awareness, and a deep appreciation for Sindh's rich natural environment."
         },
         {
-          title: "Girls' Leadership Cohorts",
-          desc: "Dedicated female mentorship, assertiveness training, and tech-building confidence circles."
+          title: "Resilience, Empathy & Leadership",
+          desc: "Cultivating self-awareness, emotional empathy, collaborative teamwork, and the resilience to overcome challenges while making sound, ethical decisions as future leaders in school, family, and careers."
         }
       ],
       heroOath: {
-        title: "The Hero Oath (Class 9)",
-        text: "“I will build with integrity. I will speak with courage. I will serve the soil of Sindh and never surrender to helplessness.”"
+        title: "The Student Character Pledge (Class 9)",
+        text: "“I will act with integrity and honesty. I will communicate with clarity and respect. I will practice discipline, stand by my peers, serve the soil of Sindh, and meet every life challenge with resilience.”"
       }
     },
     theProof: {
@@ -784,9 +896,9 @@ export const contentMap: Record<Language, SiteContent> = {
         },
         {
           laneNumber: "02",
-          title: "Ecosystems & Exposure Programs",
-          highlight: "Our startups will live inside the ecosystems — local and global.",
-          description: "Connected directly into National Incubation Centers (NICs) at home, and international accelerators abroad. Selected founders travel for exposure and fundraising sprints to Silicon Valley and advanced tech hubs. Exposure is a curriculum program here, not an accident."
+          title: "International Educational Trips & Global Exposure",
+          highlight: "Broadening horizons through international educational trips, global technologies, and world-class innovation ecosystems.",
+          description: "Potential international educational trips and foreign study visits expose students to diverse cultures, world-class educational systems, cutting-edge technologies, and fresh global perspectives. By experiencing how leading global institutions learn and build, students broaden their mental horizons, discover global academic and career pathways, build lasting self-confidence, and dare to imagine ambitious futures for themselves and for Sindh."
         },
         {
           laneNumber: "03",
@@ -795,7 +907,33 @@ export const contentMap: Record<Language, SiteContent> = {
           description: "Prominent student startups are registered as US Delaware/California corporate entities for global investor access and credibility. Students are backed to file intellectual property patents in the USA first, then worldwide — so what is invented in Sindh is owned by its inventors."
         }
       ],
-      closing: "The promise of the bridge: the talent stays rooted in Sindh — its companies, capital, patents and recognition go global. We export products and ownership, not people."
+      closing: "The promise of the bridge: the talent stays rooted in Sindh — its companies, capital, patents and recognition go global. We export products and ownership, not people.",
+      scholarshipHighlight: {
+        badge: "Educational Equity & Merit",
+        title: "Scholarships for Deserving & Talented Students",
+        subtitle: "Ensuring financial circumstances never limit a gifted child's potential.",
+        description: "We believe financial constraints should never stand between a talented, hardworking child and a transformative education. Our merit and need-based scholarships are designed to help deserving students access world-class learning opportunities, high-tech labs, and comprehensive character grooming. By opening these doors, scholarships elevate whole families, cultivate community pride, and build a forward-looking generation of leaders who will uplift the future of Sindh.",
+        points: [
+          "Merit awards recognizing exceptional talent and intellectual curiosity",
+          "Need-based scholarships ensuring accessible education for every deserving child",
+          "Empowering families and breaking socioeconomic barriers across Sindh",
+          "Investing in tomorrow's scientists, builders, and community pioneers"
+        ],
+        valueProposition: "A talent discovered in rural Sindh can change the trajectory of an entire community."
+      },
+      internationalTripsHighlight: {
+        badge: "Global Horizons",
+        title: "International Educational Trips & Global Exposure",
+        subtitle: "Connecting young minds with global cultures, technologies, and foreign education.",
+        description: "Prospective international educational trips and technology exposure visits provide students with life-changing exposure to foreign educational systems, diverse cultures, emerging artificial intelligence tools, and global perspectives. These immersive journeys broaden students' mental horizons, ignite ambitious dreams, instill deep cross-cultural confidence, and help them explore international academic and career possibilities — returning home inspired to build world-class solutions for Sindh.",
+        points: [
+          "Direct exposure to world-class classrooms, universities, and tech incubators",
+          "Interacting with diverse cultures, global peers, and international mentors",
+          "Broadening ambition beyond local boundaries to embrace global opportunities",
+          "Fostering cross-cultural confidence while keeping students deeply rooted in Sindh"
+        ],
+        valueProposition: "When a child sees the wider world firsthand, their definition of what is possible changes forever."
+      }
     },
     theMovement: {
       badge: "The Sindh Renaissance",
@@ -830,7 +968,7 @@ export const contentMap: Record<Language, SiteContent> = {
       badge: "Sehwan Sharif, Sindh",
       title: "Sehwan — One City First, On Purpose",
       whySehwan: "The city of the Qalandar — pilgrimage, mystic music, ancient heritage — and the founder’s own proving ground. We start where the proof is. The Sehwan blueprint is built to be repeated city-by-city across all of Sindh.",
-      cityProjects: "Student projects anchor right in Sehwan: heritage audio-guide QR trails, shrine visitor-flow sensors, artisan craft digitization, and Gorakh/Kirthar survival treks. The city is our classroom.",
+      cityProjects: "Student projects anchor right in Sehwan: heritage audio-guide QR trails, shrine visitor-flow sensors, artisan craft digitization, and mountain trekking expeditions across Buddo Jabal, Bhago Torho, and the Karoonjhar range. The whole province is our classroom.",
       campusSpine: [
         "Advanced Computing & AI Workstation Lab",
         "Maker Space with 3D Printers & IoT Hardware",
@@ -894,7 +1032,7 @@ export const contentMap: Record<Language, SiteContent> = {
           id: "parents",
           audience: "For Parents",
           title: "Don't take our word for it. Take a tour.",
-          description: "Walk the labs. Sit in an actual Future Layer period. Meet the teachers. Ask the hard questions — especially about board exams, discipline, and fee scholarships.",
+          description: "Walk the labs. Sit in an actual Future Layer period. Meet the teachers. Ask the hard questions — especially about board exams, character discipline, and merit/need scholarships for deserving students.",
           ctaText: "Book a Campus Visit",
           secondaryCta: "WhatsApp Us Directly"
         },
@@ -927,11 +1065,15 @@ export const contentMap: Record<Language, SiteContent> = {
         },
         {
           question: "Is this Islamic and culturally values-appropriate?",
-          answer: "Absolutely. Full Islamiat curriculum per the Sindh scheme of studies; the Hero Track places ethics, character, and integrity at its center; girls' cohorts are led by qualified female mentors; outdoor treks have parental consent and rigorous safety supervision."
+          answer: "Absolutely. Full Islamiat curriculum per the Sindh scheme of studies; Personality Grooming places ethics, character, and integrity at its center; girls' cohorts are led by qualified female mentors; mountain trekking expeditions have parental consent and rigorous safety supervision."
         },
         {
-          question: "What if our family cannot afford the full fee?",
-          answer: "Financial need should never stand between a talented Sindhi child and the future. We publish transparent criteria for merit scholarships, need awards, and sibling discounts. Evening academy community tracks are free or nominal via our partner foundations."
+          question: "What scholarship opportunities are available for deserving and talented students?",
+          answer: "Financial need should never stand between a talented, deserving child and quality education. We offer transparent merit-based scholarships and need-based financial awards to ensure gifted students from all backgrounds can access our curriculum, modern AI labs, and personality grooming programs. These scholarships empower students, uplift families, and help build a skilled, ambitious future for Sindh."
+        },
+        {
+          question: "How do international educational trips and foreign exposure benefit students?",
+          answer: "Prospective international educational trips offer students firsthand exposure to diverse global cultures, foreign educational systems, advanced technologies, and new perspectives. These transformative journeys expand students' horizons, build personal confidence, encourage ambitious academic and career exploration, and inspire them to bring world-class knowledge back to Sindh."
         },
         {
           question: "How do parents track their child's progress?",
@@ -968,8 +1110,8 @@ export const contentMap: Record<Language, SiteContent> = {
       bookVisit: "دورو بڪ ڪريو",
       curriculumMap: "نصاب جو نقشو",
       curriculumMapSub: "نرسري کان ميٽرڪ BISE + فيوچر ليئر",
-      theHeroTrackNav: "دي هيرو ٽريڪ",
-      theHeroTrackNavSub: "تقرير، گرومنگ ۽ گورک هل ٽريڪس",
+      theHeroTrackNav: "شخصيت سازي",
+      theHeroTrackNavSub: "شخصيت سازي، ڳالهه ٻولهه ۽ سنڌ ۾ جبلن جي ٽريڪنگ",
       studentIncubator: "شاگردن جو انڪيوبيٽر",
       studentIncubatorSub: "ڪلاس 8 تائين رجسٽرڊ ڪمپنيون",
       eveningAcademyNav: "شام جي اڪيڊمي",
@@ -1013,7 +1155,7 @@ export const contentMap: Record<Language, SiteContent> = {
       validationName: "مهرباني ڪري پنهنجو مڪمل نالو لکو.",
       validationPhone: "مهرباني ڪري صحيح فون يا واٽس ائپ نمبر لکو (گهٽ ۾ گهٽ 10 انگ).",
       nextSeatsLimited: "ايندڙ داخلا ڪلاس رومز جي گنجائش سان مشروط آهي، ارادن سان نه.",
-      elevation5688: "5,688 فوٽ اوچائي",
+      elevation5688: "ٻُڏو · ڀاڳو ٽوڙهو · ڪارونجهر",
       makersInnovationHub: "ميڪرز ۽ انوويشن هب",
       sehwanSharifLabel: "سيوهڻ شريف",
       whySehwanTitle: "سيوهڻ ڇو",
@@ -1032,7 +1174,7 @@ export const contentMap: Record<Language, SiteContent> = {
       craftedWithPride: "سنڌ ۾ فخر سان ٺاهيل",
       forSindhFuture: "سڀاڻي جي تعمير ڪندڙن لاءِ",
       nurseryMatricBise: "نرسري–ميٽرڪ BISE اسڪيم",
-      heroTrackGorakhTreks: "دي هيرو ٽريڪ ۽ گورک ٽريڪس",
+      heroTrackGorakhTreks: "شخصيت سازي ۽ جبلن جي ٽريڪنگ",
       eveningCommunityAcademy: "شام جي ڪميونٽي اڪيڊمي",
       innovationLabBuilders: "تعمير ڪندڙن لاءِ انوويشن ليب",
       saturdayBuildDays: "ڇنڇر بلڊ ڊيز",
@@ -1069,7 +1211,7 @@ export const contentMap: Record<Language, SiteContent> = {
       instantProofSub: "ميٽرڪ تائين هر شاگرد AI آٽوميشن تيار ڪري ٿو، ڪمپني جا اڪائونٽس هلائي ٿو ۽ اسٽيج تي پچ ڪري ٿو.",
       noMarketObsolescenceTitle: "مارڪيٽ ۾ فرسوده نه ٿيڻ جي ضمانت",
       noMarketObsolescenceDesc: "ڇهن سالن جي عمر کان ٻار بورڊ نصاب سان گڏ ڪمپيوٽنگ ۽ بزنس جا ماهر ٿين ٿا. سورهن سالن جي عمر تائين ڏهن سالن جي عملي مهارت پيدا ٿي وڃي ٿي.",
-      gorakhTrekTitle: "گورک هل سروائيول ٽريڪ",
+      gorakhTrekTitle: "سنڌ جي جبلن تي ٽريڪنگ جون مہمات",
       investorPrecedent: "سرمائيدارن جو اعتماد",
       lanePrefix: "راھ",
       directVentureTrack: "سڌو سنئون وينچر ٽريڪ",
@@ -1152,7 +1294,7 @@ export const contentMap: Record<Language, SiteContent> = {
     theTurn: {
       badge: "نئون آغاز",
       title: "تنهنڪري اسان پراڻي نظام جو انتظار ڇڏي اهو اسڪول ٺاهيو جنهن جو مستقبل گهرجائو آهي.",
-      description: "مڪمل سنڌ بورڊ اسڪيم — انگريزي، اردو ۽ سنڌي لازما، رياضي، سائنس ۽ مڪمل ميٽرڪ گروپ (~80% وقت بورڊ جي تيارين لاءِ). انهي سان گڏ مستقبل جو اضافو: ڪلاس 1 کان AI، ڪاروبار جو مضمون، ۽ هيرو ٽريڪ اخلاق ۽ همت لاءِ.",
+      description: "مڪمل سنڌ بورڊ اسڪيم — انگريزي، اردو ۽ سنڌي لازما، رياضي، سائنس ۽ مڪمل ميٽرڪ گروپ (~80% وقت بورڊ جي تيارين لاءِ). انهي سان گڏ مستقبل جو اضافو: ڪلاس 1 کان AI، ڪاروبار جو مضمون، ۽ شخصيت سازي اخلاق ۽ اعليٰ ڪردار لاءِ.",
       breakdown: [
         {
           title: "سنڌ بورڊ بنياد",
@@ -1180,16 +1322,16 @@ export const contentMap: Record<Language, SiteContent> = {
         },
         {
           id: "hero",
-          title: "هيرو ٽريڪ",
-          role: "ڪردار ۽ بهادري",
-          description: "تقرير، گرومنگ، سڀاءُ، گورک هلز جا چڙهائي ڪيمپ. همت ٽائيم ٽيبل تي، نه رڳو نوٽيس بورڊ تي.",
+          title: "شخصيت سازي",
+          role: "ڪردار ۽ زندگيءَ جون مهارتون",
+          description: "شاگردن جي ڪردار، ورتائي ۽ بنيادي اخلاق جي عملي تربيت: نظم و ضبط، ايمانداري، اثرائتي ڳالهه ٻولهه (غور سان ٻڌڻ ۽ سٺي نموني پنهنجو خيال رکڻ)، سماجي آداب، خود اعتمادي، ٽيم ورڪ ۽ سنڌ جي جبلن تي ٽريڪنگ.",
           highlight: "هفتي ۾ 2 پيريڊ"
         },
         {
           id: "incubator",
-          title: "انڪيوبيٽر",
-          role: "حقيقي ڪمپنيون",
-          description: "ڪلاس 8 کان 10 جي شاگردن جون باضابطا ڪمپنيون، حقيقي گراهڪ ۽ اين آءِ سي مينٽرز.",
+          title: "ننڍا ڪاروبار ۽ شاگرد انڪيوبيٽر",
+          role: "حقيقي ڪمپنيون ۽ مقامي صنعت",
+          description: "شاگردن کي مقامي ننڍن ۽ وچولن ڪاروبارن (SMEs) — صابڻ ٺاهڻ جا يونٽ، موبائل ريپيئرنگ جا دڪان ۽ چپل تيار ڪرڻ جا ڪارخانا — سان ڳنڍڻ، جتي هو پيداواري عمل ۽ حقيقي واپار سکن ٿا.",
           highlight: "ڪلاس 8 کان 10"
         },
         {
@@ -1282,19 +1424,19 @@ export const contentMap: Record<Language, SiteContent> = {
         {
           grade: "ڪلاس 6–7",
           computing: "پائٿون پروگرامنگ، موبائل ائپس، سينسرز ۽ IoT، ايماندار پرامپٽنگ.",
-          entrepreneurship: "بزنس ماڊل ڪينواس، سيوهڻ اسٽالن تي مال وڪرو ڪرڻ، باقاعده روزنامچو.",
+          entrepreneurship: "بزنس ماڊل ڪينواس، مقامي ننڍن ڪاروبارن (صابڻ ۽ چپل يونٽس) سان گڏ عملي پيداوار ۽ روزنامچو.",
           milestone: "پائٿون ۽ حقيقي وڪرو"
         },
         {
           grade: "ڪلاس 8",
           computing: "ويب سائيٽ ٺاهڻ، APIs، AI ايجنٽ ورڪ فلوز، 3D ڊيزائننگ ۽ پرنٽنگ.",
-          entrepreneurship: "حقيقي رجسٽرڊ اسٽوڊنٽ ڪمپني، پوري ٽرم ۾ گراهڪن کي مال فراهم ڪرڻ.",
+          entrepreneurship: "حقيقي رجسٽرڊ اسٽوڊنٽ ڪمپني، مقامي صنعتن (موبائل ريپيئر ۽ هٿ جا هنر) سان ڳنڍيل حقيقي گراهڪن کي مال پهچائڻ.",
           milestone: "رجسٽرڊ ادارو"
         },
         {
           grade: "ڪلاس 9–10",
           computing: "سنڌ بورڊ ڪمپيوٽر سائنس + مقامي خانداني ڪاروبار لاءِ AI آٽوميشن سافٽ ويئر.",
-          entrepreneurship: "انڪيوبيٽر سيمسٽر، NIC/ORIC ججز اڳيان باضابطا ڊيمو ڊي پچنگ.",
+          entrepreneurship: "ڪيمپس انڪيوبيٽر سيمسٽر، مقامي SMEs جي عملي مسئلن جو حل، NIC/ORIC ججز اڳيان باضابطا ڊيمو ڊي پچنگ.",
           milestone: "ميٽرڪ سند ۽ لائيو پورٽ فوليو"
         }
       ],
@@ -1321,32 +1463,104 @@ export const contentMap: Record<Language, SiteContent> = {
         }
       ]
     },
+    smeEnterprises: {
+      badge: "عملي ۽ فني سکيا",
+      title: "تعليم کي حقيقي ڪاروبار ۽ مقامي صنعت سان ڳنڍڻ",
+      subtitle: "عملي پيداوار، فني هنر ۽ حقيقي ڪم جي ذريعي ننڍن ۽ وچولن ڪاروبارن (SMEs) کي سمجهڻ.",
+      whatIsSmeTitle: "ننڍا ۽ وچولا ڪاروبار (SMEs) ڇا آهن؟",
+      whatIsSmeDesc: "ننڍا ۽ وچولا ڪاروبار (SMEs) اصل ۾ اهي مقامي دڪان، ننڍا ورڪشاپ، مرمتي مرڪز ۽ ننڍا پيداواري يونٽ آهن جيڪي اسان جي سنڌ جي روزاني معيشت کي هلائين ٿا. هي ڪي پري واريون وڏيون ڪمپنيون ناهن، پر اسان جي شهرن ۽ ڳوٺن جا اهي ڪاروبار آهن جتي عام ضرورت جون شيون ٺهن ٿيون، ٽيڪنيڪل مرمت ٿئي ٿي، ۽ مقامي ماڻهن کي روزگار ملي ٿو.",
+      whyConnectTitle: "تعليم کي مقامي ڪاروبار سان ڳنڍڻ ڇو ضروري آهي؟",
+      whyConnectDesc: "صرف درسي ڪتاب پڙهڻ سان شاگردن کي اها خبر نٿي پوي ته حقيقي دنيا ۾ ڪم ڪيئن ٿئي ٿو. جڏهن شاگرد مقامي ڪاروبارن جو مشاهدو ڪن ٿا ۽ پاڻ ننڍا پراجيڪٽ هلائين ٿا، ته هو حقيقي شيون ٺهندي ڏسن ٿا، فني ۽ عملي هنر سکن ٿا، گراهڪن سان ڳالهائڻ جو سڀاءُ سکندا آهن، ڪاروباري مسئلا سمجهندا آهن، ۽ پنهنجي لاءِ مستقبل جي نوڪرين، فني روزگار يا نئين ڪاروبار جا دروازا کوليندا آهن.",
+      learningOutcomesTitle: "شاگرد حقيقي ڪاروبارن مان ڇا سکن ٿا؟",
+      learningOutcomes: [
+        {
+          title: "شين جي تياري ۽ پيداواري عمل (Manufacturing Processes)",
+          desc: "خام مال کڻڻ، وزن ۽ ماپ جو حساب، ترتيب سان شين جي تياري، پيڪنگ ۽ حفاظت جا اصول سمجهڻ."
+        },
+        {
+          title: "موبائل ريپيئر ۽ عملي ٽيڪنيڪل هنر",
+          desc: "اليڪٽرانڪ خرابين جي سڃاڻپ، سرڪٽ سولڊرنگ، ٽچ اسڪرين ۽ بيٽري مٽائڻ، ۽ باقاعده ٽيڪنيڪل اوزار هلائڻ."
+        },
+        {
+          title: "گراهڪن جي خدمت ۽ سندن ضرورتن کي سمجهڻ",
+          desc: "گراهڪ جي ڳالهه ڌيان سان ٻڌڻ، شائستگي سان ڳالهائڻ، سندن مسئلي جو حل ڳولڻ، ۽ گراهڪ جو اعتماد حاصل ڪرڻ."
+        },
+        {
+          title: "ٽيم ورڪ، معيار جي پڪ ۽ مسئلن جو حل",
+          desc: "ساٿين سان گڏجي ڪم ڪرڻ، خراب شين جي سڌارو، ۽ ورڪشاپ ۾ روزانو ايندڙ ڏکيائين کي سٺي نموني حل ڪرڻ."
+        },
+        {
+          title: "مقامي ڪاروبار ڪيئن هلندا آهن؟",
+          desc: "روڪ رقم جو حساب، کاتو ۽ لکپڙھ، مال جي سنڀال، خرچن ۽ منافعي جو فرق، ۽ مقامي بازار جا اصول سمجهڻ."
+        },
+        {
+          title: "ڪاروباري سوچ، فني مهارتون ۽ روزگار جا موقعا",
+          desc: "عملي فني هنر سکڻ، مارڪيٽ جي ضرورتن کي سڃاڻڻ، ۽ اڳتي هلي پنهنجو روزگار يا ڪاروبار شروع ڪرڻ جو حوصلو پيدا ڪرڻ."
+        }
+      ],
+      examplesTitle: "مقامي ڪاروبارن جا عملي مثال جيڪي اسان جا شاگرد سکن ٿا",
+      examplesSubtitle: "سنڌ جا اهي حقيقي ڪاروبار جتي شاگرد عملي پيداوار، ٽيڪنيڪل مرمت ۽ واپاري عمل جو مشاهدو ڪن ٿا.",
+      examples: [
+        {
+          id: "soap-making",
+          title: "صابڻ ٺاهڻ جا ننڍا يونٽ (Soap-Making Units)",
+          role: "پيداوار ۽ فارموليشن",
+          businessDoes: "صابڻ ٺاهڻ جا ننڍا يونٽ قدرتي تيل، لائي، خوشبوئن ۽ دوائن واري ٻوٽين جو حساب ڪري، ملاوٽ ڪري سانچن ۾ وجهن ٿا، سڪائين ٿا، ٺپو هڻن ٿا ۽ پيڪ ڪري مقامي بازارن ۾ موڪلين ٿا.",
+          studentsLearn: "شاگرد خام مال جي ماپ، پيداواري مرحلا، پيڪنگ جو طريقو، صفائي جا معيار، في صابڻ تي ايندڙ خرچ، ۽ عام استعمال واريون شيون تيار ڪرڻ جو عملي تجربو حاصل ڪن ٿا.",
+          tags: ["فارمولا ۽ ماپ", "پيداواري عمل", "پيڪنگ ۽ معيار", "خرچن جو حساب"]
+        },
+        {
+          id: "mobile-repair",
+          title: "موبائل فون ريپيئر جا دڪان (Mobile Repair Shops)",
+          role: "ٽيڪنيڪل هارڊويئر ۽ مرمت",
+          businessDoes: "مقامي موبائل مستري اسمارٽ فونز جا مدر بورڊ چيڪ ڪن ٿا، ٽٽل اسڪرينون بدلائن ٿا، چارجنگ پورٽ سولڊر ڪن ٿا، ڊيٽا بحال ڪن ٿا ۽ سافٽ ويئر جا مسئلا حل ڪن ٿا.",
+          studentsLearn: "شاگرد عملي موبائل مرمت، ميٽر سان خرابي چيڪ ڪرڻ، بارڪ اليڪٽرانڪ اوزار سنڀالڻ، ۽ گراهڪ سان شائستگي سان ڳالهائي کيس خرابي ۽ خرچ سمجهائڻ جا آداب سکن ٿا.",
+          tags: ["سرڪٽ سولڊرنگ", "هارڊويئر چيڪنگ", "گراهڪ جي خدمت", "ٽيڪنيڪل هنر"]
+        },
+        {
+          id: "footwear-manufacturing",
+          title: "چپل ۽ جوتا ٺاهڻ جا ننڍا ڪارخانا (Footwear Units)",
+          role: "چمڙي جو هنر ۽ تياري",
+          businessDoes: "چپل سازي جا مقامي ڪارخانا چمڙي چونڊين ٿا، تلو ۽ پٽيون ڪٽين ٿا، هٿ سان مضبوط سبي تيار ڪن ٿا، رٻڙ جي تلن تي بيهارين ٿا ۽ سنڌي چپل توڙي جديد بوٽ تيار ڪري دڪانن تي پهچائين ٿا.",
+          studentsLearn: "شاگرد پيداوار جو پورو مرحلو، چمڙي ۽ مواد جي پرک، گڏجي ڪم ڪرڻ، پائيدار معيار جي جانچ، اسٽاڪ سنڀالڻ ۽ بازار جي دڪانن تائين پهچائڻ جا اصول سکن ٿا.",
+          tags: ["چمڙي جو ڪم", "ڪٽائي ۽ سبائي", "پائيداري جي پرک", "بازار ۾ سپلائي"]
+        },
+        {
+          id: "local-workshops",
+          title: "سنڌ جا ٻيا مقامي ورڪشاپ ۽ ننڍا پيداواري يونٽ",
+          role: "مشينري، فني هنر ۽ مقامي هنر",
+          businessDoes: "مقامي سطح تي موٽرسائيڪل ميڪينڪ ورڪشاپس، اجرڪ جي ٺپن وارا يونٽ، لوهه ۽ گريل ويلڊنگ جا دڪان، ۽ ڪاٺ جي ڪم وارا ادارا علائقي جي ماڻهن جي روزاني ضرورتن جي خدمت ڪن ٿا.",
+          studentsLearn: "شاگرد ڏسن ٿا ته مقامي ڪاروبار ڪيئن هلندا آهن، اوزارن جي سنڀال ۽ حفاظت جا اصول ڪهڙا آهن، گراهڪن سان اگهه ڪيئن طئي ٿئي ٿو، ۽ هو پنهنجي لاءِ فني نوڪرين يا پنهنجي ڪاروبار جا ڪهڙا موقعا ڳولي سگهن ٿا.",
+          tags: ["مشينري ۽ اوزار", "فني تربيت", "مقامي ڪاروباري نظام", "روزگار جا موقعا"]
+        }
+      ]
+    },
     heroTrack: {
-      badge: "اخلاق ۽ شخصيت",
-      title: "هيرو ٽريڪ",
-      subtitle: "حوصلي ۽ اخلاق جي تربيت اسڪول جي روزاني ٽائيم ٽيبل تي.",
-      description: "دنيا جي وڏن ادارن مان سکيل اصولن کي سنڌ جي روايتن سان گڏيو ويو آهي: هر هفتي گفتگو ۽ گرومنگ جا 2 پيريڊ، اسٽيج تي پبلڪ اسپيڪنگ، شهر جي بازارن ۾ وڪري جو چئلينج ۽ گورک هلز جو پهاڙي سفر.",
+      badge: "ڪردار ۽ شخصيت سازي جو شعبو",
+      title: "شخصيت سازي",
+      subtitle: "شاگردن جي ڪردار، اخلاق، خود اعتمادي، ۽ اسڪول، خانداني زندگي، سماج ۽ ايندڙ ڪيريئر لاءِ بنيادي زندگيءَ جون صلاحيتون.",
+      description: "شخصيت سازي رڳو تقرير يا اسٽيج جي ٽريننگ ناهي، پر هي شاگردن جي اخلاق، روزمره جي ورتائي، خود اعتمادي ۽ عملي زندگيءَ جي بنيادي مهارتن کي سنوارڻ جو باقاعده نظام آهي. اسان پنهنجي شاگردن ۾ نظم و ضبط ۽ ذاتي ذميواري؛ اعليٰ اخلاق، سچائي ۽ ايمانداري؛ ڌيان سان ٻڌڻ ۽ سٺي نموني، احترام سان پنهنجا خيال ظاهر ڪرڻ؛ سماج ۾ باادب ورتائو؛ مشڪلاتن ۽ ناڪامين کي منهن ڏيڻ جو حوصلو؛ خود آگاھي، همدردي، باهمي سهڪار ۽ درست فيصلا ڪرڻ جي قائدانه صلاحيت پيدا ڪريون ٿا، جيڪي کين اسڪول، گهر، معاشري ۽ ايندڙ پيشه ورانه زندگيءَ ۾ ڪامياب بنائين ٿا.",
       features: [
         {
-          title: "اسٽيج ۽ خطابت (هفتيوار)",
-          desc: "نرسري کان ميٽرڪ تائين لکين ٻڌندڙن سامهون پنهنجو موقف بنا خوف رکڻ جي مشق."
+          title: "ڳالهه ٻولهه ۽ باوقار انداز ۾ اظهار",
+          desc: "رڳو اسٽيج جي تقرير ناهي: شاگرد ڌيان سان ٻڌڻ، باوقار گفتگو، سٺي نموني پنهنجي ڳالهه سمجهائڻ، ۽ نرسري کان وٺي ميٽرڪ تائين پر اعتماد انداز ۾ خيال پيش ڪرڻ سکن ٿا."
         },
         {
-          title: "بازار ۾ وڪري جو مقابلو",
-          desc: "سيوهڻ جي بازارن ۾ وڃي ماڻهن سان ملڻ، رد ٿيڻ کي برداشت ڪرڻ ۽ احترام سان پچ پيش ڪرڻ."
+          title: "نظم و ضبط، اخلاقيات ۽ سماجي آداب",
+          desc: "سچائي، ديانتداري، ذاتي احتساب ۽ گهر، ڪلاس روم ۽ سڄي سماج ۾ باادب ۽ باوقار ورتاءُ اختيار ڪرڻ جي عملي تربيت."
         },
         {
-          title: "گورک هلز جو مشڪل سفر",
-          desc: "پهاڙن تي ٽيمن سان گڏ پنڌ، مشڪل حالتن ۾ فيصلا ڪرڻ ۽ بقا جي جدوجهد."
+          title: "جبلن تي ٽريڪنگ جون مہمات",
+          desc: "سنڌ جي مختلف جابلو ماڳن — جنهن ۾ ٻُڏو جبل، ڀاڳو ٽوڙهو، ڪارونجهر جبل ۽ ٻيون جابلو پٽيون شامل آهن — تي مطالعاتي ۽ تربيتي ٽريڪنگ. شاگرد جسماني طاقت، خود اعتمادي، سختين کي منهن ڏيڻ جو حوصلو، باهمي ٽيم ورڪ، ٻاهرين ماحول جو عملي شعور ۽ سنڌ جي قدرتي حسن جو قدر ڪرڻ سکن ٿا."
         },
         {
-          title: "نياڻين جي قيادت جا گروپس",
-          desc: "سنڌ جي ڌيئرن لاءِ باهمت ليڊرشپ، ٽيڪنالاجي ۽ فيصلي سازي جون خاص تربيتون."
+          title: "حوصلا، باهمي سهڪار ۽ قيادت",
+          desc: "مسئلن کي منهن ڏيڻ جي همت، ٻين جو ساٿ ڏيڻ، همدردي، ۽ اخلاقي بنيادن تي فيصلا ڪرڻ جي صلاحيت جيڪا شاگردن کي اسڪول، گهر ۽ مستقبل جي عملي زندگيءَ ۾ سٺو اڳواڻ بڻائي ٿي."
         }
       ],
       heroOath: {
-        title: "هيرو جو عهد (ڪلاس 9)",
-        text: "”مان سچائي سان تعمير ڪندس. مان حوصلي سان ڳالهائيندس. مان سنڌ جي ڌرتي جي خدمت ڪندس ۽ ڪڏهن به مايوس نه ٿيندس.“"
+        title: "شاگردن جو اخلاقي عهد (ڪلاس 9)",
+        text: "”مان سچائي ۽ ديانتداري سان ڪم ڪندس. مان عزت ۽ چٽائيءَ سان ڳالهائيندس. مان نظم و ضبط اختيار ڪندس، پنهنجي ساٿين جو ساٿ ڏيندس، سنڌ جي مٽيءَ جي خدمت ڪندس، ۽ زندگيءَ جي هر چئلينج جو بهادريءَ سان مقابلو ڪندس.“"
       }
     },
     theProof: {
@@ -1391,9 +1605,9 @@ export const contentMap: Record<Language, SiteContent> = {
         },
         {
           laneNumber: "02",
-          title: "عالمي ايڪو سسٽم ۽ اسٽڊي ٽوئرز",
-          highlight: "اسان جا اسٽارٽ اپس پاڪستاني ۽ بين الاقوامي نيٽ ورڪ اندر زنده رهندا.",
-          description: "شاگردن جون ڪمپنيون NIC ۽ ٻاهرين ملڪن جي ايڪسيليٽرز سان ڳنڍجن ٿيون. چونڊيل شاگرد سلڪون ويلي ۽ آمريڪا جا دورا ڪري سڌو سيڙپڪارن کي پچ ڪندا."
+          title: "بين الاقوامي تعليمي دورا ۽ عالمي سڃاڻپ",
+          highlight: "بين الاقوامي تعليمي دورن، جديد ٽيڪنالوجيز ۽ عالمي ادارن ذريعي ذهني سوچ کي وسيع ڪرڻ.",
+          description: "شاگردن لاءِ امڪاني بين الاقوامي تعليمي دورا ۽ تربيتي سفر کين مختلف ثقافتن، عالمي تعليمي نظامن، جديد ترين ٽيڪنالوجي ۽ وسيع تر نظرين سان روشناس ڪرائين ٿا. دنيا جي ترقي يافته ادارن کي ڏسڻ سان شاگردن جو فڪري دائرو ويڪرو ٿئي ٿو، خود اعتمادي وڌي ٿي، بلند حوصلا پيدا ٿين ٿا ۽ هو پنهنجي گهر ڀاتين ۽ سنڌ جي بهتر مستقبل لاءِ عالمي سطح جا تعليمي ۽ پيشه ورانه رستا ڳولي سگهن ٿا."
         },
         {
           laneNumber: "03",
@@ -1402,7 +1616,33 @@ export const contentMap: Record<Language, SiteContent> = {
           description: "بهترين شاگردن جا اسٽارٽ اپس آمريڪا (Delaware) ۾ رجسٽرڊ ڪيا ويندا ۽ انهن جون ايجادون پهريان آمريڪا ۽ پوءِ سڄي دنيا ۾ پيٽنٽ ڪرائي محفوظ ڪيون وينديون."
         }
       ],
-      closing: "اسان جو وعدو: ڏات سنڌ جي مٽي ۾ رهندي، جڏهن ته ان جون ڪمپنيون، پيٽنٽس ۽ ايجادون سڄي دنيا ۾ ڦهلجنديون. اسان شين کي برآمد ڪنداسين، ماڻهن کي نه."
+      closing: "اسان جو وعدو: ڏات سنڌ جي مٽي ۾ رهندي، جڏهن ته ان جون ڪمپنيون، پيٽنٽس ۽ ايجادون سڄي دنيا ۾ ڦهلجنديون. اسان شين کي برآمد ڪنداسين، ماڻهن کي نه.",
+      scholarshipHighlight: {
+        badge: "تعليمي انصاف ۽ اهليت",
+        title: "مستحق ۽ ذهين شاگردن لاءِ اسڪالرشپس",
+        subtitle: "مالي حالتون ڪنهن به باصلاحيت ٻار جي تعليم ۽ حوصلي جي آڏو رڪاوٽ نه بڻجنديون.",
+        description: "اسان جو ايمان آهي ته مالي مجبوري ڪڏهن به سنڌ جي ڪنهن ذهين ۽ محنتي ٻار جي ترقيءَ ۾ رڪاوٽ نه بڻجڻ گهرجي. اسان شفاف ميرٽ ۽ ضرورت تي ٻڌل اسڪالرشپ پروگرام ذريعي مستحق شاگردن کي اعليٰ تعليم، جديد ليبز ۽ مڪمل گرومنگ جا موقعا فراهم ڪرڻ جا خواهشمند آهيون. جڏهن باصلاحيت ٻار بنا رڪاوٽ اڳتي وڌن ٿا ته پورو خاندان سکيو ٿئي ٿو، ڳوٺن ۾ فخر پيدا ٿئي ٿو ۽ سنڌ کي سڀاڻي لاءِ قابل قيادت ملي ٿي.",
+        points: [
+          "ذهانت ۽ صلاحيت کي مڃڻ لاءِ ميرٽ ايوارڊز",
+          "ضرورت مند خاندانن جي لائق ٻارن لاءِ مالي سهائتا",
+          "خاندانن کي بااختيار بڻائڻ ۽ سماجي رڪاوٽون ختم ڪرڻ",
+          "سنڌ جي سڀاڻي لاءِ نوان سائنسدان، معمار ۽ ليڊرز تيار ڪرڻ"
+        ],
+        valueProposition: "سنڌ جي ڳوٺ مان اڀرندڙ هڪ باصلاحيت ٻار پوري علائقي جو مقدر تبديل ڪري سگهي ٿو."
+      },
+      internationalTripsHighlight: {
+        badge: "عالمي افق ۽ شعور",
+        title: "بين الاقوامي تعليمي دورا ۽ ثقافتي شعور",
+        subtitle: "ٻارن کي پرڏيهي تعليمي ادارن، جديد ٽيڪنالوجي ۽ نئين دنيا سان ڳنڍڻ.",
+        description: "شاگردن لاءِ بين الاقوامي مطالعاتي دورا ۽ ٽيڪنالوجي ايڪسپو کين پرڏيهي اسڪولن، مختلف ثقافتن، جديد آرٽيفيشل انٽيليجنس اوزارن ۽ عالمي سوچ سان عملي طور ڳنڍين ٿا. هي تجرباتي سفر ٻارن جي ذهني حدن کي ٽوڙين ٿا، سندن دلين ۾ وڏا خواب پيدا ڪن ٿا، کين بين الاقوامي سطح جي پراعتمادي بخشين ٿا، ۽ کين دنيا جي اعليٰ يونيورسٽين ۽ ڪيريئرز ڏانهن راغب ڪن ٿا — جتان سکي هو سنڌ جي ترقيءَ لاءِ نوان حل آڻي سگهن.",
+        points: [
+          "عالمي درجي جي ڪلاسن، يونيورسٽين ۽ انوويشن هبز جو سڌو دورو",
+          "مختلف ثقافتن، عالمي شاگردن ۽ بين الاقوامي مينٽرز سان ملاقاتون",
+          "مقامي حدن کان ٻاهر نڪري عالمي امڪانن جو ادراڪ ڪرڻ",
+          "سنڌ جي مٽي سان جڙيل رهندي بين الاقوامي اعتماد حاصل ڪرڻ"
+        ],
+        valueProposition: "جڏهن ڪو ٻار پنهنجي اکين سان وڏي دنيا کي ڏسي ٿو، ته سندس ارادن جون حدون هميشه لاءِ کلي پون ٿيون."
+      }
     },
     theMovement: {
       badge: "سنڌ جي جاڳرتا",
@@ -1437,7 +1677,7 @@ export const contentMap: Record<Language, SiteContent> = {
       badge: "سيوهڻ شريف، سنڌ",
       title: "سيوهڻ — پهريان هڪ شهر، مڪمل ارادي سان",
       whySehwan: "قلندر جو شهر — صوفي راڳ، روحاني تاريخ ۽ اسان جي باني جو پنهنجو ميدان. اسان شروعات اتان ڪريون ٿا جتي حقيقي ثبوت اڳ ۾ ئي موجود آهي. هي ماڊل اڳتي هلي پوري سنڌ ۾ ڦهلائبو.",
-      cityProjects: "شاگردن جو ڪم سيوهڻ سان جڙيل آهي: درگاهه جا آڊيو گائيڊ QR ڪوڊ، زائرين جي انگ اکرن جا سينسرز، هٿ جي هنرن جي ڊجيٽائيزيشن ۽ گورک ٽريڪس. سيوهڻ جو شهر اسان جو ڪلاس روم آهي.",
+      cityProjects: "شاگردن جو ڪم سيوهڻ سان جڙيل آهي: درگاهه جا آڊيو گائيڊ QR ڪوڊ، زائرين جي انگ اکرن جا سينسرز، هٿ جي هنرن جي ڊجيٽائيزيشن ۽ ٻُڏو جبل، ڀاڳو ٽوڙهو ۽ ڪارونجهر جبلن تي ٽريڪنگ مہمات. سڄي سنڌ اسان جو ڪلاس روم آهي.",
       campusSpine: [
         "جديد AI ۽ ڪمپيوٽنگ ورڪ اسٽيشن ليب",
         "3D پرنٽرز ۽ هارڊويئر ميڪر اسپيس",
@@ -1534,11 +1774,15 @@ export const contentMap: Record<Language, SiteContent> = {
         },
         {
           question: "ڇا هي اسلامي قدرن ۽ مقامي روايتن مطابق آهي؟",
-          answer: "ها بلڪل. مڪمل سنڌ بورڊ اسلاميات نصاب موجود آهي؛ هيرو ٽريڪ سچائي ۽ اخلاق سيکاري ٿو؛ نياڻين جا ڪلاس نياڻيون ماهر سنڀالين ٿيون؛ پهاڙي سفر والدين جي لکت واري رضامندي سان ٿين ٿا."
+          answer: "ها بلڪل. مڪمل سنڌ بورڊ اسلاميات نصاب موجود آهي؛ شخصيت سازي سچائي ۽ اخلاق سيکاري ٿي؛ نياڻين جا ڪلاس نياڻيون ماهر سنڀالين ٿيون؛ سنڌ جي جبلن تي ٽريڪنگ مہمات والدين جي لکت واري رضامندي ۽ مڪمل حفاظتي انتظامن سان ٿين ٿيون."
         },
         {
-          question: "جيڪڏهن اسان مڪمل فيس ڀري نه سگهون ته؟",
-          answer: "پئسي جي اڻاٺ سبب سنڌ جي ڪنهن به لائق ٻار کي علم کان محروم نه رکيو ويندو. اسان مستحق ۽ ذهين ٻارن لاءِ شفاف اسڪالرشپ رکي آهي. شام جا ڪورس به رعايتي يا مفت آهن."
+          question: "مستحق ۽ ذهين شاگردن لاءِ اسڪالرشپ جا ڪهڙا موقعا آهن؟",
+          answer: "پئسي جي تنگي سبب سنڌ جي ڪنهن به لائق ۽ محنتي ٻار کي معياري تعليم کان محروم نه رکيو ويندو. اسان مستحق ۽ باصلاحيت ٻارن لاءِ ميرٽ ۽ ضرورت جي بنياد تي شفاف اسڪالرشپس پيش ڪريون ٿا، ته جيئن هو اسان جي نصاب، AI ليبز ۽ شخصيت سازي واري تربيت مان پورو فائدو حاصل ڪري سگهن. هي سهائتا خاندانن کي سگھ ڏئي ٿي ۽ سنڌ جي روشن مستقبل جو پايو ٻڌي ٿي."
+        },
+        {
+          question: "بين الاقوامي تعليمي دورن مان شاگردن کي ڪهڙو فائدو ملي ٿو؟",
+          answer: "امڪاني پرڏيهي تعليمي دورا شاگردن کي نيون ثقافتون، عالمي تعليمي معيار، جديد ترين ٽيڪنالوجي ۽ وسيع تر خيال ڏسڻ جو موقعو ڏين ٿا. هي سفر سندن سوچ کي وسيع ڪن ٿا، شخصي اعتماد وڌائين ٿا، کين وڏن مقصدن لاءِ اُتساهين ٿا ۽ سندن لاءِ مستقبل جي تعليم ۽ عالمي ڪيريئر جا نوان دروازا کولين ٿا."
         },
         {
           question: "والدين ٻار جي ڪارڪردگي ڪيئن چيڪ ڪندا؟",
@@ -1575,8 +1819,8 @@ export const contentMap: Record<Language, SiteContent> = {
       bookVisit: "دورہ بک کریں",
       curriculumMap: "نصاب کا نقشہ",
       curriculumMapSub: "نرسری تا میٹرک BISE + فیوچر لیئر",
-      theHeroTrackNav: "دی ہیرو ٹریک",
-      theHeroTrackNavSub: "تقریر، گرومنگ اور گورکھ ہل ٹریکس",
+      theHeroTrackNav: "شخصیت سازی",
+      theHeroTrackNavSub: "شخصیت سازی، باہمی گفتگو اور سندھ میں پہاڑی ٹریکنگ",
       studentIncubator: "طلباء کا انکیوبیٹر",
       studentIncubatorSub: "کلاس 8 تک رجسٹرڈ کمپنیاں",
       eveningAcademyNav: "شام کی اکیڈمی",
@@ -1620,7 +1864,7 @@ export const contentMap: Record<Language, SiteContent> = {
       validationName: "براہ کرم اپنا پورا نام درج کریں۔",
       validationPhone: "براہ کرم درست فون یا واٹس ایپ نمبر درج کریں (کم از کم 10 ہندسے)۔",
       nextSeatsLimited: "اگلا داخلہ کلاس رومز کی گنجائش کے ساتھ مشروط ہے، حوصلے کے ساتھ نہیں۔",
-      elevation5688: "5,688 فٹ بلندی",
+      elevation5688: "بڈو · بھاگو توڑہو · کارونجھر",
       makersInnovationHub: "میکرز اور انوویشن ہب",
       sehwanSharifLabel: "سہون شریف",
       whySehwanTitle: "سہون کیوں",
@@ -1639,7 +1883,7 @@ export const contentMap: Record<Language, SiteContent> = {
       craftedWithPride: "سندھ میں فخر کے ساتھ تیار کردہ",
       forSindhFuture: "کل کے معماروں کیلئے",
       nurseryMatricBise: "نرسری تا میٹرک BISE اسکیم",
-      heroTrackGorakhTreks: "دی ہیرو ٹریک اور گورکھ ٹریکس",
+      heroTrackGorakhTreks: "شخصیت سازی اور پہاڑی ٹریکنگ",
       eveningCommunityAcademy: "شام کی کمیونٹی اکیڈمی",
       innovationLabBuilders: "معماروں کیلئے انوویشن لیب",
       saturdayBuildDays: "ہفتہ وار بلڈ ڈیز",
@@ -1676,7 +1920,7 @@ export const contentMap: Record<Language, SiteContent> = {
       instantProofSub: "میٹرک تک ہر طالب علم AI آٹومیشن تیار کر چکا ہوتا ہے، کمپنی اکاؤنٹس چلاتا ہے اور اسٹیج پر پچ کرتا ہے۔",
       noMarketObsolescenceTitle: "مارکیٹ میں متروک نہ ہونے کی ضمانت",
       noMarketObsolescenceDesc: "چھ سال کی عمر سے بچے بورڈ نصاب کے ساتھ کمپیوٹنگ اور انٹرپرینیورشپ میں مہارت پاتے ہیں۔ سولہ سال کی عمر تک دس سال کا عملی فرق پیدا ہو جاتا ہے۔",
-      gorakhTrekTitle: "گورکھ ہل بقاء کا ٹریک",
+      gorakhTrekTitle: "سندھ کے پہاڑوں پر ٹریکنگ مہمات",
       investorPrecedent: "سرمایہ کاروں کا اعتماد",
       lanePrefix: "راہ",
       directVentureTrack: "براہ راست وینچر ٹریک",
@@ -1759,7 +2003,7 @@ export const contentMap: Record<Language, SiteContent> = {
     theTurn: {
       badge: "نئی راہ",
       title: "چنانچہ ہم نے فرسودہ نظام کے سدھرنے کا انتظار چھوڑ کر وہ اسکول بنایا جس کا مستقبل متقاضی ہے۔",
-      description: "مکمل سندھ بورڈ اسکیم — انگریزی، اردو اور سندھی، ریاضی، سائنس اور مکمل میٹرک گروپ (~80% وقت بورڈ کی تیاریوں پر)۔ اس پر مستقبل کی تہہ: کلاس 1 سے AI، انٹرپرینیورشپ بطور مضمون، اور ہیرو ٹریک کردار و ہمت کے لیے۔",
+      description: "مکمل سندھ بورڈ اسکیم — انگریزی، اردو اور سندھی، ریاضی، سائنس اور مکمل میٹرک گروپ (~80% وقت بورڈ کی تیاریوں پر)۔ اس پر مستقبل کی تہہ: کلاس 1 سے AI، انٹرپرینیورشپ بطور مضمون، اور شخصیت سازی کردار و اخلاق کے لیے۔",
       breakdown: [
         {
           title: "سندھ بورڈ نصاب",
@@ -1787,16 +2031,16 @@ export const contentMap: Record<Language, SiteContent> = {
         },
         {
           id: "hero",
-          title: "ہیرو ٹریک",
-          role: "کردار اور جرات",
-          description: "خطابت، گرومنگ، سلیقہ، گورکھ ہلز کے کیمپس۔ ہمت باقاعدہ ٹائم ٹیبل کا حصہ ہے۔",
+          title: "شخصیت سازی",
+          role: "کردار اور بنیادی مہارتیں",
+          description: "طلبہ کے کردار اور رویوں کی عملی تربیت: نظم و ضبط، اخلاقیات، باہمی گفتگو (غور سے سننا اور باوقار انداز میں اظہار)، معاشرتی آداب، خود اعتمادی، ٹیم ورک اور سندھ کے پہاڑوں پر ٹریکنگ۔",
           highlight: "ہفتے میں 2 پیریڈ"
         },
         {
           id: "incubator",
-          title: "انکیوبیٹر",
-          role: "حقیقی کمپنیاں",
-          description: "کلاس 8 تا 10 کے طلباء کی رجسٹرڈ کمپنیاں، حقیقی کسٹمرز اور NIC مینٹرز۔",
+          title: "چھوٹے کاروبار اور اسٹوڈنٹ انکیوبیٹر",
+          role: "حقیقی کمپنیاں اور مقامی صنعت",
+          description: "طلبہ کو چھوٹے اور درمیانے درجے کے کاروباروں (SMEs) — صابن سازی کے یونٹس، موبائل ریپیئر شاپس اور جوتا سازی کے کارخانوں — سے جوڑنا، جہاں وہ مینوفیکچرنگ اور حقیقی تجارت سیکھتے ہیں۔",
           highlight: "کلاس 8 تا 10"
         },
         {
@@ -1889,19 +2133,19 @@ export const contentMap: Record<Language, SiteContent> = {
         {
           grade: "کلاس 6 تا 7",
           computing: "پائتھون پروگرامنگ، موبائل ایپس، انٹرنیٹ آف تھنگز (IoT) سینسرز۔",
-          entrepreneurship: "بزنس ماڈل کینوس، شہر کے بازاروں میں تیار کردہ اشیاء کی فروخت۔",
+          entrepreneurship: "بزنس ماڈل کینوس، مقامی چھوٹے یونٹس (صابن سازی اور جوتا سازی) کے تعاون سے بیچ پروڈکشن اور کھاتہ داری۔",
           milestone: "پائتھون اور مارکیٹ سیلز"
         },
         {
           grade: "کلاس 8",
           computing: "ویب ڈویلپمنٹ، APIs، خودکار AI ایجنٹ ورک فلوز، تھری ڈی ڈیزائننگ۔",
-          entrepreneurship: "باقاعدہ رجسٹرڈ طالب علم کمپنی، پوری ٹرم صارفین کو پروڈکٹ کی فراہمی۔",
+          entrepreneurship: "باقاعدہ رجسٹرڈ طالب علم کمپنی، مقامی صنعتوں (موبائل ریپیئر اور مینوفیکچرنگ) کے ساتھ صارفین کو حقیقی فراہمی۔",
           milestone: "قانونی کمپنی کا انتظام"
         },
         {
           grade: "کلاس 9 تا 10",
           computing: "سندھ بورڈ کمپیوٹر سائنس + خاندانی کاروبار کیلئے تیار کردہ AI آٹومیشن۔",
-          entrepreneurship: "کیمپس انکیوبیٹر سمسٹر؛ NIC اور ORIC مہمانوں کے روبرو فائنل پچ۔",
+          entrepreneurship: "کیمپس انکیوبیٹر سمسٹر؛ مقامی SMEs کے مسائل کا حل؛ NIC اور ORIC مہمانوں کے روبرو فائنل پچ۔",
           milestone: "میٹرک رزلٹ اور لائیو پورٹ فولیو"
         }
       ],
@@ -1928,32 +2172,104 @@ export const contentMap: Record<Language, SiteContent> = {
         }
       ]
     },
+    smeEnterprises: {
+      badge: "عملی و فنی تربیت",
+      title: "تعلیم کو حقیقی کاروبار اور مقامی صنعت سے جوڑنا",
+      subtitle: "عملی پیداوار، فنی ہنر اور حقیقی کام کے ذریعے چھوٹے اور درمیانے درجے کے کاروباروں (SMEs) کو سمجھنا۔",
+      whatIsSmeTitle: "چھوٹے اور درمیانے کاروبار (SMEs) کیا ہیں؟",
+      whatIsSmeDesc: "چھوٹے اور درمیانے کاروبار (SMEs) دراصل وہ مقامی خود مختار دکانیں، ورکشاپس، ریپیئرنگ سینٹرز اور چھوٹے مینوفیکچرنگ یونٹس ہیں جو ہماری روزمرہ معیشت کو چلاتے ہیں۔ یہ کوئی دور دراز کی کارپوریٹ کمپنیاں نہیں ہیں، بلکہ سندھ کے قصبوں اور بازاروں میں موجود وہ حقیقی یونٹس ہیں جہاں عام ضرورت کی اشیاء تیار ہوتی ہیں، فنی مرمت کی جاتی ہے اور مقامی ہنر مندوں کو روزگار ملتا ہے۔",
+      whyConnectTitle: "تعلیم کو مقامی کاروباروں سے جوڑنا کیوں ضروری ہے؟",
+      whyConnectDesc: "صرف نصابی کتابوں سے یہ نہیں سیکھا جا سکتا کہ حقیقی معاشی دنیا کیسے کام کرتی ہے۔ جب طلبہ مقامی کاروباروں کے ساتھ وابستہ ہوتے ہیں اور خود چھوٹے منصوبے چلاتے ہیں، تو وہ دیکھتے ہیں کہ اصل اشیاء کیسے بنتی ہیں، عملی و فنی مہارتیں کیسے حاصل کی جاتی ہیں، کسٹمر سے کیسے شائستگی سے پیش آتے ہیں، کاروباری مشکلات کو کیسے حل کرتے ہیں، اور مستقبل میں نوکری یا اپنے کاروبار کے کیا کیا مواقع موجود ہیں۔",
+      learningOutcomesTitle: "طلبہ حقیقی کاروباروں سے کیا سیکھتے ہیں؟",
+      learningOutcomes: [
+        {
+          title: "مصنوعات کی تیاری اور پیداواری عمل (Manufacturing Processes)",
+          desc: "خام مال کا حصول، فارمولیشن اور درست پیمائش، اسمبلی لائن، پیکیجنگ اور حفاظتی اصولوں کی پابندی۔"
+        },
+        {
+          title: "موبائل ریپیئر اور عملی تکنیکی مہارتیں",
+          desc: "الیکٹرانک خرابیوں کی تشخیص، سرکٹ سولڈرنگ، اسکرین اور بیٹری کی تبدیلی، اور ہارڈویئر کی خرابیوں کو درست کرنا۔"
+        },
+        {
+          title: "کسٹمر سروس اور صارفین کی ضروریات کو سمجھنا",
+          desc: "گاہک کی بات غور سے سننا، شائستہ گفتگو، مطلوبہ مسئلے کا بروقت حل اور گاہک کا اعتماد جیتنا۔"
+        },
+        {
+          title: "ٹیم ورک، کوالٹی کنٹرول اور مسائل کا حل",
+          desc: "ساتھیوں کے ساتھ مل کر کام کرنا، معیار کی یکسانیت برقرار رکھنا اور ورکشاپ کے روزمرہ چیلنجز کو مل کر حل کرنا۔"
+        },
+        {
+          title: "مقامی کاروبار کیسے کام کرتے ہیں؟",
+          desc: "کیش فلو، کھاتہ داری، مال کی دیکھ بھال، اخراجات اور منافع کا توازن، اور مقامی مارکیٹ کی اقتصادی حرکیات۔"
+        },
+        {
+          title: "انٹرپرینیورشپ، ووکیشنل اسکلز اور روزگار کے مواقع",
+          desc: "عملی فنی صلاحیتیں نکھارنا، مارکیٹ کے تقاضے سمجھنا اور مستقبل میں باعزت روزگار یا ذاتی کاروبار شروع کرنے کا اعتماد حاصل کرنا۔"
+        }
+      ],
+      examplesTitle: "مقامی کاروباروں کی عملی مثالیں جن سے ہمارے طلبہ سیکھتے ہیں",
+      examplesSubtitle: "سندھ کے وہ حقیقی کاروباری یونٹس جہاں طلبہ مینوفیکچرنگ، تکنیکی مرمت اور تجارتی عمل کا مشاہدہ کرتے ہیں۔",
+      examples: [
+        {
+          id: "soap-making",
+          title: "صابن سازی کے چھوٹے یونٹس (Soap-Making Units)",
+          role: "پیداوار اور فارمولیشن",
+          businessDoes: "صابن سازی کے چھوٹے یونٹس قدرتی تیل، لائی، خوشبو اور جڑی بوٹیوں کی درست پیمائش کر کے ملاوٹ کرتے ہیں، سانچوں میں ڈھالتے ہیں، خشک کرتے ہیں، مہر لگاتے ہیں اور پیک کر کے مارکیٹ میں فروخت کرتے ہیں۔",
+          studentsLearn: "طلبہ خام مال کا تناسب، پیداواری مراحل، پیکنگ کا طریقہ، صفائی کے معیارات، فی یونٹ لاگت کا حساب اور روزمرہ مصنوعات کی تیاری کا عملی مشاہدہ کرتے ہیں۔",
+          tags: ["فارمولیشن و پیمائش", "پیداواری مراحل", "پیکنگ و کوالٹی", "یونٹ لاگت"]
+        },
+        {
+          id: "mobile-repair",
+          title: "موبائل فون ریپیئر شاپس (Mobile Repair Shops)",
+          role: "تکنیکی ہارڈویئر اور سروس",
+          businessDoes: "موبائل ٹیکنیشن اسمارٹ فونز کے مدر بورڈ میں فالٹ تلاش کرتے ہیں، ٹوٹی ہوئی اسکرینیں تبدیل کرتے ہیں، چارجنگ پورٹ سولڈر کرتے ہیں، ڈیٹا ریکور کرتے ہیں اور سافٹ ویئر مسائل حل کرتے ہیں۔",
+          studentsLearn: "طلبہ عملی ریپیئرنگ اسکلز، ملٹی میٹر سے فالٹ ٹریسنگ، حساس الیکٹرانک پرزوں کی ہینڈلنگ، اور گاہک سے شائستگی سے بات کر کے درست تخمینہ دینے کے آداب سیکھتے ہیں۔",
+          tags: ["سرکٹ سولڈرنگ", "ہارڈویئر ٹیسٹنگ", "کسٹمر سروس", "تکنیکی مہارت"]
+        },
+        {
+          id: "footwear-manufacturing",
+          title: "چپل اور جوتا سازی کے یونٹس (Footwear Units)",
+          role: "چمڑے کی دستکاری اور اسمبلنگ",
+          businessDoes: "جوتا سازی کے مقامی یونٹس چمڑے کی کٹائی کرتے ہیں، پیٹرن بناتے ہیں، مضبوط ہاتھوں سے سلائی کرتے ہیں، تلوے جوڑتے ہیں اور روایتی سندھی چپل سمیت جدید جوتے تیار کر کے بازاروں میں فراہم کرتے ہیں۔",
+          studentsLearn: "طلبہ چمڑے اور خام مال کی پرکھ، کٹائی اور سلائی کے مراحل، ٹیم ورک، پائیداری کے ٹیسٹ، انوینٹری مینجمنٹ اور مارکیٹ تک سپلائی کے اصول سیکھتے ہیں۔",
+          tags: ["چمڑے کا کام", "پیٹرن اور کٹائی", "پائیداری کے اصول", "مارکیٹ سپلائی"]
+        },
+        {
+          id: "local-workshops",
+          title: "سندھ کی دیگر مقامی ورکشاپس اور مینوفیکچرنگ یونٹس",
+          role: "مشینری، مکینیکل اور علاقائی دستکاری",
+          businessDoes: "مقامی موٹر سائیکل مکینک ورکشاپس، روایتی اجرک بلاک پرنٹنگ یونٹس، لوہے کی ویلڈنگ کی دکانیں اور لکڑی کے کارخانے سندھ کے قصبوں میں ضروری خدمات اور مصنوعات فراہم کرتے ہیں۔",
+          studentsLearn: "طلبہ دیکھتے ہیں کہ مقامی کاروبار روزانہ کی بنیاد پر کیسے چلتے ہیں، ورکشاپ سیفٹی کیا ہے، صارفین سے قیمتوں کے معاملات کیسے طے پاتے ہیں، اور وہ اپنے لیے ووکیشنل شعبوں میں کیا راہیں تلاش کر سکتے ہیں۔",
+          tags: ["مکینیکل مرمت", "ووکیشنل ہنر", "مقامی کاروباری نظام", "روشن امکانات"]
+        }
+      ]
+    },
     heroTrack: {
-      badge: "کردار اور حوصلہ",
-      title: "دی ہیرو ٹریک",
-      subtitle: "حوصلہ، گفتگو اور خود اعتمادی اسکول کے ٹائم ٹیبل پر۔",
-      description: "دنیا کے بہترین مربی اصولوں کی روشنی میں سندھ کیلئے تشکیل دیا گیا پروگرام: ہفتے میں دو باقاعدہ پیریڈ گرومنگ اور پیشکش کیلئے، نرسری سے دسویں تک اسٹیج پر پبلک اسپیکنگ، بازاروں میں اجنبیوں سے ڈیلنگ اور گورکھ ہلز کی مہم جوئی۔",
+      badge: "کردار اور اخلاقی تربیت کا شعبہ",
+      title: "شخصیت سازی",
+      subtitle: "طلبہ کا کردار، اخلاق، خود اعتمادی اور اسکول، خاندانی زندگی، معاشرے اور روشن مستقبل کیلئے بنیادی مہارتیں۔",
+      description: "شخصیت سازی محض تقریری مشق نہیں، بلکہ یہ طلبہ کے کردار، اخلاق، روزمرہ کے رویوں، خود اعتمادی اور عملی زندگی کی بنیادی مہارتوں کو نکھارنے کا باقاعدہ نظام ہے۔ ہم نظم و ضبط اور ذاتی جواب دہی کا احساس؛ سچائی، دیانت داری اور اخلاقی اقدار؛ دوسروں کو توجہ سے سننے اور شائستگی و وضاحت سے اپنی بات پیش کرنے کا ہنر؛ معاشرتی آداب اور باوقار سلوک؛ مشکلات اور ناکامیوں کا ڈٹ کر مقابلہ کرنے کا حوصلہ؛ خود آگاہی، باہمی ہمدردی، ٹیم ورک اور درست قائدانہ فیصلے کرنے کی صلاحیت پیدا کرتے ہیں جو طلبہ کو اسکول، خاندانی زندگی، معاشرے اور مستقبل کے کیریئر میں سرخرو بناتی ہے۔",
       features: [
         {
-          title: "اسٹیج اور تقریر (ہفتہ وار)",
-          desc: "نرسری کے دائرے سے لے کر میٹرک میں روشنیوں تلے کلیدی خطابات تک تربیت۔"
+          title: "باہمی گفتگو اور باوقار اظہارِ خیال",
+          desc: "صرف پبلک اسپیکنگ نہیں: طلبہ دوسروں کو غور سے سننے، گفتگو کے شائستہ آداب، احترام کے ساتھ بات سمجھانے اور نرسری سے دسویں جماعت تک پراعتماد انداز میں اظہارِ خیال کی مشق کرتے ہیں۔"
         },
         {
-          title: "بازار میں اجنبیوں کو فروخت کا چیلنج",
-          desc: "سہون کے بازاروں میں لوگوں کے سامنے بات کرنا، نفی کو مسکرا کر سہنا اور احترام سے بات منوانا۔"
+          title: "نظم و ضبط، اخلاقیات اور سماجی آداب",
+          desc: "سچائی، دیانت داری، ذاتی جواب دہی اور گھر، کلاس روم اور معاشرے میں باوقار و شائستہ رویہ اختیار کرنے کی عملی تربیت۔"
         },
         {
-          title: "گورکھ ہلز سروائیول کیمپس",
-          desc: "بلند پہاڑوں پر ٹیم کے ساتھ مشقت، ہنگامی صورتحال سے نمٹنا اور مستقل مزاجی۔"
+          title: "پہاڑی ٹریکنگ کی مہمات",
+          desc: "سندھ کے مختلف پہاڑی سلسلوں — بشمول بڈو جبل، بھاگو توڑہو، کارونجھر کے پہاڑ اور دیگر راستے — پر جامع ٹریکنگ مہمات۔ طلبہ جسمانی فٹنس، خود اعتمادی، مشکلات جھیلنے کا حوصلہ، ٹیم ورک، قدرتی ماحول کی آگاہی اور سندھ کی قدرتی خوبصورتی سے دلی لگاؤ پیدا کرتے ہیں۔"
         },
         {
-          title: "طالبات کا لیڈرشپ گروپ",
-          desc: "سندھ کی بیٹیوں کیلئے مخصوص باہمت رہنمائی، ٹیکنالوجی اور خود اعتمادی کی تربیت۔"
+          title: "حوصلہ مندی، ہمدردی اور قائدانہ صلاحیت",
+          desc: "چیلنجز کا سامنا کرنے کی ہمت، باہمی تعاون، دوسروں کا احساس اور اخلاقی اصولوں پر فیصلے کرنے کی صلاحیت جو طلبہ کو اسکول، گھر اور مستقبل میں بہترین رہنما بناتی ہے۔"
         }
       ],
       heroOath: {
-        title: "ہیرو کا حلف (کلاس 9)",
-        text: "”میں دیانتداری سے تعمیر کروں گا۔ میں جرات سے بات کروں گا۔ میں سندھ کی مٹی کی خدمت کروں گا اور کبھی بے بسی کے آگے ہتھیار نہیں ڈالوں گا۔“"
+        title: "طلبہ کا اخلاقی عہد (نہم جماعت)",
+        text: "”میں سچائی اور دیانت داری سے کام لوں گا۔ میں عزت اور شائستگی کے ساتھ گفتگو کروں گا۔ میں نظم و ضبط کا پابند رہوں گا، اپنے ساتھیوں کا ساتھ دوں گا، سندھ کی دھرتی کی خدمت کروں گا، اور زندگی کے ہر چیلنج کا ڈٹ کر مقابلہ کروں گا۔“"
       }
     },
     theProof: {
@@ -1998,9 +2314,9 @@ export const contentMap: Record<Language, SiteContent> = {
         },
         {
           laneNumber: "02",
-          title: "عالمی ایکو سسٹم اور تربیتی دورے",
-          highlight: "ہمارے اسٹارٹ اپس پاکستان اور دنیا کے معروف نیٹ ورکس کا حصہ ہوں گے۔",
-          description: "قومی اور بین الاقوامی ایکسیلیٹرز سے براہ راست رابطہ۔ منتخب نوجوان سلیکان ویلی اور ترقی یافتہ مارکیٹوں کا دورہ کر کے فنڈ ریزنگ اور معاہدے کریں گے۔"
+          title: "بین الاقوامی تعلیمی دورے اور عالمی شعور",
+          highlight: "بین الاقوامی تعلیمی دوروں، جدید ٹیکنالوجیز اور عالمی اداروں کے ذریعے سوچ کے افق کو وسعت دینا۔",
+          description: "طلبہ کیلئے متوقع بین الاقوامی تعلیمی دورے اور مطالعاتی سفر انہیں مختلف ثقافتوں، غیر ملکی تعلیمی نظاموں، جدید ترین ٹیکنالوجی اور نئے عالمی زاویوں سے روشناس کراتے ہیں۔ دنیا کے جدید تعلیمی اداروں کو دیکھنے سے طلبہ کا ذہنی افق وسیع ہوتا ہے، خود اعتمادی پیدا ہوتی ہے، بلند حوصلے پروان چڑھتے ہیں اور وہ اپنے خاندان اور سندھ کے روشن مستقبل کیلئے عالمی تعلیمی و پیشہ ورانہ راہیں تلاش کر سکتے ہیں۔"
         },
         {
           laneNumber: "03",
@@ -2009,7 +2325,33 @@ export const contentMap: Record<Language, SiteContent> = {
           description: "طلباء کے اسٹارٹ اپس کو امریکہ میں قانونی طور پر رجسٹر کرایا جائے گا اور ان کی ایجادات کو امریکہ اور دنیا بھر میں پیٹنٹ کر کے محفوظ بنایا جائے گا۔"
         }
       ],
-      closing: "ہمارا وعدہ: ٹیلنٹ سندھ کی مٹی میں رہے گا، جبکہ کمپنیاں، پیٹنٹس اور آمدنی دنیا بھر سے آئے گی۔ ہم اشیاء برآمد کریں گے، اپنے لوگ نہیں۔"
+      closing: "ہمارا وعدہ: ٹیلنٹ سندھ کی مٹی میں رہے گا، جبکہ کمپنیاں، پیٹنٹس اور آمدنی دنیا بھر سے آئے گی۔ ہم اشیاء برآمد کریں گے، اپنے لوگ نہیں۔",
+      scholarshipHighlight: {
+        badge: "تعلیمی مساوات اور میرٹ",
+        title: "مستحق اور باصلاحیت طلبہ کیلئے اسکالرشپس",
+        subtitle: "مالی حالات کسی باصلاحیت بچے کی تعلیمی اڑان کی راہ میں رکاوٹ نہیں بنیں گے۔",
+        description: "ہمارا پختہ یقین ہے کہ مالی تنگی سندھ کے کسی ذہین اور محنتی بچے کی معیاری تعلیم کی راہ میں کبھی دیوار نہیں بننی چاہیے۔ ہمارے میرٹ اور ضرورت پر مبنی اسکالرشپ پروگرام کا مقصد مستحق طلبہ کو مستقبل کی تعلیم، جدید لیبز اور جامع شخصیت سازی کے یکساں مواقع فراہم کرنا ہے۔ جب باصلاحیت بچے آگے بڑھتے ہیں تو پورے خاندان کا معیارِ زندگی بلند ہوتا ہے، بستیوں میں اعتماد پیدا ہوتا ہے اور سندھ کو کل کیلئے باوقار اور ہنر مند قیادت میسر آتی ہے۔",
+        points: [
+          "غیر معمولی ذہانت اور صلاحیت کے اعتراف کیلئے میرٹ ایوارڈز",
+          "مستحق خاندانوں کے لائق طلبہ کیلئے مالی معاونت",
+          "خاندانوں کو بااختیار بنانا اور سماجی رکاوٹیں دور کرنا",
+          "سندھ کے کل کیلئے نئے سائنسدان، معمار اور لیڈرز تیار کرنا"
+        ],
+        valueProposition: "سندھ کے کسی گاؤں سے ابھرنے والا ایک باصلاحیت بچہ پوری بستی کی تقدیر بدل سکتا ہے۔"
+      },
+      internationalTripsHighlight: {
+        badge: "عالمی افق اور تجربات",
+        title: "بین الاقوامی تعلیمی دورے اور ثقافتی تجربات",
+        subtitle: "نوجوان اذہان کو بین الاقوامی درسگاہوں، جدید ٹیکنالوجی اور نئی دنیا سے جوڑنا۔",
+        description: "طلبہ کیلئے متوقع بین الاقوامی تعلیمی دورے اور ٹیکنالوجی مشاہداتی سفر انہیں غیر ملکی تعلیمی اداروں، متنوع ثقافتوں، ابھرتی ہوئی جدید ٹیکنالوجیز اور عالمی سوچ کا عینی شاہد بناتے ہیں۔ یہ بصیرت افروز سفر طلبہ کی خود اعتمادی کو نئی بلندیوں پر پہنچاتے ہیں، ان کے خوابوں کو وسعت دیتے ہیں اور انہیں بین الاقوامی علمی اور پیشہ ورانہ مواقع دریافت کرنے کی ترغیب دیتے ہیں — تاکہ وہ سندھ کی ترقی کیلئے عالمی معیار کے حل تیار کر سکیں۔",
+        points: [
+          "عالمی معیار کے کلاس رومز، جامعات اور انوویشن ہبز کا براہِ راست دورہ",
+          "مختلف ثقافتوں، غیر ملکی طلبہ اور عالمی اساتذہ سے باہمی تبادلۂ خیال",
+          "مقامی حدود سے آگے بڑھ کر عالمی امکانات کو اپنانے کا حوصلہ",
+          "اپنی مٹی سے جڑے رہتے ہوئے بین الاقوامی پراعتمادی کا حصول"
+        ],
+        valueProposition: "جب کوئی بچہ اپنی آنکھوں سے بڑی دنیا کو دیکھتا ہے، تو اس کے امکانات کی تعریف ہمیشہ کیلئے بدل جاتی ہے۔"
+      }
     },
     theMovement: {
       badge: "سندھ کی نشاۃ ثانیہ",
@@ -2044,7 +2386,7 @@ export const contentMap: Record<Language, SiteContent> = {
       badge: "سہون شریف، سندھ",
       title: "سہون — پہلے ایک شہر، پورے ارادے کے ساتھ",
       whySehwan: "قلندر کا شہر — روحانی روایت، موسیقی اور ہمارے بانی کی اپنی آزمائش گاہ۔ ہم وہیں سے شروع کر رہے ہیں جہاں عملی ثبوت پہلے سے موجود ہے۔ سہون کا یہ ماڈل پوری سندھ میں دہرایا جائے گا۔",
-      cityProjects: "طلباء کا کام سہون کی ضرورتوں سے جڑا ہے: مزار کے آڈیو گائیڈ QR کوڈز، زائرین کے بہاؤ کے سینسرز، روایتی دستکاریوں کی ڈیجیٹائزیشن اور گورکھ ہلز کی مشقیں۔ سہون کا شہر ہمارا کلاس روم ہے۔",
+      cityProjects: "طلباء کا کام سہون کی ضرورتوں سے جڑا ہے: مزار کے آڈیو گائیڈ QR کوڈز، زائرین کے بہاؤ کے سینسرز، روایتی دستکاریوں کی ڈیجیٹائزیشن اور بڈو جبل، بھاگو توڑہو اور کارونجھر کے پہاڑوں پر ٹریکنگ مہمات۔ پوری دھرتی ہمارا کلاس روم ہے۔",
       campusSpine: [
         "جدید کمپیوٹنگ اور AI ورک اسٹیشن لیب",
         "تھری ڈی پرنٹرز اور ہارڈویئر میکرز اسپیس",
@@ -2141,11 +2483,15 @@ export const contentMap: Record<Language, SiteContent> = {
         },
         {
           question: "کیا یہ اسلامی اقدار اور ہماری روایات کے مطابق ہے؟",
-          answer: "بالکل۔ سندھ بورڈ کی مکمل اسلامیات موجود ہے؛ ہیرو ٹریک دیانتداری اور اخلاقیات پر مبنی ہے؛ طالبات کے سیشنز خواتین اساتذہ کے زیرِ نگرانی ہیں؛ اور پہاڑی کیمپس والدین کی اجازت سے ہوتے ہیں۔"
+          answer: "بالکل۔ سندھ بورڈ کی مکمل اسلامیات موجود ہے؛ شخصیت سازی دیانتداری اور اخلاقیات پر مبنی ہے؛ طالبات کے سیشنز خواتین اساتذہ کے زیرِ نگرانی ہیں؛ اور سندھ کے پہاڑوں پر ٹریکنگ مہمات والدین کی اجازت اور سخت حفاظتی انتظامات کے تحت ہوتی ہیں۔"
         },
         {
-          question: "اگر ہمارا خاندان مکمل فیس ادا نہ کر سکے تو؟",
-          answer: "مالی تنگی سندھ کے کسی باصلاحیت بچے کی راہ میں رکاوٹ نہیں بنے گی۔ ہم نے میرٹ اور ضرورت کی بنیاد پر شفاف اسکالرشپ پالیسی رکھی ہے۔ شام کی اکیڈمی بھی مفت یا برائے نام فیس پر ہے۔"
+          question: "مستحق اور باصلاحیت طلبہ کیلئے اسکالرشپ کے کیا مواقع ہیں؟",
+          answer: "مالی تنگی سندھ کے کسی ذہین اور محنتی بچے کی راہ میں کبھی رکاوٹ نہیں بنے گی۔ ہم مستحق اور باصلاحیت طلبہ کیلئے میرٹ اور ضرورت کی بنیاد پر شفاف اسکالرشپس فراہم کرتے ہیں تاکہ وہ ہمارے جدید نصاب، AI لیبز اور شخصیت سازی کی تربیت سے پورا فائدہ اٹھا سکیں۔ یہ مواقع خاندانوں کو سہارا دیتے ہیں اور سندھ کے روشن مستقبل کی بنیاد بنتے ہیں۔"
+        },
+        {
+          question: "بین الاقوامی تعلیمی دوروں سے طلبہ کو کیا فائدہ حاصل ہوتا ہے؟",
+          answer: "متوقع بین الاقوامی تعلیمی دورے طلبہ کو دنیا کے جدید تعلیمی نظاموں، مختلف ثقافتوں، جدید ٹیکنالوجیز اور نئے افکار سے عملی روشناسی فراہم کرتے ہیں۔ یہ دورے طلبہ کے سوچنے کا انداز وسیع کرتے ہیں، خود اعتمادی بڑھاتے ہیں، بڑے مقاصد کیلئے پرعزم کرتے ہیں اور مستقبل کے تعلیمی اور پیشہ ورانہ راستے کھولنے میں مدد دیتے ہیں۔"
         },
         {
           question: "والدین اپنے بچے کی تعلیمی پیش رفت کیسے دیکھیں گے؟",

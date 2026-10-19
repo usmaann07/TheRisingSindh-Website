@@ -846,7 +846,7 @@ export const contentMap: Record<Language, SiteContent> = {
         },
         {
           title: "Mountain Trekking Expeditions",
-          desc: "Trek in Buddo Jabal, Bhago Torho and Karoonjhar to build fitness, confidence, teamwork and respect for nature."
+          desc: "Trekking / camping in Bado Jabbal , Bhago torho and Karoonjhar like mountains , surfing , sailing , boating and swimming in Indus River Indus to build fitness , confidence , teamwork and respect for the nature. "
         },
         {
           title: "Resilience, Empathy & Leadership",
@@ -1555,7 +1555,7 @@ export const contentMap: Record<Language, SiteContent> = {
         },
         {
           title: "جبلن تي ٽريڪنگ جون مہمات",
-          desc: "ٻُڏو جبل، ڀاڳو ٽوڙهو ۽ ڪارونجهر تي ٽريڪنگ سان فٽنيس، اعتماد، ٽيم ورڪ ۽ فطرت جو قدر وڌايو."
+          desc: "ٻُڏو جبل، ڀاڳو ٽوڙهو ۽ ڪارونجهر ۾ ٽريڪنگ ۽ ڪئمپنگ ڪريو؛ سنڌو درياهه ۾ سرفنگ، ٻيڙي هلائڻ ۽ ترڻ سان جسماني تندرستي، اعتماد، ٽيم ورڪ ۽ فطرت جو احترام وڌايو."
         },
         {
           title: "حوصلا، باهمي سهڪار ۽ قيادت",
@@ -2264,7 +2264,7 @@ export const contentMap: Record<Language, SiteContent> = {
         },
         {
           title: "پہاڑی ٹریکنگ کی مہمات",
-          desc: "بڈو جبل، بھاگو توڑہو اور کارونجھر کی ٹریکنگ سے فٹنس، اعتماد، ٹیم ورک اور فطرت سے لگاؤ بڑھتا ہے۔"
+          desc: "بڈو جبل، بھاگو توڑہو اور کارونجھر میں ٹریکنگ اور کیمپنگ کریں؛ دریائے سندھ میں سرفنگ، کشتی رانی، کشتی سواری اور تیراکی سے فٹنس، اعتماد، ٹیم ورک اور فطرت کا احترام بڑھائیں۔"
         },
         {
           title: "حوصلہ مندی، ہمدردی اور قائدانہ صلاحیت",

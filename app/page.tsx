@@ -73,7 +73,7 @@ export default function Home() {
         {/* The Movement: Sindh Renaissance, Moenjodaro & Build Here Stay Here */}
         <TheMovementSection onOpenModal={handleOpenModal} />
 
-        {/* Sehwan Campus Blueprint, Innovation Lab & Evening Community Academy */}
+        {/* Sehwan Campus Blueprint, Innovation Lab & The Technology Layer */}
         <SehwanCampusSection onOpenModal={handleOpenModal} />
 
         {/* Join Us: Four Conversion Doors, Transparent FAQs & Content Governance */}

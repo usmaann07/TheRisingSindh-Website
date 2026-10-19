@@ -406,7 +406,7 @@ export const contentMap: Record<Language, SiteContent> = {
       theHeroTrackNavSub: "Character, communication & mountain trekking across Sindh",
       studentIncubator: "Student Incubator",
       studentIncubatorSub: "Registered companies by Class 8",
-      eveningAcademyNav: "Evening Academy",
+      eveningAcademyNav: "The Technology Layer",
       eveningAcademyNavSub: "Community labs open after 5 pm"
     },
     common: {
@@ -471,7 +471,7 @@ export const contentMap: Record<Language, SiteContent> = {
       vocationalCareerPathways: "Vocational Career Pathways",
       nurseryMatricBise: "Nursery–Matric BISE Scheme",
       heroTrackGorakhTreks: "Character Building & Mountain Trekking",
-      eveningCommunityAcademy: "Evening Community Academy",
+      eveningCommunityAcademy: "The Technology Layer",
       innovationLabBuilders: "Innovation Lab for Builders",
       saturdayBuildDays: "Saturday Build Days",
       sehwanCampusLabNav: "Sehwan Campus & Innovation Lab",
@@ -514,7 +514,7 @@ export const contentMap: Record<Language, SiteContent> = {
       partnerVentureCta: "Partner with a venture",
       positiveSindhDocNote: "Positive Sindh Strand: Every Matric student contributes to one student-directed documentary.",
       joinTheMovementCta: "Join The Movement",
-      afterHoursEngine: "AFTER-HOURS COMMUNITY ENGINE",
+      afterHoursEngine: "TECHNOLOGY & COMMUNITY",
       alignedWithLabel: "Aligned with",
       applyForBenchCta: "Apply for Bench",
       fourDoorsSubtitle: "A proven road from Sehwan to Silicon Valley, rebuilt as a curriculum.",
@@ -632,8 +632,8 @@ export const contentMap: Record<Language, SiteContent> = {
         },
         {
           id: "academy",
-          title: "Evening Academy",
-          role: "Community Engine",
+          title: "The Technology Layer",
+          role: "Technology and Community",
           description: "12-week courses in coding, AI, video and freelancing for local youth and adults.",
           highlight: "Open to Sehwan"
         }
@@ -988,7 +988,7 @@ export const contentMap: Record<Language, SiteContent> = {
       ],
       roadAhead: "Our vision grows from Nursery–Matric to a college and, one day, a Sindh technology university.",
       eveningAcademy: {
-        title: "Evening Community Academy — The Trust Engine",
+        title: "The Technology Layer — The Trust Engine",
         opening: "After school, the labs offer local youth and adults 12-week courses in practical skills.",
         tracks: [
           {
@@ -1123,7 +1123,7 @@ export const contentMap: Record<Language, SiteContent> = {
       theHeroTrackNavSub: "شخصيت سازي، ڳالهه ٻولهه ۽ سنڌ ۾ جبلن جي ٽريڪنگ",
       studentIncubator: "شاگردن جو انڪيوبيٽر",
       studentIncubatorSub: "ڪلاس 8 تائين رجسٽرڊ ڪمپنيون",
-      eveningAcademyNav: "شام جي اڪيڊمي",
+      eveningAcademyNav: "ٽيڪنالاجي جو پرت",
       eveningAcademyNavSub: "ڪميونٽي ليبز شام 5 وڳي کان پوءِ کليل"
     },
     common: {
@@ -1188,7 +1188,7 @@ export const contentMap: Record<Language, SiteContent> = {
       vocationalCareerPathways: "فني ڪيريئر جا رستا",
       nurseryMatricBise: "نرسري–ميٽرڪ BISE اسڪيم",
       heroTrackGorakhTreks: "شخصيت سازي ۽ جبلن جي ٽريڪنگ",
-      eveningCommunityAcademy: "شام جي ڪميونٽي اڪيڊمي",
+      eveningCommunityAcademy: "ٽيڪنالاجي جو پرت",
       innovationLabBuilders: "تعمير ڪندڙن لاءِ انوويشن ليب",
       saturdayBuildDays: "ڇنڇر بلڊ ڊيز",
       sehwanCampusLabNav: "سيوهڻ ڪيمپس ۽ انوويشن ليب",
@@ -1231,7 +1231,7 @@ export const contentMap: Record<Language, SiteContent> = {
       partnerVentureCta: "اسٽارٽ اپ پارٽنرشپ لاءِ رابطو ڪريو",
       positiveSindhDocNote: "مثبت سنڌ پيش رفت: هر ميٽرڪ جو شاگرد پنهنجي ٺاهيل دستاويزي فلم (ڊاڪيومينٽري) ۾ حصو وٺي ٿو.",
       joinTheMovementCta: "تحريڪ جو حصو بڻجو",
-      afterHoursEngine: "شام جو ڪميونٽي ادارو",
+      afterHoursEngine: "ٽيڪنالاجي ۽ ڪميونٽي",
       alignedWithLabel: "هم آهنگ",
       applyForBenchCta: "بينچ لاءِ درخواست ڏيو",
       fourDoorsSubtitle: "سيوهڻ کان سليڪان ويلي تائين ثابت ٿيل رستو، هاڻي نصاب طور تيار.",
@@ -1349,8 +1349,8 @@ export const contentMap: Record<Language, SiteContent> = {
         },
         {
           id: "academy",
-          title: "شام جي اڪيڊمي",
-          role: "سڄي شهر لاءِ",
+          title: "ٽيڪنالاجي جو پرت",
+          role: "ٽيڪنالاجي ۽ ڪميونٽي",
           description: "مقامي نوجوانن ۽ بالغن لاءِ AI، ڪوڊنگ، وڊيو ۽ فري لانسنگ جا 12 هفتن جا ڪورس.",
           highlight: "سيوهڻ لاءِ کليل"
         }
@@ -1705,7 +1705,7 @@ export const contentMap: Record<Language, SiteContent> = {
       ],
       roadAhead: "اسان جو خواب نرسري–ميٽرڪ کان ڪاليج ۽ اڳتي سنڌ جي ٽيڪنالاجي يونيورسٽي تائين آهي.",
       eveningAcademy: {
-        title: "شام جي ڪميونٽي اڪيڊمي — اعتماد جو انجڻ",
+        title: "ٽيڪنالاجي جو پرت — اعتماد جو انجڻ",
         opening: "اسڪول کان پوءِ ليبون مقامي نوجوانن ۽ بالغن لاءِ 12 هفتن جا فني ڪورس هلائين ٿيون.",
         tracks: [
           {
@@ -1840,7 +1840,7 @@ export const contentMap: Record<Language, SiteContent> = {
       theHeroTrackNavSub: "شخصیت سازی، باہمی گفتگو اور سندھ میں پہاڑی ٹریکنگ",
       studentIncubator: "طلباء کا انکیوبیٹر",
       studentIncubatorSub: "کلاس 8 تک رجسٹرڈ کمپنیاں",
-      eveningAcademyNav: "شام کی اکیڈمی",
+      eveningAcademyNav: "ٹیکنالوجی کی تہہ",
       eveningAcademyNavSub: "کمیونٹی لیبز شام 5 بجے کے بعد کھلی ہیں"
     },
     common: {
@@ -1905,7 +1905,7 @@ export const contentMap: Record<Language, SiteContent> = {
       vocationalCareerPathways: "فنی کیریئر کے مواقع",
       nurseryMatricBise: "نرسری تا میٹرک BISE اسکیم",
       heroTrackGorakhTreks: "شخصیت سازی اور پہاڑی ٹریکنگ",
-      eveningCommunityAcademy: "شام کی کمیونٹی اکیڈمی",
+      eveningCommunityAcademy: "ٹیکنالوجی کی تہہ",
       innovationLabBuilders: "معماروں کیلئے انوویشن لیب",
       saturdayBuildDays: "ہفتہ وار بلڈ ڈیز",
       sehwanCampusLabNav: "سہون کیمپس اور انوویشن لیب",
@@ -1948,7 +1948,7 @@ export const contentMap: Record<Language, SiteContent> = {
       partnerVentureCta: "اسٹارٹ اپ پارٹنرشپ کیلئے رابطہ کریں",
       positiveSindhDocNote: "مثبت سندھ پہلو: ہر میٹرک کا طالب علم خود تیار کردہ دستاویزی فلم میں حصہ لیتا ہے۔",
       joinTheMovementCta: "تحریک کا حصہ بنیں",
-      afterHoursEngine: "شام کا کمیونٹی ادارہ",
+      afterHoursEngine: "ٹیکنالوجی اور کمیونٹی",
       alignedWithLabel: "ہم آہنگ",
       applyForBenchCta: "بینچ کیلئے درخواست دیں",
       fourDoorsSubtitle: "سہون سے سلیکان ویلی تک کا آزمودہ سفر، جو اب نصاب کی شکل میں ہے۔",
@@ -2066,8 +2066,8 @@ export const contentMap: Record<Language, SiteContent> = {
         },
         {
           id: "academy",
-          title: "شام کی اکیڈمی",
-          role: "عوامی خدمت",
+          title: "ٹیکنالوجی کی تہہ",
+          role: "ٹیکنالوجی اور کمیونٹی",
           description: "مقامی نوجوانوں اور بڑوں کیلئے AI، کوڈنگ، ویڈیو اور فری لانسنگ کے 12 ہفتے کے کورسز۔",
           highlight: "سہون کیلئے کھلا"
         }
@@ -2422,7 +2422,7 @@ export const contentMap: Record<Language, SiteContent> = {
       ],
       roadAhead: "ہمارا وژن نرسری تا میٹرک سے کالج اور مستقبل میں سندھ کی ٹیکنالوجی یونیورسٹی تک ہے۔",
       eveningAcademy: {
-        title: "شام کی کمیونٹی اکیڈمی — اعتماد کا ستون",
+        title: "ٹیکنالوجی کی تہہ — اعتماد کا ستون",
         opening: "اسکول کے بعد لیبز مقامی نوجوانوں اور بڑوں کیلئے 12 ہفتوں کے فنی کورسز پیش کرتی ہیں۔",
         tracks: [
           {

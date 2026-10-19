@@ -249,10 +249,7 @@ export interface SiteContent {
     examples: {
       id: string;
       title: string;
-      role: string;
-      businessDoes: string;
-      studentsLearn: string;
-      tags: string[];
+      description: string;
     }[];
   };
   heroTrack: {
@@ -794,39 +791,47 @@ export const contentMap: Record<Language, SiteContent> = {
         }
       ],
       examplesTitle: "Local businesses students explore",
-      examplesSubtitle: "Examples of manufacturing, repair and retail work across Sindh.",
+      examplesSubtitle: "Eight local manufacturing, repair and water-service examples.",
       examples: [
         {
-          id: "soap-making",
+          id: "data-cable-manufacturing",
+          title: "Data Cable Manufacturing Units",
+          description: "Manufacturers assemble conductors, connectors and insulation to make data and charging cables."
+        },
+        {
+          id: "plastic-bottle-manufacturing",
+          title: "Plastic Bottle Manufacturing Units",
+          description: "Factories make plastic bottles for drinking water, beverages and other products."
+        },
+        {
+          id: "ro-water-treatment",
+          title: "RO Water Treatment Plants",
+          description: "Plants use reverse osmosis to purify water and supply clean drinking water."
+        },
+        {
+          id: "concrete-block-paver-manufacturing",
+          title: "Concrete Block and Paver Manufacturing Units",
+          description: "These units produce durable concrete blocks and pavers for buildings and walkways."
+        },
+        {
+          id: "small-soap-making",
           title: "Small Soap-Making Units",
-          role: "Manufacturing & Formulation",
-          businessDoes: "Soap-makers mix oils, fragrances and herbs, then mold and package soaps for local markets.",
-          studentsLearn: "Students practice measuring, batch production, hygiene, quality checks and cost calculation.",
-          tags: ["Chemical Formulation", "Batch Production", "Packaging & Quality", "Unit Costing"]
+          description: "Small producers make and package soap for local shops and markets."
         },
         {
-          id: "mobile-repair",
-          title: "Mobile Phone Repair Shops",
-          role: "Technical Hardware & Service",
-          businessDoes: "Phone repair shops diagnose faults, replace screens, repair charging ports and update software.",
-          studentsLearn: "Students practice diagnostics, basic electronics, repairs and clear cost estimates for customers.",
-          tags: ["Circuit Soldering", "Hardware Diagnostics", "Customer Service", "Technical Troubleshooting"]
+          id: "mobile-repairing",
+          title: "Mobile Repairing Shops",
+          description: "Repair shops diagnose phone faults and fix screens, batteries and charging issues."
         },
         {
-          id: "footwear-manufacturing",
-          title: "Small Chappal & Footwear Units",
-          role: "Leathercraft & Assembly",
-          businessDoes: "Local workshops cut and stitch leather to make Sindhi chappal and modern footwear for local markets.",
-          studentsLearn: "Students learn material selection, assembly, quality checks, stock management and pricing.",
-          tags: ["Leather Crafting", "Pattern Cutting", "Durability Standards", "Bazaar Distribution"]
+          id: "chappal-making",
+          title: "Chappal-Making Small Units",
+          description: "Local makers cut, stitch and finish chappals for customers and markets."
         },
         {
-          id: "local-workshops",
+          id: "local-mechanical-craft-workshops",
           title: "Local Mechanical & Craft Workshops in Sindh",
-          role: "Fabrication & Vocational Trades",
-          businessDoes: "Motorcycle garages, Ajrak printers, metal shops and carpenters provide local services across Sindh.",
-          studentsLearn: "Students explore workshop safety, local crafts, problem-solving and vocational careers.",
-          tags: ["Mechanical Maintenance", "Vocational Skills", "Local Trade Operations", "Entrepreneurial Pathways"]
+          description: "Local workshops provide mechanical repairs, metalwork, Ajrak printing and carpentry."
         }
       ]
     },
@@ -1503,39 +1508,47 @@ export const contentMap: Record<Language, SiteContent> = {
         }
       ],
       examplesTitle: "شاگردن لاءِ مقامي ڪاروبارن جا مثال",
-      examplesSubtitle: "سنڌ ۾ پيداوار، مرمت ۽ واپار جا عملي مثال.",
+      examplesSubtitle: "مقامي پيداوار، مرمت ۽ پاڻي جي خدمتن جا اٺ مثال.",
       examples: [
         {
-          id: "soap-making",
-          title: "صابڻ ٺاهڻ جا ننڍا يونٽ (Soap-Making Units)",
-          role: "پيداوار ۽ فارموليشن",
-          businessDoes: "صابڻ جا يونٽ تيل، خوشبو ۽ جڙي ٻوٽين مان صابڻ ٺاهي پيڪ ڪري مقامي بازارن ۾ موڪلين ٿا.",
-          studentsLearn: "شاگرد ماپ، پيداوار، صفائي، معيار ۽ خرچ جو حساب سکن ٿا.",
-          tags: ["فارمولا ۽ ماپ", "پيداواري عمل", "پيڪنگ ۽ معيار", "خرچن جو حساب"]
+          id: "data-cable-manufacturing",
+          title: "ڊيٽا ڪيبل ٺاهڻ جا ڪارخانا",
+          description: "اهي ڪارخانا تارون، ڪنيڪٽر ۽ حفاظتي تهه گڏ ڪري ڊيٽا ۽ چارجنگ ڪيبل ٺاهين ٿا."
         },
         {
-          id: "mobile-repair",
-          title: "موبائل فون ريپيئر جا دڪان (Mobile Repair Shops)",
-          role: "ٽيڪنيڪل هارڊويئر ۽ مرمت",
-          businessDoes: "موبائل مرمت جا دڪان فون جا نقص ڳولين، اسڪرينون بدلائين ۽ چارجنگ يا سافٽ ويئر جا مسئلا حل ڪن ٿا.",
-          studentsLearn: "شاگرد خرابي جاچڻ، بنيادي اليڪٽرانڪس، مرمت ۽ گراهڪ کي خرچ سمجهائڻ سکن ٿا.",
-          tags: ["سرڪٽ سولڊرنگ", "هارڊويئر چيڪنگ", "گراهڪ جي خدمت", "ٽيڪنيڪل هنر"]
+          id: "plastic-bottle-manufacturing",
+          title: "پلاسٽڪ جون بوتلون ٺاهڻ جا ڪارخانا",
+          description: "اهي ڪارخانا پيئڻ جي پاڻي، مشروبات ۽ ٻين شين لاءِ پلاسٽڪ جون بوتلون ٺاهين ٿا."
         },
         {
-          id: "footwear-manufacturing",
-          title: "چپل ۽ جوتا ٺاهڻ جا ننڍا ڪارخانا (Footwear Units)",
-          role: "چمڙي جو هنر ۽ تياري",
-          businessDoes: "مقامي يونٽ چمڙو ڪٽي ۽ سبن ٿا، سنڌي چپل ۽ جديد جوتا ٺاهي بازارن ۾ وڪڻن ٿا.",
-          studentsLearn: "شاگرد مواد چونڊڻ، گڏ ڪرڻ، معيار، اسٽاڪ ۽ اگهه رکڻ سکن ٿا.",
-          tags: ["چمڙي جو ڪم", "ڪٽائي ۽ سبائي", "پائيداري جي پرک", "بازار ۾ سپلائي"]
+          id: "ro-water-treatment",
+          title: "آر او پاڻي صاف ڪرڻ جا پلانٽ",
+          description: "اهي پلانٽ ريورس اوسموسس ذريعي پاڻي صاف ڪري پيئڻ جو صاف پاڻي فراهم ڪن ٿا."
         },
         {
-          id: "local-workshops",
-          title: "سنڌ جا ٻيا مقامي ورڪشاپ ۽ ننڍا پيداواري يونٽ",
-          role: "مشينري، فني هنر ۽ مقامي هنر",
-          businessDoes: "موٽرسائيڪل ورڪشاپ، اجرڪ ڇپائي، ويلڊنگ ۽ ڪاٺ جا ڪم مقامي ضرورتون پوريون ڪن ٿا.",
-          studentsLearn: "شاگرد اوزارن جي حفاظت، هنر، اگهه ۽ فني روزگار جا موقعا سکن ٿا.",
-          tags: ["مشينري ۽ اوزار", "فني تربيت", "مقامي ڪاروباري نظام", "روزگار جا موقعا"]
+          id: "concrete-block-paver-manufacturing",
+          title: "ڪنڪريٽ بلاڪ ۽ پيور ٺاهڻ جا ڪارخانا",
+          description: "اهي ڪارخانا عمارتن ۽ پيادل رستن لاءِ مضبوط ڪنڪريٽ بلاڪ ۽ پيور ٺاهين ٿا."
+        },
+        {
+          id: "small-soap-making",
+          title: "صابڻ ٺاهڻ جا ننڍا يونٽ",
+          description: "ننڍا ٺاهيندڙ مقامي دڪانن ۽ بازارن لاءِ صابڻ ٺاهي پيڪ ڪن ٿا."
+        },
+        {
+          id: "mobile-repairing",
+          title: "موبائل مرمت جا دڪان",
+          description: "مرمتي دڪان فون جا نقص ڳولي اسڪرين، بيٽري ۽ چارجنگ جا مسئلا ٺيڪ ڪن ٿا."
+        },
+        {
+          id: "chappal-making",
+          title: "چپل ٺاهڻ جا ننڍا يونٽ",
+          description: "مقامي ڪاريگر گراهڪن ۽ بازارن لاءِ چپل ڪٽي، سبي ۽ تيار ڪن ٿا."
+        },
+        {
+          id: "local-mechanical-craft-workshops",
+          title: "سنڌ جا مقامي مڪينيڪل ۽ هنري ورڪشاپ",
+          description: "مقامي ورڪشاپ مشينري جي مرمت، ڌاتوءَ جو ڪم، اجرڪ ڇپائي ۽ واڍڪو ڪم ڪن ٿا."
         }
       ]
     },
@@ -2212,39 +2225,47 @@ export const contentMap: Record<Language, SiteContent> = {
         }
       ],
       examplesTitle: "طلبہ کیلئے مقامی کاروباروں کی مثالیں",
-      examplesSubtitle: "سندھ میں پیداوار، مرمت اور تجارت کی عملی مثالیں۔",
+      examplesSubtitle: "مقامی پیداوار، مرمت اور پانی کی خدمات کی آٹھ مثالیں۔",
       examples: [
         {
-          id: "soap-making",
-          title: "صابن سازی کے چھوٹے یونٹس (Soap-Making Units)",
-          role: "پیداوار اور فارمولیشن",
-          businessDoes: "صابن کے یونٹ تیل، خوشبو اور جڑی بوٹیوں سے صابن بنا کر مقامی منڈیوں میں فروخت کرتے ہیں۔",
-          studentsLearn: "طلبہ پیمائش، پیداوار، صفائی، معیار اور لاگت کا حساب سیکھتے ہیں۔",
-          tags: ["فارمولیشن و پیمائش", "پیداواری مراحل", "پیکنگ و کوالٹی", "یونٹ لاگت"]
+          id: "data-cable-manufacturing",
+          title: "ڈیٹا کیبل بنانے کے یونٹس",
+          description: "یہ یونٹس تاروں، کنیکٹرز اور حفاظتی تہہ کو جوڑ کر ڈیٹا اور چارجنگ کیبلز بناتے ہیں۔"
         },
         {
-          id: "mobile-repair",
-          title: "موبائل فون ریپیئر شاپس (Mobile Repair Shops)",
-          role: "تکنیکی ہارڈویئر اور سروس",
-          businessDoes: "موبائل ریپیئر شاپس فون کے نقص دور، اسکرین تبدیل اور چارجنگ یا سافٹ ویئر کے مسائل حل کرتی ہیں۔",
-          studentsLearn: "طلبہ تشخیص، بنیادی الیکٹرانکس، مرمت اور گاہک کو واضح تخمینہ دینا سیکھتے ہیں۔",
-          tags: ["سرکٹ سولڈرنگ", "ہارڈویئر ٹیسٹنگ", "کسٹمر سروس", "تکنیکی مہارت"]
+          id: "plastic-bottle-manufacturing",
+          title: "پلاسٹک کی بوتلیں بنانے کے یونٹس",
+          description: "یہ کارخانے پینے کے پانی، مشروبات اور دیگر مصنوعات کیلئے پلاسٹک کی بوتلیں بناتے ہیں۔"
         },
         {
-          id: "footwear-manufacturing",
-          title: "چپل اور جوتا سازی کے یونٹس (Footwear Units)",
-          role: "چمڑے کی دستکاری اور اسمبلنگ",
-          businessDoes: "مقامی یونٹس چمڑا کاٹ کر اور سی کر سندھی چپل اور جدید جوتے تیار کرتے ہیں۔",
-          studentsLearn: "طلبہ مواد کا انتخاب، تیاری، معیار، اسٹاک اور قیمت مقرر کرنا سیکھتے ہیں۔",
-          tags: ["چمڑے کا کام", "پیٹرن اور کٹائی", "پائیداری کے اصول", "مارکیٹ سپلائی"]
+          id: "ro-water-treatment",
+          title: "آر او واٹر ٹریٹمنٹ پلانٹس",
+          description: "یہ پلانٹس ریورس اوسموسس کے ذریعے پانی صاف کرکے پینے کا صاف پانی فراہم کرتے ہیں۔"
         },
         {
-          id: "local-workshops",
-          title: "سندھ کی دیگر مقامی ورکشاپس اور مینوفیکچرنگ یونٹس",
-          role: "مشینری، مکینیکل اور علاقائی دستکاری",
-          businessDoes: "موٹر سائیکل ورکشاپس، اجرک پرنٹنگ، ویلڈنگ اور لکڑی کے کام مقامی ضروریات پوری کرتے ہیں۔",
-          studentsLearn: "طلبہ ورکشاپ سیفٹی، ہنر، قیمت طے کرنا اور فنی کیریئر کے مواقع سیکھتے ہیں۔",
-          tags: ["مکینیکل مرمت", "ووکیشنل ہنر", "مقامی کاروباری نظام", "روشن امکانات"]
+          id: "concrete-block-paver-manufacturing",
+          title: "کنکریٹ بلاک اور پیور بنانے کے یونٹس",
+          description: "یہ یونٹس عمارتوں اور پیدل راستوں کیلئے پائیدار کنکریٹ بلاک اور پیور تیار کرتے ہیں۔"
+        },
+        {
+          id: "small-soap-making",
+          title: "صابن سازی کے چھوٹے یونٹس",
+          description: "چھوٹے یونٹس مقامی دکانوں اور بازاروں کیلئے صابن تیار کرکے پیک کرتے ہیں۔"
+        },
+        {
+          id: "mobile-repairing",
+          title: "موبائل ریپیئرنگ شاپس",
+          description: "یہ دکانیں فون کے نقص کی تشخیص کرکے اسکرین، بیٹری اور چارجنگ کے مسائل ٹھیک کرتی ہیں۔"
+        },
+        {
+          id: "chappal-making",
+          title: "چپل سازی کے چھوٹے یونٹس",
+          description: "مقامی کاریگر گاہکوں اور بازاروں کیلئے چپل کاٹتے، سیتے اور تیار کرتے ہیں۔"
+        },
+        {
+          id: "local-mechanical-craft-workshops",
+          title: "سندھ کی مقامی مکینیکل اور دستکاری ورکشاپس",
+          description: "یہ ورکشاپس مشینری کی مرمت، دھات کا کام، اجرک پرنٹنگ اور بڑھئی کا کام کرتی ہیں۔"
         }
       ]
     },

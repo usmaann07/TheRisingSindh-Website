@@ -406,7 +406,7 @@ export const contentMap: Record<Language, SiteContent> = {
       theHeroTrackNavSub: "Character, communication & mountain trekking across Sindh",
       studentIncubator: "Student Incubator",
       studentIncubatorSub: "Registered companies by Class 8",
-      eveningAcademyNav: "The Technology Layer",
+      eveningAcademyNav: "Technology and Community",
       eveningAcademyNavSub: "Community labs open after 5 pm"
     },
     common: {
@@ -471,7 +471,7 @@ export const contentMap: Record<Language, SiteContent> = {
       vocationalCareerPathways: "Vocational Career Pathways",
       nurseryMatricBise: "Nursery–Matric BISE Scheme",
       heroTrackGorakhTreks: "Character Building & Mountain Trekking",
-      eveningCommunityAcademy: "The Technology Layer",
+      eveningCommunityAcademy: "Technology and Community",
       innovationLabBuilders: "Innovation Lab for Builders",
       saturdayBuildDays: "Saturday Build Days",
       sehwanCampusLabNav: "Sehwan Campus & Innovation Lab",
@@ -514,7 +514,7 @@ export const contentMap: Record<Language, SiteContent> = {
       partnerVentureCta: "Partner with a venture",
       positiveSindhDocNote: "Positive Sindh Strand: Every Matric student contributes to one student-directed documentary.",
       joinTheMovementCta: "Join The Movement",
-      afterHoursEngine: "TECHNOLOGY & COMMUNITY",
+      afterHoursEngine: "TECHNOLOGY AND COMMUNITY",
       alignedWithLabel: "Aligned with",
       applyForBenchCta: "Apply for Bench",
       fourDoorsSubtitle: "A proven road from Sehwan to Silicon Valley, rebuilt as a curriculum.",
@@ -617,25 +617,25 @@ export const contentMap: Record<Language, SiteContent> = {
           highlight: "Nursery to Matric"
         },
         {
-          id: "hero",
-          title: "Personality Grooming",
-          role: "Character & Life Skills",
-          description: "Build confidence, communication, discipline, teamwork and character through practice and trekking.",
-          highlight: "2 Periods Weekly"
-        },
-        {
-          id: "incubator",
-          title: "SMEs & Student Incubator",
+          id: "sme-incubation",
+          title: "The SMEs and Student Incubation",
           role: "Real Companies & Industry",
           description: "Learn production, customer service and business through local workshops and SMEs.",
           highlight: "Class 8 to 10"
         },
         {
-          id: "academy",
-          title: "The Technology Layer",
+          id: "technology-community",
+          title: "Technology and Community",
           role: "Technology and Community",
           description: "12-week courses in coding, AI, video and freelancing for local youth and adults.",
           highlight: "Open to Sehwan"
+        },
+        {
+          id: "global-bridge",
+          title: "The Global Bridge",
+          role: "Global Partners & Opportunities",
+          description: "Connect local talent with global partners, opportunities and markets.",
+          highlight: "Local to Global"
         }
       ]
     },
@@ -988,7 +988,7 @@ export const contentMap: Record<Language, SiteContent> = {
       ],
       roadAhead: "Our vision grows from Nursery–Matric to a college and, one day, a Sindh technology university.",
       eveningAcademy: {
-        title: "The Technology Layer — The Trust Engine",
+        title: "Technology and Community — The Trust Engine",
         opening: "After school, the labs offer local youth and adults 12-week courses in practical skills.",
         tracks: [
           {
@@ -1123,7 +1123,7 @@ export const contentMap: Record<Language, SiteContent> = {
       theHeroTrackNavSub: "شخصيت سازي، ڳالهه ٻولهه ۽ سنڌ ۾ جبلن جي ٽريڪنگ",
       studentIncubator: "شاگردن جو انڪيوبيٽر",
       studentIncubatorSub: "ڪلاس 8 تائين رجسٽرڊ ڪمپنيون",
-      eveningAcademyNav: "ٽيڪنالاجي جو پرت",
+      eveningAcademyNav: "ٽيڪنالاجي ۽ ڪميونٽي",
       eveningAcademyNavSub: "ڪميونٽي ليبز شام 5 وڳي کان پوءِ کليل"
     },
     common: {
@@ -1188,7 +1188,7 @@ export const contentMap: Record<Language, SiteContent> = {
       vocationalCareerPathways: "فني ڪيريئر جا رستا",
       nurseryMatricBise: "نرسري–ميٽرڪ BISE اسڪيم",
       heroTrackGorakhTreks: "شخصيت سازي ۽ جبلن جي ٽريڪنگ",
-      eveningCommunityAcademy: "ٽيڪنالاجي جو پرت",
+      eveningCommunityAcademy: "ٽيڪنالاجي ۽ ڪميونٽي",
       innovationLabBuilders: "تعمير ڪندڙن لاءِ انوويشن ليب",
       saturdayBuildDays: "ڇنڇر بلڊ ڊيز",
       sehwanCampusLabNav: "سيوهڻ ڪيمپس ۽ انوويشن ليب",
@@ -1334,25 +1334,25 @@ export const contentMap: Record<Language, SiteContent> = {
           highlight: "نرسري کان ميٽرڪ"
         },
         {
-          id: "hero",
-          title: "شخصيت سازي",
-          role: "ڪردار ۽ زندگيءَ جون مهارتون",
-          description: "نظم، ايمانداري، ڳالهه ٻولهه، ٽيم ورڪ ۽ اعتماد کي عملي سرگرمين ۽ ٽريڪنگ سان وڌايو.",
-          highlight: "هفتي ۾ 2 پيريڊ"
-        },
-        {
-          id: "incubator",
-          title: "ننڍا ڪاروبار ۽ شاگرد انڪيوبيٽر",
+          id: "sme-incubation",
+          title: "ننڍا ۽ وچولا ڪاروبار ۽ شاگردن جي انڪيوبيشن",
           role: "حقيقي ڪمپنيون ۽ مقامي صنعت",
           description: "مقامي ڪاروبارن ۽ ورڪشاپن سان پيداوار، گراهڪ خدمت ۽ واپار سکن ٿا.",
           highlight: "ڪلاس 8 کان 10"
         },
         {
-          id: "academy",
-          title: "ٽيڪنالاجي جو پرت",
+          id: "technology-community",
+          title: "ٽيڪنالاجي ۽ ڪميونٽي",
           role: "ٽيڪنالاجي ۽ ڪميونٽي",
           description: "مقامي نوجوانن ۽ بالغن لاءِ AI، ڪوڊنگ، وڊيو ۽ فري لانسنگ جا 12 هفتن جا ڪورس.",
           highlight: "سيوهڻ لاءِ کليل"
+        },
+        {
+          id: "global-bridge",
+          title: "عالمي پُل",
+          role: "عالمي ساٿي ۽ موقعا",
+          description: "مقامي صلاحيتن کي عالمي ساٿين، موقعن ۽ مارڪيٽن سان ڳنڍيون.",
+          highlight: "مقامي کان عالمي سطح تائين"
         }
       ]
     },
@@ -1705,7 +1705,7 @@ export const contentMap: Record<Language, SiteContent> = {
       ],
       roadAhead: "اسان جو خواب نرسري–ميٽرڪ کان ڪاليج ۽ اڳتي سنڌ جي ٽيڪنالاجي يونيورسٽي تائين آهي.",
       eveningAcademy: {
-        title: "ٽيڪنالاجي جو پرت — اعتماد جو انجڻ",
+        title: "ٽيڪنالاجي ۽ ڪميونٽي — اعتماد جو انجڻ",
         opening: "اسڪول کان پوءِ ليبون مقامي نوجوانن ۽ بالغن لاءِ 12 هفتن جا فني ڪورس هلائين ٿيون.",
         tracks: [
           {
@@ -1840,7 +1840,7 @@ export const contentMap: Record<Language, SiteContent> = {
       theHeroTrackNavSub: "شخصیت سازی، باہمی گفتگو اور سندھ میں پہاڑی ٹریکنگ",
       studentIncubator: "طلباء کا انکیوبیٹر",
       studentIncubatorSub: "کلاس 8 تک رجسٹرڈ کمپنیاں",
-      eveningAcademyNav: "ٹیکنالوجی کی تہہ",
+      eveningAcademyNav: "ٹیکنالوجی اور کمیونٹی",
       eveningAcademyNavSub: "کمیونٹی لیبز شام 5 بجے کے بعد کھلی ہیں"
     },
     common: {
@@ -1905,7 +1905,7 @@ export const contentMap: Record<Language, SiteContent> = {
       vocationalCareerPathways: "فنی کیریئر کے مواقع",
       nurseryMatricBise: "نرسری تا میٹرک BISE اسکیم",
       heroTrackGorakhTreks: "شخصیت سازی اور پہاڑی ٹریکنگ",
-      eveningCommunityAcademy: "ٹیکنالوجی کی تہہ",
+      eveningCommunityAcademy: "ٹیکنالوجی اور کمیونٹی",
       innovationLabBuilders: "معماروں کیلئے انوویشن لیب",
       saturdayBuildDays: "ہفتہ وار بلڈ ڈیز",
       sehwanCampusLabNav: "سہون کیمپس اور انوویشن لیب",
@@ -2051,25 +2051,25 @@ export const contentMap: Record<Language, SiteContent> = {
           highlight: "نرسری تا میٹرک"
         },
         {
-          id: "hero",
-          title: "شخصیت سازی",
-          role: "کردار اور بنیادی مہارتیں",
-          description: "عملی سرگرمیوں اور ٹریکنگ سے نظم، دیانت، گفتگو، اعتماد اور ٹیم ورک بڑھائیں۔",
-          highlight: "ہفتے میں 2 پیریڈ"
-        },
-        {
-          id: "incubator",
-          title: "چھوٹے کاروبار اور اسٹوڈنٹ انکیوبیٹر",
+          id: "sme-incubation",
+          title: "چھوٹے اور درمیانے کاروبار اور طلبہ کی انکیوبیشن",
           role: "حقیقی کمپنیاں اور مقامی صنعت",
           description: "مقامی کاروباروں اور ورکشاپس سے پیداوار، کسٹمر سروس اور تجارت سیکھیں۔",
           highlight: "کلاس 8 تا 10"
         },
         {
-          id: "academy",
-          title: "ٹیکنالوجی کی تہہ",
+          id: "technology-community",
+          title: "ٹیکنالوجی اور کمیونٹی",
           role: "ٹیکنالوجی اور کمیونٹی",
           description: "مقامی نوجوانوں اور بڑوں کیلئے AI، کوڈنگ، ویڈیو اور فری لانسنگ کے 12 ہفتے کے کورسز۔",
           highlight: "سہون کیلئے کھلا"
+        },
+        {
+          id: "global-bridge",
+          title: "عالمی پل",
+          role: "عالمی شراکت دار اور مواقع",
+          description: "مقامی صلاحیتوں کو عالمی شراکت داروں، مواقع اور منڈیوں سے جوڑیں۔",
+          highlight: "مقامی سے عالمی سطح تک"
         }
       ]
     },
@@ -2422,7 +2422,7 @@ export const contentMap: Record<Language, SiteContent> = {
       ],
       roadAhead: "ہمارا وژن نرسری تا میٹرک سے کالج اور مستقبل میں سندھ کی ٹیکنالوجی یونیورسٹی تک ہے۔",
       eveningAcademy: {
-        title: "ٹیکنالوجی کی تہہ — اعتماد کا ستون",
+        title: "ٹیکنالوجی اور کمیونٹی — اعتماد کا ستون",
         opening: "اسکول کے بعد لیبز مقامی نوجوانوں اور بڑوں کیلئے 12 ہفتوں کے فنی کورسز پیش کرتی ہیں۔",
         tracks: [
           {

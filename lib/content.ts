@@ -777,10 +777,6 @@ export const contentMap: Record<Language, SiteContent> = {
           desc: "Measure materials, make products, check quality and follow safety rules."
         },
         {
-          title: "Mobile Repair & Practical Technical Skills",
-          desc: "Identify faults, test components and learn basic phone repair."
-        },
-        {
           title: "Customer Service & Understanding Needs",
           desc: "Listen to customers, explain solutions and give clear estimates."
         },
@@ -1490,10 +1486,6 @@ export const contentMap: Record<Language, SiteContent> = {
           desc: "خام مال کڻڻ، وزن ۽ ماپ جو حساب، ترتيب سان شين جي تياري، پيڪنگ ۽ حفاظت جا اصول سمجهڻ."
         },
         {
-          title: "موبائل ريپيئر ۽ عملي ٽيڪنيڪل هنر",
-          desc: "اليڪٽرانڪ خرابين جي سڃاڻپ، سرڪٽ سولڊرنگ، ٽچ اسڪرين ۽ بيٽري مٽائڻ، ۽ باقاعده ٽيڪنيڪل اوزار هلائڻ."
-        },
-        {
           title: "گراهڪن جي خدمت ۽ سندن ضرورتن کي سمجهڻ",
           desc: "گراهڪ جي ڳالهه ڌيان سان ٻڌڻ، شائستگي سان ڳالهائڻ، سندن مسئلي جو حل ڳولڻ، ۽ گراهڪ جو اعتماد حاصل ڪرڻ."
         },
@@ -2201,10 +2193,6 @@ export const contentMap: Record<Language, SiteContent> = {
         {
           title: "مصنوعات کی تیاری اور پیداواری عمل (Manufacturing Processes)",
           desc: "خام مال کا حصول، فارمولیشن اور درست پیمائش، اسمبلی لائن، پیکیجنگ اور حفاظتی اصولوں کی پابندی۔"
-        },
-        {
-          title: "موبائل ریپیئر اور عملی تکنیکی مہارتیں",
-          desc: "الیکٹرانک خرابیوں کی تشخیص، سرکٹ سولڈرنگ، اسکرین اور بیٹری کی تبدیلی، اور ہارڈویئر کی خرابیوں کو درست کرنا۔"
         },
         {
           title: "کسٹمر سروس اور صارفین کی ضروریات کو سمجھنا",

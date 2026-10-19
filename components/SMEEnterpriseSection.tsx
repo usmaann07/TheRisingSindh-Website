@@ -23,7 +23,7 @@ interface SMEEnterpriseProps {
 }
 
 export function SMEEnterpriseSection({ onOpenModal }: SMEEnterpriseProps) {
-  const { t, isRTL } = useLanguage();
+  const { t, isRTL, language } = useLanguage();
   const [selectedExample, setSelectedExample] = useState<number>(0);
 
   const getExampleIcon = (id: string) => {
@@ -46,14 +46,12 @@ export function SMEEnterpriseSection({ onOpenModal }: SMEEnterpriseProps) {
       case 0:
         return <Factory className="w-4 h-4 text-[#d97706]" />;
       case 1:
-        return <Wrench className="w-4 h-4 text-[#d97706]" />;
-      case 2:
         return <Users className="w-4 h-4 text-[#d97706]" />;
-      case 3:
+      case 2:
         return <CheckCircle2 className="w-4 h-4 text-[#d97706]" />;
-      case 4:
+      case 3:
         return <TrendingUp className="w-4 h-4 text-[#d97706]" />;
-      case 5:
+      case 4:
         return <Target className="w-4 h-4 text-[#d97706]" />;
       default:
         return <CheckCircle2 className="w-4 h-4 text-[#d97706]" />;
@@ -260,16 +258,18 @@ export function SMEEnterpriseSection({ onOpenModal }: SMEEnterpriseProps) {
           )}
         </div>
 
-        {/* 6 Core Learning Areas Bento Grid */}
+        {/* 5 Core Learning Areas Bento Grid */}
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-10">
             <h3 className="font-serif text-3xl font-normal text-stone-900">
               {t.smeEnterprises.learningOutcomesTitle}
             </h3>
             <p className="text-xs text-stone-500 mt-1">
-              {isRTL 
-                ? "ڇهه بنيادي عملي ۽ فني شعبا جيڪي درسي تعليم کي حقيقي ڪم سان ڳنڍين ٿا" 
-                : "Six essential practical competencies bridging academic curricula with real economic life"}
+              {language === "sd"
+                ? "پنج عملي ۽ فني شعبا جيڪي درسي تعليم کي حقيقي ڪم سان ڳنڍين ٿا"
+                : language === "ur"
+                  ? "پانچ عملی اور فنی شعبے جو نصابی تعلیم کو حقیقی کام سے جوڑتے ہیں"
+                  : "Five practical skills connecting classroom learning with real work"}
             </p>
           </div>
 

@@ -866,7 +866,7 @@ export const contentMap: Record<Language, SiteContent> = {
       badge: "The Precedent",
       title: "The Proof — From Sehwan to Silicon Valley",
       intro: "Founder Ali Murtaza Solangi built his first startup in Sehwan. After winning NUST's GAP program, he ranked third among founders from 30 countries in Silicon Valley.",
-      investorTitle: "A Sehwan startup earned backing from a global investor.",
+      investorTitle: "A Sehwan startup ( Poulta Inc )earned backing from a global investor.",
       investorDesc: "The investor behind Ali's startup has also backed more than 30 unicorn companies, including Tesla, PayPal, SpaceX and Yahoo.",
       stats: [
         { number: "3rd of 30", label: "Countries Ranked in Silicon Valley" },

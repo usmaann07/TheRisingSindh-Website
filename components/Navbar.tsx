@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { ArrowUpRight, Menu, X, ChevronDown, BookOpen, Compass, Building2, Rocket } from "lucide-react";
+import { ArrowUpRight, Menu, X, ChevronDown, BookOpen, Building2, Rocket } from "lucide-react";
 import { useLanguage } from "@/lib/language-context";
 import { Language } from "@/lib/content";
 
@@ -13,6 +13,7 @@ interface NavbarProps {
 export function Navbar({ onOpenModal }: NavbarProps) {
   const { language, setLanguage, t, isRTL } = useLanguage();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileModelOpen, setMobileModelOpen] = useState(false);
   const [modelDropdownOpen, setModelDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -97,17 +98,6 @@ export function Navbar({ onOpenModal }: NavbarProps) {
                     </div>
                   </a>
                   <a
-                    href="#personality-grooming"
-                    onClick={() => setModelDropdownOpen(false)}
-                    className="flex items-start gap-2.5 p-2.5 rounded-xl hover:bg-[#d97706]/15 transition-colors text-stone-200 hover:text-[#f59e0b]"
-                  >
-                    <Compass className="w-4 h-4 text-[#f59e0b] shrink-0 mt-0.5" />
-                    <div>
-                      <div className="font-semibold text-white">{t.nav.theHeroTrackNav}</div>
-                      <div className="text-[11px] text-stone-400">{t.nav.theHeroTrackNavSub}</div>
-                    </div>
-                  </a>
-                  <a
                     href="#student-incubator"
                     onClick={() => setModelDropdownOpen(false)}
                     className="flex items-start gap-2.5 p-2.5 rounded-xl hover:bg-[#d97706]/15 transition-colors text-stone-200 hover:text-[#f59e0b]"
@@ -129,10 +119,27 @@ export function Navbar({ onOpenModal }: NavbarProps) {
                       <div className="text-[11px] text-stone-400">{t.nav.eveningAcademyNavSub}</div>
                     </div>
                   </a>
+                  <a
+                    href="#global-bridge"
+                    onClick={() => setModelDropdownOpen(false)}
+                    className="flex items-start gap-2.5 p-2.5 rounded-xl hover:bg-[#d97706]/15 transition-colors text-stone-200 hover:text-[#f59e0b]"
+                  >
+                    <ArrowUpRight className="w-4 h-4 text-[#f59e0b] shrink-0 mt-0.5" />
+                    <div>
+                      <div className="font-semibold text-white">{t.nav.globalBridge}</div>
+                      <div className="text-[11px] text-stone-400">{t.globalBridge.subtitle}</div>
+                    </div>
+                  </a>
                 </div>
               )}
             </div>
 
+            <a
+              href="#personality-grooming"
+              className="px-1.5 2xl:px-2 py-1 rounded-lg text-stone-300 hover:text-[#f59e0b] hover:bg-[#d97706]/15 transition-all whitespace-nowrap"
+            >
+              {t.nav.theHeroTrackNav}
+            </a>
             <a
               href="#what-our-students-do"
               className="px-1.5 2xl:px-2 py-1 rounded-lg text-stone-300 hover:text-[#f59e0b] hover:bg-[#d97706]/15 transition-all whitespace-nowrap"
@@ -144,12 +151,6 @@ export function Navbar({ onOpenModal }: NavbarProps) {
               className="px-1.5 2xl:px-2 py-1 rounded-lg text-stone-300 hover:text-[#f59e0b] hover:bg-[#d97706]/15 transition-all whitespace-nowrap"
             >
               {t.nav.theProof}
-            </a>
-            <a
-              href="#global-bridge"
-              className="px-1.5 2xl:px-2 py-1 rounded-lg text-stone-300 hover:text-[#f59e0b] hover:bg-[#d97706]/15 transition-all whitespace-nowrap"
-            >
-              {t.nav.globalBridge}
             </a>
             <a
               href="#sehwan-campus"
@@ -267,27 +268,55 @@ export function Navbar({ onOpenModal }: NavbarProps) {
             >
               {t.nav.whyWeExist}
             </a>
-            <a
-              href="#the-model"
-              onClick={() => setMobileMenuOpen(false)}
-              className="py-1 text-stone-300 hover:text-white border-b border-white/5 flex items-center justify-between"
-            >
-              <span>{t.nav.theModel}</span>
-              <span className="text-[10px] text-[#d97706] font-mono">BISE</span>
-            </a>
+            <div className="border-b border-white/5">
+              <button
+                type="button"
+                onClick={() => setMobileModelOpen(!mobileModelOpen)}
+                aria-expanded={mobileModelOpen}
+                className="w-full py-1 text-stone-300 hover:text-white flex items-center justify-between"
+              >
+                <span>{t.nav.theModel}</span>
+                <ChevronDown className={`w-4 h-4 text-[#d97706] transition-transform ${mobileModelOpen ? "rotate-180" : ""}`} />
+              </button>
+              {mobileModelOpen && (
+                <div className="flex flex-col ps-4 pb-2 space-y-3 text-[13px]">
+                  <a
+                    href="#the-model"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="text-stone-400 hover:text-white"
+                  >
+                    {t.nav.curriculumMap}
+                  </a>
+                  <a
+                    href="#student-incubator"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="text-stone-400 hover:text-white"
+                  >
+                    {t.nav.studentIncubator}
+                  </a>
+                  <a
+                    href="#sehwan-campus"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="text-stone-400 hover:text-white"
+                  >
+                    {t.nav.eveningAcademyNav}
+                  </a>
+                  <a
+                    href="#global-bridge"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="text-stone-400 hover:text-white"
+                  >
+                    {t.nav.globalBridge}
+                  </a>
+                </div>
+              )}
+            </div>
             <a
               href="#personality-grooming"
               onClick={() => setMobileMenuOpen(false)}
               className="py-1 text-stone-300 hover:text-white border-b border-white/5"
             >
               {t.nav.theHeroTrackNav}
-            </a>
-            <a
-              href="#student-incubator"
-              onClick={() => setMobileMenuOpen(false)}
-              className="py-1 text-stone-300 hover:text-white border-b border-white/5"
-            >
-              {t.nav.studentIncubator}
             </a>
             <a
               href="#what-our-students-do"
@@ -302,13 +331,6 @@ export function Navbar({ onOpenModal }: NavbarProps) {
               className="py-1 text-stone-300 hover:text-white border-b border-white/5"
             >
               {t.nav.theProof}
-            </a>
-            <a
-              href="#global-bridge"
-              onClick={() => setMobileMenuOpen(false)}
-              className="py-1 text-stone-300 hover:text-white border-b border-white/5"
-            >
-              {t.nav.globalBridge}
             </a>
             <a
               href="#sehwan-campus"

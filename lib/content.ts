@@ -625,7 +625,7 @@ export const contentMap: Record<Language, SiteContent> = {
         },
         {
           id: "technology-community",
-          title: "Technology and Community",
+          title: "The Technology Layer",
           role: "Technology and Community",
           description: "12-week courses in coding, AI, video and freelancing for local youth and adults.",
           highlight: "Open to Sehwan"
@@ -1342,7 +1342,7 @@ export const contentMap: Record<Language, SiteContent> = {
         },
         {
           id: "technology-community",
-          title: "ٽيڪنالاجي ۽ ڪميونٽي",
+          title: "ٽيڪنالاجي جو پرت",
           role: "ٽيڪنالاجي ۽ ڪميونٽي",
           description: "مقامي نوجوانن ۽ بالغن لاءِ AI، ڪوڊنگ، وڊيو ۽ فري لانسنگ جا 12 هفتن جا ڪورس.",
           highlight: "سيوهڻ لاءِ کليل"
@@ -2059,7 +2059,7 @@ export const contentMap: Record<Language, SiteContent> = {
         },
         {
           id: "technology-community",
-          title: "ٹیکنالوجی اور کمیونٹی",
+          title: "ٹیکنالوجی کی تہہ",
           role: "ٹیکنالوجی اور کمیونٹی",
           description: "مقامی نوجوانوں اور بڑوں کیلئے AI، کوڈنگ، ویڈیو اور فری لانسنگ کے 12 ہفتے کے کورسز۔",
           highlight: "سہون کیلئے کھلا"

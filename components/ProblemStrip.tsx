@@ -76,7 +76,7 @@ export function ProblemStrip() {
                 {t.common.aiLab}
               </div>
               <ArrowLeftRight className="w-7 h-7 text-[#d97706]" />
-              <div className="w-16 h-16 rounded-2xl bg-[#d97706] text-white flex items-center justify-center font-bold text-sm shadow-md">
+              <div className="w-16 h-16 rounded-2xl bg-[#d97706] text-white flex items-center justify-center text-center font-bold text-sm shadow-md">
                 {t.common.biseMetric}
               </div>
             </div>

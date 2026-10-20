@@ -459,7 +459,7 @@ export const contentMap: Record<Language, SiteContent> = {
       systemComparisonMatrix: "The System Comparison Matrix",
       systemComparisonSub: "Worded at the system, never at the person",
       howWeTeachTitle: "How We Teach & How Parents See It",
-      howWeTeachSub: "Five pillars for clear, accountable learning",
+      howWeTeachSub: "Six pillars for clear, accountable learning",
       exploreTitle: "Explore",
       programsTitle: "Programs",
       valuesTitle: "Values & Contact",
@@ -618,14 +618,14 @@ export const contentMap: Record<Language, SiteContent> = {
         },
         {
           id: "sme-incubation",
-          title: "The SMEs and Student Incubation",
-          role: "Real Companies & Industry",
-          description: "Learn production, customer service and business through local workshops and SMEs.",
+          title: "The SMEs & Global Trading",
+          role: "Real Companies And Trading",
+          description: "Learn production, customer service and business through local workshops and SMEs and Import and Export.",
           highlight: "Class 8 to 10"
         },
         {
           id: "technology-community",
-          title: "The Technology Layer",
+          title: "The Technology Layer & Student Incubation",
           role: "Technology and Community",
           description: "12-week courses in coding, AI, video and freelancing for local youth and adults.",
           highlight: "Open to Sehwan"
@@ -696,7 +696,7 @@ export const contentMap: Record<Language, SiteContent> = {
     theModel: {
       badge: "The Two-Layer Curriculum",
       title: "Board results protected. Future added.",
-      openingPromise: "Two layers. One timetable. Nothing sacrificed.",
+      openingPromise: "Two layers. One timetable. Nothing sacrificed. Nothing Compromised.",
       promiseDetail: "About 70% of the week covers the full Sindh syllabus, rising to 80% in board years. The remaining time adds computing, AI and entrepreneurship.",
       timelineStages: [
         {
@@ -756,6 +756,10 @@ export const contentMap: Record<Language, SiteContent> = {
         {
           title: "AI with Integrity",
           desc: "AI-assisted practice under strict teacher guidance, with clear academic-integrity ethics a child understands."
+        },
+        {
+          title: "Personal Grooming",
+          desc: "Build confidence, communication, discipline, teamwork and character through practice and trekking."
         }
       ]
     },
@@ -867,7 +871,7 @@ export const contentMap: Record<Language, SiteContent> = {
       badge: "The Precedent",
       title: "The Proof — From Sehwan to Silicon Valley",
       intro: "Founder Ali Murtaza Solangi built his first startup in Sehwan. After winning NUST's GAP program, he ranked third among founders from 30 countries in Silicon Valley.",
-      investorTitle: "A Sehwan startup ( Poulta Inc ) earned backing from a global investor.",
+      investorTitle: "A Sehwan startup ( Poulta Inc. ) earned backing from a global investor.",
       investorDesc: "The investor behind Ali's startup has also backed more than 30 unicorn companies, including Tesla, PayPal, SpaceX and Yahoo.",
       stats: [
         { number: "3rd of 30", label: "Countries Ranked in Silicon Valley" },
@@ -1176,7 +1180,7 @@ export const contentMap: Record<Language, SiteContent> = {
       systemComparisonMatrix: "نظام جي ڀيٽ واري ميٽرڪس",
       systemComparisonSub: "ڳالهه نظام جي آهي، ڪنهن فرد جي نه",
       howWeTeachTitle: "اسان ڪيئن پڙهايئون ٿا ۽ والدين ڪيئن ڏسن ٿا",
-      howWeTeachSub: "شفاف ۽ ذميوار سکيا جا پنج اصول",
+      howWeTeachSub: "شفاف ۽ ذميوار سکيا جا ڇهه اصول",
       exploreTitle: "ڳوليو",
       programsTitle: "پروگرامز",
       valuesTitle: "قدر ۽ رابطو",
@@ -1335,14 +1339,14 @@ export const contentMap: Record<Language, SiteContent> = {
         },
         {
           id: "sme-incubation",
-          title: "ننڍا ۽ وچولا ڪاروبار ۽ شاگردن جي انڪيوبيشن",
-          role: "حقيقي ڪمپنيون ۽ مقامي صنعت",
+          title: "ايس ايم ايز ۽ عالمي واپار",
+          role: "حقيقي ڪمپنيون ۽ واپار",
           description: "مقامي ڪاروبارن ۽ ورڪشاپن سان پيداوار، گراهڪ خدمت ۽ واپار سکن ٿا.",
           highlight: "ڪلاس 8 کان 10"
         },
         {
           id: "technology-community",
-          title: "ٽيڪنالاجي جو پرت",
+          title: "ٽيڪنالاجي جو پرت ۽ شاگردن جي انڪيوبيشن",
           role: "ٽيڪنالاجي ۽ ڪميونٽي",
           description: "مقامي نوجوانن ۽ بالغن لاءِ AI، ڪوڊنگ، وڊيو ۽ فري لانسنگ جا 12 هفتن جا ڪورس.",
           highlight: "سيوهڻ لاءِ کليل"
@@ -1473,6 +1477,10 @@ export const contentMap: Record<Language, SiteContent> = {
         {
           title: "ديانتداري سان AI جو استعمال",
           desc: "سخت تعليمي ضابطن ۽ اخلاقي هدايتن تحت AI جو صحيح استعمال سيکاريو وڃي ٿو."
+        },
+        {
+          title: "شخصيت سازي",
+          desc: "عملي سرگرمين ۽ ٽريڪنگ سان اعتماد، ڳالهه ٻولهه، نظم، ٽيم ورڪ ۽ ڪردار کي وڌايو."
         }
       ]
     },
@@ -1893,7 +1901,7 @@ export const contentMap: Record<Language, SiteContent> = {
       systemComparisonMatrix: "نظام کا موازنہ میٹرکس",
       systemComparisonSub: "بات نظام کی ہے، کسی فرد کی نہیں",
       howWeTeachTitle: "ہم کیسے پڑھاتے ہیں اور والدین کیسے دیکھتے ہیں",
-      howWeTeachSub: "شفاف اور ذمہ دار تعلیم کے پانچ اصول",
+      howWeTeachSub: "شفاف اور ذمہ دار تعلیم کے چھ اصول",
       exploreTitle: "دریافت کریں",
       programsTitle: "پروگرامز",
       valuesTitle: "اقدار و رابطہ",
@@ -2052,14 +2060,14 @@ export const contentMap: Record<Language, SiteContent> = {
         },
         {
           id: "sme-incubation",
-          title: "چھوٹے اور درمیانے کاروبار اور طلبہ کی انکیوبیشن",
-          role: "حقیقی کمپنیاں اور مقامی صنعت",
+          title: "ایس ایم ایز اور عالمی تجارت",
+          role: "حقیقی کمپنیاں اور تجارت",
           description: "مقامی کاروباروں اور ورکشاپس سے پیداوار، کسٹمر سروس اور تجارت سیکھیں۔",
           highlight: "کلاس 8 تا 10"
         },
         {
           id: "technology-community",
-          title: "ٹیکنالوجی کی تہہ",
+          title: "ٹیکنالوجی کی تہہ اور طلبہ کی انکیوبیشن",
           role: "ٹیکنالوجی اور کمیونٹی",
           description: "مقامی نوجوانوں اور بڑوں کیلئے AI، کوڈنگ، ویڈیو اور فری لانسنگ کے 12 ہفتے کے کورسز۔",
           highlight: "سہون کیلئے کھلا"
@@ -2190,6 +2198,10 @@ export const contentMap: Record<Language, SiteContent> = {
         {
           title: "دیانتداری اور اخلاقیات",
           desc: "اخلاقی اصولوں کے تحت AI کا تعمیری اور مثبت استعمال سکھایا جاتا ہے۔"
+        },
+        {
+          title: "شخصیت سازی",
+          desc: "عملی سرگرمیوں اور ٹریکنگ سے اعتماد، گفتگو، نظم، ٹیم ورک اور کردار کو فروغ دیں۔"
         }
       ]
     },

@@ -151,7 +151,7 @@ export function TheModelTimeline({ onOpenModal }: TheModelTimelineProps) {
           </div>
         </div>
 
-        {/* 5 Operating Pillars */}
+        {/* 6 Operating Pillars */}
         <div>
           <div className="text-center mb-10">
             <h3 className="font-serif text-3xl font-normal text-stone-900">

@@ -4,6 +4,8 @@ import React, { useState } from "react";
 import { MessageSquare, PhoneCall, X, ArrowUpRight } from "lucide-react";
 import { useLanguage } from "@/lib/language-context";
 
+const WHATSAPP_NUMBER = "923468204081";
+
 export function WhatsAppButton() {
   const { language, t, isRTL } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
@@ -18,7 +20,7 @@ export function WhatsAppButton() {
     return encodeURIComponent("Hello! I would like to book a campus visit and learn about admissions at The Rising Sindh, Sehwan.");
   };
 
-  const whatsappUrl = `https://wa.me/923000000000?text=${getWhatsAppMessage()}`;
+  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${getWhatsAppMessage()}`;
 
   return (
     <div className={`fixed bottom-6 ${isRTL ? "left-6 items-start" : "right-6 items-end"} z-40 flex flex-col`}>

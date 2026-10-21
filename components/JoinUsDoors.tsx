@@ -5,6 +5,8 @@ import { ArrowUpRight, ChevronDown, PhoneCall, ShieldCheck } from "lucide-react"
 import { motion } from "framer-motion";
 import { useLanguage } from "@/lib/language-context";
 
+const WHATSAPP_NUMBER = "923468204081";
+
 interface JoinUsDoorsProps {
   onOpenModal: (type: "campus-visit" | "build-day" | "teach" | "lab-bench") => void;
 }
@@ -142,7 +144,7 @@ export function JoinUsDoors({ onOpenModal }: JoinUsDoorsProps) {
         {/* WhatsApp Parents Button */}
         <div className="text-center mb-16">
           <a
-            href={`https://wa.me/923000000000?text=${getWhatsAppMessage()}`}
+            href={`https://wa.me/${WHATSAPP_NUMBER}?text=${getWhatsAppMessage()}`}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white border border-stone-300/80 text-stone-800 hover:border-[#d97706] text-xs sm:text-sm font-semibold transition-all shadow-xs"

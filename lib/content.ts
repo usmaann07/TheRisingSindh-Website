@@ -1,4 +1,5 @@
 // Content framework and verified copy for The Rising Sindh website
+// Revision: crisp, startup-first copy. Same interface as before — drop-in replacement.
 
 export type Language = 'en' | 'sd' | 'ur';
 
@@ -249,7 +250,10 @@ export interface SiteContent {
     examples: {
       id: string;
       title: string;
-      description: string;
+      role: string;
+      businessDoes: string;
+      studentsLearn: string;
+      tags: string[];
     }[];
   };
   heroTrack: {
@@ -383,53 +387,53 @@ export interface SiteContent {
 export const contentMap: Record<Language, SiteContent> = {
   en: {
     meta: {
-      title: "The Rising Sindh | The School That Builds What Universities Can't",
-      description: "A Sehwan school combining the Sindh Board syllabus with AI, real businesses and practical learning.",
+      title: "The Rising Sindh | The School That Builds Startups",
+      description: "A Sehwan school where students follow the Sindh Board syllabus and build real startups for global markets, Class 1 to Matric.",
       slogan: "Builders, not degree-holders.",
-      positioning: "Sindh Board education with AI, entrepreneurship and practical skills from Class 1 to Matric."
+      positioning: "Sindh Board education plus AI and startup-building, Class 1 to Matric."
     },
     nav: {
       home: "Home",
       whyWeExist: "Why We Exist",
       theModel: "The Model",
-      whatStudentsDo: "What Students Do",
+      whatStudentsDo: "What Students Build",
       theProof: "The Proof",
       globalBridge: "Global Bridge",
       sehwanCampus: "Sehwan Campus",
       theMovement: "The Movement",
       joinUs: "Join Us",
       visitCampus: "Visit a Campus",
-      bookVisit: "Book Campus Visit",
+      bookVisit: "Book a Visit",
       curriculumMap: "Curriculum Map",
-      curriculumMapSub: "Nursery to Matric BISE + Future Layer",
+      curriculumMapSub: "Nursery to Matric + Future Layer",
       theHeroTrackNav: "Personality Grooming",
-      theHeroTrackNavSub: "Character, communication & mountain trekking across Sindh",
-      studentIncubator: "Student Incubator",
-      studentIncubatorSub: "Registered companies by Class 8",
-      eveningAcademyNav: "Technology and Community",
-      eveningAcademyNavSub: "Community labs open after 5 pm"
+      theHeroTrackNavSub: "Character, confidence & trekking",
+      studentIncubator: "Student Startups",
+      studentIncubatorSub: "A real startup by Class 8",
+      eveningAcademyNav: "Evening Academy",
+      eveningAcademyNavSub: "Community courses after 5 pm"
     },
     common: {
       brandSubtitle: "Future School · Sehwan",
-      livingPrecedent: "LIVING PRECEDENT",
-      verifiedArchive: "Verified Archive",
+      livingPrecedent: "LIVING PROOF",
+      verifiedArchive: "Verified Record",
       nationalStage: "National Stage & Tech Conference",
-      resultsSpeak: "Results that speak for themselves",
+      resultsSpeak: "Results that speak",
       degreeUnemployment: "DEGREE UNEMPLOYMENT",
-      degreeUnemploymentSub: "vs 4.7% for no schooling (LFS 24-25)",
+      degreeUnemploymentSub: "vs 4.7% with no schooling (LFS 24–25)",
       siliconValleyRank: "SILICON VALLEY RANK",
-      siliconValleyRankSub: "Backed by 30+ unicorn investor",
+      siliconValleyRankSub: "Backed by a 30+ unicorn investor",
       boardProtected: "BOARD RESULTS PROTECTED",
-      boardProtectedSub: "Full BISE group + Future Layer",
+      boardProtectedSub: "Full BISE syllabus + Future Layer",
       aiLab: "AI LAB",
       biseMetric: "BISE 100%",
-      shippedProof10Years: "10 Years of Shipped Proof",
-      curriculumTrajectory: "Curriculum Trajectory",
+      shippedProof10Years: "10 Years of Shipped Work",
+      curriculumTrajectory: "Curriculum Path",
       class1ToMatric: "Class 1 → Matric",
-      compoundingAdvantage: "Ten years of compounding practical advantage",
-      openWhatsAppChat: "Open WhatsApp Chat",
-      admissionsDeskOnline: "Admissions Desk Online",
-      admissionsDeskSub: "Ask about admissions, scholarships or campus visits on WhatsApp.",
+      compoundingAdvantage: "Ten years of compounding practice",
+      openWhatsAppChat: "Open WhatsApp",
+      admissionsDeskOnline: "Admissions Desk",
+      admissionsDeskSub: "Admissions, scholarships, campus visits — on WhatsApp.",
       done: "Done",
       close: "Close",
       apply: "Apply",
@@ -437,451 +441,434 @@ export const contentMap: Record<Language, SiteContent> = {
       fullName: "Full Name",
       fullNamePlaceholder: "e.g. Asad Ali / Zainab Solangi",
       whatsAppNumber: "WhatsApp Number",
-      childClass: "Child's Class of Interest",
-      workshopTrack: "Build Track Preference",
-      projectSummary: "Project / Venture Idea Summary",
+      childClass: "Child's Class",
+      workshopTrack: "Build Track",
+      projectSummary: "Startup Idea (one line)",
       teachingPitch: "What would your students build this term?",
-      submitRequest: "Submit Request",
-      registrationReceived: "Registration Received!",
-      registrationReceivedDesc: "Our Sehwan admissions team will contact you on WhatsApp.",
+      submitRequest: "Submit",
+      registrationReceived: "Received!",
+      registrationReceivedDesc: "Our Sehwan team will reply on WhatsApp.",
       validationName: "Please enter your full name.",
       validationPhone: "Please enter a valid phone or WhatsApp number (minimum 10 digits).",
-      nextSeatsLimited: "Next intake is limited by classrooms, not ambition.",
+      nextSeatsLimited: "Seats are limited by classrooms, not ambition.",
       elevation5688: "Buddo Jabal · Bhago Torho · Karoonjhar",
       makersInnovationHub: "Makers & Innovation Hub",
       sehwanSharifLabel: "Sehwan Sharif",
       whySehwanTitle: "Why Sehwan",
-      cityProjectsTitle: "City Projects: The City is the Classroom",
-      campusSpineTitle: "CAMPUS SPINE & ARCHITECTURAL BLUEPRINT",
-      partnersTitle: "CO-FOUNDING ECOSYSTEM PARTNERS",
-      printMap: "Print or download the Nursery–Matric map",
-      seeFutureLayerLive: "See Future Layer period live on campus",
-      systemComparisonMatrix: "The System Comparison Matrix",
-      systemComparisonSub: "Worded at the system, never at the person",
-      howWeTeachTitle: "How We Teach & How Parents See It",
-      howWeTeachSub: "Six pillars for clear, accountable learning",
+      cityProjectsTitle: "The City Is the Classroom",
+      campusSpineTitle: "CAMPUS SPINE",
+      partnersTitle: "ECOSYSTEM PARTNERS",
+      printMap: "Download the Nursery–Matric map",
+      seeFutureLayerLive: "See a Future Layer period live",
+      systemComparisonMatrix: "The Comparison",
+      systemComparisonSub: "About the system, never the person",
+      howWeTeachTitle: "How We Teach",
+      howWeTeachSub: "Five pillars parents can see",
       exploreTitle: "Explore",
       programsTitle: "Programs",
       valuesTitle: "Values & Contact",
-      craftedWithPride: "Crafted with pride in Sindh",
-      forSindhFuture: "For the builders of tomorrow",
-      smallMediumEnterprises: "Small & Medium Enterprises",
+      craftedWithPride: "Made with pride in Sindh",
+      forSindhFuture: "For tomorrow's builders",
+      smallMediumEnterprises: "Local Businesses",
       sindhLocalEconomy: "Sindh Local Economy",
       realWorldPractice: "Real-World Practice",
-      vocationalCareerPathways: "Vocational Career Pathways",
+      vocationalCareerPathways: "Hands-On Trades",
       nurseryMatricBise: "Nursery–Matric BISE Scheme",
-      heroTrackGorakhTreks: "Character Building & Mountain Trekking",
-      eveningCommunityAcademy: "Technology and Community",
-      innovationLabBuilders: "Innovation Lab for Builders",
+      heroTrackGorakhTreks: "Character & Mountain Trekking",
+      eveningCommunityAcademy: "Evening Academy",
+      innovationLabBuilders: "Innovation Lab",
       saturdayBuildDays: "Saturday Build Days",
-      sehwanCampusLabNav: "Sehwan Campus & Innovation Lab",
-      theMovementNav: "The Movement (Sindh Renaissance)",
+      sehwanCampusLabNav: "Sehwan Campus & Lab",
+      theMovementNav: "The Movement",
       bookCampusVisitTitle: "Book a Campus Visit",
-      saturdayBuildDayTitle: "Saturday Build Day Registration",
+      saturdayBuildDayTitle: "Saturday Build Day",
       applyToTeachTitle: "Apply to Teach",
-      labBenchTitle: "Innovation Lab Bench Application",
+      labBenchTitle: "Innovation Lab Bench",
       modalSubtitle: "Sehwan Sharif Campus · The Rising Sindh",
-      gradeNursery: "Nursery – KG (Early Childhood)",
-      grade1to3: "Class 1–3 (Foundational Future Layer)",
-      grade4to5: "Class 4–5 (First AI Model & Bazaar)",
-      grade6to7: "Class 6–7 (Python, IoT & Mobile Apps)",
-      grade8: "Class 8 (Registered Student Company)",
-      grade9to10: "Class 9–10 (Matric Board + Incubator)",
-      trackAI: "Train First AI Model (Computer Vision)",
-      track3D: "3D Printing & Hardware Prototype",
-      trackMedia: "Positive Sindh Video & Studio Podcasting",
-      trackPitch: "Pitch an Idea on Stage to Judges",
-      teachNotesPlaceholder: "e.g. Science projects, bilingual writing, coding...",
-      labBenchPlaceholder: "e.g. AgriTech IoT for Indus basin, Sindh EdTech...",
-      stageSpecification: "STAGE SPECIFICATION",
-      computingPillarTitle: "Computing & AI Pillar",
-      entrepreneurshipPillarTitle: "Entrepreneurship Pillar",
-      evidenceBehindNeed: "THE EVIDENCE BEHIND THE NEED",
-      problemStripTitle: "Exams measure what you can remember.",
-      problemStripHighlight: "Markets pay for what you can build.",
-      youthUnemploymentTitle: "Youth graduate unemployment",
-      youthUnemploymentDesc: "32.8% of Pakistani graduates aged 20–24 are unemployed; for women, the rate reaches 45.2%.",
+      gradeNursery: "Nursery – KG",
+      grade1to3: "Class 1–3 (First Code)",
+      grade4to5: "Class 4–5 (First AI Model)",
+      grade6to7: "Class 6–7 (Python & Apps)",
+      grade8: "Class 8 (Registered Startup)",
+      grade9to10: "Class 9–10 (Matric + Incubator)",
+      trackAI: "Train an AI Model",
+      track3D: "3D-Print a Prototype",
+      trackMedia: "Shoot a Positive Sindh Video",
+      trackPitch: "Pitch to Judges",
+      teachNotesPlaceholder: "e.g. Science projects, coding, bilingual writing...",
+      labBenchPlaceholder: "e.g. AgriTech for the Indus basin, Sindhi-language AI...",
+      stageSpecification: "STAGE",
+      computingPillarTitle: "Computing & AI",
+      entrepreneurshipPillarTitle: "Startup Building",
+      evidenceBehindNeed: "THE EVIDENCE",
+      problemStripTitle: "Exams measure what you remember.",
+      problemStripHighlight: "Markets pay for what you build.",
+      youthUnemploymentTitle: "Graduate unemployment",
+      youthUnemploymentDesc: "32.8% of graduates aged 20–24 are unemployed. For women, 45.2%.",
       youthUnemploymentSource: "Source: Labour Force Survey / Gallup Pakistan",
-      instantProofTitle: "Instant proof of work over theory",
-      instantProofDesc: "Our Class 8 students have customers. Most university batches only have CVs.",
-      instantProofSub: "By Matric, every student has shipped an AI automation, kept company accounts, and pitched on stage.",
-      noMarketObsolescenceTitle: "No market obsolescence",
-      noMarketObsolescenceDesc: "Starting at six, children master computing and entrepreneurship alongside the board syllabus. By sixteen, the gap is ten years of practice.",
-      gorakhTrekTitle: "Sindh Mountain Trekking Expeditions",
+      instantProofTitle: "Proof of work, not theory",
+      instantProofDesc: "Our Class 8 students have users. Most graduates have CVs.",
+      instantProofSub: "By Matric, every student has shipped a product, kept books and pitched on stage.",
+      noMarketObsolescenceTitle: "A ten-year head start",
+      noMarketObsolescenceDesc: "Building starts at six. By sixteen, that is ten years of practice.",
+      gorakhTrekTitle: "Mountain Trekking Expeditions",
       investorPrecedent: "THE INVESTOR PRECEDENT",
       lanePrefix: "LANE",
       directVentureTrack: "Direct Venture Track",
-      partnerVentureCta: "Partner with a venture",
-      positiveSindhDocNote: "Positive Sindh Strand: Every Matric student contributes to one student-directed documentary.",
-      joinTheMovementCta: "Join The Movement",
-      afterHoursEngine: "TECHNOLOGY AND COMMUNITY",
+      partnerVentureCta: "Partner with a student startup",
+      positiveSindhDocNote: "Every Matric student contributes to one student-directed documentary.",
+      joinTheMovementCta: "Join the Movement",
+      afterHoursEngine: "AFTER-HOURS COMMUNITY ENGINE",
       alignedWithLabel: "Aligned with",
-      applyForBenchCta: "Apply for Bench",
+      applyForBenchCta: "Apply for a Bench",
       fourDoorsSubtitle: "A proven road from Sehwan to Silicon Valley, rebuilt as a curriculum.",
       forParentsBadge: "FOR PARENTS",
       forStudentsBadge: "FOR STUDENTS",
       forTeachersBadge: "FOR TEACHERS",
       forBuildersBadge: "FOR BUILDERS & UNIVERSITY STUDENTS",
       bookTourCta: "Book a tour",
-      registerBuildDayCta: "Register for Build Day",
-      teachersCardDesc: "Lesson kits provided. Full AI training. Competitive pay.",
-      buildersCardDesc: "Apply for Innovation Lab bench, AI tools and demo days.",
-      whatsappParentsPrompt: "Parents in Sindh convert on WhatsApp — Chat with Admissions",
-      faqTitle: "Frequently Asked Questions",
-      faqSubtitle: "Honest answers grounded in school policy",
-      bindingGovernanceTitle: "Binding Content Governance:",
-      bindingGovernanceDesc: "We build skills, not promise outcomes. Figures come from official surveys; we challenge outdated systems, not teachers or families.",
+      registerBuildDayCta: "Register",
+      teachersCardDesc: "Lesson kits. AI training. Competitive pay.",
+      buildersCardDesc: "A bench, AI tools and demo days.",
+      whatsappParentsPrompt: "Questions? Chat with Admissions on WhatsApp",
+      faqTitle: "Questions Parents Ask",
+      faqSubtitle: "Straight answers from school policy",
+      bindingGovernanceTitle: "Our Promise:",
+      bindingGovernanceDesc: "We teach skills; we don't guarantee outcomes. Figures come from official surveys. We challenge systems, not teachers or families.",
       sehwanLocation: "Sehwan Sharif, Sindh, Pakistan",
       whatsAppLabel: "WhatsApp"
     },
     proofStrip: {
       items: [
-        "Sindh Board Compliant (BISE)",
+        "Sindh Board (BISE) Syllabus",
         "Sindhi · Urdu · English",
-        "AI & Computing from Class 1",
-        "Real Companies by Class 8",
+        "AI from Class 1",
+        "A Startup by Class 8",
         "Silicon Valley Linkage"
       ]
     },
     hero: {
-      badge: "Nursery to Matric · Sehwan Sharif, Sindh",
-      title: "Built to scale.",
-      highlight: "Ready for the future.",
-      subtitle: "A full Sindh Board education, with AI, business and practical skills from Class 1 to Matric.",
+      badge: "Nursery to Matric · Sehwan Sharif",
+      title: "Build startups.",
+      highlight: "From Sehwan, for the world.",
+      subtitle: "The full Sindh Board syllabus, plus AI and startup-building from Class 1 to Matric.",
       ctaPrimary: "Visit a Campus",
-      ctaSecondary: "See What Our Students Do",
+      ctaSecondary: "See What Students Build",
       statPills: [
-        { label: "Class 1", sub: "Computing & AI Starts" },
-        { label: "Class 8", sub: "Registered Company Run" },
-        { label: "3rd / 30", sub: "Silicon Valley Global Rank" },
-        { label: "100%", sub: "Sindh Board Protected" }
+        { label: "Class 1", sub: "AI starts" },
+        { label: "Class 8", sub: "First startup" },
+        { label: "3rd / 30", sub: "Silicon Valley rank" },
+        { label: "100%", sub: "Sindh Board protected" }
       ]
     },
     problemStrip: {
-      tagline: "The skills gap",
-      conclusion: "Students need skills that match a changing job market.",
+      tagline: "The gap",
+      conclusion: "A degree alone no longer secures a future. Skills and shipped work do.",
       stats: [
         {
           number: "10.9%",
           label: "Degree Holder Unemployment",
-          subtext: "Compared with 4.7% of people with no schooling",
+          subtext: "vs 4.7% for people with no schooling",
           source: "Labour Force Survey 2024–25"
         },
         {
           number: "1 in 3",
           label: "Graduates Unemployed (20–24)",
-          subtext: "32.8% are unemployed as careers begin",
+          subtext: "32.8% jobless as careers begin",
           source: "Gallup Pakistan / LFS Analysis"
         },
         {
           number: "45.2%",
           label: "Female Graduate Unemployment",
-          subtext: "Ages 25–29; compared with 14.9% for men",
+          subtext: "Ages 25–29; 14.9% for men",
           source: "Labour Force Survey & Gallup"
         },
         {
           number: "760,000+",
           label: "Left Pakistan in 2025",
           subtext: "Registered for overseas employment",
-          source: "Dawn, Jul 2026 Records"
+          source: "Dawn, Jul 2026"
         }
       ]
     },
     theTurn: {
       badge: "The Turn",
-      title: "We built a school for what comes next.",
-      description: "The full Sindh Board syllabus stays central, with about 80% of class time devoted to board subjects in exam years. The Future Layer adds AI from Class 1, entrepreneurship, a registered company by Class 8, and character education.",
+      title: "A school built for what comes next.",
+      description: "The Sindh Board syllabus stays at the centre. The Future Layer adds AI, product-building and a real startup — so students leave with results and a portfolio.",
       breakdown: [
         {
           title: "Sindh Board Core",
-          desc: "Maths, Science, Islamiat, Social Studies, English, Urdu and Sindhi, with exam practice.",
-          percent: "~70-80%"
+          desc: "Maths, Science, English, Urdu, Sindhi, Islamiat, Social Studies — with exam practice.",
+          percent: "~70–80%"
         },
         {
           title: "The Future Layer",
-          desc: "AI, robotics, student companies and an e-portfolio of completed work.",
-          percent: "~20-30%"
+          desc: "AI, coding, startup-building and a public portfolio of shipped work.",
+          percent: "~20–30%"
         }
       ]
     },
     fourEngines: {
       badge: "The Architecture",
-      title: "Four Engines Powering Every Child",
-      subtitle: "Four connected programs for learning, work and community.",
+      title: "Four Engines",
+      subtitle: "One school. Four connected programs.",
       engines: [
         {
           id: "school",
           title: "The School",
           role: "Nursery – Matric",
-          description: "Board subjects and future skills taught together, with support for every student.",
+          description: "Board subjects and future skills on one timetable.",
           highlight: "Nursery to Matric"
         },
         {
-          id: "sme-incubation",
-          title: "The SMEs & Global Trading",
-          role: "Real Companies And Trading",
-          description: "Learn production, customer service and business through local workshops and SMEs and Import and Export.",
+          id: "hero",
+          title: "Personality Grooming",
+          role: "Character & Confidence",
+          description: "Communication, discipline and character — built through practice and trekking.",
+          highlight: "2 periods weekly"
+        },
+        {
+          id: "incubator",
+          title: "Student Startup Incubator",
+          role: "Real startups, real users",
+          description: "Students build products, find users and register a company — with local businesses as first customers.",
           highlight: "Class 8 to 10"
         },
         {
-          id: "technology-community",
-          title: "The Technology Layer & Student Incubation",
-          role: "Technology and Community",
-          description: "12-week courses in coding, AI, video and freelancing for local youth and adults.",
+          id: "academy",
+          title: "Evening Academy",
+          role: "Community Engine",
+          description: "12-week courses in coding, AI, media and freelancing for Sehwan's youth.",
           highlight: "Open to Sehwan"
-        },
-        {
-          id: "global-bridge",
-          title: "The Global Bridge",
-          role: "Global Partners & Opportunities",
-          description: "Connect local talent with global partners, opportunities and markets.",
-          highlight: "Local to Global"
         }
       ]
     },
     whatStudentsDo: {
-      badge: "Flagship Comparison",
-      title: "What our school students do, university students can't.",
-      intro: "Students begin building at six. By sixteen, they have ten years of practice in creating, selling and presenting their work.",
+      badge: "The Comparison",
+      title: "What our students do that graduates can't.",
+      intro: "Building starts at six. By sixteen, a student has shipped products, served users and pitched to investors.",
       ladder: [
         {
           age: "At 9",
           grade: "Class 4",
-          task: "Trains her first AI computer vision model to recognize images.",
-          contrast: "Most CS university graduates have never trained one."
+          task: "Trains her first AI vision model.",
+          contrast: "Most CS graduates never have."
         },
         {
           age: "At 10",
           grade: "Class 5",
-          task: "Runs a mini-company classroom stall and pitches it to a room of adults.",
-          contrast: "Learns unit economics, real currency transactions and customer service."
+          task: "Runs a stall and pitches it to a room of adults.",
+          contrast: "Learns pricing, cash and customers first-hand."
         },
         {
           age: "At 12",
           grade: "Classes 6–7",
-          task: "Writes Python, builds mobile apps, and wires physical IoT sensors to the cloud.",
-          contrast: "Keeps real profit-and-loss accounts from stalls in the Sehwan bazaar."
+          task: "Writes Python and builds a mobile app.",
+          contrast: "Ships it to real users in Sehwan."
         },
         {
           age: "At 13",
           grade: "Class 8",
-          task: "Registers a real company with a team, sells to strangers, files financial reports.",
-          contrast: "Connects AI models to live tools in supervised agentic workflows."
+          task: "Registers a startup with a team.",
+          contrast: "Sells to strangers and files accounts."
         },
         {
           age: "At 15",
           grade: "Class 9",
-          task: "Ships an AI automation for a local family business and enters the campus incubator.",
-          contrast: "Competes internationally on tech and entrepreneurship stages."
+          task: "Ships an AI tool for a local business and enters the incubator.",
+          contrast: "Competes on international startup stages."
         },
         {
           age: "At 16",
           grade: "Matric",
-          task: "Graduates with high BISE marks, a working AI automation, a registered product, audited books.",
-          contrast: "Walks out with a demo day judged by NIC/ORIC guests and a complete public e-portfolio."
+          task: "Graduates with strong BISE marks and a live product.",
+          contrast: "Demo day judged by NIC and ORIC guests. A public portfolio."
         }
       ],
       comparison: {
-        headers: ["A Typical Graduate (At 22, after 16 years)", "A Rising Sindh Student (At 16, after 11 years)"],
+        headers: ["A Typical Graduate (22)", "A Rising Sindh Student (16)"],
         rows: [
-          { typical: "A CV and attested photocopies", rising: "A live e-portfolio of shipped work" },
-          { typical: "Theory notes, memorized and fading", rising: "Live products with users and paying customers" },
-          { typical: "Waiting for a job vacancy to be announced", rising: "Has already sold, in person, to strangers" },
-          { typical: "Fears AI will take their job", rising: "Builds with AI as a daily productive tool" },
-          { typical: "Must leave for the city or overseas", rising: "Serves international clients from Sehwan" }
+          { typical: "A CV and attested photocopies", rising: "A live portfolio of shipped work" },
+          { typical: "Memorised theory, fading", rising: "Products with real users" },
+          { typical: "Waiting for a vacancy", rising: "Has already sold to strangers" },
+          { typical: "Fears AI will take the job", rising: "Builds with AI every day" },
+          { typical: "Must leave for the city or abroad", rising: "Serves global clients from Sehwan" }
         ]
       },
-      closingNote: "Our students can still choose university, with practical experience and a portfolio of work alongside their degree."
+      closingNote: "University stays open to every student — with a portfolio in hand."
     },
     theModel: {
       badge: "The Two-Layer Curriculum",
       title: "Board results protected. Future added.",
-      openingPromise: "Two layers. One timetable. Nothing sacrificed. Nothing Compromised.",
-      promiseDetail: "About 70% of the week covers the full Sindh syllabus, rising to 80% in board years. The remaining time adds computing, AI and entrepreneurship.",
+      openingPromise: "Two layers. One timetable. Nothing sacrificed.",
+      promiseDetail: "About 70% of the week is the Sindh Board syllabus — 80% in Classes 9–10. The rest is computing, AI and startup-building.",
       timelineStages: [
         {
           grade: "Nursery – KG",
-          computing: "Screen-light: sequencing logic games, 'instruct the robot' playful activities.",
-          entrepreneurship: "Sharing, classroom responsibility roles, role-play market day barter.",
-          milestone: "Logical sequence & empathy"
+          computing: "Screen-free logic games and 'instruct the robot' play.",
+          entrepreneurship: "Sharing, classroom roles, market-day role-play.",
+          milestone: "Logic & empathy"
         },
         {
           grade: "Classes 1–3",
-          computing: "ScratchJr, floor robots, fast touch-typing, algorithmic thinking.",
-          entrepreneurship: "Classroom shop with real coins, personal savings jars, ledger books.",
-          milestone: "First code & physical currency"
+          computing: "ScratchJr, floor robots, touch-typing.",
+          entrepreneurship: "Classroom shop with real coins, savings jars.",
+          milestone: "First code"
         },
         {
           grade: "Classes 4–5",
-          computing: "Scratch games, BBC micro:bit microcontrollers, first AI model trained (Teachable Machine).",
-          entrepreneurship: "School bazaar stalls, mini-company business model pitch to parents.",
-          milestone: "First trained AI model"
+          computing: "Scratch, micro:bit, first AI model.",
+          entrepreneurship: "Bazaar stall, mini-company pitch to parents.",
+          milestone: "First AI model"
         },
         {
           grade: "Classes 6–7",
-          computing: "Python programming, mobile app development (App Inventor), IoT sensors, honest AI prompting.",
-          entrepreneurship: "Business Model Canvas, batch production runs with local SME workshops (soap units & footwear), accounting ledgers.",
-          milestone: "Python & live public sales"
+          computing: "Python, mobile apps, IoT sensors, honest AI prompting.",
+          entrepreneurship: "Business Model Canvas, first product with real users, basic accounts.",
+          milestone: "First shipped product"
         },
         {
           grade: "Class 8",
-          computing: "Web development, APIs, supervised AI-agent workflows, 3D design & 3D printing.",
-          entrepreneurship: "A real registered student company operating alongside local enterprises (soap, mobile repairs, footwear), selling to real customers all term.",
-          milestone: "Legally registered enterprise"
+          computing: "Web, APIs, supervised AI-agent workflows, 3D printing.",
+          entrepreneurship: "A registered student startup with a team, customers and quarterly accounts.",
+          milestone: "Registered startup"
         },
         {
           grade: "Classes 9–10",
-          computing: "Sindh Board Computer Science + an AI automation built for an active family business.",
-          entrepreneurship: "MVP semester in campus incubator solving practical industry challenges for local SMEs; demo day pitch judged by NIC/ORIC venture guests.",
-          milestone: "BISE Matric + Live Portfolio"
+          computing: "Board Computer Science + an AI automation for a local business.",
+          entrepreneurship: "Incubator semester: MVP, early users, demo-day pitch to NIC/ORIC guests.",
+          milestone: "Matric + live portfolio"
         }
       ],
       teachingPillars: [
         {
-          title: "Mastery-First",
-          desc: "Weekly quizzes with reteach loops — no child is left behind at the back of the class silently."
+          title: "Mastery First",
+          desc: "Weekly checks and reteach loops. No child slips through quietly."
         },
         {
           title: "Lifelong E-Portfolio",
-          desc: "Every project, company report, code repo and competition entry from KG to Matric — proof of work."
+          desc: "Every project and startup report from KG to Matric, in one public record."
         },
         {
           title: "Parent Dashboard",
-          desc: "Track monthly academic and future-layer progress in your language, straight on your mobile phone."
+          desc: "Monthly progress in Sindhi, Urdu or English, on your phone."
         },
         {
           title: "Teachers Are Never Alone",
-          desc: "Recorded lesson kits and central academic support — the Future Layer does not depend on every teacher being an AI expert."
+          desc: "Recorded lesson kits and central support. No teacher needs to be an AI expert."
         },
         {
           title: "AI with Integrity",
-          desc: "AI-assisted practice under strict teacher guidance, with clear academic-integrity ethics a child understands."
-        },
-        {
-          title: "Personal Grooming",
-          desc: "Build confidence, communication, discipline, teamwork and character through practice and trekking."
+          desc: "AI as a tool, under teacher guidance, with clear rules on honest work."
         }
       ]
     },
     smeEnterprises: {
-      badge: "Vocational & Practical Learning",
-      title: "Connecting Education with Real Businesses & Local Industries",
-      subtitle: "Learn practical skills through local businesses and real projects.",
-      whatIsSmeTitle: "What Are SMEs (Small & Medium-sized Enterprises)?",
-      whatIsSmeDesc: "SMEs are local shops, workshops, repair centers and manufacturers that provide goods, services and jobs across Sindh.",
-      whyConnectTitle: "Why Connect Education with Local Industry?",
-      whyConnectDesc: "Working with local businesses helps students practice production, problem-solving, customer service and basic business skills—and explore future careers.",
-      learningOutcomesTitle: "Skills students practice",
+      badge: "Hands-On Learning",
+      title: "Local Businesses as First Customers",
+      subtitle: "Startups need customers. Sehwan's workshops and shops are where our students find their first.",
+      whatIsSmeTitle: "Why local businesses?",
+      whatIsSmeDesc: "Soap units, phone-repair shops, footwear makers and craft workshops run Sehwan's economy — and they have real problems worth solving.",
+      whyConnectTitle: "What students do with them",
+      whyConnectDesc: "Visit, observe, find a bottleneck, and build a product that fixes it — a billing app, an online store, a simple automation.",
+      learningOutcomesTitle: "Skills students practise",
       learningOutcomes: [
         {
-          title: "Product Manufacturing & Production Processes",
-          desc: "Measure materials, make products, check quality and follow safety rules."
+          title: "Finding a Real Problem",
+          desc: "Observe a workshop and spot what costs it time or money."
         },
         {
-          title: "Customer Service & Understanding Needs",
-          desc: "Listen to customers, explain solutions and give clear estimates."
+          title: "Talking to Customers",
+          desc: "Listen, ask, and explain a solution in plain language."
         },
         {
-          title: "Teamwork, Quality Control & Problem-Solving",
-          desc: "Work as a team, check quality and solve workshop problems."
+          title: "Production & Quality",
+          desc: "See how products are made, checked and priced."
         },
         {
-          title: "How Local Businesses Operate",
-          desc: "Track money, stock, costs and sales in a local business."
-        },
-        {
-          title: "Entrepreneurship & Career Opportunities",
-          desc: "Explore local needs, skilled trades and starting a small business."
+          title: "Running the Numbers",
+          desc: "Costs, stock, cash and margin — inside a real business."
         }
       ],
-      examplesTitle: "Local businesses students explore",
-      examplesSubtitle: "Eight local manufacturing, repair and water-service examples.",
+      examplesTitle: "Where students start",
+      examplesSubtitle: "Four kinds of Sehwan businesses that become first customers.",
       examples: [
         {
-          id: "data-cable-manufacturing",
-          title: "Data Cable Manufacturing Units",
-          description: "Manufacturers assemble conductors, connectors and insulation to make data and charging cables."
+          id: "soap-making",
+          title: "Soap-Making Units",
+          role: "Manufacturing",
+          businessDoes: "Mix, mould and package soap for local markets.",
+          studentsLearn: "Students build batch-costing sheets and simple online catalogues.",
+          tags: ["Costing", "Catalogue", "Packaging"]
         },
         {
-          id: "plastic-bottle-manufacturing",
-          title: "Plastic Bottle Manufacturing Units",
-          description: "Factories make plastic bottles for drinking water, beverages and other products."
+          id: "mobile-repair",
+          title: "Phone Repair Shops",
+          role: "Technical Service",
+          businessDoes: "Diagnose faults, replace screens, fix charging and software.",
+          studentsLearn: "Students build job-tracking and quote tools, and learn basic diagnostics.",
+          tags: ["Diagnostics", "Job Tracking", "Customer Service"]
         },
         {
-          id: "ro-water-treatment",
-          title: "RO Water Treatment Plants",
-          description: "Plants use reverse osmosis to purify water and supply clean drinking water."
+          id: "footwear-manufacturing",
+          title: "Chappal & Footwear Units",
+          role: "Craft & Assembly",
+          businessDoes: "Cut and stitch leather into Sindhi chappal and modern footwear.",
+          studentsLearn: "Students build product photos, online stores and stock trackers.",
+          tags: ["E-Commerce", "Stock", "Pricing"]
         },
         {
-          id: "concrete-block-paver-manufacturing",
-          title: "Concrete Block and Paver Manufacturing Units",
-          description: "These units produce durable concrete blocks and pavers for buildings and walkways."
-        },
-        {
-          id: "small-soap-making",
-          title: "Small Soap-Making Units",
-          description: "Small producers make and package soap for local shops and markets."
-        },
-        {
-          id: "mobile-repairing",
-          title: "Mobile Repairing Shops",
-          description: "Repair shops diagnose phone faults and fix screens, batteries and charging issues."
-        },
-        {
-          id: "chappal-making",
-          title: "Chappal-Making Small Units",
-          description: "Local makers cut, stitch and finish chappals for customers and markets."
-        },
-        {
-          id: "local-mechanical-craft-workshops",
-          title: "Local Mechanical & Craft Workshops in Sindh",
-          description: "Local workshops provide mechanical repairs, metalwork, Ajrak printing and carpentry."
+          id: "local-workshops",
+          title: "Craft & Mechanical Workshops",
+          role: "Trades",
+          businessDoes: "Ajrak printers, garages, metal and wood shops serve the city.",
+          studentsLearn: "Students map workflows, test ideas and discover trades worth building for.",
+          tags: ["Workflow", "Prototyping", "Vocational Paths"]
         }
       ]
     },
     heroTrack: {
-      badge: "The Character & Behaviour Pillar",
+      badge: "The Character Pillar",
       title: "Personality Grooming",
-      subtitle: "Developing character, behaviour, confidence, and essential life skills for school, family life, society, and future careers.",
-      description: "Students build discipline, honesty, communication, confidence, empathy, teamwork and resilience for school, home and future work.",
+      subtitle: "Confidence, communication, discipline and character — for school, home and the world stage.",
+      description: "Founders need more than code. Two periods a week build the habits that carry a student through a pitch, a team and a hard day.",
       features: [
         {
-          title: "Communication & Respectful Expression",
-          desc: "Practice listening, respectful conversation and confident speaking."
+          title: "Communication",
+          desc: "Listen well, speak clearly, present with confidence."
         },
         {
-          title: "Discipline, Ethics & Social Manners",
-          desc: "Practice honesty, responsibility and respect at school and at home."
+          title: "Discipline & Ethics",
+          desc: "Honesty, responsibility and respect, practised daily."
         },
         {
-          title: "Mountain Trekking Expeditions",
-          desc: "Trekking / camping in Bado Jabbal , Bhago torho and Karoonjhar like mountains , surfing , sailing , boating and swimming in Indus River Indus to build fitness , confidence , teamwork and respect for the nature. "
+          title: "Mountain Trekking",
+          desc: "Buddo Jabal, Bhago Torho and Karoonjhar: fitness, teamwork and respect for nature."
         },
         {
-          title: "Resilience, Empathy & Leadership",
-          desc: "Build empathy, teamwork and resilience, and learn to make thoughtful decisions."
+          title: "Resilience & Leadership",
+          desc: "Empathy, teamwork and steady decisions under pressure."
         }
       ],
       heroOath: {
-        title: "The Student Character Pledge (Class 9)",
-        text: "“I will act with integrity and honesty. I will communicate with clarity and respect. I will practice discipline, stand by my peers, serve the soil of Sindh, and meet every life challenge with resilience.”"
+        title: "The Student Pledge (Class 9)",
+        text: "“I will act with honesty. I will speak with clarity and respect. I will stand by my team, serve the soil of Sindh, and meet every challenge with resilience.”"
       }
     },
     theProof: {
       badge: "The Precedent",
-      title: "The Proof — From Sehwan to Silicon Valley",
+      title: "From Sehwan to Silicon Valley",
       intro: "Founder Ali Murtaza Solangi built his first startup in Sehwan. After winning NUST's GAP program, he ranked third among founders from 30 countries in Silicon Valley.",
-      investorTitle: "A Sehwan startup ( Poulta Inc. ) earned backing from a global investor.",
-      investorDesc: "The investor behind Ali's startup has also backed more than 30 unicorn companies, including Tesla, PayPal, SpaceX and Yahoo.",
+      investorTitle: "A Sehwan startup, backed by a global investor.",
+      investorDesc: "The investor behind Ali's startup has backed more than 30 unicorns, including Tesla, PayPal, SpaceX and Yahoo.",
       stats: [
-        { number: "3rd of 30", label: "Countries Ranked in Silicon Valley" },
-        { number: "10+", label: "Countries Served Globally Today" },
-        { number: "Hundreds", label: "Of High-Tech Employees Led" },
-        { number: "Millions $", label: "In Global Tech Revenue" }
+        { number: "3rd of 30", label: "Countries ranked in Silicon Valley" },
+        { number: "20+", label: "Countries served today" },
+        { number: "Hundreds", label: "Of high-tech employees led" }
       ],
       whyItMatters: {
-        title: "A global company can be built from Sehwan—we have done it.",
-        desc: "The school brings that experience into the classroom, teaching students to build, present and pursue global opportunities from Class 1."
+        title: "A global company can be built from Sehwan. We've done it.",
+        desc: "This school turns that journey into a curriculum, from Class 1."
       },
       founderQuote: {
         quote: "“Everything they will tell your child is impossible from Sehwan, I have already done from Sehwan. The only thing I lacked was a school like this. So I built it.”",
@@ -889,232 +876,229 @@ export const contentMap: Record<Language, SiteContent> = {
         role: "Founder, The Rising Sindh"
       },
       milestones: [
-        { year: "Phase 1", stage: "Born in Sehwan", desc: "First tech solution coded in ordinary rooms beside the shrine of Lal Shahbaz Qalandar." },
-        { year: "Phase 2", stage: "National Champion", desc: "Won top national honors through NUST's prestigious Global Acceleration Program (GAP)." },
-        { year: "Phase 3", stage: "Silicon Valley Podium", desc: "Ranked 3rd among 30 nations as 'The Most Investable Startup in Silicon Valley'." },
-        { year: "Phase 4", stage: "Global Scale", desc: "Backed by 30+ unicorn investor (Tesla, SpaceX, PayPal portfolio), operating across 10 countries." },
-        { year: "Phase 5", stage: "Returning to Sehwan", desc: "Rebuilding that entire journey as Pakistan's first future-ready school curriculum." }
+        { year: "Phase 1", stage: "Born in Sehwan", desc: "First product coded in ordinary rooms beside the shrine of Lal Shahbaz Qalandar." },
+        { year: "Phase 2", stage: "National Champion", desc: "Won NUST's Global Acceleration Program (GAP)." },
+        { year: "Phase 3", stage: "Silicon Valley Podium", desc: "Ranked 3rd of 30 nations as 'The Most Investable Startup in Silicon Valley'." },
+        { year: "Phase 4", stage: "Global Scale", desc: "Backed by a 30+ unicorn investor; operating across 20+ countries." },
+        { year: "Phase 5", stage: "Back to Sehwan", desc: "That journey, rebuilt as a school curriculum." }
       ]
     },
     globalBridge: {
-      badge: "Local Talent · Global Stream",
-      title: "The Global Bridge — Built from Day One",
-      subtitle: "Connect local talent with global partners, opportunities and markets.",
+      badge: "Local Talent · Global Market",
+      title: "The Global Bridge",
+      subtitle: "Student startups are built for global markets from day one.",
       lanes: [
         {
           laneNumber: "01",
-          title: "Joint Ventures & Co-founders Without Borders",
+          title: "Co-founders Without Borders",
           highlight: "A founder in Sehwan. A co-founder in Silicon Valley. One cap table.",
-          description: "Diaspora and global professionals can join student ventures as partners, contributing experience, networks or capital under clear agreements."
+          description: "Diaspora and global professionals join student startups as partners — with experience, networks or capital."
         },
         {
           laneNumber: "02",
-          title: "International Educational Trips & Global Exposure",
-          highlight: "Educational visits introduce students to new cultures, technology and ideas.",
-          description: "Planned international study visits can introduce students to global schools, cultures and technologies, broaden their outlook and help them explore future study and career paths."
+          title: "Global Exposure",
+          highlight: "Study visits to startup hubs, universities and labs abroad.",
+          description: "Students see how global founders work — then come home to build."
         },
         {
           laneNumber: "03",
           title: "Global Registration & Patents",
-          highlight: "Born in Sehwan. Registered in Silicon Valley. Protected worldwide.",
-          description: "Selected student startups may register in Delaware or California and seek patents to protect inventions made in Sindh."
+          highlight: "Born in Sehwan. Registered in Delaware. Protected worldwide.",
+          description: "Selected student startups register in the US and file patents for inventions made in Sindh."
         }
       ],
-      closing: "Talent stays rooted in Sindh while its products and ideas reach global markets.",
+      closing: "Talent stays rooted in Sindh. Products go global.",
       scholarshipHighlight: {
-        badge: "Educational Equity & Merit",
-        title: "Scholarships for Deserving & Talented Students",
-        subtitle: "Merit- and need-based support for eligible students.",
-        description: "Scholarships help deserving students access the curriculum, labs and character education, regardless of their family's financial circumstances.",
+        badge: "Merit & Need",
+        title: "Scholarships",
+        subtitle: "No talented child is priced out.",
+        description: "Merit- and need-based scholarships cover eligible students across the full program — labs, trekking and startups included.",
         points: [
-          "Merit awards recognizing exceptional talent and intellectual curiosity",
-          "Need-based scholarships ensuring accessible education for every deserving child",
-          "Empowering families and breaking socioeconomic barriers across Sindh",
-          "Investing in tomorrow's scientists, builders, and community pioneers"
+          "Merit awards for exceptional talent",
+          "Need-based support for every deserving child",
+          "Open to eligible families across Sindh"
         ],
-        valueProposition: "Supporting one student can benefit a whole community."
+        valueProposition: "One student supported lifts a whole community."
       },
       internationalTripsHighlight: {
         badge: "Global Horizons",
-        title: "International Educational Trips & Global Exposure",
-        subtitle: "Explore global education, cultures and technology.",
-        description: "Planned study visits can introduce students to international schools, cultures and technologies, and help them explore future academic and career opportunities.",
+        title: "International Study Visits",
+        subtitle: "See the world's best. Then build at home.",
+        description: "Planned visits to global schools, universities and startup hubs widen ambition and show what is possible.",
         points: [
-          "Direct exposure to world-class classrooms, universities, and tech incubators",
-          "Interacting with diverse cultures, global peers, and international mentors",
-          "Broadening ambition beyond local boundaries to embrace global opportunities",
-          "Fostering cross-cultural confidence while keeping students deeply rooted in Sindh"
+          "World-class classrooms and incubators",
+          "Global peers and mentors",
+          "Confidence abroad, roots in Sindh"
         ],
-        valueProposition: "New experiences can broaden a student's sense of possibility."
+        valueProposition: "Exposure widens what a student believes is possible."
       }
     },
     theMovement: {
       badge: "The Sindh Renaissance",
-      title: "The Movement — Sindh, Rising Again",
+      title: "Sindh, Rising Again",
       inheritance: {
-        title: "Sindh has a long tradition of building and innovation.",
-        desc: "The Indus Valley built planned cities such as Moenjodaro 5,000 years ago. Sindh's history of engineering, poetry and craft inspires our focus on creating and building."
+        title: "Sindh has always built.",
+        desc: "Moenjodaro was a planned city 5,000 years ago. Building is the inheritance."
       },
       globalVillage: {
-        title: "Digital tools connect local talent with global work.",
-        desc: "A designer near Sehwan can serve clients abroad, and an app can reach users worldwide. Our school helps students prepare for these opportunities."
+        title: "The market is now global.",
+        desc: "A product built in Sehwan can reach users anywhere. The internet erased the distance."
       },
       buildHere: {
-        title: "Build globally, while staying rooted in Sindh.",
-        desc: "We respect families who work abroad. We also want students to have the choice to build businesses and serve global clients from home."
+        title: "Build global. Stay rooted.",
+        desc: "We respect families who work abroad. We want students to have the choice to build from home and sell to the world."
       },
       tenYearPicture: {
-        title: "What Rising Looks Like (The 10-Year Picture)",
-        desc: "A future shaped by local innovation, invention and technology.",
+        title: "The 10-Year Picture",
+        desc: "What Sindh looks like when its students build startups.",
         points: [
-          "Startups registered in Sehwan solving agriculture, water, health and language challenges.",
-          "Girls' robotics & AI teams winning podium finishes in international tournaments.",
-          "Silicon Valley and diaspora co-founders sitting on Sehwan cap tables.",
-          "Patents filed from Sehwan to the United States Patent Office.",
-          "A youth generation fluent in Sindhi, Urdu, English — and generative AI.",
-          "An evening academy lighting up Sehwan after dark; next a College, then a modern Polytechnic University."
+          "Startups from Sehwan solving agriculture, water, health and language problems.",
+          "Girls' AI and robotics teams on international podiums.",
+          "Silicon Valley co-founders on Sehwan cap tables.",
+          "Patents filed from Sehwan to the US Patent Office.",
+          "A generation fluent in Sindhi, Urdu, English — and AI."
         ]
       },
-      invitation: "Join The Rising Sindh as a parent, student, teacher or partner."
+      invitation: "Join as a parent, student, teacher or partner."
     },
     sehwanCampus: {
       badge: "Sehwan Sharif, Sindh",
-      title: "Sehwan — One City First, On Purpose",
-      whySehwan: "Sehwan's heritage and the founder's experience make it a natural place to begin. The campus model is designed to grow across Sindh.",
-      cityProjects: "Students work on local heritage, visitor guides, artisan crafts and trekking projects across Buddo Jabal, Bhago Torho and Karoonjhar.",
+      title: "Sehwan — One City First",
+      whySehwan: "The founder's home, a city of heritage, and a model built to grow across Sindh.",
+      cityProjects: "Students build for the city: heritage guides, artisan stores, and trekking projects in Buddo Jabal, Bhago Torho and Karoonjhar.",
       campusSpine: [
-        "Advanced Computing & AI Workstation Lab",
-        "Maker Space with 3D Printers & IoT Hardware",
-        "Digital Media, Podcast & Video Studio",
-        "The Venture Incubator Pitch Room",
-        "The Keynote Auditorium & Stage",
-        "Science & Experimental Labs"
+        "Computing & AI Lab",
+        "Maker Space: 3D Printers & IoT",
+        "Media, Podcast & Video Studio",
+        "Incubator Pitch Room",
+        "Auditorium & Stage",
+        "Science Labs"
       ],
-      roadAhead: "Our vision grows from Nursery–Matric to a college and, one day, a Sindh technology university.",
+      roadAhead: "From Nursery–Matric to a college, and one day a Sindh technology university.",
       eveningAcademy: {
-        title: "Technology and Community — The Trust Engine",
-        opening: "After school, the labs offer local youth and adults 12-week courses in practical skills.",
+        title: "Evening Academy",
+        opening: "After 5 pm the labs open to Sehwan: 12-week courses for youth and adults.",
         tracks: [
           {
             name: "Digital Foundations & Freelancing",
             duration: "12 Weeks",
-            outcome: "Computer basics → office productivity → work English → first international gig",
+            outcome: "Computer basics → office tools → work English → first international gig",
             alignedWith: "Saylani-style delivery, NAVTTC certified"
           },
           {
             name: "Code & Practical AI",
             duration: "12 Weeks",
-            outcome: "Python fundamentals → data handling → AI agent tools → one deployed automation in portfolio",
-            alignedWith: "PSEB certification tracks & internships"
+            outcome: "Python → data → AI tools → one deployed automation",
+            alignedWith: "PSEB certification & internships"
           },
           {
             name: "Video, Media & Storytelling",
             duration: "12 Weeks",
-            outcome: "Phone videography → editing → 3 published pieces including one 'Positive Sindh' documentary",
+            outcome: "Phone videography → editing → 3 published pieces, including one 'Positive Sindh' documentary",
             alignedWith: "Campus Studio & AI Lab access"
           },
           {
-            name: "E-Commerce & Local Commerce",
+            name: "E-Commerce",
             duration: "12 Weeks",
-            outcome: "Product photography → digital catalog → online payments → 1 live online merchant store",
-            alignedWith: "Local Sehwan traders & student mentoring"
+            outcome: "Product photos → catalogue → online payments → one live store",
+            alignedWith: "Sehwan traders & student mentoring"
           }
         ]
       },
       innovationLab: {
-        title: "The Innovation Lab — For the City's Builders",
-        desc: "University students and professionals can apply to use the labs, get mentorship and present projects at Demo Days.",
+        title: "The Innovation Lab",
+        desc: "University students and professionals apply for a bench, mentorship and demo days.",
         benches: [
-          "Final-year university projects transformed into registered companies",
-          "Engineers turning evening side projects into venture-backed products",
+          "Final-year projects turned into registered startups",
+          "Side projects turned into venture-ready products",
           "Founders finding their first engineering and design co-founders"
         ]
       },
       partners: [
-        { name: "NIC (National Incubation Center)", role: "Incubation mentors & annual demo-day judges" },
-        { name: "ORIC Linkages", role: "University research translation & commercialization" },
-        { name: "PSEB", role: "Skills certifications & technology internships" },
-        { name: "Saylani", role: "Evening community training delivery model" }
+        { name: "NIC (National Incubation Center)", role: "Incubation mentors & demo-day judges" },
+        { name: "ORIC Linkages", role: "University research commercialisation" },
+        { name: "PSEB", role: "Skills certification & tech internships" },
+        { name: "Saylani", role: "Evening training delivery model" }
       ]
     },
     joinUs: {
       badge: "Take Action",
-      title: "Find your way to take part.",
+      title: "Pick your door.",
       doors: [
         {
           id: "parents",
           audience: "For Parents",
-          title: "Visit the campus and see for yourself.",
-          description: "Explore the labs, observe a Future Layer class, meet teachers and ask about exams, student support and scholarships.",
+          title: "See it for yourself.",
+          description: "Tour the labs, sit in a Future Layer class, meet teachers, ask about exams and scholarships.",
           ctaText: "Book a Campus Visit",
-          secondaryCta: "WhatsApp Us Directly"
+          secondaryCta: "WhatsApp Us"
         },
         {
           id: "students",
           audience: "For Students",
-          title: "Come build something on a Saturday.",
-          description: "Train an AI model, 3D-print a design, make a video or pitch an idea at a Saturday workshop.",
+          title: "Build something on Saturday.",
+          description: "Train an AI model, 3D-print a design, shoot a video or pitch an idea.",
           ctaText: "Register for a Build Day"
         },
         {
           id: "professionals",
           audience: "For University Students & Pros",
-          title: "Turn a project into something real.",
-          description: "Apply to use the Innovation Lab for AI tools, mentorship and Demo Days.",
+          title: "Turn a project into a startup.",
+          description: "A lab bench, AI tools, mentorship and demo days.",
           ctaText: "Apply for a Lab Bench"
         },
         {
           id: "teachers",
           audience: "For Teachers",
-          title: "Teach with hands-on learning.",
-          description: "Use lesson kits, modern labs and academic support. Training and competitive pay are provided.",
+          title: "Teach by building.",
+          description: "Lesson kits, modern labs, central support, training and competitive pay.",
           ctaText: "Apply to Teach"
         }
       ],
       faqs: [
         {
           question: "Will the Future Layer hurt my child's Matric grades?",
-          answer: "No. Board subjects take about 70% of the weekly timetable and 80% in Classes 9–10, with exam practice included."
+          answer: "No. Board subjects take about 70% of the week, and 80% in Classes 9–10, with exam practice built in."
         },
         {
-          question: "Is this Islamic and culturally values-appropriate?",
-          answer: "Yes. The school follows the Sindh Islamiat curriculum. Female mentors lead girls' cohorts, and treks require parental consent and safety supervision."
+          question: "Is this in line with our Islamic and cultural values?",
+          answer: "Yes. The Sindh Islamiat curriculum is followed. Female mentors lead girls' cohorts. Treks require parental consent and safety supervision."
         },
         {
-          question: "What scholarship opportunities are available for deserving and talented students?",
-          answer: "Merit- and need-based scholarships help eligible students access the curriculum, AI labs and character education."
+          question: "Are there scholarships?",
+          answer: "Yes. Merit- and need-based scholarships give eligible students access to the full program."
         },
         {
-          question: "How do international educational trips and foreign exposure benefit students?",
-          answer: "Planned study visits can introduce students to other cultures, education systems and technologies, and help them explore future study and career options."
+          question: "What do international study visits add?",
+          answer: "Exposure to global schools, startup hubs and cultures — and a clearer sense of what students can build at home."
         },
         {
-          question: "How do parents track their child's progress?",
-          answer: "The Parent Dashboard is available in Sindhi, Urdu and English, with monthly updates on board progress and student projects."
+          question: "How do I track my child's progress?",
+          answer: "Through the Parent Dashboard in Sindhi, Urdu or English, with monthly updates on board work and projects."
         }
       ]
     },
     footer: {
       slogan: "Builders, not degree-holders.",
-      ctaBand: "Admissions are limited by classroom space. Book a visit.",
-      ctaButton: "Book Campus Visit",
+      ctaBand: "Seats are limited by classrooms. Book a visit.",
+      ctaButton: "Book a Campus Visit",
       rights: "The Rising Sindh. All Rights Reserved. Sehwan Sharif, Sindh, Pakistan.",
-      governanceNote: "Non-political and Sindhi-first, inspired by Indus heritage and focused on the future."
+      governanceNote: "Non-political. Sindhi-first. Future-focused."
     }
   },
   sd: {
     meta: {
-      title: "دي رائزنگ سنڌ | اهو اسڪول جيڪو يونيورسٽيون نه ٺاهي سگهيون",
-      description: "سيوهڻ جو اسڪول، جتي سنڌ بورڊ جي تعليم سان گڏ AI، ڪاروبار ۽ عملي سکيا آهي.",
+      title: "دي رائزنگ سنڌ | اهو اسڪول جيڪو اسٽارٽ اپ ٺاهي ٿو",
+      description: "سيوهڻ جو اسڪول، جتي شاگرد سنڌ بورڊ جو نصاب پڙهن ٿا ۽ ڪلاس 1 کان ميٽرڪ تائين عالمي مارڪيٽ لاءِ حقيقي اسٽارٽ اپ ٺاهين ٿا.",
       slogan: "تعمير ڪندڙ، نه رڳو ڊگري وٺندڙ.",
-      positioning: "سنڌ بورڊ جي تعليم سان گڏ ڪلاس 1 کان AI، ڪاروبار ۽ عملي سکيا."
+      positioning: "سنڌ بورڊ جي تعليم سان گڏ AI ۽ اسٽارٽ اپ سازي، ڪلاس 1 کان ميٽرڪ."
     },
     nav: {
       home: "مکيه صفحو",
       whyWeExist: "اسان ڇو آهيون",
       theModel: "اسان جو نمونو",
       whatStudentsDo: "شاگرد ڇا ٺاهين ٿا",
-      theProof: "زنده ثبوت",
+      theProof: "ثبوت",
       globalBridge: "عالمي پُل",
       sehwanCampus: "سيوهڻ ڪيمپس",
       theMovement: "تحريڪ",
@@ -1122,35 +1106,35 @@ export const contentMap: Record<Language, SiteContent> = {
       visitCampus: "ڪيمپس جو دورو ڪريو",
       bookVisit: "دورو بڪ ڪريو",
       curriculumMap: "نصاب جو نقشو",
-      curriculumMapSub: "نرسري کان ميٽرڪ BISE + فيوچر ليئر",
+      curriculumMapSub: "نرسري کان ميٽرڪ + فيوچر ليئر",
       theHeroTrackNav: "شخصيت سازي",
-      theHeroTrackNavSub: "شخصيت سازي، ڳالهه ٻولهه ۽ سنڌ ۾ جبلن جي ٽريڪنگ",
-      studentIncubator: "شاگردن جو انڪيوبيٽر",
-      studentIncubatorSub: "ڪلاس 8 تائين رجسٽرڊ ڪمپنيون",
-      eveningAcademyNav: "ٽيڪنالاجي ۽ ڪميونٽي",
-      eveningAcademyNavSub: "ڪميونٽي ليبز شام 5 وڳي کان پوءِ کليل"
+      theHeroTrackNavSub: "ڪردار، اعتماد ۽ ٽريڪنگ",
+      studentIncubator: "شاگردن جا اسٽارٽ اپ",
+      studentIncubatorSub: "ڪلاس 8 تائين حقيقي اسٽارٽ اپ",
+      eveningAcademyNav: "شام جي اڪيڊمي",
+      eveningAcademyNavSub: "شام 5 وڳي کان پوءِ ڪميونٽي ڪورس"
     },
     common: {
       brandSubtitle: "فيوچر اسڪول · سيوهڻ",
-      livingPrecedent: "زنده ثبوت ۽ نظير",
+      livingPrecedent: "زنده ثبوت",
       verifiedArchive: "تصديق ٿيل رڪارڊ",
       nationalStage: "قومي اسٽيج ۽ ٽيڪ ڪانفرنس",
-      resultsSpeak: "اهي نتيجا جيڪي پاڻ ڳالهائين ٿا",
+      resultsSpeak: "نتيجا جيڪي پاڻ ڳالهائين ٿا",
       degreeUnemployment: "ڊگري يافته بيروزگاري",
-      degreeUnemploymentSub: "بمقابلي 4.7% بنا پڙهيل (LFS 24-25)",
+      degreeUnemploymentSub: "بمقابلي 4.7% اڻ پڙهيل (LFS 24–25)",
       siliconValleyRank: "سلڪون ويلي رينڪ",
-      siliconValleyRankSub: "30+ يونيڪارن انويسٽر پاران سپورٽ ٿيل",
+      siliconValleyRankSub: "30+ يونيڪارن سيڙپڪار جي سپورٽ",
       boardProtected: "بورڊ جا نتيجا محفوظ",
-      boardProtectedSub: "مڪمل BISE گروپ + فيوچر ليئر",
+      boardProtectedSub: "مڪمل BISE نصاب + فيوچر ليئر",
       aiLab: "اي آءِ ليب",
       biseMetric: "BISE 100%",
-      shippedProof10Years: "10 سالن جو حقيقي عملي ثبوت",
-      curriculumTrajectory: "نصاب جي اڳڀرائي",
+      shippedProof10Years: "10 سالن جو عملي ڪم",
+      curriculumTrajectory: "نصاب جو رستو",
       class1ToMatric: "ڪلاس 1 → ميٽرڪ",
-      compoundingAdvantage: "ڏهن سالن جو مسلسل وڌندڙ عملي فائدو",
-      openWhatsAppChat: "واٽس ائپ چيٽ کوليو",
-      admissionsDeskOnline: "داخلا ڊيسڪ آن لائن",
-      admissionsDeskSub: "داخلائن، اسڪالرشپس يا ڪيمپس دوري بابت واٽس ائپ تي پڇو.",
+      compoundingAdvantage: "ڏهن سالن جي مسلسل مشق",
+      openWhatsAppChat: "واٽس ائپ کوليو",
+      admissionsDeskOnline: "داخلا ڊيسڪ",
+      admissionsDeskSub: "داخلا، اسڪالرشپ، ڪيمپس دورو — واٽس ائپ تي.",
       done: "ٺيڪ آهي",
       close: "بند ڪريو",
       apply: "درخواست ڏيو",
@@ -1158,684 +1142,664 @@ export const contentMap: Record<Language, SiteContent> = {
       fullName: "مڪمل نالو",
       fullNamePlaceholder: "مثال: اسد علي / زينب سولنگي",
       whatsAppNumber: "واٽس ائپ نمبر",
-      childClass: "ٻار جي ڪلاس جي پسند",
-      workshopTrack: "بلڊ ٽريڪ جي ترجيح",
-      projectSummary: "منصوبي / ڪاروباري خيال جو خلاصو",
+      childClass: "ٻار جو ڪلاس",
+      workshopTrack: "بلڊ ٽريڪ",
+      projectSummary: "اسٽارٽ اپ جو خيال (هڪ سٽ)",
       teachingPitch: "توهان جا شاگرد هن ٽرم ڇا ٺاهيندا؟",
-      submitRequest: "درخواست جمع ڪريو",
-      registrationReceived: "درخواست موصول ٿي وئي آهي!",
-      registrationReceivedDesc: "سيوهڻ ڪيمپس جي ٽيم جلد اوهان سان واٽس ائپ تي رابطو ڪندي.",
+      submitRequest: "جمع ڪريو",
+      registrationReceived: "موصول ٿيو!",
+      registrationReceivedDesc: "سيوهڻ جي ٽيم واٽس ائپ تي جواب ڏيندي.",
       validationName: "مهرباني ڪري پنهنجو مڪمل نالو لکو.",
       validationPhone: "مهرباني ڪري صحيح فون يا واٽس ائپ نمبر لکو (گهٽ ۾ گهٽ 10 انگ).",
-      nextSeatsLimited: "ايندڙ داخلا ڪلاس رومز جي گنجائش سان مشروط آهي، ارادن سان نه.",
+      nextSeatsLimited: "سيٽون ڪلاس رومز سان محدود آهن، ارادن سان نه.",
       elevation5688: "ٻُڏو جبل · ڀاڳو ٽوڙهو · ڪارونجهر",
       makersInnovationHub: "ميڪرز ۽ انوويشن هب",
       sehwanSharifLabel: "سيوهڻ شريف",
       whySehwanTitle: "سيوهڻ ڇو",
-      cityProjectsTitle: "شهر جا پروجيڪٽ: شهر ئي ڪلاس روم آهي",
-      campusSpineTitle: "ڪيمپس جو نقشو ۽ تعميراتي بليو پرنٽ",
-      partnersTitle: "شريڪ باني ايڪوسسٽم پارٽنرز",
-      printMap: "نرسري–ميٽرڪ نصاب پرنٽ يا ڊائون لوڊ ڪريو",
-      seeFutureLayerLive: "ڪيمپس تي فيوچر ليئر جو پيريڊ لائيو ڏسو",
-      systemComparisonMatrix: "نظام جي ڀيٽ واري ميٽرڪس",
-      systemComparisonSub: "ڳالهه نظام جي آهي، ڪنهن فرد جي نه",
-      howWeTeachTitle: "اسان ڪيئن پڙهايئون ٿا ۽ والدين ڪيئن ڏسن ٿا",
-      howWeTeachSub: "شفاف ۽ ذميوار سکيا جا ڇهه اصول",
+      cityProjectsTitle: "شهر ئي ڪلاس روم آهي",
+      campusSpineTitle: "ڪيمپس جو ڍانچو",
+      partnersTitle: "ايڪوسسٽم پارٽنرز",
+      printMap: "نرسري–ميٽرڪ نقشو ڊائون لوڊ ڪريو",
+      seeFutureLayerLive: "فيوچر ليئر جو پيريڊ لائيو ڏسو",
+      systemComparisonMatrix: "ڀيٽ",
+      systemComparisonSub: "ڳالهه نظام جي آهي، فرد جي نه",
+      howWeTeachTitle: "اسان ڪيئن پڙهايون ٿا",
+      howWeTeachSub: "پنج ٿنڀا جيڪي والدين ڏسي سگهن ٿا",
       exploreTitle: "ڳوليو",
-      programsTitle: "پروگرامز",
+      programsTitle: "پروگرام",
       valuesTitle: "قدر ۽ رابطو",
       craftedWithPride: "سنڌ ۾ فخر سان ٺاهيل",
       forSindhFuture: "سڀاڻي جي تعمير ڪندڙن لاءِ",
-      smallMediumEnterprises: "ننڍا ۽ وچولا ڪاروبار",
+      smallMediumEnterprises: "مقامي ڪاروبار",
       sindhLocalEconomy: "سنڌ جي مقامي معيشت",
-      realWorldPractice: "عملي سکيا",
-      vocationalCareerPathways: "فني ڪيريئر جا رستا",
+      realWorldPractice: "عملي مشق",
+      vocationalCareerPathways: "هٿ جا هنر",
       nurseryMatricBise: "نرسري–ميٽرڪ BISE اسڪيم",
-      heroTrackGorakhTreks: "شخصيت سازي ۽ جبلن جي ٽريڪنگ",
-      eveningCommunityAcademy: "ٽيڪنالاجي ۽ ڪميونٽي",
-      innovationLabBuilders: "تعمير ڪندڙن لاءِ انوويشن ليب",
+      heroTrackGorakhTreks: "ڪردار ۽ جبلن جي ٽريڪنگ",
+      eveningCommunityAcademy: "شام جي اڪيڊمي",
+      innovationLabBuilders: "انوويشن ليب",
       saturdayBuildDays: "ڇنڇر بلڊ ڊيز",
-      sehwanCampusLabNav: "سيوهڻ ڪيمپس ۽ انوويشن ليب",
-      theMovementNav: "تحريڪ (سنڌ رينيسانس)",
+      sehwanCampusLabNav: "سيوهڻ ڪيمپس ۽ ليب",
+      theMovementNav: "تحريڪ",
       bookCampusVisitTitle: "ڪيمپس جو دورو بُڪ ڪريو",
-      saturdayBuildDayTitle: "ڇنڇر بلڊ ڊي لاءِ رجسٽريشن",
+      saturdayBuildDayTitle: "ڇنڇر بلڊ ڊي",
       applyToTeachTitle: "استاد طور درخواست ڏيو",
-      labBenchTitle: "انوويشن ليب بينچ لاءِ درخواست",
-      modalSubtitle: "سيوهڻ شريف ڪيمپس · دي رائيزنگ سنڌ",
-      gradeNursery: "نرسري – ڪي جي (شروعاتي عمر)",
-      grade1to3: "ڪلاس 1–3 (بنيادي فيوچر ليئر)",
-      grade4to5: "ڪلاس 4–5 (پھريون AI ماڊل ۽ بازار)",
-      grade6to7: "ڪلاس 6–7 (پائٿون، IoT ۽ موبائل ائپس)",
-      grade8: "ڪلاس 8 (رجسٽرڊ اسٽوڊنٽ ڪمپني)",
-      grade9to10: "ڪلاس 9–10 (ميٽرڪ بورڊ + انڪيوبيٽر)",
-      trackAI: "پھريون AI ماڊل تربيت ڪريو (ڪمپيوٽر ويزن)",
-      track3D: "3D پرنٽنگ ۽ هارڊويئر پروٽوٽائپ",
-      trackMedia: "مثبت سنڌ ويڊيو ۽ اسٽوڊيو پاڊڪاسٽنگ",
-      trackPitch: "اسٽيج تي ججن اڳيان خيال پيش ڪريو",
-      teachNotesPlaceholder: "مثال: سائنس پروجيڪٽس، ٻه-ٻولي لکڻ، ڪوڊنگ...",
-      labBenchPlaceholder: "مثال: انڊس بيسن لاءِ ايگري ٽيڪ IoT، سنڌ ايڊ ٽيڪ...",
-      stageSpecification: "درجي جي تفصيل",
-      computingPillarTitle: "ڪمپيوٽنگ ۽ AI شعبو",
-      entrepreneurshipPillarTitle: "ڪاروبار ۽ هنر شعبو",
-      evidenceBehindNeed: "ضرورت پويان حقيقي ثبوت",
+      labBenchTitle: "انوويشن ليب بينچ",
+      modalSubtitle: "سيوهڻ شريف ڪيمپس · دي رائزنگ سنڌ",
+      gradeNursery: "نرسري – ڪي جي",
+      grade1to3: "ڪلاس 1–3 (پهريون ڪوڊ)",
+      grade4to5: "ڪلاس 4–5 (پهريون AI ماڊل)",
+      grade6to7: "ڪلاس 6–7 (پائٿون ۽ ائپس)",
+      grade8: "ڪلاس 8 (رجسٽرڊ اسٽارٽ اپ)",
+      grade9to10: "ڪلاس 9–10 (ميٽرڪ + انڪيوبيٽر)",
+      trackAI: "AI ماڊل ٽرين ڪريو",
+      track3D: "3D پروٽوٽائپ پرنٽ ڪريو",
+      trackMedia: "مثبت سنڌ وڊيو ٺاهيو",
+      trackPitch: "ججن اڳيان پچ ڪريو",
+      teachNotesPlaceholder: "مثال: سائنس پروجيڪٽ، ڪوڊنگ، ٻه-ٻولي لکڻ...",
+      labBenchPlaceholder: "مثال: انڊس بيسن لاءِ ايگري ٽيڪ، سنڌي ٻوليءَ جي AI...",
+      stageSpecification: "درجو",
+      computingPillarTitle: "ڪمپيوٽنگ ۽ AI",
+      entrepreneurshipPillarTitle: "اسٽارٽ اپ سازي",
+      evidenceBehindNeed: "ثبوت",
       problemStripTitle: "امتحان رڳو ياداشت ماپين ٿا.",
-      problemStripHighlight: "مارڪيٽ هٿ سان ٺاهيل شين جو ملهه ڏئي ٿي.",
-      youthUnemploymentTitle: "نوجوان گريجوئيٽ بيروزگاري",
-      youthUnemploymentDesc: "20–24 سالن جي 32.8٪ پاڪستاني گريجوئيٽ بيروزگار آهن؛ عورتن ۾ شرح 45.2٪ آهي.",
+      problemStripHighlight: "مارڪيٽ ٺاهيل شين جو ملهه ڏئي ٿي.",
+      youthUnemploymentTitle: "گريجوئيٽ بيروزگاري",
+      youthUnemploymentDesc: "20–24 سالن جا 32.8٪ گريجوئيٽ بيروزگار آهن. عورتن ۾ 45.2٪.",
       youthUnemploymentSource: "ذريعو: ليبر فورس سروي / گيلپ پاڪستان",
-      instantProofTitle: "نظريي بدران ڪم جو فوري ثبوت",
-      instantProofDesc: "اسان جي ڪلاس 8 جي شاگردن وٽ گراهڪ آهن، جڏهن ته اڪثر يونيورسٽي گريجوئيٽس وٽ رڳو سي وي هوندي آهي.",
-      instantProofSub: "ميٽرڪ تائين هر شاگرد AI آٽوميشن تيار ڪري ٿو، ڪمپني جا اڪائونٽس هلائي ٿو ۽ اسٽيج تي پچ ڪري ٿو.",
-      noMarketObsolescenceTitle: "مارڪيٽ ۾ فرسوده نه ٿيڻ جي ضمانت",
-      noMarketObsolescenceDesc: "ڇهن سالن جي عمر کان ٻار بورڊ نصاب سان گڏ ڪمپيوٽنگ ۽ بزنس جا ماهر ٿين ٿا. سورهن سالن جي عمر تائين ڏهن سالن جي عملي مهارت پيدا ٿي وڃي ٿي.",
-      gorakhTrekTitle: "سنڌ جي جبلن تي ٽريڪنگ جون مہمات",
-      investorPrecedent: "سرمائيدارن جو اعتماد",
+      instantProofTitle: "نظريي بدران ڪم جو ثبوت",
+      instantProofDesc: "اسان جي ڪلاس 8 جي شاگردن وٽ يوزر آهن. اڪثر گريجوئيٽس وٽ رڳو سي وي.",
+      instantProofSub: "ميٽرڪ تائين هر شاگرد پراڊڪٽ لانچ ڪري چڪو، کاتو رکي چڪو ۽ اسٽيج تي پچ ڪري چڪو هوندو.",
+      noMarketObsolescenceTitle: "ڏهن سالن جي اڳڀرائي",
+      noMarketObsolescenceDesc: "ٺاهڻ ڇهن سالن ۾ شروع ٿئي ٿو. سورهن سالن تائين اها ڏهن سالن جي مشق آهي.",
+      gorakhTrekTitle: "جبلن جي ٽريڪنگ مهمون",
+      investorPrecedent: "سيڙپڪار جو اعتماد",
       lanePrefix: "راھ",
-      directVentureTrack: "سڌو سنئون وينچر ٽريڪ",
-      partnerVentureCta: "اسٽارٽ اپ پارٽنرشپ لاءِ رابطو ڪريو",
-      positiveSindhDocNote: "مثبت سنڌ پيش رفت: هر ميٽرڪ جو شاگرد پنهنجي ٺاهيل دستاويزي فلم (ڊاڪيومينٽري) ۾ حصو وٺي ٿو.",
-      joinTheMovementCta: "تحريڪ جو حصو بڻجو",
-      afterHoursEngine: "ٽيڪنالاجي ۽ ڪميونٽي",
+      directVentureTrack: "سڌو وينچر ٽريڪ",
+      partnerVentureCta: "شاگردن جي اسٽارٽ اپ سان ڀائيوار ٿيو",
+      positiveSindhDocNote: "هر ميٽرڪ جو شاگرد شاگردن جي ٺاهيل هڪ ڊاڪيومينٽري ۾ حصو وٺي ٿو.",
+      joinTheMovementCta: "تحريڪ ۾ شامل ٿيو",
+      afterHoursEngine: "شام جو ڪميونٽي انجڻ",
       alignedWithLabel: "هم آهنگ",
       applyForBenchCta: "بينچ لاءِ درخواست ڏيو",
-      fourDoorsSubtitle: "سيوهڻ کان سليڪان ويلي تائين ثابت ٿيل رستو، هاڻي نصاب طور تيار.",
+      fourDoorsSubtitle: "سيوهڻ کان سلڪون ويلي تائين ثابت ٿيل رستو، هاڻي نصاب جي صورت ۾.",
       forParentsBadge: "والدين لاءِ",
       forStudentsBadge: "شاگردن لاءِ",
       forTeachersBadge: "استادن لاءِ",
       forBuildersBadge: "تعمير ڪندڙن ۽ يونيورسٽي شاگردن لاءِ",
-      bookTourCta: "ڪيمپس جو دورو بُڪ ڪريو",
-      registerBuildDayCta: "بلڊ ڊي لاءِ رجسٽر ٿيو",
-      teachersCardDesc: "سبقن جون مڪمل ڪٽس، AI ٽريننگ ۽ بهترين معاوضو مهيا ڪيو ويندو.",
-      buildersCardDesc: "انوويشن ليب بينچ، جديد AI ٽولز ۽ ڊيمو ڊيز لاءِ درخواست ڏيو.",
-      whatsappParentsPrompt: "سنڌ جا والدين واٽس ائپ تي سڌو رابطو ڪن ٿا — ايڊميشن سان ڳالهايو",
-      faqTitle: "اڪثر پڇيا ويندڙ سوال",
-      faqSubtitle: "اسڪول جي پاليسين تي ٻڌل شفاف جواب",
-      bindingGovernanceTitle: "لازمي مواد جي شفافيت:",
-      bindingGovernanceDesc: "اسان مهارتون سيکاريون ٿا، نتيجن جي ضمانت نٿا ڏيون. انگ سرڪاري سروي جا آهن؛ تنقيد نظام تي آهي، استادن يا والدين تي نه.",
+      bookTourCta: "دورو بُڪ ڪريو",
+      registerBuildDayCta: "رجسٽر ٿيو",
+      teachersCardDesc: "سبقن جون ڪٽس. AI ٽريننگ. سٺو معاوضو.",
+      buildersCardDesc: "بينچ، AI ٽولز ۽ ڊيمو ڊيز.",
+      whatsappParentsPrompt: "سوال آهي؟ واٽس ائپ تي داخلا ڊيسڪ سان ڳالهايو",
+      faqTitle: "والدين جا سوال",
+      faqSubtitle: "اسڪول جي پاليسي تي ٻڌل سڌا جواب",
+      bindingGovernanceTitle: "اسان جو واعدو:",
+      bindingGovernanceDesc: "اسان مهارتون سيکاريون ٿا، نتيجن جي ضمانت نٿا ڏيون. انگ سرڪاري سروي جا آهن. تنقيد نظام تي آهي، استادن يا خاندانن تي نه.",
       sehwanLocation: "سيوهڻ شريف، سنڌ، پاڪستان",
       whatsAppLabel: "واٽس ائپ"
     },
     proofStrip: {
       items: [
-        "سنڌ بورڊ مطابق (BISE)",
+        "سنڌ بورڊ (BISE) نصاب",
         "سنڌي · اردو · انگريزي",
-        "ڪلاس 1 کان AI ۽ ڪمپيوٽنگ",
-        "ڪلاس 8 تائين پنهنجي ڪمپني",
-        "سلڪون ويلي سان سڌو لاڳاپو"
+        "ڪلاس 1 کان AI",
+        "ڪلاس 8 تائين اسٽارٽ اپ",
+        "سلڪون ويلي سان لاڳاپو"
       ]
     },
     hero: {
-      badge: "نرسري کان ميٽرڪ تائين · سيوهڻ شريف، سنڌ",
-      title: "ڊگري ڪافي ناهي.",
-      highlight: "مهارتن سان مستقبل ٺاهيون.",
-      subtitle: "سنڌ بورڊ جي مڪمل نصاب سان گڏ ڪلاس 1 کان AI، ڪاروبار ۽ عملي مهارتون.",
+      badge: "نرسري کان ميٽرڪ · سيوهڻ شريف",
+      title: "اسٽارٽ اپ ٺاهيو.",
+      highlight: "سيوهڻ مان، دنيا لاءِ.",
+      subtitle: "سنڌ بورڊ جو مڪمل نصاب، ان سان گڏ ڪلاس 1 کان ميٽرڪ تائين AI ۽ اسٽارٽ اپ سازي.",
       ctaPrimary: "ڪيمپس جو دورو ڪريو",
-      ctaSecondary: "اسان جا شاگرد ڇا ڪن ٿا",
+      ctaSecondary: "شاگرد ڇا ٺاهين ٿا",
       statPills: [
-        { label: "ڪلاس 1", sub: "ڪمپيوٽنگ ۽ AI جي شروعات" },
-        { label: "ڪلاس 8", sub: "شاگردن جي حقيقي ڪمپني" },
-        { label: "ٽيون نمبر / 30", sub: "سلڪون ويلي ۾ عالمي پوزيشن" },
-        { label: "100%", sub: "سنڌ بورڊ مڪمل محفوظ" }
+        { label: "ڪلاس 1", sub: "AI جي شروعات" },
+        { label: "ڪلاس 8", sub: "پهريون اسٽارٽ اپ" },
+        { label: "ٽيون / 30", sub: "سلڪون ويلي رينڪ" },
+        { label: "100%", sub: "سنڌ بورڊ محفوظ" }
       ]
     },
     problemStrip: {
-      tagline: "مهارتن جي کوٽ",
-      conclusion: "شاگردن کي بدلجندڙ روزگار لاءِ لاڳاپيل مهارتون گهرجن.",
+      tagline: "فرق",
+      conclusion: "رڳو ڊگري مستقبل جي ضمانت ناهي رهي. مهارت ۽ ٺاهيل ڪم آهي.",
       stats: [
         {
           number: "10.9%",
           label: "ڊگري هولڊرز ۾ بيروزگاري",
-          subtext: "اڻ پڙهيل ماڻهن ۾ 4.7 سيڪڙو جي ڀيٽ ۾",
+          subtext: "اڻ پڙهيل ماڻهن ۾ 4.7٪ جي ڀيٽ ۾",
           source: "ليبر فورس سروي 2024–25"
         },
         {
           number: "3 مان 1",
-          label: "گريجوئيٽ بيروزگار (عمر 20-24)",
-          subtext: "32.8 سيڪڙو کي ڪيريئر جي شروعات ۾ روزگار ناهي",
-          source: "گيلپ پاڪستان تجزيو"
+          label: "گريجوئيٽ بيروزگار (20–24)",
+          subtext: "32.8٪ ڪيريئر جي شروعات ۾ بيروزگار",
+          source: "گيلپ پاڪستان / LFS تجزيو"
         },
         {
           number: "45.2%",
-          label: "پڙهيل نياڻين جي بيروزگاري",
-          subtext: "عمر 25–29؛ مردن ۾ 14.9 سيڪڙو جي ڀيٽ ۾",
-          source: "گيلپ / ايل ايف ايس رڪارڊ"
+          label: "نياڻين گريجوئيٽس ۾ بيروزگاري",
+          subtext: "عمر 25–29؛ مردن ۾ 14.9٪",
+          source: "ليبر فورس سروي ۽ گيلپ"
         },
         {
           number: "760,000+",
-          label: "2025 ۾ ملڪ ڇڏي ويا",
-          subtext: "ٻاهرين ملڪ روزگار لاءِ رجسٽرڊ ٿيا",
-          source: "روزاني ڊان، جولاءِ 2026"
+          label: "2025 ۾ پاڪستان ڇڏي ويا",
+          subtext: "ٻاهرين ملڪ روزگار لاءِ رجسٽرڊ",
+          source: "ڊان، جولاءِ 2026"
         }
       ]
     },
     theTurn: {
-      badge: "نئون آغاز",
-      title: "اسان ايندڙ دور لاءِ اسڪول ٺاهيو.",
-      description: "مڪمل سنڌ بورڊ نصاب برقرار آهي؛ امتحاني سالن ۾ لڳ ڀڳ 80٪ وقت بورڊ لاءِ آهي. ڪلاس 1 کان AI، ڪاروبار ۽ شخصيت سازي به شامل آهن.",
+      badge: "موڙ",
+      title: "ايندڙ دور لاءِ ٺهيل اسڪول.",
+      description: "سنڌ بورڊ جو نصاب مرڪز ۾ رهي ٿو. فيوچر ليئر ان ۾ AI، پراڊڪٽ سازي ۽ حقيقي اسٽارٽ اپ شامل ڪري ٿي — شاگرد نتيجن ۽ پورٽ فوليو ٻنهي سان نڪرن ٿا.",
       breakdown: [
         {
           title: "سنڌ بورڊ بنياد",
-          desc: "سنڌي، اردو، انگريزي، سائنس، رياضي ۽ اسلاميات، امتحاني مشقن سان.",
-          percent: "~70-80%"
+          desc: "رياضي، سائنس، انگريزي، اردو، سنڌي، اسلاميات، سماجي اڀياس — امتحاني مشق سان.",
+          percent: "~70–80%"
         },
         {
-          title: "مستقبل جي ليئر",
-          desc: "AI، روبوٽڪس، شاگردن جون ڪمپنيون ۽ پروجيڪٽن جو اي-پورٽ فوليو.",
-          percent: "~20-30%"
+          title: "فيوچر ليئر",
+          desc: "AI، ڪوڊنگ، اسٽارٽ اپ سازي ۽ ٺاهيل ڪم جو عوامي پورٽ فوليو.",
+          percent: "~20–30%"
         }
       ]
     },
     fourEngines: {
-      badge: "چار بنيادي ٿنڀا",
-      title: "هر ٻار جي ترقي جا چار انجڻ",
-      subtitle: "تعليم، ڪم ۽ ڪميونٽي لاءِ چار گڏيل پروگرام.",
+      badge: "ڍانچو",
+      title: "چار انجڻ",
+      subtitle: "هڪ اسڪول. چار ڳنڍيل پروگرام.",
       engines: [
         {
           id: "school",
           title: "اسڪول",
-          role: "نرسري کان ميٽرڪ",
-          description: "بورڊ جا مضمون ۽ مستقبل جون مهارتون گڏ، هر شاگرد جي سکيا لاءِ سهائتا سان.",
+          role: "نرسري – ميٽرڪ",
+          description: "بورڊ جا مضمون ۽ مستقبل جون مهارتون هڪ ئي ٽائيم ٽيبل تي.",
           highlight: "نرسري کان ميٽرڪ"
         },
         {
-          id: "sme-incubation",
-          title: "ايس ايم ايز ۽ عالمي واپار",
-          role: "حقيقي ڪمپنيون ۽ واپار",
-          description: "مقامي ڪاروبارن ۽ ورڪشاپن سان پيداوار، گراهڪ خدمت ۽ واپار سکن ٿا.",
+          id: "hero",
+          title: "شخصيت سازي",
+          role: "ڪردار ۽ اعتماد",
+          description: "ڳالهه ٻولهه، نظم ۽ ڪردار — مشق ۽ ٽريڪنگ ذريعي.",
+          highlight: "هفتي ۾ 2 پيريڊ"
+        },
+        {
+          id: "incubator",
+          title: "شاگردن جو اسٽارٽ اپ انڪيوبيٽر",
+          role: "حقيقي اسٽارٽ اپ، حقيقي يوزر",
+          description: "شاگرد پراڊڪٽ ٺاهين ٿا، يوزر ڳولين ٿا ۽ ڪمپني رجسٽر ڪن ٿا — مقامي ڪاروبار سندن پهريان گراهڪ.",
           highlight: "ڪلاس 8 کان 10"
         },
         {
-          id: "technology-community",
-          title: "ٽيڪنالاجي جو پرت ۽ شاگردن جي انڪيوبيشن",
-          role: "ٽيڪنالاجي ۽ ڪميونٽي",
-          description: "مقامي نوجوانن ۽ بالغن لاءِ AI، ڪوڊنگ، وڊيو ۽ فري لانسنگ جا 12 هفتن جا ڪورس.",
+          id: "academy",
+          title: "شام جي اڪيڊمي",
+          role: "ڪميونٽي انجڻ",
+          description: "سيوهڻ جي نوجوانن لاءِ ڪوڊنگ، AI، ميڊيا ۽ فري لانسنگ جا 12 هفتن جا ڪورس.",
           highlight: "سيوهڻ لاءِ کليل"
-        },
-        {
-          id: "global-bridge",
-          title: "عالمي پُل",
-          role: "عالمي ساٿي ۽ موقعا",
-          description: "مقامي صلاحيتن کي عالمي ساٿين، موقعن ۽ مارڪيٽن سان ڳنڍيون.",
-          highlight: "مقامي کان عالمي سطح تائين"
         }
       ]
     },
     whatStudentsDo: {
-      badge: "حقيقتن جو ڀيٽ",
-      title: "جيڪو اسان جا اسڪول جا ٻار ڪن ٿا، يونيورسٽي جا شاگرد نه ٿا ڪري سگهن.",
-      intro: "شاگرد ڇهن سالن کان ٺاهڻ سکڻ شروع ڪن ٿا؛ سورهن سالن تائين کين ڏهن سالن جي عملي مشق ملي ٿي.",
+      badge: "ڀيٽ",
+      title: "جيڪو اسان جا شاگرد ڪن ٿا، گريجوئيٽ نه ٿا ڪري سگهن.",
+      intro: "ٺاهڻ ڇهن سالن ۾ شروع ٿئي ٿو. سورهن سالن تائين شاگرد پراڊڪٽ لانچ ڪري چڪو، يوزرن جي خدمت ڪري چڪو ۽ سيڙپڪارن اڳيان پچ ڪري چڪو هوندو.",
       ladder: [
         {
-          age: "9 سالن جي عمر",
+          age: "9 سالن ۾",
           grade: "ڪلاس 4",
-          task: "تصويرن جي سڃاڻپ لاءِ پنهنجو پهريون AI ماڊل ٽرين ڪري ٿي.",
-          contrast: "اڪثر ڪمپيوٽر سائنس گريجوئيٽس ڪڏهن ماڊل ٽرين ناهي ڪيو."
+          task: "پنهنجو پهريون AI ويزن ماڊل ٽرين ڪري ٿي.",
+          contrast: "اڪثر CS گريجوئيٽس ڪڏهن ناهي ڪيو."
         },
         {
-          age: "10 سالن جي عمر",
+          age: "10 سالن ۾",
           grade: "ڪلاس 5",
-          task: "اسڪول بازار ۾ پنهنجو اسٽال هلائي وڏن آڏو بزنس پچ پيش ڪري ٿو.",
-          contrast: "نفعي نقصان ۽ ڪسٽمر ڊيلنگ جو حقيقي عملي سبق وٺي ٿو."
+          task: "اسٽال هلائي ٿو ۽ وڏن اڳيان پچ ڪري ٿو.",
+          contrast: "قيمت، نقد ۽ گراهڪ سڌو سکي ٿو."
         },
         {
-          age: "12 سالن جي عمر",
-          grade: "ڪلاس 6-7",
-          task: "پائٿون ۾ ڪوڊ لکي ٿو، موبائل ايپ ٺاهي ٿو، سينسرز کي انٽرنيٽ سان ڳنڍي ٿو.",
-          contrast: "سيوهڻ جي بازار ۾ وڪرو ڪري پنهنجو باقاعده کاتو رکي ٿو."
+          age: "12 سالن ۾",
+          grade: "ڪلاس 6–7",
+          task: "پائٿون لکي ٿو ۽ موبائل ائپ ٺاهي ٿو.",
+          contrast: "سيوهڻ ۾ حقيقي يوزرن کي پهچائي ٿو."
         },
         {
-          age: "13 سالن جي عمر",
+          age: "13 سالن ۾",
           grade: "ڪلاس 8",
-          task: "ٽيم سان گڏ باضابطا رجسٽرڊ ڪمپني هلائي ٿو، اجنبي گراهڪن کي وڪرو ڪري ٿو.",
-          contrast: "AI ايجنٽس ۽ سافٽ ويئر ورڪ فلوز ٽولز سان ملائي ٿو."
+          task: "ٽيم سان اسٽارٽ اپ رجسٽر ڪري ٿو.",
+          contrast: "اجنبين کي وڪرو ڪري ٿو ۽ کاتو رکي ٿو."
         },
         {
-          age: "15 سالن جي عمر",
+          age: "15 سالن ۾",
           grade: "ڪلاس 9",
-          task: "مقامي ڪاروبار لاءِ AI آٽوميشن سافٽ ويئر ٺاهي انڪيوبيٽر ۾ ويهي ٿو.",
-          contrast: "بين الاقوامي پليٽ فارمن تي مقابلو ڪري ٿو."
+          task: "مقامي ڪاروبار لاءِ AI ٽول ٺاهي انڪيوبيٽر ۾ داخل ٿئي ٿو.",
+          contrast: "بين الاقوامي اسٽارٽ اپ اسٽيجن تي مقابلو ڪري ٿو."
         },
         {
-          age: "16 سالن جي عمر",
+          age: "16 سالن ۾",
           grade: "ميٽرڪ",
-          task: "سنڌ بورڊ جي اعليٰ سند سان گڏ هلندڙ AI پراڊڪٽ، آڊٽ ٿيل کاتو ۽ اي-پورٽ فوليو کڻي نڪري ٿو.",
-          contrast: "NIC ۽ ORIC جي ماهرن اڳيان ڊيمو ڊي تي ڪمپني پيش ڪري چڪو هوندو آهي."
+          task: "BISE جي سٺن مارڪن ۽ هلندڙ پراڊڪٽ سان گريجوئيٽ ٿئي ٿو.",
+          contrast: "NIC ۽ ORIC مهمانن اڳيان ڊيمو ڊي. عوامي پورٽ فوليو."
         }
       ],
       comparison: {
-        headers: ["عام يونيورسٽي گريجوئيٽ (22 سال، 16 سالن جي پڙهائي)", "دي رائزنگ سنڌ جو شاگرد (16 سال، 11 سالن جي پڙهائي)"],
+        headers: ["عام گريجوئيٽ (22 سال)", "رائزنگ سنڌ جو شاگرد (16 سال)"],
         rows: [
-          { typical: "هڪ تصديق ٿيل سي وي ۽ فوٽو ڪاپيون", rising: "ٺاهيل حقيقي ڪمن جو لائيو پورٽ فوليو" },
-          { typical: "ياد ڪيل نوٽس جيڪي جلد وسري ويندا", rising: "مارڪيٽ ۾ هلندڙ پروڊڪٽس ۽ پيسا ڏيندڙ گراهڪ" },
-          { typical: "سرڪاري يا نجي نوڪري جي اشتهار جو انتظار", rising: "اجنبي ماڻهن سان سامهون ٿي ڊيلنگ ڪري چڪو هوندو" },
-          { typical: "خوف ته AI کائنس نوڪري کسي وٺندو", rising: "AI کي روزاني پنهنجي اوزار طور استعمال ڪري ٿو" },
-          { typical: "مجبورن وڏي شهر يا پرڏيهه وڃڻ جي ڪوشش", rising: "سيوهڻ ۾ ويهي دنيا سان ڪاروبار ڪري ٿو" }
+          { typical: "سي وي ۽ تصديق ٿيل فوٽو ڪاپيون", rising: "ٺاهيل ڪم جو لائيو پورٽ فوليو" },
+          { typical: "ياد ڪيل نظريا، وسرندڙ", rising: "حقيقي يوزرن سان پراڊڪٽس" },
+          { typical: "نوڪري جي اشتهار جو انتظار", rising: "اجنبين کي وڪرو ڪري چڪو" },
+          { typical: "خوف ته AI نوڪري کسيندو", rising: "روزانو AI سان ٺاهي ٿو" },
+          { typical: "شهر يا پرڏيهه وڃڻ جي مجبوري", rising: "سيوهڻ مان عالمي گراهڪن جي خدمت" }
         ]
       },
-      closingNote: "شاگرد يونيورسٽي به چونڊي سگهن ٿا، عملي تجربي ۽ پنهنجي ڪم جي پورٽ فوليو سان."
+      closingNote: "يونيورسٽي هر شاگرد لاءِ کليل رهي ٿي — هٿ ۾ پورٽ فوليو سان."
     },
     theModel: {
       badge: "ٻه سطحي نصاب",
-      title: "بورڊ جا نتيجا مڪمل محفوظ. مستقبل شامل.",
-      openingPromise: "ٻه درجا. هڪ ٽائيم ٽيبل. ڪا به قرباني ناهي.",
-      promiseDetail: "هفتي جو لڳ ڀڳ 70٪ وقت سنڌ بورڊ لاءِ، امتحاني سالن ۾ 80٪ آهي. باقي وقت ڪمپيوٽنگ، AI ۽ ڪاروبار لاءِ آهي.",
+      title: "بورڊ جا نتيجا محفوظ. مستقبل شامل.",
+      openingPromise: "ٻه سطحون. هڪ ٽائيم ٽيبل. ڪا قرباني ناهي.",
+      promiseDetail: "هفتي جو لڳ ڀڳ 70٪ سنڌ بورڊ نصاب — ڪلاس 9–10 ۾ 80٪. باقي ڪمپيوٽنگ، AI ۽ اسٽارٽ اپ سازي.",
       timelineStages: [
         {
           grade: "نرسري – ڪي جي",
-          computing: "اسڪرين کانسواءِ لاجڪ گيمز، 'روبوٽ کي هدايت ڏيو' جون رانديون.",
-          entrepreneurship: "شراڪتداري، ڪلاس جون ذميواريون، رول پلي مارڪيٽ ڊي.",
-          milestone: "منطق ۽ احساس"
+          computing: "اسڪرين کانسواءِ لاجڪ گيمز ۽ 'روبوٽ کي هدايت ڏيو' رانديون.",
+          entrepreneurship: "شراڪت، ڪلاس جون ذميواريون، مارڪيٽ ڊي رول پلي.",
+          milestone: "منطق ۽ همدردي"
         },
         {
           grade: "ڪلاس 1–3",
-          computing: "ScratchJr، فلور روبوٽس، ڪمپيوٽر ٽائپنگ، بنيادي الگورٿم.",
-          entrepreneurship: "حقيقي پئسن سان ڪلاس جو دڪان، بچت جي گُلق، کاتو سنڀالڻ.",
-          milestone: "پهريون ڪوڊ ۽ پئسو"
+          computing: "ScratchJr، فلور روبوٽ، ٽائپنگ.",
+          entrepreneurship: "حقيقي سڪن سان ڪلاس جو دڪان، بچت جي گُلق.",
+          milestone: "پهريون ڪوڊ"
         },
         {
           grade: "ڪلاس 4–5",
-          computing: "اسڪريچ گيمز، micro:bit مائيڪرو ڪنٽرولر، پهريون تربيت يافته AI ماڊل.",
-          entrepreneurship: "اسڪول مينهوار بازار، والدين اڳيان ننڍي ڪمپني جو نظريو پيش ڪرڻ.",
-          milestone: "AI ماڊل ٽريننگ"
+          computing: "اسڪريچ، micro:bit، پهريون AI ماڊل.",
+          entrepreneurship: "بازار اسٽال، والدين اڳيان ننڍي ڪمپني جو پچ.",
+          milestone: "پهريون AI ماڊل"
         },
         {
           grade: "ڪلاس 6–7",
-          computing: "پائٿون پروگرامنگ، موبائل ائپس، سينسرز ۽ IoT، ايماندار پرامپٽنگ.",
-          entrepreneurship: "بزنس ماڊل ڪينواس، مقامي ننڍن ڪاروبارن (صابڻ ۽ چپل يونٽس) سان گڏ عملي پيداوار ۽ روزنامچو.",
-          milestone: "پائٿون ۽ حقيقي وڪرو"
+          computing: "پائٿون، موبائل ائپس، IoT سينسر، ايماندار AI پرامپٽنگ.",
+          entrepreneurship: "بزنس ماڊل ڪينواس، حقيقي يوزرن سان پهرين پراڊڪٽ، بنيادي کاتو.",
+          milestone: "پهرين لانچ ٿيل پراڊڪٽ"
         },
         {
           grade: "ڪلاس 8",
-          computing: "ويب سائيٽ ٺاهڻ، APIs، AI ايجنٽ ورڪ فلوز، 3D ڊيزائننگ ۽ پرنٽنگ.",
-          entrepreneurship: "حقيقي رجسٽرڊ اسٽوڊنٽ ڪمپني، مقامي صنعتن (موبائل ريپيئر ۽ هٿ جا هنر) سان ڳنڍيل حقيقي گراهڪن کي مال پهچائڻ.",
-          milestone: "رجسٽرڊ ادارو"
+          computing: "ويب، APIs، نگراني هيٺ AI ايجنٽ ورڪ فلو، 3D پرنٽنگ.",
+          entrepreneurship: "ٽيم، گراهڪن ۽ ٽه-ماهي کاتي سان رجسٽرڊ شاگرد اسٽارٽ اپ.",
+          milestone: "رجسٽرڊ اسٽارٽ اپ"
         },
         {
           grade: "ڪلاس 9–10",
-          computing: "سنڌ بورڊ ڪمپيوٽر سائنس + مقامي خانداني ڪاروبار لاءِ AI آٽوميشن سافٽ ويئر.",
-          entrepreneurship: "ڪيمپس انڪيوبيٽر سيمسٽر، مقامي SMEs جي عملي مسئلن جو حل، NIC/ORIC ججز اڳيان باضابطا ڊيمو ڊي پچنگ.",
-          milestone: "ميٽرڪ سند ۽ لائيو پورٽ فوليو"
+          computing: "بورڊ ڪمپيوٽر سائنس + مقامي ڪاروبار لاءِ AI آٽوميشن.",
+          entrepreneurship: "انڪيوبيٽر سيمسٽر: MVP، شروعاتي يوزر، NIC/ORIC مهمانن اڳيان ڊيمو ڊي پچ.",
+          milestone: "ميٽرڪ + لائيو پورٽ فوليو"
         }
       ],
       teachingPillars: [
         {
           title: "مهارت پهريان",
-          desc: "هفتيوار ٽيسٽ ۽ جائزي سان ڪنهن به ٻار کي خاموشي سان پوئتي رهڻ نه ڏنو ويندو."
+          desc: "هفتيوار چڪاس ۽ ٻيهر سيکارڻ. ڪو ٻار خاموشي سان پوئتي نه رهندو."
         },
         {
           title: "عمر ڀر جو اي-پورٽ فوليو",
-          desc: "ڪي جي کان ميٽرڪ تائين هر پروجيڪٽ، ڪوڊ ريپو ۽ ڪمپني رپورٽ محفوظ ٿيندي."
+          desc: "ڪي جي کان ميٽرڪ تائين هر پروجيڪٽ ۽ اسٽارٽ اپ رپورٽ، هڪ عوامي رڪارڊ ۾."
         },
         {
-          title: "والدين جو موبائل ڊيش بورڊ",
-          desc: "پنهنجي زبان (سنڌي) ۾ ٻار جي تعليمي ۽ ٽيڪنالوجي ترقي فون تي چيڪ ڪريو."
+          title: "والدين جو ڊيش بورڊ",
+          desc: "مهيني جي ترقي سنڌي، اردو يا انگريزيءَ ۾، توهان جي فون تي."
         },
         {
           title: "استاد اڪيلا ناهن",
-          desc: "مرڪزي اڪيڊمڪ ٽيم ۽ رڪارڊ ٿيل سبق کٽس — هر استاد جو AI ماهر هجڻ لازمي ناهي."
+          desc: "رڪارڊ ٿيل سبق ڪٽس ۽ مرڪزي سهائتا. ڪنهن استاد جو AI ماهر هجڻ ضروري ناهي."
         },
         {
-          title: "ديانتداري سان AI جو استعمال",
-          desc: "سخت تعليمي ضابطن ۽ اخلاقي هدايتن تحت AI جو صحيح استعمال سيکاريو وڃي ٿو."
-        },
-        {
-          title: "شخصيت سازي",
-          desc: "عملي سرگرمين ۽ ٽريڪنگ سان اعتماد، ڳالهه ٻولهه، نظم، ٽيم ورڪ ۽ ڪردار کي وڌايو."
+          title: "ديانتداريءَ سان AI",
+          desc: "AI هڪ اوزار طور، استاد جي رهنمائي ۾، ايماندار ڪم جي چٽن اصولن سان."
         }
       ]
     },
     smeEnterprises: {
-      badge: "عملي ۽ فني سکيا",
-      title: "تعليم کي حقيقي ڪاروبار ۽ مقامي صنعت سان ڳنڍڻ",
-      subtitle: "عملي پيداوار، فني هنر ۽ حقيقي ڪم جي ذريعي ننڍن ۽ وچولن ڪاروبارن (SMEs) کي سمجهڻ.",
-      whatIsSmeTitle: "ننڍا ۽ وچولا ڪاروبار (SMEs) ڇا آهن؟",
-      whatIsSmeDesc: "SMEs سنڌ جا مقامي دڪان، ورڪشاپ، مرمتي مرڪز ۽ ڪارخانا آهن، جيڪي شيون، خدمتون ۽ روزگار ڏين ٿا.",
-      whyConnectTitle: "تعليم کي مقامي ڪاروبار سان ڳنڍڻ ڇو ضروري آهي؟",
-      whyConnectDesc: "مقامي ڪاروبارن سان ڪم ڪري شاگرد پيداوار، مسئلا حل ڪرڻ، گراهڪ خدمت ۽ ڪاروباري مهارتون سکندا ۽ ڪيريئر جا رستا ڳوليندا آهن.",
-      learningOutcomesTitle: "شاگرد حقيقي ڪاروبارن مان ڇا سکن ٿا؟",
+      badge: "عملي سکيا",
+      title: "مقامي ڪاروبار پهرين گراهڪ طور",
+      subtitle: "اسٽارٽ اپ کي گراهڪ گهرجن. سيوهڻ جا ورڪشاپ ۽ دڪان اهي جايون آهن جتي اسان جا شاگرد پنهنجا پهريان گراهڪ ڳولين ٿا.",
+      whatIsSmeTitle: "مقامي ڪاروبار ڇو؟",
+      whatIsSmeDesc: "صابڻ يونٽ، موبائل ريپيئر دڪان، چپل ٺاهيندڙ ۽ هنري ورڪشاپ سيوهڻ جي معيشت هلائين ٿا — ۽ انهن وٽ حل ڪرڻ جهڙا حقيقي مسئلا آهن.",
+      whyConnectTitle: "شاگرد انهن سان ڇا ڪن ٿا",
+      whyConnectDesc: "دورو ڪن، ڏسن، رڪاوٽ ڳولين ۽ ان کي حل ڪندڙ پراڊڪٽ ٺاهين — بلنگ ائپ، آن لائن دڪان، سادي آٽوميشن.",
+      learningOutcomesTitle: "شاگرد ڪهڙيون مهارتون مشق ڪن ٿا",
       learningOutcomes: [
         {
-          title: "شين جي تياري ۽ پيداواري عمل (Manufacturing Processes)",
-          desc: "خام مال کڻڻ، وزن ۽ ماپ جو حساب، ترتيب سان شين جي تياري، پيڪنگ ۽ حفاظت جا اصول سمجهڻ."
+          title: "حقيقي مسئلو ڳولڻ",
+          desc: "ورڪشاپ کي ڏسو ۽ سڃاڻو ته ڪهڙي شيءِ وقت يا پئسو کائي ٿي."
         },
         {
-          title: "گراهڪن جي خدمت ۽ سندن ضرورتن کي سمجهڻ",
-          desc: "گراهڪ جي ڳالهه ڌيان سان ٻڌڻ، شائستگي سان ڳالهائڻ، سندن مسئلي جو حل ڳولڻ، ۽ گراهڪ جو اعتماد حاصل ڪرڻ."
+          title: "گراهڪن سان ڳالهائڻ",
+          desc: "ٻڌو، پڇو ۽ حل سادي ٻوليءَ ۾ سمجهايو."
         },
         {
-          title: "ٽيم ورڪ، معيار جي پڪ ۽ مسئلن جو حل",
-          desc: "ساٿين سان گڏجي ڪم ڪرڻ، خراب شين جي سڌارو، ۽ ورڪشاپ ۾ روزانو ايندڙ ڏکيائين کي سٺي نموني حل ڪرڻ."
+          title: "پيداوار ۽ معيار",
+          desc: "ڏسو ته شيون ڪيئن ٺهن، جاچجن ۽ اگهه رکجن ٿيون."
         },
         {
-          title: "مقامي ڪاروبار ڪيئن هلندا آهن؟",
-          desc: "روڪ رقم جو حساب، کاتو ۽ لکپڙھ، مال جي سنڀال، خرچن ۽ منافعي جو فرق، ۽ مقامي بازار جا اصول سمجهڻ."
-        },
-        {
-          title: "ڪاروباري سوچ، فني مهارتون ۽ روزگار جا موقعا",
-          desc: "عملي فني هنر سکڻ، مارڪيٽ جي ضرورتن کي سڃاڻڻ، ۽ اڳتي هلي پنهنجو روزگار يا ڪاروبار شروع ڪرڻ جو حوصلو پيدا ڪرڻ."
+          title: "حساب ڪتاب",
+          desc: "خرچ، اسٽاڪ، نقد ۽ منافعو — حقيقي ڪاروبار اندر."
         }
       ],
-      examplesTitle: "شاگردن لاءِ مقامي ڪاروبارن جا مثال",
-      examplesSubtitle: "مقامي پيداوار، مرمت ۽ پاڻي جي خدمتن جا اٺ مثال.",
+      examplesTitle: "شاگرد ڪٿان شروع ڪن ٿا",
+      examplesSubtitle: "سيوهڻ جا چار قسمن جا ڪاروبار جيڪي پهريان گراهڪ بڻجن ٿا.",
       examples: [
         {
-          id: "data-cable-manufacturing",
-          title: "ڊيٽا ڪيبل ٺاهڻ جا ڪارخانا",
-          description: "اهي ڪارخانا تارون، ڪنيڪٽر ۽ حفاظتي تهه گڏ ڪري ڊيٽا ۽ چارجنگ ڪيبل ٺاهين ٿا."
+          id: "soap-making",
+          title: "صابڻ ٺاهڻ جا يونٽ",
+          role: "پيداوار",
+          businessDoes: "مقامي بازارن لاءِ صابڻ ملائين، ڍالين ۽ پيڪ ڪن ٿا.",
+          studentsLearn: "شاگرد بيچ-ڪاسٽنگ شيٽون ۽ سادا آن لائن ڪيٽلاگ ٺاهين ٿا.",
+          tags: ["خرچ جو حساب", "ڪيٽلاگ", "پيڪنگ"]
         },
         {
-          id: "plastic-bottle-manufacturing",
-          title: "پلاسٽڪ جون بوتلون ٺاهڻ جا ڪارخانا",
-          description: "اهي ڪارخانا پيئڻ جي پاڻي، مشروبات ۽ ٻين شين لاءِ پلاسٽڪ جون بوتلون ٺاهين ٿا."
+          id: "mobile-repair",
+          title: "موبائل ريپيئر دڪان",
+          role: "ٽيڪنيڪل سروس",
+          businessDoes: "خرابيون ڳولين، اسڪرين بدلائين، چارجنگ ۽ سافٽ ويئر ٺيڪ ڪن ٿا.",
+          studentsLearn: "شاگرد جاب-ٽريڪنگ ۽ ڪوٽيشن ٽول ٺاهين ٿا ۽ بنيادي چڪاس سکن ٿا.",
+          tags: ["چڪاس", "جاب ٽريڪنگ", "گراهڪ خدمت"]
         },
         {
-          id: "ro-water-treatment",
-          title: "آر او پاڻي صاف ڪرڻ جا پلانٽ",
-          description: "اهي پلانٽ ريورس اوسموسس ذريعي پاڻي صاف ڪري پيئڻ جو صاف پاڻي فراهم ڪن ٿا."
+          id: "footwear-manufacturing",
+          title: "چپل ۽ جوتن جا يونٽ",
+          role: "هنر ۽ تياري",
+          businessDoes: "چمڙو ڪٽي ۽ سبي سنڌي چپل ۽ جديد جوتا ٺاهين ٿا.",
+          studentsLearn: "شاگرد پراڊڪٽ فوٽو، آن لائن دڪان ۽ اسٽاڪ ٽريڪر ٺاهين ٿا.",
+          tags: ["اي ڪامرس", "اسٽاڪ", "اگهه"]
         },
         {
-          id: "concrete-block-paver-manufacturing",
-          title: "ڪنڪريٽ بلاڪ ۽ پيور ٺاهڻ جا ڪارخانا",
-          description: "اهي ڪارخانا عمارتن ۽ پيادل رستن لاءِ مضبوط ڪنڪريٽ بلاڪ ۽ پيور ٺاهين ٿا."
-        },
-        {
-          id: "small-soap-making",
-          title: "صابڻ ٺاهڻ جا ننڍا يونٽ",
-          description: "ننڍا ٺاهيندڙ مقامي دڪانن ۽ بازارن لاءِ صابڻ ٺاهي پيڪ ڪن ٿا."
-        },
-        {
-          id: "mobile-repairing",
-          title: "موبائل مرمت جا دڪان",
-          description: "مرمتي دڪان فون جا نقص ڳولي اسڪرين، بيٽري ۽ چارجنگ جا مسئلا ٺيڪ ڪن ٿا."
-        },
-        {
-          id: "chappal-making",
-          title: "چپل ٺاهڻ جا ننڍا يونٽ",
-          description: "مقامي ڪاريگر گراهڪن ۽ بازارن لاءِ چپل ڪٽي، سبي ۽ تيار ڪن ٿا."
-        },
-        {
-          id: "local-mechanical-craft-workshops",
-          title: "سنڌ جا مقامي مڪينيڪل ۽ هنري ورڪشاپ",
-          description: "مقامي ورڪشاپ مشينري جي مرمت، ڌاتوءَ جو ڪم، اجرڪ ڇپائي ۽ واڍڪو ڪم ڪن ٿا."
+          id: "local-workshops",
+          title: "هنري ۽ مشيني ورڪشاپ",
+          role: "هنر",
+          businessDoes: "اجرڪ ڇپائي، گيراج، لوهه ۽ ڪاٺ جا دڪان شهر جي خدمت ڪن ٿا.",
+          studentsLearn: "شاگرد ڪم جو نقشو ٺاهين، خيال آزمائين ۽ اهي هنر ڳولين جن لاءِ ٺاهڻ جهڙو آهي.",
+          tags: ["ورڪ فلو", "پروٽوٽائپ", "فني رستا"]
         }
       ]
     },
     heroTrack: {
-      badge: "ڪردار ۽ شخصيت سازي جو شعبو",
+      badge: "ڪردار جو ٿنڀو",
       title: "شخصيت سازي",
-      subtitle: "شاگردن جي ڪردار، اخلاق، خود اعتمادي، ۽ اسڪول، خانداني زندگي، سماج ۽ ايندڙ ڪيريئر لاءِ بنيادي زندگيءَ جون صلاحيتون.",
-      description: "شاگرد نظم، ايمانداري، ڳالهه ٻولهه، اعتماد، همدردي، ٽيم ورڪ ۽ مشڪلاتن کي منهن ڏيڻ جون صلاحيتون سکندا آهن.",
+      subtitle: "اعتماد، ڳالهه ٻولهه، نظم ۽ ڪردار — اسڪول، گهر ۽ عالمي اسٽيج لاءِ.",
+      description: "بانيءَ کي ڪوڊ کان وڌيڪ گهرجي. هفتي ۾ ٻه پيريڊ اهي عادتون ٺاهين ٿا جيڪي شاگرد کي پچ، ٽيم ۽ ڏکئي ڏينهن مان پار ڪرائين ٿيون.",
       features: [
         {
-          title: "ڳالهه ٻولهه ۽ باوقار انداز ۾ اظهار",
-          desc: "ٻڌڻ، احترام سان ڳالهائڻ ۽ اعتماد سان پنهنجا خيال پيش ڪرڻ جي مشق."
+          title: "ڳالهه ٻولهه",
+          desc: "چڱيءَ طرح ٻڌو، صاف ڳالهايو، اعتماد سان پيش ڪريو."
         },
         {
-          title: "نظم و ضبط، اخلاقيات ۽ سماجي آداب",
-          desc: "اسڪول ۽ گهر ۾ سچائي، ذميواري ۽ احترام جي عملي تربيت."
+          title: "نظم ۽ اخلاق",
+          desc: "سچائي، ذميواري ۽ احترام، روزاني مشق سان."
         },
         {
-          title: "جبلن تي ٽريڪنگ جون مہمات",
-          desc: "ٻُڏو جبل، ڀاڳو ٽوڙهو ۽ ڪارونجهر ۾ ٽريڪنگ ۽ ڪئمپنگ ڪريو؛ سنڌو درياهه ۾ سرفنگ، ٻيڙي هلائڻ ۽ ترڻ سان جسماني تندرستي، اعتماد، ٽيم ورڪ ۽ فطرت جو احترام وڌايو."
+          title: "جبلن جي ٽريڪنگ",
+          desc: "ٻُڏو جبل، ڀاڳو ٽوڙهو ۽ ڪارونجهر: فٽنيس، ٽيم ورڪ ۽ فطرت جو احترام."
         },
         {
-          title: "حوصلا، باهمي سهڪار ۽ قيادت",
-          desc: "همدردي، ٽيم ورڪ ۽ همت سان مسئلا حل ڪرڻ ۽ سٺا فيصلا ڪرڻ سکن."
+          title: "همت ۽ قيادت",
+          desc: "همدردي، ٽيم ورڪ ۽ دٻاءَ هيٺ ٺهيل فيصلا."
         }
       ],
       heroOath: {
-        title: "شاگردن جو اخلاقي عهد (ڪلاس 9)",
-        text: "”مان سچائي ۽ ديانتداري سان ڪم ڪندس. مان عزت ۽ چٽائيءَ سان ڳالهائيندس. مان نظم و ضبط اختيار ڪندس، پنهنجي ساٿين جو ساٿ ڏيندس، سنڌ جي مٽيءَ جي خدمت ڪندس، ۽ زندگيءَ جي هر چئلينج جو بهادريءَ سان مقابلو ڪندس.“"
+        title: "شاگردن جو عهد (ڪلاس 9)",
+        text: "”مان سچائيءَ سان ڪم ڪندس. مان چٽائي ۽ احترام سان ڳالهائيندس. مان پنهنجي ٽيم جو ساٿ ڏيندس، سنڌ جي مٽيءَ جي خدمت ڪندس، ۽ هر چئلينج کي همت سان منهن ڏيندس.“"
       }
     },
     theProof: {
-      badge: "زندھ ثبوت",
-      title: "ثبوت — سيوهڻ کان سلڪون ويلي تائين",
-      intro: "باني علي مرتضيٰ سولنگي پنهنجو پهريون اسٽارٽ اپ سيوهڻ ۾ ٺاهيو. NUST جي GAP پروگرام ۾ ڪاميابي کان پوءِ، هو سلڪون ويلي ۾ 30 ملڪن جي بانيئن مان ٽئين نمبر تي آيو.",
-      investorTitle: "سيوهڻ جي اسٽارٽ اپ کي عالمي سيڙپڪار جي حمايت ملي.",
-      investorDesc: "علي جي اسٽارٽ اپ جي سيڙپڪار 30 کان وڌيڪ يونيڪارن ڪمپنين ۾ سيڙپ ڪئي آهي، جن ۾ ٽيسلا، پي پال، اسپيس ايڪس ۽ ياهو شامل آهن.",
+      badge: "نظير",
+      title: "سيوهڻ کان سلڪون ويلي تائين",
+      intro: "باني علي مرتضيٰ سولنگي پنهنجو پهريون اسٽارٽ اپ سيوهڻ ۾ ٺاهيو. NUST جو GAP پروگرام کٽڻ کان پوءِ، هو سلڪون ويلي ۾ 30 ملڪن جي بانيئن مان ٽئين نمبر تي آيو.",
+      investorTitle: "سيوهڻ جو اسٽارٽ اپ، عالمي سيڙپڪار جي سپورٽ سان.",
+      investorDesc: "علي جي اسٽارٽ اپ جي سيڙپڪار 30 کان وڌيڪ يونيڪارن ۾ سيڙپ ڪئي آهي، جن ۾ ٽيسلا، پي پال، اسپيس ايڪس ۽ ياهو شامل آهن.",
       stats: [
-        { number: "ٽيون نمبر / 30", label: "سلڪون ويلي ۾ ملڪن مان پوزيشن" },
-        { number: "10+", label: "ملڪن ۾ ڪمپني جي عالمي سروس" },
-        { number: "سوين", label: "ملازمن جي عالمي ٽيم" },
-        { number: "لکين ڊالر", label: "عالمي ٽيڪنالوجي آمدني" }
+        { number: "30 مان ٽيون", label: "سلڪون ويلي ۾ ملڪن جي رينڪنگ" },
+        { number: "20+", label: "ملڪن ۾ اڄ خدمت" },
+        { number: "سوين", label: "هاءِ ٽيڪ ملازمن جي اڳواڻي" }
       ],
       whyItMatters: {
-        title: "سيوهڻ مان عالمي ڪمپني ٺهي سگهي ٿي—اسان اهو ڪري ڏيکاريو.",
-        desc: "هي اسڪول ڪلاس 1 کان شاگردن کي ٺاهڻ، پنهنجو ڪم پيش ڪرڻ ۽ عالمي موقعن لاءِ تيار ڪري ٿو."
+        title: "سيوهڻ مان عالمي ڪمپني ٺهي سگهي ٿي. اسان ڪري ڏيکاريو.",
+        desc: "هي اسڪول ان سفر کي ڪلاس 1 کان نصاب ۾ بدلائي ٿو."
       },
       founderQuote: {
-        quote: "”جيڪو ڪجهه هو اوهان جي ٻار کي سيوهڻ مان ناممڪن چوندا، مان اهو سيوهڻ مان ڪري ڏيکاريو آهي. رڳو اهڙي اسڪول جي کوٽ هئي. تنهنڪري مان هي اسڪول تعمير ڪيو.“",
+        quote: "”جيڪو ڪجهه هو اوهان جي ٻار کي سيوهڻ مان ناممڪن چوندا، مان اهو سيوهڻ مان ڪري ڏيکاريو آهي. رڳو اهڙي اسڪول جي کوٽ هئي. تنهنڪري مان هي اسڪول ٺاهيو.“",
         name: "علي مرتضيٰ سولنگي",
         role: "باني، دي رائزنگ سنڌ"
       },
       milestones: [
-        { year: "پهريون مرحلو", stage: "سيوهڻ مان شروعات", desc: "لال شهباز قلندر جي درگاهه ڀرسان عام ڪمرن ۾ پهريون ٽيڪنالاجي ڪوڊ لکيو ويو." },
-        { year: "ٻيو مرحلو", stage: "قومي چيمپيئن", desc: "NUST GAP پروگرام ذريعي سڄي پاڪستان ۾ اعليٰ ڪاميابي حاصل ڪئي." },
-        { year: "ٽيون مرحلو", stage: "سلڪون ويلي اسٽيج", desc: "30 ملڪن ۾ ٽيون نمبر ۽ 'The Most Investable Startup' جو اعزاز ورتو." },
-        { year: "چوٿون مرحلو", stage: "عالمي سطح", desc: "ايلون مسڪ جي سيڙپڪار کان فنڊ حاصل ڪري 10 ملڪن ۾ ڪمپني وڌائي." },
-        { year: "پنجون مرحلو", stage: "واپسي سنڌ ڏانهن", desc: "اهو پورو عمل ٻارن لاءِ مستقبل جي اسڪول جي صورت ۾ کڻي واپس آيا." }
+        { year: "پهريون مرحلو", stage: "سيوهڻ مان جنم", desc: "لال شهباز قلندر جي درگاهه ڀرسان عام ڪمرن ۾ پهرين پراڊڪٽ ڪوڊ ڪئي وئي." },
+        { year: "ٻيو مرحلو", stage: "قومي چيمپيئن", desc: "NUST جو گلوبل ايڪسيليريشن پروگرام (GAP) کٽيو." },
+        { year: "ٽيون مرحلو", stage: "سلڪون ويلي اسٽيج", desc: "30 ملڪن مان ٽيون نمبر، 'The Most Investable Startup in Silicon Valley'." },
+        { year: "چوٿون مرحلو", stage: "عالمي سطح", desc: "30+ يونيڪارن سيڙپڪار جي سپورٽ؛ 20+ ملڪن ۾ ڪم." },
+        { year: "پنجون مرحلو", stage: "واپس سيوهڻ", desc: "اهو سفر، اسڪول جي نصاب طور ٻيهر ٺاهيل." }
       ]
     },
     globalBridge: {
-      badge: "مقامي ڏات · عالمي وهڪرو",
-      title: "عالمي پُل — پهرين ڏينهن کان جڙيل",
-      subtitle: "مقامي صلاحيتن کي عالمي ساٿين، موقعن ۽ مارڪيٽن سان ڳنڍيون.",
+      badge: "مقامي ڏات · عالمي مارڪيٽ",
+      title: "عالمي پُل",
+      subtitle: "شاگردن جا اسٽارٽ اپ پهرين ڏينهن کان عالمي مارڪيٽ لاءِ ٺهن ٿا.",
       lanes: [
         {
           laneNumber: "01",
-          title: "بنا سرحدن جي گڏيل ڪاروبار ۽ شريڪ باني",
-          highlight: "سيوهڻ ۾ باني. سلڪون ويلي ۾ پارٽنر. هڪ ئي ڪمپني.",
-          description: "پرڏيهه ۾ رهندڙ ماهر شاگردن جي منصوبن ۾ ڀائيوار ٿي تجربو، نيٽ ورڪ يا سرمايو ڏئي سگهن ٿا."
+          title: "بنا سرحدن جي شريڪ باني",
+          highlight: "سيوهڻ ۾ باني. سلڪون ويلي ۾ شريڪ باني. هڪ ئي ڪمپني.",
+          description: "پرڏيهي سنڌي ۽ عالمي ماهر شاگردن جي اسٽارٽ اپس ۾ ڀائيوار ٿين ٿا — تجربي، نيٽ ورڪ يا سرمايي سان."
         },
         {
           laneNumber: "02",
-          title: "بين الاقوامي تعليمي دورا ۽ عالمي سڃاڻپ",
-          highlight: "تعليمي دورن سان نيون ثقافتون، ٽيڪنالاجي ۽ خيال ڏسن.",
-          description: "امڪاني عالمي تعليمي دورا شاگردن کي نون ادارن ۽ ثقافتن سان روشناس ڪرائين، سندن سوچ وسيع ڪن ۽ تعليم يا ڪيريئر جا نوان رستا ڏيکارين."
+          title: "عالمي سڃاڻپ",
+          highlight: "ٻاهرين ملڪن جي اسٽارٽ اپ هبز، يونيورسٽين ۽ ليبز جا مطالعاتي دورا.",
+          description: "شاگرد ڏسن ٿا ته عالمي باني ڪيئن ڪم ڪن ٿا — پوءِ گهر اچي ٺاهين ٿا."
         },
         {
           laneNumber: "03",
-          title: "عالمي رجسٽريشن ۽ پيٽنٽس",
-          highlight: "سيوهڻ ۾ پيدائش. سلڪون ويلي ۾ رجسٽريشن. عالمي تحفظ.",
-          description: "بهترين شاگردن جا اسٽارٽ اپس آمريڪا (Delaware) ۾ رجسٽرڊ ڪيا ويندا ۽ انهن جون ايجادون پهريان آمريڪا ۽ پوءِ سڄي دنيا ۾ پيٽنٽ ڪرائي محفوظ ڪيون وينديون."
+          title: "عالمي رجسٽريشن ۽ پيٽنٽ",
+          highlight: "جنم سيوهڻ ۾. رجسٽريشن ڊيلاويئر ۾. تحفظ سڄي دنيا ۾.",
+          description: "چونڊيل شاگرد اسٽارٽ اپ آمريڪا ۾ رجسٽر ٿين ٿا ۽ سنڌ ۾ ٿيل ايجادن جا پيٽنٽ داخل ڪن ٿا."
         }
       ],
-      closing: "ڏات سنڌ ۾ رهي، جڏهن ته هتان جون شيون ۽ خيال عالمي مارڪيٽن تائين پهچن.",
+      closing: "ڏات سنڌ ۾ رهي ٿي. پراڊڪٽس دنيا ۾ وڃن ٿيون.",
       scholarshipHighlight: {
-        badge: "تعليمي انصاف ۽ اهليت",
-        title: "مستحق ۽ ذهين شاگردن لاءِ اسڪالرشپس",
-        subtitle: "مالي حالتون ڪنهن به باصلاحيت ٻار جي تعليم ۽ حوصلي جي آڏو رڪاوٽ نه بڻجنديون.",
-        description: "ميرٽ ۽ ضرورت جي بنياد تي اسڪالرشپس سان مستحق شاگرد نصاب، جديد ليبز ۽ شخصيت سازي مان فائدو وٺي سگهن ٿا.",
+        badge: "ميرٽ ۽ ضرورت",
+        title: "اسڪالرشپ",
+        subtitle: "ڪو به باصلاحيت ٻار پئسي سبب ٻاهر نه رهندو.",
+        description: "ميرٽ ۽ ضرورت تي ٻڌل اسڪالرشپ اهل شاگردن لاءِ مڪمل پروگرام کي ڍڪين ٿيون — ليب، ٽريڪنگ ۽ اسٽارٽ اپ سميت.",
         points: [
-          "ذهانت ۽ صلاحيت کي مڃڻ لاءِ ميرٽ ايوارڊز",
-          "ضرورت مند خاندانن جي لائق ٻارن لاءِ مالي سهائتا",
-          "خاندانن کي بااختيار بڻائڻ ۽ سماجي رڪاوٽون ختم ڪرڻ",
-          "سنڌ جي سڀاڻي لاءِ نوان سائنسدان، معمار ۽ ليڊرز تيار ڪرڻ"
+          "غير معمولي ڏات لاءِ ميرٽ ايوارڊ",
+          "هر مستحق ٻار لاءِ ضرورت تي ٻڌل سهائتا",
+          "سڄي سنڌ جي اهل خاندانن لاءِ کليل"
         ],
-        valueProposition: "هڪ شاگرد جي سهائتا سڄي ڪميونٽي لاءِ فائديمند ٿي سگهي ٿي."
+        valueProposition: "هڪ شاگرد جي سهائتا سڄي ڪميونٽي کي مٿي کڻي ٿي."
       },
       internationalTripsHighlight: {
-        badge: "عالمي افق ۽ شعور",
-        title: "بين الاقوامي تعليمي دورا ۽ ثقافتي شعور",
-        subtitle: "عالمي تعليم، ثقافتن ۽ ٽيڪنالاجي سان واقفيت.",
-        description: "امڪاني مطالعاتي دورا شاگردن کي مختلف تعليمي نظامن، ثقافتن ۽ ٽيڪنالاجيءَ سان متعارف ڪرائين ۽ مستقبل جا موقعا ڏيکارين.",
+        badge: "عالمي افق",
+        title: "بين الاقوامي مطالعاتي دورا",
+        subtitle: "دنيا جو بهترين ڏسو. پوءِ گهر ۾ ٺاهيو.",
+        description: "عالمي اسڪولن، يونيورسٽين ۽ اسٽارٽ اپ هبز جا رٿيل دورا ارادن کي وسيع ڪن ٿا ۽ ڏيکارين ٿا ته ڇا ممڪن آهي.",
         points: [
-          "عالمي درجي جي ڪلاسن، يونيورسٽين ۽ انوويشن هبز جو سڌو دورو",
-          "مختلف ثقافتن، عالمي شاگردن ۽ بين الاقوامي مينٽرز سان ملاقاتون",
-          "مقامي حدن کان ٻاهر نڪري عالمي امڪانن جو ادراڪ ڪرڻ",
-          "سنڌ جي مٽي سان جڙيل رهندي بين الاقوامي اعتماد حاصل ڪرڻ"
+          "عالمي معيار جا ڪلاس روم ۽ انڪيوبيٽر",
+          "عالمي ساٿي ۽ مينٽر",
+          "ٻاهر اعتماد، سنڌ ۾ پاڙون"
         ],
-        valueProposition: "نوان تجربا شاگردن جي سوچ جا افق وسيع ڪن ٿا."
+        valueProposition: "سڃاڻپ شاگرد جي ممڪن جي حد وڌائي ٿي."
       }
     },
     theMovement: {
       badge: "سنڌ جي جاڳرتا",
-      title: "تحريڪ — سنڌ ٻيهر اڀري رهي آهي",
+      title: "سنڌ، ٻيهر اڀرندڙ",
       inheritance: {
-        title: "سنڌ وٽ تعمير ۽ جدت جي ڊگهي روايت آهي.",
-        desc: "موهن جو دڙو 5,000 سال اڳ رٿيل شهر هو. سنڌ جي انجنيئرنگ، شاعري ۽ هنر جي تاريخ اسان کي نوان حل ٺاهڻ لاءِ اتساهي ٿي."
+        title: "سنڌ هميشه ٺاهيو آهي.",
+        desc: "موهن جو دڙو 5,000 سال اڳ رٿيل شهر هو. ٺاهڻ اسان جو ورثو آهي."
       },
       globalVillage: {
-        title: "ڊجيٽل اوزار مقامي صلاحيتن کي عالمي ڪم سان ڳنڍين ٿا.",
-        desc: "سيوهڻ جو ڊزائنر پرڏيهي گراهڪن لاءِ ڪم ڪري سگهي ٿو ۽ ايپ سڄي دنيا تائين پهچي سگهي ٿي. اسان شاگردن کي انهن موقعن لاءِ تيار ڪريون ٿا."
+        title: "مارڪيٽ هاڻي عالمي آهي.",
+        desc: "سيوهڻ ۾ ٺهيل پراڊڪٽ ڪٿي به يوزرن تائين پهچي سگهي ٿي. انٽرنيٽ فاصلو ختم ڪري ڇڏيو."
       },
       buildHere: {
-        title: "عالمي ڪم ڪريو، سنڌ سان جڙيل رهو.",
-        desc: "اسان پرڏيهه ۾ ڪم ڪندڙ خاندانن جو احترام ڪريون ٿا. شاگردن کي گهر ويهي ڪاروبار ٺاهڻ ۽ عالمي گراهڪن سان ڪم ڪرڻ جو اختيار به هئڻ گهرجي."
+        title: "عالمي ٺاهيو. پاڙون هتي رکو.",
+        desc: "اسان پرڏيهه ۾ ڪم ڪندڙ خاندانن جو احترام ڪريون ٿا. اسان چاهيون ٿا ته شاگردن وٽ گهر ويهي ٺاهڻ ۽ دنيا کي وڪڻڻ جو اختيار هجي."
       },
       tenYearPicture: {
-        title: "ڏهن سالن جو نقشو (سنڌ جو اڀار)",
-        desc: "ماضي جي ياد ناهي پر نئين دور جي نئين ايجاد ۽ صنعتي انقلاب آهي.",
+        title: "ڏهن سالن جو نقشو",
+        desc: "سنڌ ڪيئن لڳندي جڏهن ان جا شاگرد اسٽارٽ اپ ٺاهيندا.",
         points: [
-          "سيوهڻ مان رجسٽر ٿيل اسٽارٽ اپس زرعي، پاڻي ۽ ٻولي جا مسئلا حل ڪندا.",
-          "نياڻين جون روبوٽڪس ٽيمون بين الاقوامي مقابلن ۾ ٽرافيون کٽنديون.",
-          "سلڪون ويلي جا سيڙپڪار سيوهڻ جي ڪمپنين جا شريڪ هوندا.",
-          "سيوهڻ مان آمريڪا ۾ ايجادن جا باضابطا پيٽنٽ داخل ڪيا ويندا.",
-          "نوجوان سنڌي، اردو، انگريزي ۽ AI ۾ مڪمل ماهر هوندا.",
-          "شام جو اڪيڊمي سڄي شهر کي روشن ڪندي؛ ان بعد ڪالج ۽ باقاعده جديد يونيورسٽي جڙندي."
+          "سيوهڻ جا اسٽارٽ اپ زراعت، پاڻي، صحت ۽ ٻوليءَ جا مسئلا حل ڪندا.",
+          "نياڻين جون AI ۽ روبوٽڪس ٽيمون بين الاقوامي پوڊيم تي.",
+          "سيوهڻ جي ڪمپنين ۾ سلڪون ويلي جا شريڪ باني.",
+          "سيوهڻ مان آمريڪي پيٽنٽ آفيس ۾ داخل ٿيل پيٽنٽ.",
+          "سنڌي، اردو، انگريزي — ۽ AI ۾ ماهر نسل."
         ]
       },
-      invitation: "والدين، شاگرد، استاد يا ڀائيوار طور دي رائزنگ سنڌ ۾ شامل ٿيو."
+      invitation: "والدين، شاگرد، استاد يا ڀائيوار طور شامل ٿيو."
     },
     sehwanCampus: {
       badge: "سيوهڻ شريف، سنڌ",
-      title: "سيوهڻ — پهريان هڪ شهر، مڪمل ارادي سان",
-      whySehwan: "قلندر جو شهر ۽ باني جو پنهنجو شهر—سيوهڻ شروعات لاءِ فطري جاءِ آهي. هي ماڊل سڄي سنڌ ۾ وڌائي سگهجي ٿو.",
-      cityProjects: "شاگرد مقامي ورثي، زائرين جي رهنمائي، هنر ۽ ٻُڏو جبل، ڀاڳو ٽوڙهو ۽ ڪارونجهر جي ٽريڪنگ تي ڪم ڪن ٿا.",
+      title: "سيوهڻ — پهريان هڪ شهر",
+      whySehwan: "بانيءَ جو گهر، ورثي جو شهر، ۽ سڄي سنڌ ۾ وڌڻ لاءِ ٺهيل ماڊل.",
+      cityProjects: "شاگرد شهر لاءِ ٺاهين ٿا: ورثي جا گائيڊ، هنرمندن جا آن لائن دڪان، ۽ ٻُڏو جبل، ڀاڳو ٽوڙهو ۽ ڪارونجهر ۾ ٽريڪنگ پروجيڪٽ.",
       campusSpine: [
-        "جديد AI ۽ ڪمپيوٽنگ ورڪ اسٽيشن ليب",
-        "3D پرنٽرز ۽ هارڊويئر ميڪر اسپيس",
-        "ڊجيٽل اسٽوڊيو، پوڊ ڪاسٽ ۽ وڊيو ايڊيٽنگ روم",
-        "ڪمپني انڪيوبيٽر پچ روم",
-        "خطابت ۽ تقريرن جو وڏو آڊيٽوريم",
-        "سائنس ۽ عملي تجربن جون ليبارٽريون"
+        "ڪمپيوٽنگ ۽ AI ليب",
+        "ميڪر اسپيس: 3D پرنٽر ۽ IoT",
+        "ميڊيا، پوڊڪاسٽ ۽ وڊيو اسٽوڊيو",
+        "انڪيوبيٽر پچ روم",
+        "آڊيٽوريم ۽ اسٽيج",
+        "سائنس ليبز"
       ],
-      roadAhead: "اسان جو خواب نرسري–ميٽرڪ کان ڪاليج ۽ اڳتي سنڌ جي ٽيڪنالاجي يونيورسٽي تائين آهي.",
+      roadAhead: "نرسري–ميٽرڪ کان ڪاليج، ۽ هڪ ڏينهن سنڌ جي ٽيڪنالاجي يونيورسٽي.",
       eveningAcademy: {
-        title: "ٽيڪنالاجي ۽ ڪميونٽي — اعتماد جو انجڻ",
-        opening: "اسڪول کان پوءِ ليبون مقامي نوجوانن ۽ بالغن لاءِ 12 هفتن جا فني ڪورس هلائين ٿيون.",
+        title: "شام جي اڪيڊمي",
+        opening: "شام 5 وڳي کان پوءِ ليبون سيوهڻ لاءِ کلن ٿيون: نوجوانن ۽ بالغن لاءِ 12 هفتن جا ڪورس.",
         tracks: [
           {
             name: "ڊجيٽل بنياد ۽ فري لانسنگ",
             duration: "12 هفتا",
-            outcome: "ڪمپيوٽر سکيا → آفيس ٽولز → عملي انگريزي → پهريون آن لائن آرڊر",
-            alignedWith: "سيلاني ماڊل، NAVTTC سان لاڳاپيل"
+            outcome: "ڪمپيوٽر بنياد → آفيس ٽولز → ڪم جي انگريزي → پهريون بين الاقوامي ڪم",
+            alignedWith: "سيلاني ماڊل، NAVTTC سرٽيفائيڊ"
           },
           {
-            name: "ڪوڊنگ ۽ عملي AI",
+            name: "ڪوڊ ۽ عملي AI",
             duration: "12 هفتا",
-            outcome: "پائٿون → ڊيٽا → AI اوزار → پنهنجو تيار ڪيل خودڪار سافٽ ويئر",
-            alignedWith: "PSEB سرٽيفڪيشن ۽ انٽرن شپ"
+            outcome: "پائٿون → ڊيٽا → AI ٽولز → هڪ ڊيپلائي ٿيل آٽوميشن",
+            alignedWith: "PSEB سرٽيفڪيشن ۽ انٽرنشپ"
           },
           {
-            name: "وڊيو ڊيزائننگ ۽ ميڊيا",
+            name: "وڊيو، ميڊيا ۽ ڪهاڻي",
             duration: "12 هفتا",
-            outcome: "موبائل وڊيو → ايڊيٽنگ → 3 شايع ٿيل ڪم جنهن ۾ هڪ 'پازيٽو سنڌ' فلم هجي",
-            alignedWith: "ڪيمپس اسٽوڊيو ۽ ليب تائين رسائي"
+            outcome: "فون وڊيوگرافي → ايڊيٽنگ → 3 شايع ٿيل ڪم، جن ۾ هڪ 'مثبت سنڌ' ڊاڪيومينٽري",
+            alignedWith: "ڪيمپس اسٽوڊيو ۽ AI ليب تائين رسائي"
           },
           {
-            name: "اي ڪامرس ۽ مقامي واپار",
+            name: "اي ڪامرس",
             duration: "12 هفتا",
-            outcome: "پراڊڪٽ تصويرون → ڪيٽلاگ → آن لائن پيمنٽ → هڪ مڪمل آن لائن دڪان",
-            alignedWith: "سيوهڻ جا دڪاندار ۽ شاگرد مينٽرشپ"
+            outcome: "پراڊڪٽ فوٽو → ڪيٽلاگ → آن لائن ادائگي → هڪ لائيو دڪان",
+            alignedWith: "سيوهڻ جا واپاري ۽ شاگرد مينٽرنگ"
           }
         ]
       },
       innovationLab: {
-        title: "انوويشن ليب — سڀني ٺاهيندڙن لاءِ کليل",
-        desc: "يونيورسٽي جا شاگرد ۽ ماهر ليب، رهنمائي ۽ ڊيمو ڊي لاءِ درخواست ڏئي سگهن ٿا.",
+        title: "انوويشن ليب",
+        desc: "يونيورسٽي جا شاگرد ۽ ماهر بينچ، رهنمائي ۽ ڊيمو ڊي لاءِ درخواست ڏين ٿا.",
         benches: [
-          "فائنل ايئر پروجيڪٽس حقيقي ڪمپنيون بڻجن ٿيون",
-          "نوجوان پنهنجي سائيڊ پروجيڪٽس کي پيداواري شين ۾ بدلائين ٿا",
-          "باني پنهنجي ٽيم ۽ ٽيڪنيڪل پارٽنر هتان ڳولين ٿا"
+          "فائنل ايئر پروجيڪٽ رجسٽرڊ اسٽارٽ اپ ۾ بدليل",
+          "سائيڊ پروجيڪٽ وينچر لاءِ تيار پراڊڪٽ ۾ بدليل",
+          "باني پنهنجا پهريان انجنيئرنگ ۽ ڊزائن شريڪ باني ڳوليندڙ"
         ]
       },
       partners: [
-        { name: "NIC پاڪستان", role: "انڪيوبيشن مينٽرز ۽ ڊيمو ڊي ججز" },
-        { name: "ORIC يونيورسٽيون", role: "تحقيق ۽ تعليمي ڳانڍاپو" },
-        { name: "PSEB", role: "آئي ٽي سرٽيفڪيشن ۽ نوڪرين جا موقعا" },
-        { name: "سيلاني ويفليئر", role: "شام جي مفت ٽريننگ نظام ۾ مددگار" }
+        { name: "NIC (نيشنل انڪيوبيشن سينٽر)", role: "انڪيوبيشن مينٽر ۽ ڊيمو ڊي جج" },
+        { name: "ORIC لاڳاپا", role: "يونيورسٽي تحقيق جو ڪمرشلائيزيشن" },
+        { name: "PSEB", role: "مهارت سرٽيفڪيشن ۽ ٽيڪ انٽرنشپ" },
+        { name: "سيلاني", role: "شام جي ٽريننگ جو ماڊل" }
       ]
     },
     joinUs: {
-      badge: "حصو بڻجو",
-      title: "شامل ٿيڻ جو رستو چونڊيو.",
+      badge: "عمل ڪريو",
+      title: "پنهنجو دروازو چونڊيو.",
       doors: [
         {
           id: "parents",
           audience: "والدين لاءِ",
-          title: "ڪيمپس جو دورو ڪريو ۽ پاڻ ڏسو.",
-          description: "ليب ڏسو، فيوچر ڪلاس ۾ ويهو، استادن سان ملو ۽ امتحانن، سهائتا ۽ اسڪالرشپس بابت پڇو.",
+          title: "پاڻ ڏسو.",
+          description: "ليب ڏسو، فيوچر ليئر ڪلاس ۾ ويهو، استادن سان ملو، امتحانن ۽ اسڪالرشپ بابت پڇو.",
           ctaText: "ڪيمپس جو دورو بُڪ ڪريو",
-          secondaryCta: "واٽس ائپ تي ڳالهايو"
+          secondaryCta: "واٽس ائپ ڪريو"
         },
         {
           id: "students",
           audience: "شاگردن لاءِ",
-          title: "ڇنڇر تي اچو، پنهنجي هٿ سان ڪجهه ٺاهيو.",
-          description: "ڇنڇر ورڪشاپ ۾ AI ماڊل ٺاهيو، 3D پرنٽ ڪريو، وڊيو ٺاهيو يا پنهنجو خيال پيش ڪريو.",
+          title: "ڇنڇر تي ڪجهه ٺاهيو.",
+          description: "AI ماڊل ٽرين ڪريو، 3D ڊزائن پرنٽ ڪريو، وڊيو ٺاهيو يا خيال پچ ڪريو.",
           ctaText: "بلڊ ڊي لاءِ رجسٽر ٿيو"
         },
         {
           id: "professionals",
           audience: "يونيورسٽي شاگردن ۽ ماهرن لاءِ",
-          title: "پنهنجي منصوبي کي حقيقت بڻايو.",
-          description: "AI اوزارن، رهنمائي ۽ ڊيمو ڊي لاءِ انوويشن ليب ۾ درخواست ڏيو.",
-          ctaText: "ليب بينچ لاءِ اپلاءِ ڪريو"
+          title: "پروجيڪٽ کي اسٽارٽ اپ بڻايو.",
+          description: "ليب بينچ، AI ٽولز، رهنمائي ۽ ڊيمو ڊيز.",
+          ctaText: "ليب بينچ لاءِ درخواست ڏيو"
         },
         {
           id: "teachers",
           audience: "استادن لاءِ",
-          title: "عملي سکيا سان پڙهايو.",
-          description: "سبق ڪٽس، جديد ليب ۽ اڪيڊمڪ سهائتا سان پڙهايو؛ تربيت ۽ مناسب پگهار موجود آهي.",
-          ctaText: "استاد طور شامل ٿيو"
+          title: "ٺاهي سيکاريو.",
+          description: "سبق ڪٽس، جديد ليب، مرڪزي سهائتا، تربيت ۽ سٺو معاوضو.",
+          ctaText: "استاد طور درخواست ڏيو"
         }
       ],
       faqs: [
         {
-          question: "ڇا فيوچر ليئر سبب منهنجي ٻار جو ميٽرڪ نتيجو متاثر ٿيندو؟",
-          answer: "نه. هفتي جو لڳ ڀڳ 70٪ وقت بورڊ لاءِ، ۽ ڪلاس 9–10 ۾ 80٪ آهي؛ امتحاني مشق به شامل آهي."
+          question: "ڇا فيوچر ليئر منهنجي ٻار جي ميٽرڪ مارڪن کي نقصان پهچائيندي؟",
+          answer: "نه. بورڊ جا مضمون هفتي جو لڳ ڀڳ 70٪ وٺن ٿا، ۽ ڪلاس 9–10 ۾ 80٪، امتحاني مشق سميت."
         },
         {
-          question: "ڇا هي اسلامي قدرن ۽ مقامي روايتن مطابق آهي؟",
-          answer: "ها. سنڌ بورڊ جو اسلاميات نصاب شامل آهي، نياڻين جا ڪلاس عورت استاد هلائين ٿيون ۽ ٽريڪنگ لاءِ والدين جي اجازت ۽ حفاظتي انتظام آهن."
+          question: "ڇا هي اسان جي اسلامي ۽ ثقافتي قدرن مطابق آهي؟",
+          answer: "ها. سنڌ جو اسلاميات نصاب پڙهايو وڃي ٿو. نياڻين جا گروپ عورت مينٽر هلائين ٿيون. ٽريڪنگ لاءِ والدين جي اجازت ۽ حفاظتي نگراني لازمي آهي."
         },
         {
-          question: "مستحق ۽ ذهين شاگردن لاءِ اسڪالرشپ جا ڪهڙا موقعا آهن؟",
-          answer: "ميرٽ ۽ ضرورت جي بنياد تي اسڪالرشپس سان مستحق شاگرد نصاب، AI ليبز ۽ شخصيت سازي مان فائدو وٺي سگهن ٿا."
+          question: "ڇا اسڪالرشپ آهن؟",
+          answer: "ها. ميرٽ ۽ ضرورت تي ٻڌل اسڪالرشپ اهل شاگردن کي مڪمل پروگرام تائين رسائي ڏين ٿيون."
         },
         {
-          question: "بين الاقوامي تعليمي دورن مان شاگردن کي ڪهڙو فائدو ملي ٿو؟",
-          answer: "امڪاني مطالعاتي دورا شاگردن کي نيون ثقافتون، تعليمي نظام ۽ ٽيڪنالاجي ڏيکارين ٿا ۽ مستقبل جا رستا کولين ٿا."
+          question: "بين الاقوامي مطالعاتي دورا ڇا ڏين ٿا؟",
+          answer: "عالمي اسڪولن، اسٽارٽ اپ هبز ۽ ثقافتن سان سڃاڻپ — ۽ چٽو احساس ته شاگرد گهر ۾ ڇا ٺاهي سگهن ٿا."
         },
         {
-          question: "والدين ٻار جي ڪارڪردگي ڪيئن چيڪ ڪندا؟",
-          answer: "والدين جي موبائل ڊيش بورڊ ذريعي، جيڪو سنڌي ۽ اردو ۾ موجود آهي، جتي مهيني جي رپورٽ ۽ پروجيڪٽس جا تفصيل نظر ايندا."
+          question: "مان پنهنجي ٻار جي ترقي ڪيئن ڏسان؟",
+          answer: "سنڌي، اردو يا انگريزيءَ ۾ والدين جي ڊيش بورڊ ذريعي، بورڊ جي ڪم ۽ پروجيڪٽن تي مهيني وار اپڊيٽ سان."
         }
       ]
     },
     footer: {
       slogan: "تعمير ڪندڙ، نه رڳو ڊگري وٺندڙ.",
-      ctaBand: "داخلا ڪلاس روم جي گنجائش تائين محدود آهن. دورو بڪ ڪريو.",
+      ctaBand: "سيٽون ڪلاس رومز سان محدود آهن. دورو بڪ ڪريو.",
       ctaButton: "ڪيمپس دورو بُڪ ڪريو",
       rights: "دي رائزنگ سنڌ. سڀ حق محفوظ آهن. سيوهڻ شريف، سنڌ، پاڪستان.",
-      governanceNote: "غير سياسي ۽ سنڌي اوليت؛ سنڌو تهذيب کان متاثر، مستقبل تي ڌيان."
+      governanceNote: "غير سياسي. سنڌي اوليت. مستقبل تي ڌيان."
     }
   },
   ur: {
     meta: {
-      title: "دی رائزنگ سندھ | وہ اسکول جو یونیورسٹیاں نہ بنا سکیں",
-      description: "سہون کا اسکول، جہاں سندھ بورڈ کی تعلیم کے ساتھ AI، کاروبار اور عملی تربیت ہے۔",
+      title: "دی رائزنگ سندھ | وہ اسکول جو اسٹارٹ اپ بناتا ہے",
+      description: "سہون کا اسکول، جہاں طلبہ سندھ بورڈ کا نصاب پڑھتے ہیں اور کلاس 1 سے میٹرک تک عالمی منڈی کے لیے حقیقی اسٹارٹ اپ بناتے ہیں۔",
       slogan: "تعمیر کار، نہ کہ محض ڈگری یافتہ۔",
-      positioning: "سندھ بورڈ کی تعلیم کے ساتھ کلاس 1 سے AI، کاروبار اور عملی تربیت۔"
+      positioning: "سندھ بورڈ کی تعلیم کے ساتھ AI اور اسٹارٹ اپ سازی، کلاس 1 سے میٹرک۔"
     },
     nav: {
       home: "ہوم",
       whyWeExist: "ہمارا مقصد",
       theModel: "ہمارا ماڈل",
-      whatStudentsDo: "طلباء کیا بناتے ہیں",
-      theProof: "زندہ ثبوت",
+      whatStudentsDo: "طلبہ کیا بناتے ہیں",
+      theProof: "ثبوت",
       globalBridge: "عالمی پل",
       sehwanCampus: "سہون کیمپس",
       theMovement: "تحریک",
@@ -1843,487 +1807,470 @@ export const contentMap: Record<Language, SiteContent> = {
       visitCampus: "کیمپس کا دورہ کریں",
       bookVisit: "دورہ بک کریں",
       curriculumMap: "نصاب کا نقشہ",
-      curriculumMapSub: "نرسری تا میٹرک BISE + فیوچر لیئر",
+      curriculumMapSub: "نرسری تا میٹرک + فیوچر لیئر",
       theHeroTrackNav: "شخصیت سازی",
-      theHeroTrackNavSub: "شخصیت سازی، باہمی گفتگو اور سندھ میں پہاڑی ٹریکنگ",
-      studentIncubator: "طلباء کا انکیوبیٹر",
-      studentIncubatorSub: "کلاس 8 تک رجسٹرڈ کمپنیاں",
-      eveningAcademyNav: "ٹیکنالوجی اور کمیونٹی",
-      eveningAcademyNavSub: "کمیونٹی لیبز شام 5 بجے کے بعد کھلی ہیں"
+      theHeroTrackNavSub: "کردار، اعتماد اور ٹریکنگ",
+      studentIncubator: "طلبہ کے اسٹارٹ اپ",
+      studentIncubatorSub: "کلاس 8 تک حقیقی اسٹارٹ اپ",
+      eveningAcademyNav: "شام کی اکیڈمی",
+      eveningAcademyNavSub: "شام 5 بجے کے بعد کمیونٹی کورسز"
     },
     common: {
       brandSubtitle: "فیوچر اسکول · سہون",
-      livingPrecedent: "زندہ ثبوت اور نظیر",
+      livingPrecedent: "زندہ ثبوت",
       verifiedArchive: "تصدیق شدہ ریکارڈ",
       nationalStage: "قومی اسٹیج اور ٹیک کانفرنس",
       resultsSpeak: "نتائج جو خود بولتے ہیں",
       degreeUnemployment: "ڈگری یافتہ بیروزگاری",
-      degreeUnemploymentSub: "بمقابلہ 4.7% بغیر تعلیم (LFS 24-25)",
+      degreeUnemploymentSub: "بمقابلہ 4.7% بغیر تعلیم (LFS 24–25)",
       siliconValleyRank: "سلیکان ویلی رینک",
-      siliconValleyRankSub: "30+ یونیکورن انویسٹر کی جانب سے تصدیق شدہ",
+      siliconValleyRankSub: "30+ یونیکورن انویسٹر کی حمایت",
       boardProtected: "بورڈ کے نتائج محفوظ",
-      boardProtectedSub: "مکمل BISE گروپ + فیوچر لیئر",
+      boardProtectedSub: "مکمل BISE نصاب + فیوچر لیئر",
       aiLab: "اے آئی لیب",
       biseMetric: "BISE 100%",
-      shippedProof10Years: "10 سال کا عملی ثبوت",
-      curriculumTrajectory: "نصاب کی رفتار اور سمت",
+      shippedProof10Years: "10 سال کا عملی کام",
+      curriculumTrajectory: "نصاب کا راستہ",
       class1ToMatric: "کلاس 1 → میٹرک",
-      compoundingAdvantage: "دس سال کا مسلسل بڑھتا ہوا عملی فائدہ",
-      openWhatsAppChat: "واٹس ایپ چیٹ کھولیں",
-      admissionsDeskOnline: "داخلہ ڈیسک آن لائن",
-      admissionsDeskSub: "داخلوں، اسکالرشپس یا کیمپس وزٹ کیلئے واٹس ایپ پر پوچھیں۔",
+      compoundingAdvantage: "دس سال کی مسلسل مشق",
+      openWhatsAppChat: "واٹس ایپ کھولیں",
+      admissionsDeskOnline: "داخلہ ڈیسک",
+      admissionsDeskSub: "داخلہ، اسکالرشپ، کیمپس وزٹ — واٹس ایپ پر۔",
       done: "مکمل",
       close: "بند کریں",
       apply: "درخواست دیں",
-      submit: "جمع کروائیں",
+      submit: "جمع کریں",
       fullName: "پورا نام",
       fullNamePlaceholder: "مثال: اسد علی / زینب سولنگی",
       whatsAppNumber: "واٹس ایپ نمبر",
-      childClass: "بچے کی کلاس کا انتخاب",
-      workshopTrack: "بلڈ ٹریک کی ترجیح",
-      projectSummary: "منصوبے یا کاروباری آئیڈیا کا خلاصہ",
-      teachingPitch: "آپ کے طلباء اس ٹرم میں کیا بنائیں گے؟",
-      submitRequest: "درخواست جمع کروائیں",
-      registrationReceived: "درخواست موصول ہو گئی ہے!",
-      registrationReceivedDesc: "سہون کیمپس ٹیم جلد واٹس ایپ پر آپ سے رابطہ کرے گی۔",
+      childClass: "بچے کی کلاس",
+      workshopTrack: "بلڈ ٹریک",
+      projectSummary: "اسٹارٹ اپ آئیڈیا (ایک سطر)",
+      teachingPitch: "آپ کے طلبہ اس ٹرم کیا بنائیں گے؟",
+      submitRequest: "جمع کریں",
+      registrationReceived: "موصول ہو گیا!",
+      registrationReceivedDesc: "سہون ٹیم واٹس ایپ پر جواب دے گی۔",
       validationName: "براہ کرم اپنا پورا نام درج کریں۔",
       validationPhone: "براہ کرم درست فون یا واٹس ایپ نمبر درج کریں (کم از کم 10 ہندسے)۔",
-      nextSeatsLimited: "اگلا داخلہ کلاس رومز کی گنجائش کے ساتھ مشروط ہے، حوصلے کے ساتھ نہیں۔",
+      nextSeatsLimited: "نشستیں کلاس رومز سے محدود ہیں، حوصلے سے نہیں۔",
       elevation5688: "بڈو جبل · بھاگو توڑہو · کارونجھر",
       makersInnovationHub: "میکرز اور انوویشن ہب",
       sehwanSharifLabel: "سہون شریف",
       whySehwanTitle: "سہون کیوں",
-      cityProjectsTitle: "شہر کے پروجیکٹس: شہر ہی کلاس روم ہے",
-      campusSpineTitle: "کیمپس کا نقشہ اور آرکیٹیکچرل بلیو پرنٹ",
-      partnersTitle: "شریک بانی ایکو سسٹم پارٹنرز",
-      printMap: "نرسری تا میٹرک نصاب پرنٹ یا ڈاؤن لوڈ کریں",
-      seeFutureLayerLive: "کیمپس پر فیوچر لیئر کا پیریڈ لائیو دیکھیں",
-      systemComparisonMatrix: "نظام کا موازنہ میٹرکس",
-      systemComparisonSub: "بات نظام کی ہے، کسی فرد کی نہیں",
-      howWeTeachTitle: "ہم کیسے پڑھاتے ہیں اور والدین کیسے دیکھتے ہیں",
-      howWeTeachSub: "شفاف اور ذمہ دار تعلیم کے چھ اصول",
+      cityProjectsTitle: "شہر ہی کلاس روم ہے",
+      campusSpineTitle: "کیمپس کا ڈھانچہ",
+      partnersTitle: "ایکو سسٹم پارٹنرز",
+      printMap: "نرسری تا میٹرک نقشہ ڈاؤن لوڈ کریں",
+      seeFutureLayerLive: "فیوچر لیئر کا پیریڈ لائیو دیکھیں",
+      systemComparisonMatrix: "موازنہ",
+      systemComparisonSub: "بات نظام کی ہے، فرد کی نہیں",
+      howWeTeachTitle: "ہم کیسے پڑھاتے ہیں",
+      howWeTeachSub: "پانچ ستون جو والدین دیکھ سکتے ہیں",
       exploreTitle: "دریافت کریں",
       programsTitle: "پروگرامز",
       valuesTitle: "اقدار و رابطہ",
-      craftedWithPride: "سندھ میں فخر کے ساتھ تیار کردہ",
-      forSindhFuture: "کل کے معماروں کیلئے",
-      smallMediumEnterprises: "چھوٹے اور درمیانے کاروبار",
+      craftedWithPride: "سندھ میں فخر سے تیار کردہ",
+      forSindhFuture: "کل کے معماروں کے لیے",
+      smallMediumEnterprises: "مقامی کاروبار",
       sindhLocalEconomy: "سندھ کی مقامی معیشت",
-      realWorldPractice: "عملی تربیت",
-      vocationalCareerPathways: "فنی کیریئر کے مواقع",
+      realWorldPractice: "عملی مشق",
+      vocationalCareerPathways: "ہاتھ کے ہنر",
       nurseryMatricBise: "نرسری تا میٹرک BISE اسکیم",
-      heroTrackGorakhTreks: "شخصیت سازی اور پہاڑی ٹریکنگ",
-      eveningCommunityAcademy: "ٹیکنالوجی اور کمیونٹی",
-      innovationLabBuilders: "معماروں کیلئے انوویشن لیب",
+      heroTrackGorakhTreks: "کردار اور پہاڑی ٹریکنگ",
+      eveningCommunityAcademy: "شام کی اکیڈمی",
+      innovationLabBuilders: "انوویشن لیب",
       saturdayBuildDays: "ہفتہ وار بلڈ ڈیز",
-      sehwanCampusLabNav: "سہون کیمپس اور انوویشن لیب",
-      theMovementNav: "تحریک (سندھ نشاۃ ثانیہ)",
+      sehwanCampusLabNav: "سہون کیمپس اور لیب",
+      theMovementNav: "تحریک",
       bookCampusVisitTitle: "کیمپس کا دورہ بک کریں",
-      saturdayBuildDayTitle: "ہفتہ وار بلڈ ڈے رجسٹریشن",
+      saturdayBuildDayTitle: "ہفتہ وار بلڈ ڈے",
       applyToTeachTitle: "بطور استاد درخواست دیں",
-      labBenchTitle: "انوویشن لیب بینچ کی درخواست",
-      modalSubtitle: "سیہون شریف کیمپس · دی رائزنگ سندھ",
-      gradeNursery: "نرسری – کے جی (ابتدائی عمر)",
-      grade1to3: "کلاس 1–3 (بنیادی فیوچر لیئر)",
-      grade4to5: "کلاس 4–5 (پہلا AI ماڈل اور بازار)",
-      grade6to7: "کلاس 6–7 (پائتھن، IoT اور موبائل ایپس)",
-      grade8: "کلاس 8 (رجسٹرڈ اسٹوڈنٹ کمپنی)",
-      grade9to10: "کلاس 9–10 (میٹرک بورڈ + انکیوبیٹر)",
-      trackAI: "پہلا AI ماڈل تربیت دیں (کمپیوٹر ویژن)",
-      track3D: "3D پرنٹنگ اور ہارڈویئر پروٹو ٹائپ",
-      trackMedia: "مثبت سندھ ویڈیو اور اسٹوڈیو پوڈ کاسٹنگ",
-      trackPitch: "اسٹیج پر ججز کے سامنے خیال پیش کریں",
-      teachNotesPlaceholder: "مثال: سائنس پراجیکٹس، دو لسانی تحریر، کوڈنگ...",
-      labBenchPlaceholder: "مثال: انڈس بیسن کیلئے ایگری ٹیک IoT، سندھ ایڈ ٹیک...",
-      stageSpecification: "درجے کی تفصیلات",
-      computingPillarTitle: "کمپیوٹنگ اور AI شعبہ",
-      entrepreneurshipPillarTitle: "انٹرپرینیورشپ شعبہ",
-      evidenceBehindNeed: "ضرورت کے پیچھے ٹھوس ثبوت",
+      labBenchTitle: "انوویشن لیب بینچ",
+      modalSubtitle: "سہون شریف کیمپس · دی رائزنگ سندھ",
+      gradeNursery: "نرسری – کے جی",
+      grade1to3: "کلاس 1–3 (پہلا کوڈ)",
+      grade4to5: "کلاس 4–5 (پہلا AI ماڈل)",
+      grade6to7: "کلاس 6–7 (پائتھن اور ایپس)",
+      grade8: "کلاس 8 (رجسٹرڈ اسٹارٹ اپ)",
+      grade9to10: "کلاس 9–10 (میٹرک + انکیوبیٹر)",
+      trackAI: "AI ماڈل ٹرین کریں",
+      track3D: "3D پروٹو ٹائپ پرنٹ کریں",
+      trackMedia: "مثبت سندھ ویڈیو بنائیں",
+      trackPitch: "ججز کے سامنے پچ کریں",
+      teachNotesPlaceholder: "مثال: سائنس پراجیکٹس، کوڈنگ، دو لسانی تحریر...",
+      labBenchPlaceholder: "مثال: انڈس بیسن کے لیے ایگری ٹیک، سندھی زبان کی AI...",
+      stageSpecification: "درجہ",
+      computingPillarTitle: "کمپیوٹنگ اور AI",
+      entrepreneurshipPillarTitle: "اسٹارٹ اپ سازی",
+      evidenceBehindNeed: "ثبوت",
       problemStripTitle: "امتحانات صرف یادداشت ناپتے ہیں۔",
-      problemStripHighlight: "مارکیٹ عملی صلاحیت کی قدر کرتی ہے۔",
-      youthUnemploymentTitle: "نوجوان گریجویٹ بیروزگاری",
-      youthUnemploymentDesc: "20–24 سال کے 32.8% پاکستانی گریجویٹ بے روزگار ہیں؛ خواتین میں شرح 45.2% ہے۔",
+      problemStripHighlight: "مارکیٹ بنائی ہوئی چیز کی قیمت دیتی ہے۔",
+      youthUnemploymentTitle: "گریجویٹ بیروزگاری",
+      youthUnemploymentDesc: "20–24 سال کے 32.8% گریجویٹ بیروزگار ہیں۔ خواتین میں 45.2%۔",
       youthUnemploymentSource: "ماخذ: لیبر فورس سروے / گیلپ پاکستان",
-      instantProofTitle: "نظریات کے بجائے کام کا فوری ثبوت",
-      instantProofDesc: "ہمارے کلاس 8 کے طلباء کے پاس باقاعدہ گاہک ہیں۔ اکثر یونیورسٹی طلباء کے پاس محض سی وی ہوتی ہے۔",
-      instantProofSub: "میٹرک تک ہر طالب علم AI آٹومیشن تیار کر چکا ہوتا ہے، کمپنی اکاؤنٹس چلاتا ہے اور اسٹیج پر پچ کرتا ہے۔",
-      noMarketObsolescenceTitle: "مارکیٹ میں متروک نہ ہونے کی ضمانت",
-      noMarketObsolescenceDesc: "چھ سال کی عمر سے بچے بورڈ نصاب کے ساتھ کمپیوٹنگ اور انٹرپرینیورشپ میں مہارت پاتے ہیں۔ سولہ سال کی عمر تک دس سال کا عملی فرق پیدا ہو جاتا ہے۔",
-      gorakhTrekTitle: "سندھ کے پہاڑوں پر ٹریکنگ مہمات",
-      investorPrecedent: "سرمایہ کاروں کا اعتماد",
+      instantProofTitle: "نظریے کے بجائے کام کا ثبوت",
+      instantProofDesc: "ہمارے کلاس 8 کے طلبہ کے پاس یوزرز ہیں۔ اکثر گریجویٹس کے پاس صرف سی وی۔",
+      instantProofSub: "میٹرک تک ہر طالب علم پراڈکٹ لانچ کر چکا، کھاتہ رکھ چکا اور اسٹیج پر پچ کر چکا ہوتا ہے۔",
+      noMarketObsolescenceTitle: "دس سال کی برتری",
+      noMarketObsolescenceDesc: "بنانا چھ سال کی عمر میں شروع ہوتا ہے۔ سولہ سال تک یہ دس سال کی مشق ہے۔",
+      gorakhTrekTitle: "پہاڑی ٹریکنگ مہمات",
+      investorPrecedent: "سرمایہ کار کا اعتماد",
       lanePrefix: "راہ",
       directVentureTrack: "براہ راست وینچر ٹریک",
-      partnerVentureCta: "اسٹارٹ اپ پارٹنرشپ کیلئے رابطہ کریں",
-      positiveSindhDocNote: "مثبت سندھ پہلو: ہر میٹرک کا طالب علم خود تیار کردہ دستاویزی فلم میں حصہ لیتا ہے۔",
-      joinTheMovementCta: "تحریک کا حصہ بنیں",
-      afterHoursEngine: "ٹیکنالوجی اور کمیونٹی",
+      partnerVentureCta: "طلبہ کے اسٹارٹ اپ میں شراکت کریں",
+      positiveSindhDocNote: "ہر میٹرک کا طالب علم طلبہ کی بنائی ایک دستاویزی فلم میں حصہ لیتا ہے۔",
+      joinTheMovementCta: "تحریک میں شامل ہوں",
+      afterHoursEngine: "شام کا کمیونٹی انجن",
       alignedWithLabel: "ہم آہنگ",
-      applyForBenchCta: "بینچ کیلئے درخواست دیں",
-      fourDoorsSubtitle: "سہون سے سلیکان ویلی تک کا آزمودہ سفر، جو اب نصاب کی شکل میں ہے۔",
-      forParentsBadge: "والدین کیلئے",
-      forStudentsBadge: "طلباء کیلئے",
-      forTeachersBadge: "اساتذہ کیلئے",
-      forBuildersBadge: "معماروں اور یونیورسٹی طلباء کیلئے",
-      bookTourCta: "کیمپس کا دورہ بک کریں",
-      registerBuildDayCta: "بلڈ ڈے کیلئے رجسٹر ہوں",
-      teachersCardDesc: "اسباق کی کٹس، مکمل AI تربیت اور بہترین مشاہرہ فراہم کیا جائے گا۔",
-      buildersCardDesc: "انوویشن لیب بینچ، جدید AI ٹولز اور ڈیمو ڈیز کیلئے درخواست دیں۔",
-      whatsappParentsPrompt: "سندھ کے والدین واٹس ایپ پر فوری رابطہ کریں — ایڈمیشن ڈیسک",
-      faqTitle: "اکثر پوچھے گئے سوالات",
-      faqSubtitle: "اسکول کی پالیسی پر مبنی شفاف اور واضح جوابات",
-      bindingGovernanceTitle: "پابند مواد کی شفافیت:",
-      bindingGovernanceDesc: "ہم مہارتیں سکھاتے ہیں، نتائج کی ضمانت نہیں دیتے۔ اعداد سرکاری سروے کے ہیں؛ تنقید نظام پر ہے، اساتذہ یا والدین پر نہیں۔",
+      applyForBenchCta: "بینچ کے لیے درخواست دیں",
+      fourDoorsSubtitle: "سہون سے سلیکان ویلی تک آزمودہ راستہ، اب نصاب کی شکل میں۔",
+      forParentsBadge: "والدین کے لیے",
+      forStudentsBadge: "طلبہ کے لیے",
+      forTeachersBadge: "اساتذہ کے لیے",
+      forBuildersBadge: "معماروں اور یونیورسٹی طلبہ کے لیے",
+      bookTourCta: "دورہ بک کریں",
+      registerBuildDayCta: "رجسٹر ہوں",
+      teachersCardDesc: "لیسن کٹس۔ AI تربیت۔ اچھا معاوضہ۔",
+      buildersCardDesc: "بینچ، AI ٹولز اور ڈیمو ڈیز۔",
+      whatsappParentsPrompt: "سوال ہے؟ واٹس ایپ پر داخلہ ڈیسک سے بات کریں",
+      faqTitle: "والدین کے سوالات",
+      faqSubtitle: "اسکول کی پالیسی پر مبنی سیدھے جواب",
+      bindingGovernanceTitle: "ہمارا وعدہ:",
+      bindingGovernanceDesc: "ہم مہارتیں سکھاتے ہیں، نتائج کی ضمانت نہیں دیتے۔ اعداد سرکاری سروے کے ہیں۔ تنقید نظام پر ہے، اساتذہ یا خاندانوں پر نہیں۔",
       sehwanLocation: "سہون شریف، سندھ، پاکستان",
       whatsAppLabel: "واٹس ایپ"
     },
     proofStrip: {
       items: [
-        "سندھ بورڈ سے منظور شدہ (BISE)",
+        "سندھ بورڈ (BISE) نصاب",
         "سندھی · اردو · انگریزی",
-        "کلاس 1 سے AI اور کمپیوٹنگ",
-        "کلاس 8 تک اپنی رجسٹرڈ کمپنی",
-        "سلیکان ویلی سے براہِ راست رابطہ"
+        "کلاس 1 سے AI",
+        "کلاس 8 تک اسٹارٹ اپ",
+        "سلیکان ویلی سے رابطہ"
       ]
     },
     hero: {
-      badge: "نرسری تا میٹرک · سہون شریف، سندھ",
-      title: "ڈگری کافی نہیں۔",
-      highlight: "مہارتوں سے مستقبل بنائیں۔",
-      subtitle: "سندھ بورڈ کے مکمل نصاب کے ساتھ کلاس 1 سے AI، کاروبار اور عملی مہارتیں۔",
+      badge: "نرسری تا میٹرک · سہون شریف",
+      title: "اسٹارٹ اپ بنائیں۔",
+      highlight: "سہون سے، دنیا کے لیے۔",
+      subtitle: "سندھ بورڈ کا مکمل نصاب، اس کے ساتھ کلاس 1 سے میٹرک تک AI اور اسٹارٹ اپ سازی۔",
       ctaPrimary: "کیمپس کا دورہ کریں",
-      ctaSecondary: "دیکھیں ہمارے طلباء کیا کرتے ہیں",
+      ctaSecondary: "طلبہ کیا بناتے ہیں",
       statPills: [
-        { label: "کلاس 1", sub: "کمپیوٹنگ اور AI کا آغاز" },
-        { label: "کلاس 8", sub: "رجسٹرڈ کمپنی کا قیام" },
-        { label: "3rd / 30", sub: "سلیکان ویلی میں عالمی اعزاز" },
-        { label: "100%", sub: "سندھ بورڈ کا مکمل تحفظ" }
+        { label: "کلاس 1", sub: "AI کا آغاز" },
+        { label: "کلاس 8", sub: "پہلا اسٹارٹ اپ" },
+        { label: "3rd / 30", sub: "سلیکان ویلی رینک" },
+        { label: "100%", sub: "سندھ بورڈ محفوظ" }
       ]
     },
     problemStrip: {
-      tagline: "مہارتوں کا فرق",
-      conclusion: "طلبہ کو بدلتی ہوئی ملازمتوں سے متعلق مہارتیں درکار ہیں۔",
+      tagline: "فرق",
+      conclusion: "صرف ڈگری اب مستقبل کی ضمانت نہیں۔ مہارت اور بنایا ہوا کام ہے۔",
       stats: [
         {
           number: "10.9%",
-          label: "ڈگری ہولڈرز میں بے روزگاری",
-          subtext: "بغیر تعلیم والے افراد میں 4.7% کے مقابلے میں",
+          label: "ڈگری ہولڈرز میں بیروزگاری",
+          subtext: "بغیر تعلیم والے افراد میں 4.7% کے مقابلے",
           source: "لیبر فورس سروے 2024–25"
         },
         {
           number: "3 میں سے 1",
-          label: "گریجویٹ بے روزگار (20-24 سال)",
-          subtext: "32.8% نوجوان کیریئر کے آغاز پر بے روزگار ہیں",
-          source: "گیلپ پاکستان تجزیہ"
+          label: "گریجویٹ بیروزگار (20–24)",
+          subtext: "32.8% کیریئر کے آغاز پر بیروزگار",
+          source: "گیلپ پاکستان / LFS تجزیہ"
         },
         {
           number: "45.2%",
-          label: "خواتین گریجویٹس کی بے روزگاری",
-          subtext: "عمر 25–29؛ مردوں میں 14.9% کے مقابلے میں",
-          source: "گیلپ و لیبر فورس سروے"
+          label: "خواتین گریجویٹس کی بیروزگاری",
+          subtext: "عمر 25–29؛ مردوں میں 14.9%",
+          source: "لیبر فورس سروے اور گیلپ"
         },
         {
           number: "760,000+",
-          label: "2025 میں ملک چھوڑ گئے",
-          subtext: "بیرونِ ملک روزگار کیلئے رجسٹر ہوئے",
-          source: "روزنامہ ڈان، جولائی 2026"
+          label: "2025 میں پاکستان چھوڑ گئے",
+          subtext: "بیرونِ ملک روزگار کے لیے رجسٹرڈ",
+          source: "ڈان، جولائی 2026"
         }
       ]
     },
     theTurn: {
-      badge: "نئی راہ",
-      title: "ہم نے مستقبل کیلئے ایک نیا اسکول بنایا۔",
-      description: "سندھ بورڈ کا مکمل نصاب برقرار ہے؛ امتحانی سالوں میں تقریباً 80% وقت بورڈ مضامین کیلئے ہے۔ کلاس 1 سے AI، کاروبار اور کردار سازی بھی شامل ہیں۔",
+      badge: "موڑ",
+      title: "آنے والے دور کے لیے بنا اسکول۔",
+      description: "سندھ بورڈ کا نصاب مرکز میں رہتا ہے۔ فیوچر لیئر اس میں AI، پراڈکٹ سازی اور حقیقی اسٹارٹ اپ شامل کرتی ہے — طلبہ نتائج اور پورٹ فولیو دونوں کے ساتھ نکلتے ہیں۔",
       breakdown: [
         {
-          title: "سندھ بورڈ نصاب",
-          desc: "ریاضی، سائنس، اسلامیات، مطالعہ پاکستان، انگریزی، اردو اور سندھی، امتحانی مشق کے ساتھ۔",
-          percent: "~70-80%"
+          title: "سندھ بورڈ بنیاد",
+          desc: "ریاضی، سائنس، انگریزی، اردو، سندھی، اسلامیات، معاشرتی علوم — امتحانی مشق کے ساتھ۔",
+          percent: "~70–80%"
         },
         {
-          title: "مستقبل کی تہہ (Future Layer)",
-          desc: "AI، روبوٹکس، طلباء کی کمپنیاں اور کام کا ای-پورٹ فولیو۔",
-          percent: "~20-30%"
+          title: "فیوچر لیئر",
+          desc: "AI، کوڈنگ، اسٹارٹ اپ سازی اور بنائے ہوئے کام کا عوامی پورٹ فولیو۔",
+          percent: "~20–30%"
         }
       ]
     },
     fourEngines: {
-      badge: "تعلیمی ستون",
-      title: "ہر طالب علم کو پروان چڑھانے والے چار انجن",
-      subtitle: "تعلیم، کام اور کمیونٹی کیلئے چار مربوط پروگرام۔",
+      badge: "ڈھانچہ",
+      title: "چار انجن",
+      subtitle: "ایک اسکول۔ چار مربوط پروگرام۔",
       engines: [
         {
           id: "school",
           title: "اسکول",
-          role: "نرسری تا میٹرک",
-          description: "بورڈ مضامین اور مستقبل کی مہارتیں ساتھ، ہر طالب علم کیلئے مدد کے ساتھ۔",
+          role: "نرسری – میٹرک",
+          description: "بورڈ مضامین اور مستقبل کی مہارتیں ایک ہی ٹائم ٹیبل پر۔",
           highlight: "نرسری تا میٹرک"
         },
         {
-          id: "sme-incubation",
-          title: "ایس ایم ایز اور عالمی تجارت",
-          role: "حقیقی کمپنیاں اور تجارت",
-          description: "مقامی کاروباروں اور ورکشاپس سے پیداوار، کسٹمر سروس اور تجارت سیکھیں۔",
+          id: "hero",
+          title: "شخصیت سازی",
+          role: "کردار اور اعتماد",
+          description: "گفتگو، نظم اور کردار — مشق اور ٹریکنگ کے ذریعے۔",
+          highlight: "ہفتے میں 2 پیریڈ"
+        },
+        {
+          id: "incubator",
+          title: "طلبہ کا اسٹارٹ اپ انکیوبیٹر",
+          role: "حقیقی اسٹارٹ اپ، حقیقی یوزرز",
+          description: "طلبہ پراڈکٹ بناتے، یوزرز ڈھونڈتے اور کمپنی رجسٹر کرتے ہیں — مقامی کاروبار ان کے پہلے گاہک۔",
           highlight: "کلاس 8 تا 10"
         },
         {
-          id: "technology-community",
-          title: "ٹیکنالوجی کی تہہ اور طلبہ کی انکیوبیشن",
-          role: "ٹیکنالوجی اور کمیونٹی",
-          description: "مقامی نوجوانوں اور بڑوں کیلئے AI، کوڈنگ، ویڈیو اور فری لانسنگ کے 12 ہفتے کے کورسز۔",
-          highlight: "سہون کیلئے کھلا"
-        },
-        {
-          id: "global-bridge",
-          title: "عالمی پل",
-          role: "عالمی شراکت دار اور مواقع",
-          description: "مقامی صلاحیتوں کو عالمی شراکت داروں، مواقع اور منڈیوں سے جوڑیں۔",
-          highlight: "مقامی سے عالمی سطح تک"
+          id: "academy",
+          title: "شام کی اکیڈمی",
+          role: "کمیونٹی انجن",
+          description: "سہون کے نوجوانوں کے لیے کوڈنگ، AI، میڈیا اور فری لانسنگ کے 12 ہفتے کے کورسز۔",
+          highlight: "سہون کے لیے کھلا"
         }
       ]
     },
     whatStudentsDo: {
-      badge: "واضح موازنہ",
-      title: "جو ہمارے اسکول کے بچے کرتے ہیں، یونیورسٹی گریجویٹس نہیں کر پاتے۔",
-      intro: "طلبہ چھ سال کی عمر سے بنانا سیکھتے ہیں؛ سولہ سال تک انہیں دس سال کی عملی مشق ملتی ہے۔",
+      badge: "موازنہ",
+      title: "جو ہمارے طلبہ کرتے ہیں، گریجویٹس نہیں کر پاتے۔",
+      intro: "بنانا چھ سال کی عمر میں شروع ہوتا ہے۔ سولہ تک طالب علم پراڈکٹ لانچ کر چکا، یوزرز کو سروس دے چکا اور سرمایہ کاروں کے سامنے پچ کر چکا ہوتا ہے۔",
       ladder: [
         {
-          age: "9 سال کی عمر",
+          age: "9 سال میں",
           grade: "کلاس 4",
-          task: "تصاویر پہچاننے والا اپنا پہلا AI کمپیوٹر ویژن ماڈل ٹرین کرتی ہے۔",
-          contrast: "اکثر کمپیوٹر سائنس گریجویٹس نے کبھی ماڈل ٹرین نہیں کیا۔"
+          task: "اپنا پہلا AI ویژن ماڈل ٹرین کرتی ہے۔",
+          contrast: "اکثر CS گریجویٹس نے کبھی نہیں کیا۔"
         },
         {
-          age: "10 سال کی عمر",
+          age: "10 سال میں",
           grade: "کلاس 5",
-          task: "اسکول اسٹال چلا کر بڑوں کے سامنے اپنی چھوٹی کمپنی کی بزنس پچ دیتی ہے۔",
-          contrast: "نفع نقصان اور کسٹمر ڈیلنگ کا عملی تجربہ حاصل کرتا ہے۔"
+          task: "اسٹال چلاتا ہے اور بڑوں کے سامنے پچ کرتا ہے۔",
+          contrast: "قیمت، نقد اور گاہک براہِ راست سیکھتا ہے۔"
         },
         {
-          age: "12 سال کی عمر",
-          grade: "کلاس 6-7",
-          task: "پائتھون میں کوڈ، موبائل ایپ اور سینسرز کو انٹرنیٹ سے جوڑتا ہے۔",
-          contrast: "سہون بازار کے اسٹالز سے باقاعدہ منافع اور بیلنس شیٹ بناتا ہے۔"
+          age: "12 سال میں",
+          grade: "کلاس 6–7",
+          task: "پائتھن لکھتا ہے اور موبائل ایپ بناتا ہے۔",
+          contrast: "سہون میں حقیقی یوزرز تک پہنچاتا ہے۔"
         },
         {
-          age: "13 سال کی عمر",
+          age: "13 سال میں",
           grade: "کلاس 8",
-          task: "رجسٹرڈ کمپنی میں ٹیم کے ساتھ اجنبیوں کو اشیاء فروخت کرتا ہے اور فنانشل رپورٹ بناتا ہے۔",
-          contrast: "AI ماڈلز کو روزمرہ سافٹ ویئر ورک فلوز سے منسلک کرتا ہے۔"
+          task: "ٹیم کے ساتھ اسٹارٹ اپ رجسٹر کرتا ہے۔",
+          contrast: "اجنبیوں کو بیچتا ہے اور کھاتہ رکھتا ہے۔"
         },
         {
-          age: "15 سال کی عمر",
+          age: "15 سال میں",
           grade: "کلاس 9",
-          task: "مقامی کاروبار کیلئے AI آٹومیشن بنا کر کیمپس انکیوبیٹر میں شمولیت اختیار کرتا ہے۔",
-          contrast: "بین الاقوامی ٹیک اور بزنس مقابلوں میں حصہ لیتا ہے۔"
+          task: "مقامی کاروبار کے لیے AI ٹول بنا کر انکیوبیٹر میں داخل ہوتا ہے۔",
+          contrast: "بین الاقوامی اسٹارٹ اپ اسٹیجز پر مقابلہ کرتا ہے۔"
         },
         {
-          age: "16 سال کی عمر",
+          age: "16 سال میں",
           grade: "میٹرک",
-          task: "بورڈ کے بہترین نمبرز، ایک لائیو پراڈکٹ، کمپنی کے آڈٹ شدہ اکاؤنٹس اور ای-پورٹ فولیو کے ساتھ فارغ ہوتا ہے۔",
-          contrast: "NIC اور ORIC کے ججز کے سامنے ڈیمو ڈے پر پیشکش کر چکا ہوتا ہے۔"
+          task: "BISE کے اچھے نمبروں اور چلتی ہوئی پراڈکٹ کے ساتھ فارغ ہوتا ہے۔",
+          contrast: "NIC اور ORIC مہمانوں کے سامنے ڈیمو ڈے۔ عوامی پورٹ فولیو۔"
         }
       ],
       comparison: {
-        headers: ["روایتی یونیورسٹی گریجویٹ (22 سال، 16 سالہ تعلیم)", "دی رائزنگ سندھ کا طالب علم (16 سال، 11 سالہ تعلیم)"],
+        headers: ["عام گریجویٹ (22 سال)", "رائزنگ سندھ کا طالب علم (16 سال)"],
         rows: [
-          { typical: "ایک تصدیق شدہ سی وی اور فوٹو کاپیاں", rising: "تیار کردہ لائیو کاموں کا ٹھوس ای-پورٹ فولیو" },
-          { typical: "رٹے ہوئے نوٹس جو جلد بھول جاتے ہیں", rising: "مارکیٹ میں لائیو پراڈکٹس اور باقاعدہ کسٹمرز" },
-          { typical: "ملازمت کے اشتہار کا انتظار", rising: "اجنبیوں کو مارکیٹ میں روبرو چیزیں بیچ چکا ہوتا ہے" },
-          { typical: "خوفزدہ کہ AI ان کی نوکری چھین لے گا", rising: "AI کو روزانہ اپنے معاون اوزار کے طور پر استعمال کرتا ہے" },
-          { typical: "شہر یا ملک چھوڑنے پر مجبور", rising: "سہون میں بیٹھ کر دنیا بھر کے کلائنٹس کو سروس دیتا ہے" }
+          { typical: "سی وی اور تصدیق شدہ فوٹو کاپیاں", rising: "بنائے ہوئے کام کا لائیو پورٹ فولیو" },
+          { typical: "رٹا ہوا نظریہ، بھولتا ہوا", rising: "حقیقی یوزرز کے ساتھ پراڈکٹس" },
+          { typical: "ملازمت کے اشتہار کا انتظار", rising: "اجنبیوں کو بیچ چکا" },
+          { typical: "خوف کہ AI نوکری چھین لے گا", rising: "روزانہ AI کے ساتھ بناتا ہے" },
+          { typical: "شہر یا بیرونِ ملک جانے کی مجبوری", rising: "سہون سے عالمی کلائنٹس کی خدمت" }
         ]
       },
-      closingNote: "طلبہ یونیورسٹی بھی جا سکتے ہیں، عملی تجربے اور اپنے کام کے پورٹ فولیو کے ساتھ۔"
+      closingNote: "یونیورسٹی ہر طالب علم کے لیے کھلی رہتی ہے — ہاتھ میں پورٹ فولیو کے ساتھ۔"
     },
     theModel: {
-      badge: "دو تہوں پر مشتمل نصاب",
-      title: "بورڈ کا رزلٹ محفوظ، مستقبل کی شمولیت۔",
-      openingPromise: "دو تہیں، ایک ٹائم ٹیبل۔ کوئی سمجھوتہ نہیں۔",
-      promiseDetail: "ہفتے کا تقریباً 70% وقت سندھ بورڈ کیلئے، اور بورڈ کے سالوں میں 80% ہے۔ باقی وقت کمپیوٹنگ، AI اور کاروبار کیلئے ہے۔",
+      badge: "دو تہوں کا نصاب",
+      title: "بورڈ کے نتائج محفوظ۔ مستقبل شامل۔",
+      openingPromise: "دو تہیں۔ ایک ٹائم ٹیبل۔ کوئی سمجھوتہ نہیں۔",
+      promiseDetail: "ہفتے کا تقریباً 70% سندھ بورڈ نصاب — کلاس 9–10 میں 80%۔ باقی کمپیوٹنگ، AI اور اسٹارٹ اپ سازی۔",
       timelineStages: [
         {
-          grade: "نرسری تا کے جی",
-          computing: "بغیر اسکرین منطقی گیمز، روبوٹ کو کمانڈ دینے کے تدریسی کھیل۔",
-          entrepreneurship: "باہم شیئرنگ، کلاس روم کی ذمہ داریاں، مارکیٹ ڈے کردار۔",
+          grade: "نرسری – کے جی",
+          computing: "بغیر اسکرین منطقی کھیل اور 'روبوٹ کو ہدایت دو' کھیل۔",
+          entrepreneurship: "شراکت، کلاس روم کی ذمہ داریاں، مارکیٹ ڈے رول پلے۔",
           milestone: "منطق اور ہمدردی"
         },
         {
-          grade: "کلاس 1 تا 3",
-          computing: "ScratchJr، فلور روبوٹس، ٹائپنگ اور بنیادی الگورتھم۔",
-          entrepreneurship: "حقیقی سکوں کے ساتھ کلاس روم شاپ، بچت کی عادت، کھاتہ لکھنا۔",
-          milestone: "پہلا کوڈ اور مالی سمجھ بوجھ"
+          grade: "کلاس 1–3",
+          computing: "ScratchJr، فلور روبوٹس، ٹائپنگ۔",
+          entrepreneurship: "حقیقی سکوں کے ساتھ کلاس روم شاپ، بچت کی گلک۔",
+          milestone: "پہلا کوڈ"
         },
         {
-          grade: "کلاس 4 تا 5",
-          computing: "اسکریچ گیمز، مائیکرو بٹ کنٹرولر، پہلا ٹرین شدہ AI ماڈل۔",
-          entrepreneurship: "اسکول بازار اسٹالز، والدین کے سامنے مِنی کمپنی کا آئیڈیا پیش کرنا۔",
-          milestone: "AI ماڈل کی تربیت"
+          grade: "کلاس 4–5",
+          computing: "اسکریچ، micro:bit، پہلا AI ماڈل۔",
+          entrepreneurship: "بازار اسٹال، والدین کے سامنے مِنی کمپنی کی پچ۔",
+          milestone: "پہلا AI ماڈل"
         },
         {
-          grade: "کلاس 6 تا 7",
-          computing: "پائتھون پروگرامنگ، موبائل ایپس، انٹرنیٹ آف تھنگز (IoT) سینسرز۔",
-          entrepreneurship: "بزنس ماڈل کینوس، مقامی چھوٹے یونٹس (صابن سازی اور جوتا سازی) کے تعاون سے بیچ پروڈکشن اور کھاتہ داری۔",
-          milestone: "پائتھون اور مارکیٹ سیلز"
+          grade: "کلاس 6–7",
+          computing: "پائتھن، موبائل ایپس، IoT سینسرز، دیانت دار AI پرامپٹنگ۔",
+          entrepreneurship: "بزنس ماڈل کینوس، حقیقی یوزرز کے ساتھ پہلی پراڈکٹ، بنیادی کھاتہ۔",
+          milestone: "پہلی لانچ شدہ پراڈکٹ"
         },
         {
           grade: "کلاس 8",
-          computing: "ویب ڈویلپمنٹ، APIs، خودکار AI ایجنٹ ورک فلوز، تھری ڈی ڈیزائننگ۔",
-          entrepreneurship: "باقاعدہ رجسٹرڈ طالب علم کمپنی، مقامی صنعتوں (موبائل ریپیئر اور مینوفیکچرنگ) کے ساتھ صارفین کو حقیقی فراہمی۔",
-          milestone: "قانونی کمپنی کا انتظام"
+          computing: "ویب، APIs، نگرانی میں AI ایجنٹ ورک فلوز، 3D پرنٹنگ۔",
+          entrepreneurship: "ٹیم، گاہکوں اور سہ ماہی کھاتوں کے ساتھ رجسٹرڈ طلبہ اسٹارٹ اپ۔",
+          milestone: "رجسٹرڈ اسٹارٹ اپ"
         },
         {
-          grade: "کلاس 9 تا 10",
-          computing: "سندھ بورڈ کمپیوٹر سائنس + خاندانی کاروبار کیلئے تیار کردہ AI آٹومیشن۔",
-          entrepreneurship: "کیمپس انکیوبیٹر سمسٹر؛ مقامی SMEs کے مسائل کا حل؛ NIC اور ORIC مہمانوں کے روبرو فائنل پچ۔",
-          milestone: "میٹرک رزلٹ اور لائیو پورٹ فولیو"
+          grade: "کلاس 9–10",
+          computing: "بورڈ کمپیوٹر سائنس + مقامی کاروبار کے لیے AI آٹومیشن۔",
+          entrepreneurship: "انکیوبیٹر سمسٹر: MVP، ابتدائی یوزرز، NIC/ORIC مہمانوں کے سامنے ڈیمو ڈے پچ۔",
+          milestone: "میٹرک + لائیو پورٹ فولیو"
         }
       ],
       teachingPillars: [
         {
-          title: "مہارت اولین ترجیح",
-          desc: "ہفتہ وار جائزہ اور دہرائی، تاکہ کوئی بھی بچہ پیچھے نہ رہ جائے۔"
+          title: "مہارت پہلے",
+          desc: "ہفتہ وار جانچ اور دوبارہ تدریس۔ کوئی بچہ خاموشی سے پیچھے نہیں رہتا۔"
         },
         {
-          title: "حیات بھر کا ای-پورٹ فولیو",
-          desc: "کے جی سے میٹرک تک ہر پراجیکٹ، رپورٹ اور مقابلہ کلاؤڈ پر محفوظ۔"
+          title: "عمر بھر کا ای-پورٹ فولیو",
+          desc: "کے جی سے میٹرک تک ہر پراجیکٹ اور اسٹارٹ اپ رپورٹ، ایک عوامی ریکارڈ میں۔"
         },
         {
-          title: "والدین کا موبائل ڈیش بورڈ",
-          desc: "اپنی زبان میں بچے کی تعلیمی اور تکنیکی ترقی فون پر جانچیں۔"
+          title: "والدین کا ڈیش بورڈ",
+          desc: "ماہانہ پیش رفت سندھی، اردو یا انگریزی میں، آپ کے فون پر۔"
         },
         {
           title: "اساتذہ تنہا نہیں",
-          desc: "مرکزی اکیڈمک ٹیم اور تیار شدہ سبق کٹس؛ ہر استاد کا AI ایکسپرٹ ہونا ضروری نہیں۔"
+          desc: "ریکارڈ شدہ لیسن کٹس اور مرکزی معاونت۔ کسی استاد کا AI ماہر ہونا ضروری نہیں۔"
         },
         {
-          title: "دیانتداری اور اخلاقیات",
-          desc: "اخلاقی اصولوں کے تحت AI کا تعمیری اور مثبت استعمال سکھایا جاتا ہے۔"
-        },
-        {
-          title: "شخصیت سازی",
-          desc: "عملی سرگرمیوں اور ٹریکنگ سے اعتماد، گفتگو، نظم، ٹیم ورک اور کردار کو فروغ دیں۔"
+          title: "دیانت کے ساتھ AI",
+          desc: "AI بطور اوزار، استاد کی رہنمائی میں، دیانت دار کام کے واضح اصولوں کے ساتھ۔"
         }
       ]
     },
     smeEnterprises: {
-      badge: "عملی و فنی تربیت",
-      title: "تعلیم کو حقیقی کاروبار اور مقامی صنعت سے جوڑنا",
-      subtitle: "عملی پیداوار، فنی ہنر اور حقیقی کام کے ذریعے چھوٹے اور درمیانے درجے کے کاروباروں (SMEs) کو سمجھنا۔",
-      whatIsSmeTitle: "چھوٹے اور درمیانے کاروبار (SMEs) کیا ہیں؟",
-      whatIsSmeDesc: "SMEs سندھ کے مقامی دکانیں، ورکشاپس، مرمت مراکز اور کارخانے ہیں جو اشیا، خدمات اور روزگار فراہم کرتے ہیں۔",
-      whyConnectTitle: "تعلیم کو مقامی کاروباروں سے جوڑنا کیوں ضروری ہے؟",
-      whyConnectDesc: "مقامی کاروباروں کے ساتھ کام سے طلبہ پیداوار، مسئلہ حل کرنے، کسٹمر سروس اور کاروباری مہارتیں سیکھتے اور کیریئر کے راستے دیکھتے ہیں۔",
-      learningOutcomesTitle: "طلبہ حقیقی کاروباروں سے کیا سیکھتے ہیں؟",
+      badge: "عملی تربیت",
+      title: "مقامی کاروبار بطور پہلے گاہک",
+      subtitle: "اسٹارٹ اپ کو گاہک چاہییں۔ سہون کی ورکشاپس اور دکانیں وہ جگہ ہیں جہاں ہمارے طلبہ اپنے پہلے گاہک ڈھونڈتے ہیں۔",
+      whatIsSmeTitle: "مقامی کاروبار کیوں؟",
+      whatIsSmeDesc: "صابن یونٹس، موبائل ریپیئر شاپس، چپل ساز اور دستکاری ورکشاپس سہون کی معیشت چلاتی ہیں — اور ان کے پاس حل کرنے لائق حقیقی مسائل ہیں۔",
+      whyConnectTitle: "طلبہ ان کے ساتھ کیا کرتے ہیں",
+      whyConnectDesc: "دورہ کریں، مشاہدہ کریں، رکاوٹ ڈھونڈیں اور اسے حل کرنے والی پراڈکٹ بنائیں — بلنگ ایپ، آن لائن اسٹور، سادہ آٹومیشن۔",
+      learningOutcomesTitle: "طلبہ کون سی مہارتیں مشق کرتے ہیں",
       learningOutcomes: [
         {
-          title: "مصنوعات کی تیاری اور پیداواری عمل (Manufacturing Processes)",
-          desc: "خام مال کا حصول، فارمولیشن اور درست پیمائش، اسمبلی لائن، پیکیجنگ اور حفاظتی اصولوں کی پابندی۔"
+          title: "حقیقی مسئلہ ڈھونڈنا",
+          desc: "ورکشاپ کا مشاہدہ کریں اور پہچانیں کہ کیا چیز وقت یا پیسہ کھاتی ہے۔"
         },
         {
-          title: "کسٹمر سروس اور صارفین کی ضروریات کو سمجھنا",
-          desc: "گاہک کی بات غور سے سننا، شائستہ گفتگو، مطلوبہ مسئلے کا بروقت حل اور گاہک کا اعتماد جیتنا۔"
+          title: "گاہکوں سے بات کرنا",
+          desc: "سنیں، پوچھیں اور حل سادہ زبان میں سمجھائیں۔"
         },
         {
-          title: "ٹیم ورک، کوالٹی کنٹرول اور مسائل کا حل",
-          desc: "ساتھیوں کے ساتھ مل کر کام کرنا، معیار کی یکسانیت برقرار رکھنا اور ورکشاپ کے روزمرہ چیلنجز کو مل کر حل کرنا۔"
+          title: "پیداوار اور معیار",
+          desc: "دیکھیں کہ چیزیں کیسے بنتی، جانچی اور قیمت پاتی ہیں۔"
         },
         {
-          title: "مقامی کاروبار کیسے کام کرتے ہیں؟",
-          desc: "کیش فلو، کھاتہ داری، مال کی دیکھ بھال، اخراجات اور منافع کا توازن، اور مقامی مارکیٹ کی اقتصادی حرکیات۔"
-        },
-        {
-          title: "انٹرپرینیورشپ، ووکیشنل اسکلز اور روزگار کے مواقع",
-          desc: "عملی فنی صلاحیتیں نکھارنا، مارکیٹ کے تقاضے سمجھنا اور مستقبل میں باعزت روزگار یا ذاتی کاروبار شروع کرنے کا اعتماد حاصل کرنا۔"
+          title: "حساب کتاب",
+          desc: "لاگت، اسٹاک، نقد اور منافع — حقیقی کاروبار کے اندر۔"
         }
       ],
-      examplesTitle: "طلبہ کیلئے مقامی کاروباروں کی مثالیں",
-      examplesSubtitle: "مقامی پیداوار، مرمت اور پانی کی خدمات کی آٹھ مثالیں۔",
+      examplesTitle: "طلبہ کہاں سے شروع کرتے ہیں",
+      examplesSubtitle: "سہون کے چار طرح کے کاروبار جو پہلے گاہک بنتے ہیں۔",
       examples: [
         {
-          id: "data-cable-manufacturing",
-          title: "ڈیٹا کیبل بنانے کے یونٹس",
-          description: "یہ یونٹس تاروں، کنیکٹرز اور حفاظتی تہہ کو جوڑ کر ڈیٹا اور چارجنگ کیبلز بناتے ہیں۔"
+          id: "soap-making",
+          title: "صابن سازی کے یونٹس",
+          role: "پیداوار",
+          businessDoes: "مقامی منڈیوں کے لیے صابن ملاتے، ڈھالتے اور پیک کرتے ہیں۔",
+          studentsLearn: "طلبہ بیچ-کاسٹنگ شیٹس اور سادہ آن لائن کیٹلاگ بناتے ہیں۔",
+          tags: ["لاگت", "کیٹلاگ", "پیکنگ"]
         },
         {
-          id: "plastic-bottle-manufacturing",
-          title: "پلاسٹک کی بوتلیں بنانے کے یونٹس",
-          description: "یہ کارخانے پینے کے پانی، مشروبات اور دیگر مصنوعات کیلئے پلاسٹک کی بوتلیں بناتے ہیں۔"
+          id: "mobile-repair",
+          title: "موبائل ریپیئر شاپس",
+          role: "تکنیکی سروس",
+          businessDoes: "خرابیاں ڈھونڈتے، اسکرین بدلتے، چارجنگ اور سافٹ ویئر ٹھیک کرتے ہیں۔",
+          studentsLearn: "طلبہ جاب-ٹریکنگ اور کوٹیشن ٹولز بناتے ہیں اور بنیادی تشخیص سیکھتے ہیں۔",
+          tags: ["تشخیص", "جاب ٹریکنگ", "کسٹمر سروس"]
         },
         {
-          id: "ro-water-treatment",
-          title: "آر او واٹر ٹریٹمنٹ پلانٹس",
-          description: "یہ پلانٹس ریورس اوسموسس کے ذریعے پانی صاف کرکے پینے کا صاف پانی فراہم کرتے ہیں۔"
+          id: "footwear-manufacturing",
+          title: "چپل اور جوتا سازی کے یونٹس",
+          role: "دستکاری اور اسمبلنگ",
+          businessDoes: "چمڑا کاٹ کر اور سی کر سندھی چپل اور جدید جوتے بناتے ہیں۔",
+          studentsLearn: "طلبہ پراڈکٹ فوٹوز، آن لائن اسٹورز اور اسٹاک ٹریکرز بناتے ہیں۔",
+          tags: ["ای کامرس", "اسٹاک", "قیمت"]
         },
         {
-          id: "concrete-block-paver-manufacturing",
-          title: "کنکریٹ بلاک اور پیور بنانے کے یونٹس",
-          description: "یہ یونٹس عمارتوں اور پیدل راستوں کیلئے پائیدار کنکریٹ بلاک اور پیور تیار کرتے ہیں۔"
-        },
-        {
-          id: "small-soap-making",
-          title: "صابن سازی کے چھوٹے یونٹس",
-          description: "چھوٹے یونٹس مقامی دکانوں اور بازاروں کیلئے صابن تیار کرکے پیک کرتے ہیں۔"
-        },
-        {
-          id: "mobile-repairing",
-          title: "موبائل ریپیئرنگ شاپس",
-          description: "یہ دکانیں فون کے نقص کی تشخیص کرکے اسکرین، بیٹری اور چارجنگ کے مسائل ٹھیک کرتی ہیں۔"
-        },
-        {
-          id: "chappal-making",
-          title: "چپل سازی کے چھوٹے یونٹس",
-          description: "مقامی کاریگر گاہکوں اور بازاروں کیلئے چپل کاٹتے، سیتے اور تیار کرتے ہیں۔"
-        },
-        {
-          id: "local-mechanical-craft-workshops",
-          title: "سندھ کی مقامی مکینیکل اور دستکاری ورکشاپس",
-          description: "یہ ورکشاپس مشینری کی مرمت، دھات کا کام، اجرک پرنٹنگ اور بڑھئی کا کام کرتی ہیں۔"
+          id: "local-workshops",
+          title: "دستکاری اور مکینیکل ورکشاپس",
+          role: "ہنر",
+          businessDoes: "اجرک پرنٹرز، گیراج، لوہے اور لکڑی کے کارخانے شہر کی خدمت کرتے ہیں۔",
+          studentsLearn: "طلبہ ورک فلو کا نقشہ بناتے، آئیڈیاز آزماتے اور وہ ہنر دریافت کرتے ہیں جن کے لیے بنانا قابلِ قدر ہے۔",
+          tags: ["ورک فلو", "پروٹو ٹائپ", "فنی راستے"]
         }
       ]
     },
     heroTrack: {
-      badge: "کردار اور اخلاقی تربیت کا شعبہ",
+      badge: "کردار کا ستون",
       title: "شخصیت سازی",
-      subtitle: "طلبہ کا کردار، اخلاق، خود اعتمادی اور اسکول، خاندانی زندگی، معاشرے اور روشن مستقبل کیلئے بنیادی مہارتیں۔",
-      description: "طلبہ اسکول، گھر اور کام کیلئے نظم، دیانت، گفتگو، اعتماد، ہمدردی، ٹیم ورک اور ثابت قدمی سیکھتے ہیں۔",
+      subtitle: "اعتماد، گفتگو، نظم اور کردار — اسکول، گھر اور عالمی اسٹیج کے لیے۔",
+      description: "بانی کو کوڈ سے زیادہ چاہیے۔ ہفتے میں دو پیریڈ وہ عادتیں بناتے ہیں جو طالب علم کو پچ، ٹیم اور مشکل دن سے گزار دیتی ہیں۔",
       features: [
         {
-          title: "باہمی گفتگو اور باوقار اظہارِ خیال",
-          desc: "غور سے سننے، احترام سے گفتگو اور اعتماد کے ساتھ اظہار کی مشق۔"
+          title: "گفتگو",
+          desc: "اچھی طرح سنیں، صاف بولیں، اعتماد سے پیش کریں۔"
         },
         {
-          title: "نظم و ضبط، اخلاقیات اور سماجی آداب",
-          desc: "اسکول اور گھر میں سچائی، ذمہ داری اور احترام کی عملی تربیت۔"
+          title: "نظم اور اخلاق",
+          desc: "سچائی، ذمہ داری اور احترام، روزانہ مشق کے ساتھ۔"
         },
         {
-          title: "پہاڑی ٹریکنگ کی مہمات",
-          desc: "بڈو جبل، بھاگو توڑہو اور کارونجھر میں ٹریکنگ اور کیمپنگ کریں؛ دریائے سندھ میں سرفنگ، کشتی رانی، کشتی سواری اور تیراکی سے فٹنس، اعتماد، ٹیم ورک اور فطرت کا احترام بڑھائیں۔"
+          title: "پہاڑی ٹریکنگ",
+          desc: "بڈو جبل، بھاگو توڑہو اور کارونجھر: فٹنس، ٹیم ورک اور فطرت کا احترام۔"
         },
         {
-          title: "حوصلہ مندی، ہمدردی اور قائدانہ صلاحیت",
-          desc: "ہمدردی، ٹیم ورک اور ثابت قدمی کے ساتھ مسائل حل کرنا اور بہتر فیصلے کرنا۔"
+          title: "ثابت قدمی اور قیادت",
+          desc: "ہمدردی، ٹیم ورک اور دباؤ میں ٹھہرے ہوئے فیصلے۔"
         }
       ],
       heroOath: {
-        title: "طلبہ کا اخلاقی عہد (نہم جماعت)",
-        text: "”میں سچائی اور دیانت داری سے کام لوں گا۔ میں عزت اور شائستگی کے ساتھ گفتگو کروں گا۔ میں نظم و ضبط کا پابند رہوں گا، اپنے ساتھیوں کا ساتھ دوں گا، سندھ کی دھرتی کی خدمت کروں گا، اور زندگی کے ہر چیلنج کا ڈٹ کر مقابلہ کروں گا۔“"
+        title: "طلبہ کا عہد (نہم جماعت)",
+        text: "”میں سچائی سے کام لوں گا۔ میں وضاحت اور احترام سے بات کروں گا۔ میں اپنی ٹیم کا ساتھ دوں گا، سندھ کی دھرتی کی خدمت کروں گا، اور ہر چیلنج کا ثابت قدمی سے مقابلہ کروں گا۔“"
       }
     },
     theProof: {
-      badge: "زندہ نظیر",
-      title: "ثبوت — سہون سے سلیکان ویلی تک",
-      intro: "بانی علی مرتضیٰ سولنگی نے اپنا پہلا اسٹارٹ اپ سہون میں بنایا۔ NUST GAP جیتنے کے بعد وہ سلیکان ویلی میں 30 ممالک کے بانیوں میں تیسرے نمبر پر آئے۔",
-      investorTitle: "سہون کے اسٹارٹ اپ کو عالمی سرمایہ کار کی حمایت ملی۔",
-      investorDesc: "علی کے اسٹارٹ اپ کے سرمایہ کار نے 30 سے زائد یونیکورن کمپنیوں میں سرمایہ کاری کی ہے، جن میں ٹیسلا، پے پال، اسپیس ایکس اور یاہو شامل ہیں۔",
+      badge: "نظیر",
+      title: "سہون سے سلیکان ویلی تک",
+      intro: "بانی علی مرتضیٰ سولنگی نے اپنا پہلا اسٹارٹ اپ سہون میں بنایا۔ NUST کا GAP پروگرام جیتنے کے بعد وہ سلیکان ویلی میں 30 ممالک کے بانیوں میں تیسرے نمبر پر آئے۔",
+      investorTitle: "سہون کا اسٹارٹ اپ، عالمی سرمایہ کار کی حمایت سے۔",
+      investorDesc: "علی کے اسٹارٹ اپ کے سرمایہ کار نے 30 سے زائد یونیکورنز میں سرمایہ کاری کی ہے، جن میں ٹیسلا، پے پال، اسپیس ایکس اور یاہو شامل ہیں۔",
       stats: [
-        { number: "3rd / 30", label: "سلیکان ویلی میں ممالک کے درمیان پوزیشن" },
-        { number: "10+", label: "ممالک میں عالمی خدمات کی فراہمی" },
-        { number: "سینکڑوں", label: "ہائی ٹیک ملازمین کی ٹیم" },
-        { number: "لاکھوں ڈالر", label: "ٹیکنالوجی سے حاصل کردہ زرمبادلہ" }
+        { number: "30 میں سے تیسرا", label: "سلیکان ویلی میں ممالک کی رینکنگ" },
+        { number: "20+", label: "ممالک میں آج خدمات" },
+        { number: "سینکڑوں", label: "ہائی ٹیک ملازمین کی قیادت" }
       ],
       whyItMatters: {
-        title: "سہون سے عالمی کمپنی بن سکتی ہے—ہم نے ثابت کیا۔",
-        desc: "یہ اسکول کلاس 1 سے طلبہ کو بنانے، اپنا کام پیش کرنے اور عالمی مواقع کیلئے تیار کرتا ہے۔"
+        title: "سہون سے عالمی کمپنی بن سکتی ہے۔ ہم نے کر دکھایا۔",
+        desc: "یہ اسکول اس سفر کو کلاس 1 سے نصاب میں بدلتا ہے۔"
       },
       founderQuote: {
         quote: "”جو کچھ وہ آپ کے بچے کو کہیں گے کہ سہون سے ممکن نہیں، وہ سب میں نے سہون سے کر دکھایا ہے۔ بس ایسے اسکول کی کمی تھی۔ چنانچہ میں نے یہ اسکول بنا دیا۔“",
@@ -2331,217 +2278,214 @@ export const contentMap: Record<Language, SiteContent> = {
         role: "بانی، دی رائزنگ سندھ"
       },
       milestones: [
-        { year: "پہلا مرحلہ", stage: "سہون سے آغاز", desc: "لال شہباز قلندر کی درگاہ کے قریب عام کمروں میں پہلا سافٹ ویئر تیار کیا گیا۔" },
-        { year: "دوسرا مرحلہ", stage: "قومی چیمپئن", desc: "NUST GAP پروگرام کے ذریعے پاکستان بھر میں اول مقام حاصل کیا۔" },
-        { year: "تیسرا مرحلہ", stage: "سلیکان ویلی کا اسٹیج", desc: "30 ممالک میں تیسری پوزیشن اور 'The Most Investable Startup' کا اعزاز جیتا۔" },
-        { year: "چوتھا مرحلہ", stage: "عالمی وسعت", desc: "ایلون مسک کے انویسٹر کی حمایت کے بعد 10 ممالک میں کمپنی کا نیٹ ورک پھیلایا۔" },
-        { year: "پانچواں مرحلہ", stage: "سہون واپسی", desc: "وہ سارا تجربہ سندھ کے بچوں کیلئے ایک منظم تعلیمی نصاب کی شکل میں واپس لائے۔" }
+        { year: "پہلا مرحلہ", stage: "سہون سے آغاز", desc: "لال شہباز قلندر کی درگاہ کے قریب عام کمروں میں پہلی پراڈکٹ کوڈ کی گئی۔" },
+        { year: "دوسرا مرحلہ", stage: "قومی چیمپئن", desc: "NUST کا گلوبل ایکسیلریشن پروگرام (GAP) جیتا۔" },
+        { year: "تیسرا مرحلہ", stage: "سلیکان ویلی اسٹیج", desc: "30 ممالک میں تیسری پوزیشن، 'The Most Investable Startup in Silicon Valley'۔" },
+        { year: "چوتھا مرحلہ", stage: "عالمی وسعت", desc: "30+ یونیکورن انویسٹر کی حمایت؛ 20+ ممالک میں کام۔" },
+        { year: "پانچواں مرحلہ", stage: "سہون واپسی", desc: "وہ سفر، اسکول کے نصاب کی شکل میں دوبارہ بنایا گیا۔" }
       ]
     },
     globalBridge: {
-      badge: "مقامی ٹیلنٹ · عالمی بہاؤ",
-      title: "عالمی پل — پہلے دن سے مربوط",
-      subtitle: "مقامی صلاحیتوں کو عالمی شراکت داروں، مواقع اور منڈیوں سے جوڑیں۔",
+      badge: "مقامی ٹیلنٹ · عالمی منڈی",
+      title: "عالمی پل",
+      subtitle: "طلبہ کے اسٹارٹ اپ پہلے دن سے عالمی منڈی کے لیے بنتے ہیں۔",
       lanes: [
         {
           laneNumber: "01",
-          title: "بغیر سرحدوں کے مشترکہ منصوبے اور شریک بانی",
-          highlight: "سہون میں بانی۔ سلیکان ویلی میں شریک۔ ایک ہی کمپنی۔",
-          description: "بیرون ملک مقیم ماہرین طلبہ کے منصوبوں میں شریک ہو کر تجربہ، نیٹ ورک یا سرمایہ دے سکتے ہیں۔"
+          title: "بغیر سرحدوں کے شریک بانی",
+          highlight: "سہون میں بانی۔ سلیکان ویلی میں شریک بانی۔ ایک ہی کمپنی۔",
+          description: "بیرونِ ملک مقیم اور عالمی ماہرین طلبہ کے اسٹارٹ اپس میں شریک ہوتے ہیں — تجربے، نیٹ ورک یا سرمائے کے ساتھ۔"
         },
         {
           laneNumber: "02",
-          title: "بین الاقوامی تعلیمی دورے اور عالمی شعور",
-          highlight: "تعلیمی دوروں سے نئی ثقافتوں، ٹیکنالوجی اور خیالات سے واقفیت۔",
-          description: "مجوزہ تعلیمی دورے طلبہ کو عالمی اداروں، ثقافتوں اور ٹیکنالوجی سے روشناس کرا کے تعلیم اور کیریئر کے راستے دکھاتے ہیں۔"
+          title: "عالمی شعور",
+          highlight: "بیرونِ ملک اسٹارٹ اپ ہبز، جامعات اور لیبز کے مطالعاتی دورے۔",
+          description: "طلبہ دیکھتے ہیں کہ عالمی بانی کیسے کام کرتے ہیں — پھر گھر آ کر بناتے ہیں۔"
         },
         {
           laneNumber: "03",
-          title: "عالمی رجسٹریشن اور پیٹنٹ پروٹیکشن",
-          highlight: "پیدائش سہون میں۔ رجسٹریشن سلیکان ویلی میں۔ تحفظ دنیا بھر میں۔",
-          description: "طلباء کے اسٹارٹ اپس کو امریکہ میں قانونی طور پر رجسٹر کرایا جائے گا اور ان کی ایجادات کو امریکہ اور دنیا بھر میں پیٹنٹ کر کے محفوظ بنایا جائے گا۔"
+          title: "عالمی رجسٹریشن اور پیٹنٹ",
+          highlight: "پیدائش سہون میں۔ رجسٹریشن ڈیلاویئر میں۔ تحفظ دنیا بھر میں۔",
+          description: "منتخب طلبہ اسٹارٹ اپ امریکہ میں رجسٹر ہوتے ہیں اور سندھ میں ہونے والی ایجادات کے پیٹنٹ داخل کرتے ہیں۔"
         }
       ],
-      closing: "صلاحیت سندھ میں رہے، جبکہ یہاں کی مصنوعات اور خیالات عالمی منڈیوں تک پہنچیں۔",
+      closing: "ٹیلنٹ سندھ میں رہتا ہے۔ پراڈکٹس دنیا میں جاتی ہیں۔",
       scholarshipHighlight: {
-        badge: "تعلیمی مساوات اور میرٹ",
-        title: "مستحق اور باصلاحیت طلبہ کیلئے اسکالرشپس",
-        subtitle: "مالی حالات کسی باصلاحیت بچے کی تعلیمی اڑان کی راہ میں رکاوٹ نہیں بنیں گے۔",
-        description: "میرٹ اور ضرورت پر مبنی اسکالرشپس اہل طلبہ کو نصاب، جدید لیبز اور کردار سازی تک رسائی دیتی ہیں۔",
+        badge: "میرٹ اور ضرورت",
+        title: "اسکالرشپس",
+        subtitle: "کوئی باصلاحیت بچہ پیسے کی وجہ سے باہر نہیں رہے گا۔",
+        description: "میرٹ اور ضرورت پر مبنی اسکالرشپس اہل طلبہ کے لیے پورے پروگرام کو کور کرتی ہیں — لیبز، ٹریکنگ اور اسٹارٹ اپس سمیت۔",
         points: [
-          "غیر معمولی ذہانت اور صلاحیت کے اعتراف کیلئے میرٹ ایوارڈز",
-          "مستحق خاندانوں کے لائق طلبہ کیلئے مالی معاونت",
-          "خاندانوں کو بااختیار بنانا اور سماجی رکاوٹیں دور کرنا",
-          "سندھ کے کل کیلئے نئے سائنسدان، معمار اور لیڈرز تیار کرنا"
+          "غیر معمولی صلاحیت کے لیے میرٹ ایوارڈز",
+          "ہر مستحق بچے کے لیے ضرورت پر مبنی معاونت",
+          "پورے سندھ کے اہل خاندانوں کے لیے کھلا"
         ],
-        valueProposition: "ایک طالب علم کی مدد پوری کمیونٹی کیلئے فائدہ مند ہو سکتی ہے۔"
+        valueProposition: "ایک طالب علم کی مدد پوری کمیونٹی کو اٹھاتی ہے۔"
       },
       internationalTripsHighlight: {
-        badge: "عالمی افق اور تجربات",
-        title: "بین الاقوامی تعلیمی دورے اور ثقافتی تجربات",
-        subtitle: "عالمی تعلیم، ثقافتوں اور ٹیکنالوجی کا تجربہ۔",
-        description: "مجوزہ دوروں سے طلبہ مختلف تعلیمی نظام، ثقافتیں اور ٹیکنالوجی دیکھیں اور مستقبل کے مواقع جانیں۔",
+        badge: "عالمی افق",
+        title: "بین الاقوامی مطالعاتی دورے",
+        subtitle: "دنیا کا بہترین دیکھیں۔ پھر گھر میں بنائیں۔",
+        description: "عالمی اسکولوں، جامعات اور اسٹارٹ اپ ہبز کے منصوبہ بند دورے حوصلے بڑھاتے اور دکھاتے ہیں کہ کیا ممکن ہے۔",
         points: [
-          "عالمی معیار کے کلاس رومز، جامعات اور انوویشن ہبز کا براہِ راست دورہ",
-          "مختلف ثقافتوں، غیر ملکی طلبہ اور عالمی اساتذہ سے باہمی تبادلۂ خیال",
-          "مقامی حدود سے آگے بڑھ کر عالمی امکانات کو اپنانے کا حوصلہ",
-          "اپنی مٹی سے جڑے رہتے ہوئے بین الاقوامی پراعتمادی کا حصول"
+          "عالمی معیار کے کلاس رومز اور انکیوبیٹرز",
+          "عالمی ساتھی اور مینٹرز",
+          "باہر اعتماد، سندھ میں جڑیں"
         ],
-        valueProposition: "نئے تجربات طلبہ کی سوچ وسیع کرتے ہیں۔"
+        valueProposition: "تجربہ طالب علم کے ممکن کی حد بڑھاتا ہے۔"
       }
     },
     theMovement: {
       badge: "سندھ کی نشاۃ ثانیہ",
-      title: "تحریک — سندھ کا نیا عروج",
+      title: "سندھ، پھر سے ابھرتا ہوا",
       inheritance: {
-        title: "سندھ میں تعمیر اور جدت کی قدیم روایت ہے۔",
-        desc: "موئن جو دڑو پانچ ہزار سال پہلے منصوبہ بند شہر تھا۔ سندھ کی انجینئرنگ، شاعری اور دستکاری ہمیں تخلیق کی ترغیب دیتی ہے۔"
+        title: "سندھ نے ہمیشہ بنایا ہے۔",
+        desc: "موئن جو دڑو پانچ ہزار سال پہلے منصوبہ بند شہر تھا۔ بنانا ہمارا ورثہ ہے۔"
       },
       globalVillage: {
-        title: "ڈیجیٹل ٹولز مقامی صلاحیت کو عالمی کام سے جوڑتے ہیں۔",
-        desc: "سہون کا ڈیزائنر بیرون ملک کلائنٹس کیلئے کام کر سکتا ہے، اور ایپ دنیا بھر تک پہنچ سکتی ہے۔ ہم طلبہ کو ان مواقع کیلئے تیار کرتے ہیں۔"
+        title: "منڈی اب عالمی ہے۔",
+        desc: "سہون میں بنی پراڈکٹ کہیں بھی یوزرز تک پہنچ سکتی ہے۔ انٹرنیٹ نے فاصلہ مٹا دیا۔"
       },
       buildHere: {
-        title: "سندھ سے جڑ کر عالمی کام کریں۔",
-        desc: "بیرون ملک کام کرنے والے خاندانوں کی محنت قابلِ احترام ہے۔ طلبہ کو گھر سے کاروبار بنانے اور عالمی کلائنٹس کی خدمت کا اختیار بھی ملنا چاہیے۔"
+        title: "عالمی بنائیں۔ جڑیں یہیں رکھیں۔",
+        desc: "ہم بیرونِ ملک کام کرنے والے خاندانوں کا احترام کرتے ہیں۔ ہم چاہتے ہیں کہ طلبہ کے پاس گھر سے بنانے اور دنیا کو بیچنے کا اختیار ہو۔"
       },
       tenYearPicture: {
-        title: "دس سالہ خاکہ (سندھ کا نیا روپ)",
-        desc: "مقامی جدت، ایجادات اور ٹیکنالوجی سے روشن مستقبل۔",
+        title: "دس سالہ خاکہ",
+        desc: "سندھ کیسا ہوگا جب اس کے طلبہ اسٹارٹ اپ بنائیں گے۔",
         points: [
-          "سہون سے رجسٹرڈ اسٹارٹ اپس زراعت، پانی اور مقامی چیلنجز حل کر رہے ہوں گے۔",
-          "طالبات کی روبوٹکس ٹیمیں بین الاقوامی ٹورنامنٹس میں اعزازات جیت رہی ہوں گی۔",
-          "سلیکان ویلی کے سرمایہ کار سہون کی کمپنیوں کے حصہ دار ہوں گے۔",
-          "سہون سے امریکہ میں نئی ایجادات کے باقاعدہ پیٹنٹس درج ہوں گے۔",
-          "نوجوان سندھی، اردو، انگریزی اور AI پر مکمل عبور رکھتے ہوں گے۔",
-          "شام کی اکیڈمی پورے شہر کو روشن کرے گی؛ اس کے بعد کالج اور پھر ایک شاندار ہائی ٹیک یونیورسٹی بنے گی۔"
+          "سہون کے اسٹارٹ اپ زراعت، پانی، صحت اور زبان کے مسائل حل کرتے ہوئے۔",
+          "طالبات کی AI اور روبوٹکس ٹیمیں بین الاقوامی پوڈیم پر۔",
+          "سہون کی کمپنیوں میں سلیکان ویلی کے شریک بانی۔",
+          "سہون سے امریکی پیٹنٹ آفس میں داخل کردہ پیٹنٹ۔",
+          "سندھی، اردو، انگریزی — اور AI میں ماہر نسل۔"
         ]
       },
-      invitation: "والدین، طالب علم، استاد یا شراکت دار بن کر دی رائزنگ سندھ میں شامل ہوں۔"
+      invitation: "والدین، طالب علم، استاد یا شراکت دار بن کر شامل ہوں۔"
     },
     sehwanCampus: {
       badge: "سہون شریف، سندھ",
-      title: "سہون — پہلے ایک شہر، پورے ارادے کے ساتھ",
-      whySehwan: "قلندر کا شہر اور بانی کا اپنا شہر—سہون آغاز کیلئے موزوں ہے۔ یہ ماڈل پورے سندھ میں پھیلایا جا سکتا ہے۔",
-      cityProjects: "طلبہ مقامی ورثے، زائرین کی رہنمائی، دستکاری اور بڈو جبل، بھاگو توڑہو و کارونجھر کی ٹریکنگ پر کام کرتے ہیں۔",
+      title: "سہون — پہلے ایک شہر",
+      whySehwan: "بانی کا گھر، ورثے کا شہر، اور پورے سندھ میں پھیلنے کے لیے بنا ماڈل۔",
+      cityProjects: "طلبہ شہر کے لیے بناتے ہیں: ورثے کے گائیڈ، دستکاروں کے آن لائن اسٹور، اور بڈو جبل، بھاگو توڑہو اور کارونجھر میں ٹریکنگ پراجیکٹس۔",
       campusSpine: [
-        "جدید کمپیوٹنگ اور AI ورک اسٹیشن لیب",
-        "تھری ڈی پرنٹرز اور ہارڈویئر میکرز اسپیس",
-        "ڈیجیٹل میڈیا، پوڈکاسٹ اور ویڈیو اسٹوڈیو",
-        "اسٹارٹ اپ انکیوبیٹر پچ روم",
-        "خطابت اور کانفرنسز کا بڑا آڈیٹوریم",
-        "سائنس اور عملی تجربات کی لیبارٹریز"
+        "کمپیوٹنگ اور AI لیب",
+        "میکر اسپیس: 3D پرنٹرز اور IoT",
+        "میڈیا، پوڈکاسٹ اور ویڈیو اسٹوڈیو",
+        "انکیوبیٹر پچ روم",
+        "آڈیٹوریم اور اسٹیج",
+        "سائنس لیبز"
       ],
-      roadAhead: "ہمارا وژن نرسری تا میٹرک سے کالج اور مستقبل میں سندھ کی ٹیکنالوجی یونیورسٹی تک ہے۔",
+      roadAhead: "نرسری–میٹرک سے کالج، اور ایک دن سندھ کی ٹیکنالوجی یونیورسٹی۔",
       eveningAcademy: {
-        title: "ٹیکنالوجی اور کمیونٹی — اعتماد کا ستون",
-        opening: "اسکول کے بعد لیبز مقامی نوجوانوں اور بڑوں کیلئے 12 ہفتوں کے فنی کورسز پیش کرتی ہیں۔",
+        title: "شام کی اکیڈمی",
+        opening: "شام 5 بجے کے بعد لیبز سہون کے لیے کھلتی ہیں: نوجوانوں اور بڑوں کے لیے 12 ہفتے کے کورسز۔",
         tracks: [
           {
             name: "ڈیجیٹل بنیادیں اور فری لانسنگ",
             duration: "12 ہفتے",
-            outcome: "کمپیوٹر بنیادی باتیں → دفتری سافٹ ویئر → کاروباری انگریزی → پہلا آن لائن پروجیکٹ",
-            alignedWith: "سیلانی ماڈل، NAVTTC ہم آہنگ"
+            outcome: "کمپیوٹر بنیادیں → آفس ٹولز → کام کی انگریزی → پہلا بین الاقوامی کام",
+            alignedWith: "سیلانی ماڈل، NAVTTC سرٹیفائیڈ"
           },
           {
-            name: "کوڈنگ اور عملی AI",
+            name: "کوڈ اور عملی AI",
             duration: "12 ہفتے",
-            outcome: "پائتھون بنیادیں → ڈیٹا ہینڈلنگ → AI ٹولز → پورٹ فولیو میں تیار کردہ آٹومیشن",
+            outcome: "پائتھن → ڈیٹا → AI ٹولز → ایک ڈیپلائی شدہ آٹومیشن",
             alignedWith: "PSEB سرٹیفیکیشن اور انٹرن شپس"
           },
           {
-            name: "ویڈیو، میڈیا اور کہانیاں",
+            name: "ویڈیو، میڈیا اور کہانی",
             duration: "12 ہفتے",
-            outcome: "فون ویڈیو گرافی → ایڈیٹنگ → 3 مکمل ویڈیوز بشمول 'پازیٹو سندھ' مختصر دستاویزی فلم",
-            alignedWith: "کیمپس اسٹوڈیو اور لیب تک رسائی"
+            outcome: "فون ویڈیو گرافی → ایڈیٹنگ → 3 شائع شدہ کام، بشمول ایک 'مثبت سندھ' دستاویزی فلم",
+            alignedWith: "کیمپس اسٹوڈیو اور AI لیب تک رسائی"
           },
           {
-            name: "ای کامرس اور مقامی کاروبار",
+            name: "ای کامرس",
             duration: "12 ہفتے",
-            outcome: "پراڈکٹ فوٹو گرافی → آن لائن کیٹلاگ → پیمنٹس → ایک لائیو آن لائن اسٹور",
-            alignedWith: "سہون کے تاجر اور طلباء رہنمائی"
+            outcome: "پراڈکٹ فوٹوز → کیٹلاگ → آن لائن ادائیگی → ایک لائیو اسٹور",
+            alignedWith: "سہون کے تاجر اور طلبہ کی رہنمائی"
           }
         ]
       },
       innovationLab: {
-        title: "انوویشن لیب — شہر کے تمام بنانے والوں کیلئے",
-        desc: "یونیورسٹی طلبہ اور پیشہ ور افراد لیب، رہنمائی اور ڈیمو ڈے کیلئے درخواست دے سکتے ہیں۔",
+        title: "انوویشن لیب",
+        desc: "یونیورسٹی طلبہ اور پیشہ ور افراد بینچ، رہنمائی اور ڈیمو ڈیز کے لیے درخواست دیتے ہیں۔",
         benches: [
-          "فائنل ایئر یونیورسٹی پراجیکٹس باقاعدہ کاروباری کمپنیوں میں ڈھلتے ہیں",
-          "انجینئرز اپنے شوقیہ پراجیکٹس کو منافع بخش اشیاء بناتے ہیں",
-          "نئے بانی اپنی تکنیکی اور مارکیٹنگ ٹیم یہاں سے منتخب کرتے ہیں"
+          "فائنل ایئر پراجیکٹس رجسٹرڈ اسٹارٹ اپس میں تبدیل",
+          "سائیڈ پراجیکٹس وینچر کے لیے تیار پراڈکٹس میں تبدیل",
+          "بانی اپنے پہلے انجینئرنگ اور ڈیزائن شریک بانی ڈھونڈتے ہوئے"
         ]
       },
       partners: [
-        { name: "NIC پاکستان", role: "انکیوبیشن رہنمائی اور ڈیمو ڈے کے ججز" },
-        { name: "ORIC جامعات", role: "یونیورسٹی ریسرچ اور کمرشلائزیشن" },
-        { name: "PSEB", role: "آئی ٹی اسناد اور ملازمتوں کے مواقع" },
-        { name: "سیلانی ویلفیئر", role: "شام کی کمیونٹی ٹریننگ میں شراکت دار" }
+        { name: "NIC (نیشنل انکیوبیشن سینٹر)", role: "انکیوبیشن مینٹرز اور ڈیمو ڈے ججز" },
+        { name: "ORIC روابط", role: "یونیورسٹی ریسرچ کی کمرشلائزیشن" },
+        { name: "PSEB", role: "مہارت سرٹیفیکیشن اور ٹیک انٹرن شپس" },
+        { name: "سیلانی", role: "شام کی تربیت کا ماڈل" }
       ]
     },
     joinUs: {
-      badge: "شامل ہوں",
-      title: "شمولیت کا راستہ چنیں۔",
+      badge: "عمل کریں",
+      title: "اپنا دروازہ چنیں۔",
       doors: [
         {
           id: "parents",
-          audience: "والدین کیلئے",
-          title: "کیمپس آئیں اور خود دیکھیں۔",
-          description: "لیبز دیکھیں، فیوچر کلاس میں بیٹھیں، اساتذہ سے ملیں اور امتحانات، معاونت اور اسکالرشپس کے بارے میں پوچھیں۔",
+          audience: "والدین کے لیے",
+          title: "خود دیکھیں۔",
+          description: "لیبز دیکھیں، فیوچر لیئر کلاس میں بیٹھیں، اساتذہ سے ملیں، امتحانات اور اسکالرشپس کے بارے میں پوچھیں۔",
           ctaText: "کیمپس کا دورہ بک کریں",
-          secondaryCta: "واٹس ایپ پر رابطہ کریں"
+          secondaryCta: "واٹس ایپ کریں"
         },
         {
           id: "students",
-          audience: "طلباء کیلئے",
-          title: "ہفتے کے روز آئیں، اپنے ہاتھ سے کچھ نیا بنائیں۔",
-          description: "ہفتہ وار ورکشاپ میں AI ماڈل بنائیں، 3D پرنٹ کریں، ویڈیو بنائیں یا اپنا خیال پیش کریں۔",
-          ctaText: "بلڈ ڈے کیلئے رجسٹر ہوں"
+          audience: "طلبہ کے لیے",
+          title: "ہفتے کے دن کچھ بنائیں۔",
+          description: "AI ماڈل ٹرین کریں، 3D ڈیزائن پرنٹ کریں، ویڈیو بنائیں یا آئیڈیا پچ کریں۔",
+          ctaText: "بلڈ ڈے کے لیے رجسٹر ہوں"
         },
         {
           id: "professionals",
-          audience: "یونیورسٹی طلباء و پروفیشنلز کیلئے",
-          title: "اپنے منصوبے کو حقیقت بنائیں۔",
-          description: "AI ٹولز، رہنمائی اور ڈیمو ڈے کیلئے انوویشن لیب میں درخواست دیں۔",
-          ctaText: "لیب بینچ کیلئے اپلائی کریں"
+          audience: "یونیورسٹی طلبہ اور پیشہ ور افراد کے لیے",
+          title: "پراجیکٹ کو اسٹارٹ اپ بنائیں۔",
+          description: "لیب بینچ، AI ٹولز، رہنمائی اور ڈیمو ڈیز۔",
+          ctaText: "لیب بینچ کے لیے اپلائی کریں"
         },
         {
           id: "teachers",
-          audience: "اساتذہ کیلئے",
-          title: "عملی سیکھنے کے ساتھ پڑھائیں۔",
-          description: "لیسن کٹس، جدید لیبز اور تعلیمی معاونت کے ساتھ پڑھائیں؛ تربیت اور مناسب معاوضہ فراہم ہوگا۔",
-          ctaText: "تدریس کیلئے اپلائی کریں"
+          audience: "اساتذہ کے لیے",
+          title: "بنا کر سکھائیں۔",
+          description: "لیسن کٹس، جدید لیبز، مرکزی معاونت، تربیت اور اچھا معاوضہ۔",
+          ctaText: "تدریس کے لیے اپلائی کریں"
         }
       ],
       faqs: [
         {
-          question: "کیا فیوچر لیئر سے میرے بچے کا میٹرک کا رزلٹ متاثر ہوگا؟",
-          answer: "نہیں۔ ہفتے کا تقریباً 70% وقت بورڈ مضامین کیلئے، اور کلاس 9–10 میں 80% ہے؛ امتحانی مشق بھی شامل ہے۔"
+          question: "کیا فیوچر لیئر میرے بچے کے میٹرک نمبروں کو نقصان پہنچائے گی؟",
+          answer: "نہیں۔ بورڈ مضامین ہفتے کا تقریباً 70% لیتے ہیں، اور کلاس 9–10 میں 80%، امتحانی مشق سمیت۔"
         },
         {
-          question: "کیا یہ اسلامی اقدار اور ہماری روایات کے مطابق ہے؟",
-          answer: "جی ہاں۔ سندھ بورڈ کا اسلامیات نصاب شامل ہے، طالبات کے سیشنز خواتین اساتذہ چلاتی ہیں، اور ٹریکنگ والدین کی اجازت و حفاظتی انتظامات کے ساتھ ہوتی ہے۔"
+          question: "کیا یہ ہماری اسلامی اور ثقافتی اقدار کے مطابق ہے؟",
+          answer: "جی ہاں۔ سندھ کا اسلامیات نصاب پڑھایا جاتا ہے۔ طالبات کے گروپ خواتین مینٹرز چلاتی ہیں۔ ٹریکنگ کے لیے والدین کی اجازت اور حفاظتی نگرانی لازمی ہے۔"
         },
         {
-          question: "مستحق اور باصلاحیت طلبہ کیلئے اسکالرشپ کے کیا مواقع ہیں؟",
-          answer: "میرٹ اور ضرورت پر مبنی اسکالرشپس اہل طلبہ کو نصاب، AI لیبز اور کردار سازی تک رسائی دیتی ہیں۔"
+          question: "کیا اسکالرشپس ہیں؟",
+          answer: "جی ہاں۔ میرٹ اور ضرورت پر مبنی اسکالرشپس اہل طلبہ کو پورے پروگرام تک رسائی دیتی ہیں۔"
         },
         {
-          question: "بین الاقوامی تعلیمی دوروں سے طلبہ کو کیا فائدہ حاصل ہوتا ہے؟",
-          answer: "مجوزہ دوروں سے طلبہ مختلف ثقافتیں، تعلیمی نظام اور ٹیکنالوجی دیکھیں اور مستقبل کے مواقع جانیں۔"
+          question: "بین الاقوامی مطالعاتی دورے کیا دیتے ہیں؟",
+          answer: "عالمی اسکولوں، اسٹارٹ اپ ہبز اور ثقافتوں سے واقفیت — اور واضح احساس کہ طلبہ گھر میں کیا بنا سکتے ہیں۔"
         },
         {
-          question: "والدین اپنے بچے کی تعلیمی پیش رفت کیسے دیکھیں گے؟",
-          answer: "والدین کے خصوصی موبائل ڈیش بورڈ پر جو سندھی، اردو اور انگریزی میں دستیاب ہے۔ آپ کو ہر ماہ بورڈ اور فیوچر پورٹ فولیو کی پیشرفت نظر آئے گی۔"
+          question: "میں اپنے بچے کی پیش رفت کیسے دیکھوں؟",
+          answer: "سندھی، اردو یا انگریزی میں والدین کے ڈیش بورڈ کے ذریعے، بورڈ کے کام اور پراجیکٹس پر ماہانہ اپڈیٹس کے ساتھ۔"
         }
       ]
     },
     footer: {
       slogan: "تعمیر کار، نہ کہ محض ڈگری یافتہ۔",
-      ctaBand: "داخلے کلاس روم کی گنجائش تک محدود ہیں۔ دورہ بک کریں۔",
+      ctaBand: "نشستیں کلاس رومز سے محدود ہیں۔ دورہ بک کریں۔",
       ctaButton: "کیمپس کا دورہ بک کریں",
       rights: "دی رائزنگ سندھ۔ جملہ حقوق محفوظ ہیں۔ سہون شریف، سندھ، پاکستان۔",
-      governanceNote: "غیر سیاسی، سندھی اولیت؛ وادیٔ سندھ کے ورثے سے جڑا اور مستقبل پر مرکوز۔"
+      governanceNote: "غیر سیاسی۔ سندھی اولیت۔ مستقبل پر مرکوز۔"
     }
   }
 };

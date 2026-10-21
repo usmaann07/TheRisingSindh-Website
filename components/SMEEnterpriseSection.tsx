@@ -174,7 +174,7 @@ export function SMEEnterpriseSection({ onOpenModal }: SMEEnterpriseProps) {
                   </h4>
 
                   <p className="text-xs text-stone-600 leading-relaxed font-normal line-clamp-3">
-                    {example.description}
+                    {`${example.businessDoes} ${example.studentsLearn}`}
                   </p>
                 </div>
               </div>

@@ -622,9 +622,9 @@ export const contentMap: Record<Language, SiteContent> = {
         },
         {
           id: "hero",
-          title: "Personality Grooming",
-          role: "Character & Confidence",
-          description: "Communication, discipline and character — built through practice and trekking.",
+          title: "The SMEs And Global Trading",
+          role: "Real Companies And Trading",
+          description: "Students work with real SMEs, build trading ventures and connect Sindh products to global markets.",
           highlight: "2 periods weekly"
         },
         {
@@ -1323,9 +1323,9 @@ export const contentMap: Record<Language, SiteContent> = {
         },
         {
           id: "hero",
-          title: "شخصيت سازي",
-          role: "ڪردار ۽ اعتماد",
-          description: "ڳالهه ٻولهه، نظم ۽ ڪردار — مشق ۽ ٽريڪنگ ذريعي.",
+          title: "ايس ايم ايز ۽ عالمي واپار",
+          role: "حقيقي ڪمپنيون ۽ واپار",
+          description: "شاگرد حقيقي ايس ايم ايز سان ڪم ڪن ٿا، واپاري ڪاروبار ٺاهين ٿا ۽ سنڌ جي شين کي عالمي مارڪيٽن سان ڳنڍين ٿا.",
           highlight: "هفتي ۾ 2 پيريڊ"
         },
         {
@@ -2024,9 +2024,9 @@ export const contentMap: Record<Language, SiteContent> = {
         },
         {
           id: "hero",
-          title: "شخصیت سازی",
-          role: "کردار اور اعتماد",
-          description: "گفتگو، نظم اور کردار — مشق اور ٹریکنگ کے ذریعے۔",
+          title: "ایس ایم ایز اور عالمی تجارت",
+          role: "حقیقی کمپنیاں اور تجارت",
+          description: "طلبہ حقیقی ایس ایم ایز کے ساتھ کام کرتے، تجارتی کاروبار بناتے اور سندھ کی مصنوعات کو عالمی منڈیوں سے جوڑتے ہیں۔",
           highlight: "ہفتے میں 2 پیریڈ"
         },
         {

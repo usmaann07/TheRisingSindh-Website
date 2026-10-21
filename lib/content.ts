@@ -28,6 +28,8 @@ export interface SiteContent {
     theHeroTrackNavSub: string;
     studentIncubator: string;
     studentIncubatorSub: string;
+    smeNav: string;
+    smeNavSub: string;
     eveningAcademyNav: string;
     eveningAcademyNavSub: string;
   };
@@ -410,6 +412,8 @@ export const contentMap: Record<Language, SiteContent> = {
       theHeroTrackNavSub: "Character, confidence & trekking",
       studentIncubator: "Student Startups",
       studentIncubatorSub: "A real startup by Class 8",
+      smeNav: "SMEs & Global Trading",
+      smeNavSub: "Real companies. Local SMEs. Global markets.",
       eveningAcademyNav: "Evening Academy",
       eveningAcademyNavSub: "Community courses after 5 pm"
     },
@@ -1111,6 +1115,8 @@ export const contentMap: Record<Language, SiteContent> = {
       theHeroTrackNavSub: "ڪردار، اعتماد ۽ ٽريڪنگ",
       studentIncubator: "شاگردن جا اسٽارٽ اپ",
       studentIncubatorSub: "ڪلاس 8 تائين حقيقي اسٽارٽ اپ",
+      smeNav: "ايس ايم ايز ۽ عالمي واپار",
+      smeNavSub: "حقيقي ڪمپنيون، مقامي ڪاروبار ۽ عالمي مارڪيٽون.",
       eveningAcademyNav: "شام جي اڪيڊمي",
       eveningAcademyNavSub: "شام 5 وڳي کان پوءِ ڪميونٽي ڪورس"
     },
@@ -1812,6 +1818,8 @@ export const contentMap: Record<Language, SiteContent> = {
       theHeroTrackNavSub: "کردار، اعتماد اور ٹریکنگ",
       studentIncubator: "طلبہ کے اسٹارٹ اپ",
       studentIncubatorSub: "کلاس 8 تک حقیقی اسٹارٹ اپ",
+      smeNav: "ایس ایم ایز اور عالمی تجارت",
+      smeNavSub: "حقیقی کمپنیاں، مقامی کاروبار اور عالمی منڈیاں۔",
       eveningAcademyNav: "شام کی اکیڈمی",
       eveningAcademyNavSub: "شام 5 بجے کے بعد کمیونٹی کورسز"
     },

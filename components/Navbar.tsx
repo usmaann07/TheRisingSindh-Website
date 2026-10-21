@@ -98,14 +98,14 @@ export function Navbar({ onOpenModal }: NavbarProps) {
                     </div>
                   </a>
                   <a
-                    href="#student-incubator"
+                    href="#sme-enterprises"
                     onClick={() => setModelDropdownOpen(false)}
                     className="flex items-start gap-2.5 p-2.5 rounded-xl hover:bg-[#d97706]/15 transition-colors text-stone-200 hover:text-[#f59e0b]"
                   >
-                    <Rocket className="w-4 h-4 text-[#f59e0b] shrink-0 mt-0.5" />
+                    <Building2 className="w-4 h-4 text-[#f59e0b] shrink-0 mt-0.5" />
                     <div>
-                      <div className="font-semibold text-white">{t.nav.studentIncubator}</div>
-                      <div className="text-[11px] text-stone-400">{t.nav.studentIncubatorSub}</div>
+                      <div className="font-semibold text-white">{t.nav.smeNav}</div>
+                      <div className="text-[11px] text-stone-400">{t.nav.smeNavSub}</div>
                     </div>
                   </a>
                   <a
@@ -288,11 +288,11 @@ export function Navbar({ onOpenModal }: NavbarProps) {
                     {t.nav.curriculumMap}
                   </a>
                   <a
-                    href="#student-incubator"
+                    href="#sme-enterprises"
                     onClick={() => setMobileMenuOpen(false)}
                     className="text-stone-400 hover:text-white"
                   >
-                    {t.nav.studentIncubator}
+                    {t.nav.smeNav}
                   </a>
                   <a
                     href="#sehwan-campus"

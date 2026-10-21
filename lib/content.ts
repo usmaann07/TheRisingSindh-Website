@@ -550,7 +550,7 @@ export const contentMap: Record<Language, SiteContent> = {
     hero: {
       badge: "Nursery to Matric · Sehwan Sharif",
       title: "Build startups.",
-      highlight: "From Sehwan, for the world.",
+      highlight: "From Sindh, for the world.",
       subtitle: "The full Sindh Board syllabus, plus AI and startup-building from Class 1 to Matric.",
       ctaPrimary: "Visit a Campus",
       ctaSecondary: "See What Students Build",
@@ -1251,7 +1251,7 @@ export const contentMap: Record<Language, SiteContent> = {
     hero: {
       badge: "نرسري کان ميٽرڪ · سيوهڻ شريف",
       title: "اسٽارٽ اپ ٺاهيو.",
-      highlight: "سيوهڻ مان، دنيا لاءِ.",
+      highlight: "سنڌ مان، دنيا لاءِ.",
       subtitle: "سنڌ بورڊ جو مڪمل نصاب، ان سان گڏ ڪلاس 1 کان ميٽرڪ تائين AI ۽ اسٽارٽ اپ سازي.",
       ctaPrimary: "ڪيمپس جو دورو ڪريو",
       ctaSecondary: "شاگرد ڇا ٺاهين ٿا",
@@ -1952,7 +1952,7 @@ export const contentMap: Record<Language, SiteContent> = {
     hero: {
       badge: "نرسری تا میٹرک · سہون شریف",
       title: "اسٹارٹ اپ بنائیں۔",
-      highlight: "سہون سے، دنیا کے لیے۔",
+      highlight: "سندھ سے، دنیا کے لیے۔",
       subtitle: "سندھ بورڈ کا مکمل نصاب، اس کے ساتھ کلاس 1 سے میٹرک تک AI اور اسٹارٹ اپ سازی۔",
       ctaPrimary: "کیمپس کا دورہ کریں",
       ctaSecondary: "طلبہ کیا بناتے ہیں",

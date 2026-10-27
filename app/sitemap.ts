@@ -3,7 +3,7 @@ import { MetadataRoute } from 'next';
 export const dynamic = 'force-static';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://therisingsindh.com';
+  const baseUrl = 'https://www.therisingsindh.org';
 
   return [
     {

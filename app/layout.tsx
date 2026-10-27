@@ -33,7 +33,10 @@ const notoNastaliqUrdu = Noto_Nastaliq_Urdu({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://therisingsindh.com"),
+  metadataBase: new URL("https://www.therisingsindh.org"),
+  alternates: {
+    canonical: "/"
+  },
   title: "The Rising Sindh | The School That Builds What Universities Can't",
   description:
     "Pakistan's first future school in Sehwan Sharif, Sindh — where children master the Sindh board syllabus and build with AI, run real companies before Matric, and graduate with proof, not just certificates.",
@@ -53,7 +56,7 @@ export const metadata: Metadata = {
     title: "The Rising Sindh | Builders, Not Degree-Holders",
     description:
       "Pakistan's first future school in Sehwan Sharif. Full Sindh Board curriculum + AI from Class 1 + registered student companies by Class 8.",
-    url: "https://therisingsindh.com",
+    url: "https://www.therisingsindh.org",
     siteName: "The Rising Sindh",
     images: [
       {
@@ -84,8 +87,8 @@ export default function RootLayout({
     "@type": "EducationalOrganization",
     name: "The Rising Sindh",
     alternateName: "دي رائزنگ سنڌ",
-    url: "https://therisingsindh.com",
-    logo: "https://therisingsindh.com/images/hero-students.jpg",
+    url: "https://www.therisingsindh.org",
+    logo: "https://www.therisingsindh.org/images/hero-students.jpg",
     slogan: "Builders, not degree-holders.",
     description:
       "Pakistan's first future school in Sehwan Sharif, where children master the Sindh Board syllabus and build with AI, run companies before Matric, and graduate with proof.",

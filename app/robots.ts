@@ -8,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://therisingsindh.com/sitemap.xml',
+    sitemap: 'https://www.therisingsindh.org/sitemap.xml',
   };
 }

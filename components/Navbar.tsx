@@ -72,10 +72,15 @@ export function Navbar({ onOpenModal }: NavbarProps) {
             </a>
 
             {/* Functional Dropdown for The Model */}
-            <div className="relative" ref={dropdownRef}>
+            <div
+              className="relative"
+              ref={dropdownRef}
+              onMouseEnter={() => setModelDropdownOpen(true)}
+              onMouseLeave={() => setModelDropdownOpen(false)}
+            >
               <button
                 type="button"
-                onClick={() => setModelDropdownOpen(!modelDropdownOpen)}
+                onClick={() => setModelDropdownOpen(true)}
                 aria-expanded={modelDropdownOpen}
                 aria-haspopup="true"
                 className="transition-all flex items-center gap-1 px-1.5 2xl:px-2 py-1.5 rounded-lg text-stone-300 hover:text-[#f59e0b] hover:bg-[#d97706]/15 cursor-pointer whitespace-nowrap"
@@ -85,7 +90,7 @@ export function Navbar({ onOpenModal }: NavbarProps) {
               </button>
 
               {modelDropdownOpen && (
-                <div className={`absolute top-full ${isRTL ? "right-0" : "left-0"} mt-3 w-64 bg-[#1c1917] border border-white/10 rounded-2xl p-2 shadow-2xl text-xs space-y-1 animate-in fade-in slide-in-from-top-2 duration-150 z-50`}>
+                <div className={`absolute top-full ${isRTL ? "right-0" : "left-0"} w-64 bg-[#1c1917] border border-white/10 rounded-2xl p-2 shadow-2xl text-xs space-y-1 animate-in fade-in slide-in-from-top-2 duration-150 z-50`}>
                   <a
                     href="#the-model"
                     onClick={() => setModelDropdownOpen(false)}

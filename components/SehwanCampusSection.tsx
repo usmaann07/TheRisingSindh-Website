@@ -82,7 +82,7 @@ export function SehwanCampusSection({ onOpenModal }: SehwanCampusProps) {
         </div>
 
         {/* Technology and Community */}
-        <div className="sand-card p-8 sm:p-12 mb-16">
+        <div id="evening-academy" className="sand-card p-8 sm:p-12 mb-16">
           <div className="max-w-3xl mb-8">
             <span className="text-xs font-semibold px-3 py-1 rounded-full bg-amber-50 text-[#d97706] border border-amber-200 uppercase tracking-wider font-mono">
               {t.common.afterHoursEngine}

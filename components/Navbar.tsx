@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { ArrowUpRight, Menu, X, ChevronDown, BookOpen } from "lucide-react";
+import { ArrowUpRight, Menu, X, ChevronDown, BookOpen, Building2, Factory } from "lucide-react";
 import { useLanguage } from "@/lib/language-context";
 import { Language } from "@/lib/content";
 
@@ -97,24 +97,28 @@ export function Navbar({ onOpenModal }: NavbarProps) {
                       <div className="text-[11px] text-stone-400">{t.nav.curriculumMapSub}</div>
                     </div>
                   </a>
-                  {t.fourEngines.engines.map((engine, index) => (
-                    <a
-                      key={engine.id}
-                      href="#four-engines"
-                      onClick={() => setModelDropdownOpen(false)}
-                      className="flex items-start gap-2.5 p-2.5 rounded-xl hover:bg-[#d97706]/15 transition-colors text-stone-200 hover:text-[#f59e0b]"
-                    >
-                      <span className="font-serif text-lg leading-none text-[#d97706] shrink-0">
-                        0{index + 1}
-                      </span>
-                      <div>
-                        <div className="text-[10px] font-mono uppercase tracking-wider text-[#d97706]">
-                          {engine.role}
-                        </div>
-                        <div className="font-semibold text-white">{engine.title}</div>
-                      </div>
-                    </a>
-                  ))}
+                  <a
+                    href="#evening-academy"
+                    onClick={() => setModelDropdownOpen(false)}
+                    className="flex items-start gap-2.5 p-2.5 rounded-xl hover:bg-[#d97706]/15 transition-colors text-stone-200 hover:text-[#f59e0b]"
+                  >
+                    <Building2 className="w-4 h-4 text-[#f59e0b] shrink-0 mt-0.5" />
+                    <div>
+                      <div className="font-semibold text-white">{t.nav.eveningAcademyNav}</div>
+                      <div className="text-[11px] text-stone-400">{t.nav.eveningAcademyNavSub}</div>
+                    </div>
+                  </a>
+                  <a
+                    href="#student-incubator"
+                    onClick={() => setModelDropdownOpen(false)}
+                    className="flex items-start gap-2.5 p-2.5 rounded-xl hover:bg-[#d97706]/15 transition-colors text-stone-200 hover:text-[#f59e0b]"
+                  >
+                    <Factory className="w-4 h-4 text-[#f59e0b] shrink-0 mt-0.5" />
+                    <div>
+                      <div className="font-semibold text-white">{t.nav.smeNav}</div>
+                      <div className="text-[11px] text-stone-400">{t.nav.smeNavSub}</div>
+                    </div>
+                  </a>
                   <a
                     href="#global-bridge"
                     onClick={() => setModelDropdownOpen(false)}
@@ -283,17 +287,22 @@ export function Navbar({ onOpenModal }: NavbarProps) {
                   >
                     {t.nav.curriculumMap}
                   </a>
-                  {t.fourEngines.engines.map((engine, index) => (
-                    <a
-                      key={engine.id}
-                      href="#four-engines"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="flex items-center gap-2 text-stone-400 hover:text-white"
-                    >
-                      <span className="font-serif text-[#d97706]">0{index + 1}</span>
-                      <span>{engine.title}</span>
-                    </a>
-                  ))}
+                  <a
+                    href="#evening-academy"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="flex items-center gap-2 text-stone-400 hover:text-white"
+                  >
+                    <Building2 className="w-4 h-4 text-[#f59e0b] shrink-0" />
+                    {t.nav.eveningAcademyNav}
+                  </a>
+                  <a
+                    href="#student-incubator"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="flex items-center gap-2 text-stone-400 hover:text-white"
+                  >
+                    <Factory className="w-4 h-4 text-[#f59e0b] shrink-0" />
+                    {t.nav.smeNav}
+                  </a>
                   <a
                     href="#global-bridge"
                     onClick={() => setMobileMenuOpen(false)}

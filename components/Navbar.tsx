@@ -6,6 +6,20 @@ import { ArrowUpRight, Menu, X, ChevronDown, BookOpen, Building2, Factory } from
 import { useLanguage } from "@/lib/language-context";
 import { Language } from "@/lib/content";
 
+const navSectionIds = [
+  "why-we-exist",
+  "the-model",
+  "evening-academy",
+  "student-incubator",
+  "global-bridge",
+  "personality-grooming",
+  "what-our-students-do",
+  "the-proof",
+  "sehwan-campus",
+  "the-movement",
+];
+const modelSectionIds = ["the-model", "evening-academy", "student-incubator", "global-bridge"];
+
 interface NavbarProps {
   onOpenModal: (type: "campus-visit" | "build-day" | "teach" | "lab-bench") => void;
 }
@@ -15,7 +29,9 @@ export function Navbar({ onOpenModal }: NavbarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileModelOpen, setMobileModelOpen] = useState(false);
   const [modelDropdownOpen, setModelDropdownOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState<string | null>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const navbarPillRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -38,15 +54,79 @@ export function Navbar({ onOpenModal }: NavbarProps) {
     };
   }, []);
 
+  useEffect(() => {
+    let animationFrame = 0;
+
+    const updateActiveSection = () => {
+      animationFrame = 0;
+      const activationLine = (navbarPillRef.current?.getBoundingClientRect().bottom ?? 0) + 16;
+      const targets = navSectionIds
+        .map((id) => document.getElementById(id))
+        .filter((target): target is HTMLElement => target !== null)
+        .map((target) => ({ target, bounds: target.getBoundingClientRect() }))
+        .sort((a, b) => a.bounds.top - b.bounds.top);
+
+      let activeTarget: HTMLElement | null = null;
+      for (const { target, bounds } of targets) {
+        if (bounds.top > activationLine) break;
+
+        const parentSection = target.closest("section");
+        if (parentSection !== target && bounds.bottom <= activationLine) continue;
+        activeTarget = target;
+      }
+
+      if (
+        activeTarget?.tagName === "SECTION" &&
+        activeTarget.getBoundingClientRect().bottom <= activationLine
+      ) {
+        activeTarget = null;
+      }
+
+      setActiveSection(activeTarget?.id ?? null);
+    };
+
+    const scheduleUpdate = () => {
+      if (!animationFrame) animationFrame = window.requestAnimationFrame(updateActiveSection);
+    };
+
+    scheduleUpdate();
+    window.addEventListener("scroll", scheduleUpdate, { passive: true });
+    window.addEventListener("resize", scheduleUpdate);
+    window.addEventListener("hashchange", scheduleUpdate);
+    window.addEventListener("load", scheduleUpdate);
+
+    return () => {
+      window.removeEventListener("scroll", scheduleUpdate);
+      window.removeEventListener("resize", scheduleUpdate);
+      window.removeEventListener("hashchange", scheduleUpdate);
+      window.removeEventListener("load", scheduleUpdate);
+      if (animationFrame) window.cancelAnimationFrame(animationFrame);
+    };
+  }, []);
+
   const handleLangChange = (lang: Language) => {
     setLanguage(lang);
   };
+  const isSectionActive = (id: string) => activeSection === id;
+  const isModelActive = activeSection !== null && modelSectionIds.includes(activeSection);
+  const desktopNavLinkClass = (id: string) =>
+    `px-1.5 2xl:px-2 py-1 rounded-lg transition-colors duration-200 whitespace-nowrap ${
+      isSectionActive(id)
+        ? "bg-[#d97706]/15 text-[#f59e0b]"
+        : "text-stone-300 hover:bg-[#d97706]/10 hover:text-[#f59e0b]"
+    }`;
+  const mobileNavLinkClass = (id: string) =>
+    `py-1 rounded-sm border-b border-white/5 transition-colors duration-200 ${
+      isSectionActive(id)
+        ? "bg-[#d97706]/15 text-[#f59e0b]"
+        : "text-stone-300 hover:text-white"
+    }`;
 
   return (
     <header className="fixed top-4 sm:top-6 left-0 right-0 z-50 px-3 sm:px-6 pointer-events-none">
       <div className="max-w-[1440px] w-full mx-auto flex items-center justify-between pointer-events-auto">
         {/* Floating Centered Pill Navbar with Perfect Internal Alignment & Clean Subtle Shadow */}
-        <div className="w-full bg-[#161412]/92 backdrop-blur-xl border border-white/12 rounded-full px-3.5 sm:px-5 2xl:px-6 py-2 sm:py-2.5 shadow-lg shadow-black/25 flex items-center justify-between gap-2 xl:gap-2.5 2xl:gap-4 text-white transition-all duration-200">
+        <div ref={navbarPillRef} className="w-full bg-[#161412]/92 backdrop-blur-xl border border-white/12 rounded-full px-3.5 sm:px-5 2xl:px-6 py-2 sm:py-2.5 shadow-lg shadow-black/25 flex items-center justify-between gap-2 xl:gap-2.5 2xl:gap-4 text-white transition-all duration-200">
           {/* Logo - Sized & Aligned */}
           <Link href="#home" className="flex items-center gap-2.5 sm:gap-3 group shrink-0">
             <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#d97706] to-[#b45309] flex items-center justify-center text-white font-bold text-xs sm:text-sm shadow-md group-hover:scale-105 transition-transform shrink-0">
@@ -66,7 +146,8 @@ export function Navbar({ onOpenModal }: NavbarProps) {
           <nav className="hidden xl:flex items-center gap-0.5 2xl:gap-1.5 text-[11px] 2xl:text-xs font-medium text-stone-300 shrink">
             <a
               href="#why-we-exist"
-              className="px-1.5 2xl:px-2 py-1 rounded-lg text-stone-300 hover:text-[#f59e0b] hover:bg-[#d97706]/15 transition-all whitespace-nowrap"
+              aria-current={isSectionActive("why-we-exist") ? "location" : undefined}
+              className={desktopNavLinkClass("why-we-exist")}
             >
               {t.nav.whyWeExist}
             </a>
@@ -83,10 +164,10 @@ export function Navbar({ onOpenModal }: NavbarProps) {
                 onClick={() => setModelDropdownOpen(true)}
                 aria-expanded={modelDropdownOpen}
                 aria-haspopup="true"
-                className="transition-all flex items-center gap-1 px-1.5 2xl:px-2 py-1.5 rounded-lg text-stone-300 hover:text-[#f59e0b] hover:bg-[#d97706]/15 cursor-pointer whitespace-nowrap"
+                className={`flex items-center gap-1 px-1.5 2xl:px-2 py-1.5 rounded-lg transition-colors duration-200 cursor-pointer whitespace-nowrap ${isModelActive ? "bg-[#d97706]/15 text-[#f59e0b]" : "text-stone-300 hover:text-[#f59e0b] hover:bg-[#d97706]/10"}`}
               >
                 <span>{t.nav.theModel}</span>
-                <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${modelDropdownOpen ? "rotate-180 text-[#f59e0b]" : "text-stone-400"}`} />
+                <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${modelDropdownOpen || isModelActive ? "rotate-180 text-[#fbbf24]" : "text-stone-400"}`} />
               </button>
 
               {modelDropdownOpen && (
@@ -94,7 +175,8 @@ export function Navbar({ onOpenModal }: NavbarProps) {
                   <a
                     href="#the-model"
                     onClick={() => setModelDropdownOpen(false)}
-                    className="flex items-start gap-2.5 p-2.5 rounded-xl hover:bg-[#d97706]/15 transition-colors text-stone-200 hover:text-[#f59e0b]"
+                    aria-current={isSectionActive("the-model") ? "location" : undefined}
+                    className={`flex items-start gap-2.5 p-2.5 rounded-xl transition-colors duration-200 ${isSectionActive("the-model") ? "bg-[#d97706]/15 text-[#f59e0b]" : "text-stone-200 hover:text-[#f59e0b] hover:bg-[#d97706]/10"}`}
                   >
                     <BookOpen className="w-4 h-4 text-[#f59e0b] shrink-0 mt-0.5" />
                     <div>
@@ -105,7 +187,8 @@ export function Navbar({ onOpenModal }: NavbarProps) {
                   <a
                     href="#evening-academy"
                     onClick={() => setModelDropdownOpen(false)}
-                    className="flex items-start gap-2.5 p-2.5 rounded-xl hover:bg-[#d97706]/15 transition-colors text-stone-200 hover:text-[#f59e0b]"
+                    aria-current={isSectionActive("evening-academy") ? "location" : undefined}
+                    className={`flex items-start gap-2.5 p-2.5 rounded-xl transition-colors duration-200 ${isSectionActive("evening-academy") ? "bg-[#d97706]/15 text-[#f59e0b]" : "text-stone-200 hover:text-[#f59e0b] hover:bg-[#d97706]/10"}`}
                   >
                     <Building2 className="w-4 h-4 text-[#f59e0b] shrink-0 mt-0.5" />
                     <div>
@@ -116,7 +199,8 @@ export function Navbar({ onOpenModal }: NavbarProps) {
                   <a
                     href="#student-incubator"
                     onClick={() => setModelDropdownOpen(false)}
-                    className="flex items-start gap-2.5 p-2.5 rounded-xl hover:bg-[#d97706]/15 transition-colors text-stone-200 hover:text-[#f59e0b]"
+                    aria-current={isSectionActive("student-incubator") ? "location" : undefined}
+                    className={`flex items-start gap-2.5 p-2.5 rounded-xl transition-colors duration-200 ${isSectionActive("student-incubator") ? "bg-[#d97706]/15 text-[#f59e0b]" : "text-stone-200 hover:text-[#f59e0b] hover:bg-[#d97706]/10"}`}
                   >
                     <Factory className="w-4 h-4 text-[#f59e0b] shrink-0 mt-0.5" />
                     <div>
@@ -127,7 +211,8 @@ export function Navbar({ onOpenModal }: NavbarProps) {
                   <a
                     href="#global-bridge"
                     onClick={() => setModelDropdownOpen(false)}
-                    className="flex items-start gap-2.5 p-2.5 rounded-xl hover:bg-[#d97706]/15 transition-colors text-stone-200 hover:text-[#f59e0b]"
+                    aria-current={isSectionActive("global-bridge") ? "location" : undefined}
+                    className={`flex items-start gap-2.5 p-2.5 rounded-xl transition-colors duration-200 ${isSectionActive("global-bridge") ? "bg-[#d97706]/15 text-[#f59e0b]" : "text-stone-200 hover:text-[#f59e0b] hover:bg-[#d97706]/10"}`}
                   >
                     <ArrowUpRight className="w-4 h-4 text-[#f59e0b] shrink-0 mt-0.5" />
                     <div>
@@ -141,31 +226,36 @@ export function Navbar({ onOpenModal }: NavbarProps) {
 
             <a
               href="#personality-grooming"
-              className="px-1.5 2xl:px-2 py-1 rounded-lg text-stone-300 hover:text-[#f59e0b] hover:bg-[#d97706]/15 transition-all whitespace-nowrap"
+              aria-current={isSectionActive("personality-grooming") ? "location" : undefined}
+              className={desktopNavLinkClass("personality-grooming")}
             >
               {t.nav.theHeroTrackNav}
             </a>
             <a
               href="#what-our-students-do"
-              className="px-1.5 2xl:px-2 py-1 rounded-lg text-stone-300 hover:text-[#f59e0b] hover:bg-[#d97706]/15 transition-all whitespace-nowrap"
+              aria-current={isSectionActive("what-our-students-do") ? "location" : undefined}
+              className={desktopNavLinkClass("what-our-students-do")}
             >
               {t.nav.whatStudentsDo}
             </a>
             <a
               href="#the-proof"
-              className="px-1.5 2xl:px-2 py-1 rounded-lg text-stone-300 hover:text-[#f59e0b] hover:bg-[#d97706]/15 transition-all whitespace-nowrap"
+              aria-current={isSectionActive("the-proof") ? "location" : undefined}
+              className={desktopNavLinkClass("the-proof")}
             >
               {t.nav.theProof}
             </a>
             <a
               href="#sehwan-campus"
-              className="px-1.5 2xl:px-2 py-1 rounded-lg text-stone-300 hover:text-[#f59e0b] hover:bg-[#d97706]/15 transition-all whitespace-nowrap"
+              aria-current={isSectionActive("sehwan-campus") ? "location" : undefined}
+              className={desktopNavLinkClass("sehwan-campus")}
             >
               {t.nav.sehwanCampus}
             </a>
             <a
               href="#the-movement"
-              className="px-1.5 2xl:px-2 py-1 rounded-lg text-stone-300 hover:text-[#f59e0b] hover:bg-[#d97706]/15 transition-all whitespace-nowrap"
+              aria-current={isSectionActive("the-movement") ? "location" : undefined}
+              className={desktopNavLinkClass("the-movement")}
             >
               {t.nav.theMovement}
             </a>
@@ -269,7 +359,8 @@ export function Navbar({ onOpenModal }: NavbarProps) {
             <a
               href="#why-we-exist"
               onClick={() => setMobileMenuOpen(false)}
-              className="py-1 text-stone-300 hover:text-white border-b border-white/5"
+              aria-current={isSectionActive("why-we-exist") ? "location" : undefined}
+              className={mobileNavLinkClass("why-we-exist")}
             >
               {t.nav.whyWeExist}
             </a>
@@ -278,7 +369,7 @@ export function Navbar({ onOpenModal }: NavbarProps) {
                 type="button"
                 onClick={() => setMobileModelOpen(!mobileModelOpen)}
                 aria-expanded={mobileModelOpen}
-                className="w-full py-1 text-stone-300 hover:text-white flex items-center justify-between"
+                className={`w-full py-1 rounded-sm flex items-center justify-between transition-colors duration-200 ${isModelActive ? "bg-[#d97706]/15 text-[#f59e0b]" : "text-stone-300 hover:text-white"}`}
               >
                 <span>{t.nav.theModel}</span>
                 <ChevronDown className={`w-4 h-4 text-[#d97706] transition-transform ${mobileModelOpen ? "rotate-180" : ""}`} />
@@ -288,14 +379,16 @@ export function Navbar({ onOpenModal }: NavbarProps) {
                   <a
                     href="#the-model"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="text-stone-400 hover:text-white"
+                    aria-current={isSectionActive("the-model") ? "location" : undefined}
+                    className={`rounded-sm transition-colors duration-200 ${isSectionActive("the-model") ? "bg-[#d97706]/10 text-[#f59e0b]" : "text-stone-400 hover:text-white"}`}
                   >
                     {t.nav.curriculumMap}
                   </a>
                   <a
                     href="#evening-academy"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="flex items-center gap-2 text-stone-400 hover:text-white"
+                    aria-current={isSectionActive("evening-academy") ? "location" : undefined}
+                    className={`flex items-center gap-2 rounded-sm transition-colors duration-200 ${isSectionActive("evening-academy") ? "bg-[#d97706]/10 text-[#f59e0b]" : "text-stone-400 hover:text-white"}`}
                   >
                     <Building2 className="w-4 h-4 text-[#f59e0b] shrink-0" />
                     {t.nav.eveningAcademyNav}
@@ -303,7 +396,8 @@ export function Navbar({ onOpenModal }: NavbarProps) {
                   <a
                     href="#student-incubator"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="flex items-center gap-2 text-stone-400 hover:text-white"
+                    aria-current={isSectionActive("student-incubator") ? "location" : undefined}
+                    className={`flex items-center gap-2 rounded-sm transition-colors duration-200 ${isSectionActive("student-incubator") ? "bg-[#d97706]/10 text-[#f59e0b]" : "text-stone-400 hover:text-white"}`}
                   >
                     <Factory className="w-4 h-4 text-[#f59e0b] shrink-0" />
                     {t.nav.smeNav}
@@ -311,7 +405,8 @@ export function Navbar({ onOpenModal }: NavbarProps) {
                   <a
                     href="#global-bridge"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="text-stone-400 hover:text-white"
+                    aria-current={isSectionActive("global-bridge") ? "location" : undefined}
+                    className={`rounded-sm transition-colors duration-200 ${isSectionActive("global-bridge") ? "bg-[#d97706]/10 text-[#f59e0b]" : "text-stone-400 hover:text-white"}`}
                   >
                     {t.nav.globalBridge}
                   </a>
@@ -321,35 +416,40 @@ export function Navbar({ onOpenModal }: NavbarProps) {
             <a
               href="#personality-grooming"
               onClick={() => setMobileMenuOpen(false)}
-              className="py-1 text-stone-300 hover:text-white border-b border-white/5"
+              aria-current={isSectionActive("personality-grooming") ? "location" : undefined}
+            className={mobileNavLinkClass("personality-grooming")}
             >
               {t.nav.theHeroTrackNav}
             </a>
             <a
               href="#what-our-students-do"
               onClick={() => setMobileMenuOpen(false)}
-              className="py-1 text-stone-300 hover:text-white border-b border-white/5"
+              aria-current={isSectionActive("what-our-students-do") ? "location" : undefined}
+              className={mobileNavLinkClass("what-our-students-do")}
             >
               {t.nav.whatStudentsDo}
             </a>
             <a
               href="#the-proof"
               onClick={() => setMobileMenuOpen(false)}
-              className="py-1 text-stone-300 hover:text-white border-b border-white/5"
+              aria-current={isSectionActive("the-proof") ? "location" : undefined}
+              className={mobileNavLinkClass("the-proof")}
             >
               {t.nav.theProof}
             </a>
             <a
               href="#sehwan-campus"
               onClick={() => setMobileMenuOpen(false)}
-              className="py-1 text-stone-300 hover:text-white border-b border-white/5"
+              aria-current={isSectionActive("sehwan-campus") ? "location" : undefined}
+              className={mobileNavLinkClass("sehwan-campus")}
             >
               {t.common.sehwanCampusLabNav}
             </a>
             <a
               href="#the-movement"
               onClick={() => setMobileMenuOpen(false)}
-              className="py-1 text-stone-300 hover:text-white border-b border-white/5"
+              aria-current={isSectionActive("the-movement") ? "location" : undefined}
+              className={mobileNavLinkClass("the-movement")}
             >
               {t.common.theMovementNav}
             </a>

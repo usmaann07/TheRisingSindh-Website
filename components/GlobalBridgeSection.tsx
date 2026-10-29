@@ -2,7 +2,6 @@
 
 import React from "react";
 import { Users, Plane, FileCheck, ArrowUpRight, GraduationCap, Globe, CheckCircle2 } from "lucide-react";
-import { motion } from "framer-motion";
 import { useLanguage } from "@/lib/language-context";
 
 interface GlobalBridgeProps {
@@ -32,11 +31,8 @@ export function GlobalBridgeSection({ onOpenModal }: GlobalBridgeProps) {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.7 }}
+        <div
+          data-scroll-reveal
           className="text-center max-w-4xl mx-auto mb-16"
         >
           <div className="flex items-center justify-center gap-2 text-[11px] font-semibold tracking-widest text-[#d97706] uppercase mb-2">
@@ -49,17 +45,13 @@ export function GlobalBridgeSection({ onOpenModal }: GlobalBridgeProps) {
           <p className="mt-4 text-sm sm:text-base text-stone-600 max-w-2xl mx-auto leading-relaxed font-normal">
             {t.globalBridge.subtitle}
           </p>
-        </motion.div>
+        </div>
 
         {/* 3 Global Lanes */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+        <div data-scroll-reveal data-scroll-stagger="0.12" className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
           {t.globalBridge.lanes.map((lane, idx) => (
-            <motion.div
+            <div
               key={idx}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.65, delay: idx * 0.12 }}
               className="sand-card p-8 flex flex-col justify-between"
             >
               <div>
@@ -87,21 +79,17 @@ export function GlobalBridgeSection({ onOpenModal }: GlobalBridgeProps) {
                 <span>{t.common.directVentureTrack}</span>
                 <ArrowUpRight className="w-4 h-4 text-[#d97706]" />
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
         {/* Prominent Highlighting: Scholarships & International Educational Trips Showcase */}
         {t.globalBridge.scholarshipHighlight && t.globalBridge.internationalTripsHighlight && (
           <div className="mb-16">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div data-scroll-reveal data-scroll-stagger="0.12" className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               
               {/* Highlight Card 1: Scholarships for Deserving & Talented Students */}
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.7 }}
+              <div
                 className="sand-card p-8 sm:p-10 flex flex-col justify-between border-s-4 border-s-[#d97706] shadow-sm hover:shadow-md transition-shadow"
               >
                 <div>
@@ -141,14 +129,10 @@ export function GlobalBridgeSection({ onOpenModal }: GlobalBridgeProps) {
                     “{t.globalBridge.scholarshipHighlight.valueProposition}”
                   </p>
                 </div>
-              </motion.div>
+              </div>
 
               {/* Highlight Card 2: International Educational Trips & Cultural Exposure */}
-              <motion.div
-                initial={{ opacity: 0, x: 30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.7, delay: 0.1 }}
+              <div
                 className="sand-card p-8 sm:p-10 flex flex-col justify-between border-s-4 border-s-[#d97706] shadow-sm hover:shadow-md transition-shadow"
               >
                 <div>
@@ -188,7 +172,7 @@ export function GlobalBridgeSection({ onOpenModal }: GlobalBridgeProps) {
                     “{t.globalBridge.internationalTripsHighlight.valueProposition}”
                   </p>
                 </div>
-              </motion.div>
+              </div>
 
             </div>
           </div>

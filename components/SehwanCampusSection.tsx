@@ -17,7 +17,7 @@ export function SehwanCampusSection({ onOpenModal }: SehwanCampusProps) {
     <section id="sehwan-campus" className="py-20 md:py-28 bg-[#f4efea] text-[#1c1917] border-b border-[#eae3db]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center max-w-4xl mx-auto mb-16">
+        <div data-scroll-reveal className="text-center max-w-4xl mx-auto mb-16">
           <div className="flex items-center justify-center gap-2 text-[11px] font-semibold tracking-widest text-[#d97706] uppercase mb-2">
             <span className="w-1.5 h-1.5 rounded-full bg-[#d97706]" />
             <span>{t.sehwanCampus.badge}</span>
@@ -28,7 +28,7 @@ export function SehwanCampusSection({ onOpenModal }: SehwanCampusProps) {
         </div>
 
         {/* Campus Photo & Details */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-20">
+        <div data-scroll-reveal data-scroll-stagger="0.12" className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-20">
           <div className="lg:col-span-5 relative">
             <div className="rounded-[24px] overflow-hidden shadow-xl border border-stone-300/80 bg-white p-2">
               <Image
@@ -82,7 +82,7 @@ export function SehwanCampusSection({ onOpenModal }: SehwanCampusProps) {
         </div>
 
         {/* Technology and Community */}
-        <div id="evening-academy" className="sand-card p-8 sm:p-12 mb-16">
+        <div id="evening-academy" data-scroll-reveal className="sand-card p-8 sm:p-12 mb-16">
           <div className="max-w-3xl mb-8">
             <span className="text-xs font-semibold px-3 py-1 rounded-full bg-amber-50 text-[#d97706] border border-amber-200 uppercase tracking-wider font-mono">
               {t.common.afterHoursEngine}
@@ -125,7 +125,7 @@ export function SehwanCampusSection({ onOpenModal }: SehwanCampusProps) {
         </div>
 
         {/* Innovation Lab Benches Card */}
-        <div className="sand-card p-8 sm:p-10 max-w-4xl mx-auto mb-16">
+        <div data-scroll-reveal className="sand-card p-8 sm:p-10 max-w-4xl mx-auto mb-16">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-6">
             <div>
               <h3 className="font-serif text-2xl font-normal text-stone-900">
@@ -157,7 +157,7 @@ export function SehwanCampusSection({ onOpenModal }: SehwanCampusProps) {
         </div>
 
         {/* Partners Strip */}
-        <div className="text-center">
+        <div data-scroll-reveal className="text-center">
           <span className="text-xs font-semibold text-stone-400 uppercase tracking-widest block mb-4 font-mono">
             {t.common.partnersTitle}
           </span>

@@ -62,7 +62,7 @@ export function TheModelTimeline({ onOpenModal }: TheModelTimelineProps) {
     <section id="the-model" className="py-20 md:py-28 bg-[#f4efea] text-[#1c1917] border-b border-[#eae3db]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center max-w-4xl mx-auto mb-14">
+        <div data-scroll-reveal className="text-center max-w-4xl mx-auto mb-14">
           <div className="flex items-center justify-center gap-2 text-[11px] font-semibold tracking-widest text-[#d97706] uppercase mb-2">
             <span className="w-1.5 h-1.5 rounded-full bg-[#d97706]" />
             <span>{t.theModel.badge}</span>
@@ -79,7 +79,7 @@ export function TheModelTimeline({ onOpenModal }: TheModelTimelineProps) {
         </div>
 
         {/* Grade Selector Tabs (Interactive with Clean Amber Active State) */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mb-10">
+        <div data-scroll-reveal data-scroll-stagger="0.04" className="flex flex-wrap items-center justify-center gap-2 mb-10">
           {stages.map((stage, idx) => (
             <button
               key={idx}
@@ -96,7 +96,7 @@ export function TheModelTimeline({ onOpenModal }: TheModelTimelineProps) {
         </div>
 
         {/* Selected Stage Detail Card */}
-        <div className="sand-card p-8 sm:p-12 max-w-4xl mx-auto mb-16">
+        <div data-scroll-reveal className="sand-card p-8 sm:p-12 max-w-4xl mx-auto mb-16">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-stone-100 gap-4">
             <div>
               <span className="text-xs font-semibold text-stone-400 uppercase tracking-wider font-mono">
@@ -153,14 +153,14 @@ export function TheModelTimeline({ onOpenModal }: TheModelTimelineProps) {
 
         {/* 6 Operating Pillars */}
         <div>
-          <div className="text-center mb-10">
+          <div data-scroll-reveal className="text-center mb-10">
             <h3 className="font-serif text-3xl font-normal text-stone-900">
               {t.common.howWeTeachTitle}
             </h3>
             <p className="text-xs text-stone-500 mt-1">{t.common.howWeTeachSub}</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div data-scroll-reveal data-scroll-stagger="0.1" className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {t.theModel.teachingPillars.map((pillar, idx) => (
               <div
                 key={idx}

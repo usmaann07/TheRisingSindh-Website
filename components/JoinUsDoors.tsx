@@ -28,11 +28,8 @@ export function JoinUsDoors({ onOpenModal }: JoinUsDoorsProps) {
   return (
     <section id="join-us" className="py-20 md:py-28 bg-[#f4efea] text-[#1c1917] border-b border-[#eae3db] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.7 }}
+        <div
+          data-scroll-reveal
           className="text-center max-w-3xl mx-auto mb-16"
         >
           <div className="flex items-center justify-center gap-2 text-[11px] font-semibold tracking-widest text-[#d97706] uppercase mb-2">
@@ -45,18 +42,14 @@ export function JoinUsDoors({ onOpenModal }: JoinUsDoorsProps) {
           <p className="mt-4 text-sm sm:text-base text-stone-600">
             {t.common.fourDoorsSubtitle}
           </p>
-        </motion.div>
+        </div>
 
         {/* 2 Primary Doors (Sand & Espresso luxury cards) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-12">
+        <div data-scroll-reveal data-scroll-stagger="0.1" className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-12">
           {/* Door 1: Parents (Warm white sand card) */}
           <motion.button
             type="button"
             aria-haspopup="dialog"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.65, delay: 0.1 }}
             whileHover={{ y: -5 }}
             onClick={() => onOpenModal("campus-visit")}
             className="sand-card w-full text-start p-8 sm:p-10 cursor-pointer flex flex-col justify-between min-h-[260px] group hover:shadow-xl transition-all"
@@ -82,10 +75,6 @@ export function JoinUsDoors({ onOpenModal }: JoinUsDoorsProps) {
           <motion.button
             type="button"
             aria-haspopup="dialog"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.65, delay: 0.2 }}
             whileHover={{ y: -5 }}
             onClick={() => onOpenModal("build-day")}
             className="w-full text-start p-8 sm:p-10 rounded-[20px] bg-[#161412] text-white cursor-pointer flex flex-col justify-between min-h-[260px] group shadow-xl hover:border-[#d97706]/40 border border-transparent transition-all"
@@ -109,7 +98,7 @@ export function JoinUsDoors({ onOpenModal }: JoinUsDoorsProps) {
         </div>
 
         {/* Secondary Doors */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-5xl mx-auto mb-16">
+        <div data-scroll-reveal data-scroll-stagger="0.1" className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-5xl mx-auto mb-16">
           <button
             type="button"
             aria-haspopup="dialog"
@@ -142,7 +131,7 @@ export function JoinUsDoors({ onOpenModal }: JoinUsDoorsProps) {
         </div>
 
         {/* WhatsApp Parents Button */}
-        <div className="text-center mb-16">
+        <div data-scroll-reveal className="text-center mb-16">
           <a
             href={`https://wa.me/${WHATSAPP_NUMBER}?text=${getWhatsAppMessage()}`}
             target="_blank"
@@ -155,7 +144,7 @@ export function JoinUsDoors({ onOpenModal }: JoinUsDoorsProps) {
         </div>
 
         {/* FAQs in Sand Card */}
-        <div className="max-w-3xl mx-auto mb-16">
+        <div data-scroll-reveal className="max-w-3xl mx-auto mb-16">
           <div className="text-center mb-8">
             <h3 className="font-serif text-3xl font-normal text-stone-900">
               {t.common.faqTitle}
@@ -191,7 +180,7 @@ export function JoinUsDoors({ onOpenModal }: JoinUsDoorsProps) {
         </div>
 
         {/* Content Governance Transparency */}
-        <div className="max-w-3xl mx-auto p-5 rounded-2xl bg-white border border-stone-200 text-xs text-stone-500 flex items-start gap-3">
+        <div data-scroll-reveal className="max-w-3xl mx-auto p-5 rounded-2xl bg-white border border-stone-200 text-xs text-stone-500 flex items-start gap-3">
           <ShieldCheck className="w-5 h-5 text-[#d97706] shrink-0 mt-0.5" />
           <p>
             <strong>{t.common.bindingGovernanceTitle}</strong> {t.common.bindingGovernanceDesc}

@@ -3,7 +3,6 @@
 import React from "react";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
-import { motion } from "framer-motion";
 import { useLanguage } from "@/lib/language-context";
 
 export function TheTurnSection() {
@@ -15,11 +14,9 @@ export function TheTurnSection() {
         {/* Editorial Split Showcase (Exact Webflow Inspo Screenshot Lower Half) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left: Framed Documentary Photograph with Rounded Corners */}
-          <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          <div
+            data-scroll-reveal
+            data-scroll-direction="left"
             className="lg:col-span-6 relative"
           >
             <div className="rounded-[24px] overflow-hidden shadow-2xl border border-stone-300/80 bg-white p-2 group">
@@ -31,14 +28,13 @@ export function TheTurnSection() {
                 className="w-full h-auto rounded-[18px] object-cover group-hover:scale-102 transition-transform duration-500"
               />
             </div>
-          </motion.div>
+          </div>
 
           {/* Right: Editorial Serif Headline & Amber CTA Button */}
-          <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+          <div
+            data-scroll-reveal
+            data-scroll-direction="right"
+            data-scroll-delay="0.15"
             className="lg:col-span-6 space-y-6"
           >
             <div className="flex items-center gap-2 text-[11px] font-semibold tracking-widest text-[#d97706] uppercase">
@@ -67,7 +63,7 @@ export function TheTurnSection() {
                 </span>
               </a>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

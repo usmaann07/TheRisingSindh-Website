@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Navbar } from "@/components/Navbar";
 import { HeroSection } from "@/components/HeroSection";
 import { TheTurnSection } from "@/components/TheTurnSection";
@@ -19,9 +19,102 @@ import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
 import { ActionModal } from "@/components/Modals";
 import { CustomCursor } from "@/components/CustomCursor";
+import { useLanguage } from "@/lib/language-context";
 
 export default function Home() {
+  const animationRootRef = useRef<HTMLDivElement>(null);
+  const { language } = useLanguage();
   const [modalType, setModalType] = useState<"campus-visit" | "build-day" | "teach" | "lab-bench" | null>(null);
+
+  useEffect(() => {
+    const root = animationRootRef.current;
+    if (!root) return;
+
+    let active = true;
+    let cleanupAnimations = () => {};
+    let refreshScrollTriggers = () => {};
+    let animationFrame = 0;
+    const refresh = () => {
+      if (active) refreshScrollTriggers();
+    };
+    const resizeObserver = new ResizeObserver(refresh);
+    resizeObserver.observe(root);
+
+    const initializeScrollAnimations = async () => {
+      const { gsap, ScrollTrigger } = await import("@/lib/gsap");
+      if (!active) return;
+
+      refreshScrollTriggers = () => ScrollTrigger.refresh();
+      const matchMedia = gsap.matchMedia();
+      cleanupAnimations = () => matchMedia.revert();
+
+      matchMedia.add("(prefers-reduced-motion: no-preference)", () => {
+        const context = gsap.context(() => {
+          root.querySelectorAll<HTMLElement>("[data-scroll-reveal]").forEach((element) => {
+            const targets: HTMLElement[] = element.hasAttribute("data-scroll-stagger")
+              ? Array.from(element.children).filter(
+                  (child): child is HTMLElement => child instanceof HTMLElement
+                )
+              : [element];
+            const direction = element.dataset.scrollDirection;
+
+            if (targets.length === 0) return;
+
+            gsap.fromTo(
+              targets,
+              {
+                autoAlpha: 0,
+                x: direction === "left" ? -24 : direction === "right" ? 24 : 0,
+                y: direction === "up" ? 24 : direction === "down" ? -24 : direction === "none" ? 0 : 24,
+                scale: 0.985
+              },
+              {
+                autoAlpha: 1,
+                x: 0,
+                y: 0,
+                scale: 1,
+                duration: Number(element.dataset.scrollDuration) || 0.7,
+                delay: Number(element.dataset.scrollDelay) || 0,
+                stagger: Number(element.dataset.scrollStagger) || 0,
+                ease: "power3.out",
+                onComplete: () => gsap.set(targets, { clearProps: "transform" }),
+                onReverseComplete: () => gsap.set(targets, { clearProps: "transform" }),
+                scrollTrigger: {
+                  trigger: element,
+                  start: "top 88%",
+                  end: "bottom 12%",
+                  toggleActions: "play reverse play reverse",
+                  invalidateOnRefresh: true
+                }
+              }
+            );
+          });
+        }, root);
+
+        requestAnimationFrame(refresh);
+        return () => context.revert();
+      });
+
+      animationFrame = requestAnimationFrame(refresh);
+    };
+
+    void initializeScrollAnimations().catch((error: unknown) => {
+      console.error("Failed to initialize scroll animations", error);
+    });
+
+    document.addEventListener("load", refresh, true);
+    window.addEventListener("load", refresh);
+    document.fonts.ready.then(refresh);
+
+    return () => {
+      active = false;
+      cancelAnimationFrame(animationFrame);
+      document.removeEventListener("load", refresh, true);
+      window.removeEventListener("load", refresh);
+      resizeObserver.disconnect();
+      cleanupAnimations();
+    };
+  }, [language]);
 
   const handleOpenModal = (type: "campus-visit" | "build-day" | "teach" | "lab-bench") => {
     setModalType(type);
@@ -32,7 +125,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-[#f4efea] text-[#1c1917] selection:bg-[#d97706] selection:text-white relative">
+    <div ref={animationRootRef} className="min-h-screen bg-[#f4efea] text-[#1c1917] selection:bg-[#d97706] selection:text-white relative">
       {/* GSAP Mouse Cursor Follower */}
       <CustomCursor />
 

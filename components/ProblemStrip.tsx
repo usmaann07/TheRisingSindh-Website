@@ -2,7 +2,6 @@
 
 import React from "react";
 import { ArrowLeftRight, TrendingUp } from "lucide-react";
-import { motion } from "framer-motion";
 import { useLanguage } from "@/lib/language-context";
 
 export function ProblemStrip() {
@@ -11,11 +10,8 @@ export function ProblemStrip() {
   return (
     <section className="py-20 md:py-28 bg-[#f4efea] text-[#1c1917] border-b border-[#eae3db] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.7 }}
+        <div
+          data-scroll-reveal
           className="text-center max-w-3xl mx-auto mb-16"
         >
           <div className="flex items-center justify-center gap-2 text-[11px] font-semibold tracking-widest text-[#d97706] uppercase mb-2">
@@ -26,16 +22,12 @@ export function ProblemStrip() {
             {t.common.problemStripTitle}<br />
             <span className="font-light">{t.common.problemStripHighlight}</span>
           </h2>
-        </motion.div>
+        </div>
 
         {/* 3 Sand Cards Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 mb-12">
+        <div data-scroll-reveal data-scroll-stagger="0.1" className="grid grid-cols-1 md:grid-cols-12 gap-6 mb-12">
           {/* Card 1 */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.7, delay: 0.1 }}
+          <div
             className="md:col-span-5 sand-card p-8 sm:p-10 flex flex-col justify-between hover:shadow-xl transition-all"
           >
             <div>
@@ -52,14 +44,10 @@ export function ProblemStrip() {
             <div className="mt-8 pt-4 border-t border-stone-200/80 text-[11px] font-mono text-stone-500">
               {t.common.youthUnemploymentSource}
             </div>
-          </motion.div>
+          </div>
 
           {/* Card 2 */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.7, delay: 0.2 }}
+          <div
             className="md:col-span-7 sand-card p-8 sm:p-10 flex flex-col gap-8 hover:shadow-xl transition-all"
           >
             <div>
@@ -84,14 +72,10 @@ export function ProblemStrip() {
             <div className="text-xs text-stone-600">
               {t.common.instantProofSub}
             </div>
-          </motion.div>
+          </div>
 
           {/* Card 3: Wide Card */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.7, delay: 0.3 }}
+          <div
             className="md:col-span-12 sand-card p-8 sm:p-12 hover:shadow-xl transition-all"
           >
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
@@ -143,7 +127,7 @@ export function ProblemStrip() {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

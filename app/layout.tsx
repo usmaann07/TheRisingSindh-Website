@@ -7,6 +7,7 @@ import {
 } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/lib/language-context";
+import { MotionConfig } from "framer-motion";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -140,7 +141,7 @@ export default function RootLayout({
       </head>
       <body className="antialiased min-h-screen bg-[#161412] text-[#1c1917] selection:bg-[#d97706] selection:text-white font-sans">
         <LanguageProvider>
-          {children}
+          <MotionConfig reducedMotion="user">{children}</MotionConfig>
         </LanguageProvider>
       </body>
     </html>

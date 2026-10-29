@@ -11,7 +11,7 @@ export function Footer() {
     <footer className="bg-[#161412] text-stone-400 pt-16 pb-12 border-t border-white/10">
       {/* Proof Strip */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
-        <div className="bg-white/[0.03] border border-white/10 rounded-2xl p-4 sm:p-5">
+        <div data-scroll-reveal className="bg-white/[0.03] border border-white/10 rounded-2xl p-4 sm:p-5">
           <div className="flex flex-wrap items-center justify-around gap-4 text-center">
             {t.proofStrip.items.map((item, idx) => (
               <div key={idx} className="flex items-center gap-2 text-xs font-semibold text-stone-300">
@@ -25,7 +25,7 @@ export function Footer() {
 
       {/* Main Footer Links */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className={`grid grid-cols-1 ${isRTL ? "md:grid-cols-2 lg:grid-cols-4" : "md:grid-cols-4"} gap-8 pb-12 border-b border-white/10`}>
+        <div data-scroll-reveal data-scroll-stagger="0.09" className={`grid grid-cols-1 ${isRTL ? "md:grid-cols-2 lg:grid-cols-4" : "md:grid-cols-4"} gap-8 pb-12 border-b border-white/10`}>
           {/* Col 1 */}
           <div className="space-y-3">
             <div className="flex items-center gap-2.5">
@@ -92,7 +92,7 @@ export function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-500 gap-4">
+        <div data-scroll-reveal className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-500 gap-4">
           <p>{t.footer.rights}</p>
           <p className="flex items-center gap-1 text-[11px]">
             <span>{t.common.craftedWithPride}</span>

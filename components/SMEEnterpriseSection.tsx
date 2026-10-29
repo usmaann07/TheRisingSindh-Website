@@ -14,7 +14,6 @@ import {
   TrendingUp,
   Cpu
 } from "lucide-react";
-import { motion } from "framer-motion";
 import { useLanguage } from "@/lib/language-context";
 
 interface SMEEnterpriseProps {
@@ -68,11 +67,8 @@ export function SMEEnterpriseSection({ onOpenModal }: SMEEnterpriseProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.7 }}
+        <div
+          data-scroll-reveal
           className="text-center max-w-4xl mx-auto mb-16"
         >
           <div className="flex items-center justify-center gap-2 text-[11px] font-semibold tracking-widest text-[#d97706] uppercase mb-2">
@@ -85,15 +81,11 @@ export function SMEEnterpriseSection({ onOpenModal }: SMEEnterpriseProps) {
           <p className="mt-4 text-sm sm:text-base text-stone-600 max-w-2xl mx-auto leading-relaxed font-normal">
             {t.smeEnterprises.subtitle}
           </p>
-        </motion.div>
+        </div>
 
         {/* 2 Core Concept Explainer Cards: What is an SME & Why Connect Education */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-16">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.65, delay: 0.1 }}
+        <div data-scroll-reveal data-scroll-stagger="0.1" className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-16">
+          <div
             className="sand-card p-8 flex flex-col justify-between"
           >
             <div>
@@ -113,13 +105,9 @@ export function SMEEnterpriseSection({ onOpenModal }: SMEEnterpriseProps) {
               <span className="font-mono text-[#d97706] font-semibold">{t.common.smallMediumEnterprises}</span>
               <span>{t.common.sindhLocalEconomy}</span>
             </div>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.65, delay: 0.2 }}
+          <div
             className="sand-card p-8 flex flex-col justify-between"
           >
             <div>
@@ -139,12 +127,12 @@ export function SMEEnterpriseSection({ onOpenModal }: SMEEnterpriseProps) {
               <span className="font-mono text-[#d97706] font-semibold">{t.common.realWorldPractice}</span>
               <span>{t.common.vocationalCareerPathways}</span>
             </div>
-          </motion.div>
+          </div>
         </div>
 
         {/* 4 Required Practical Examples */}
         <div className="mb-20">
-          <div className="text-center max-w-3xl mx-auto mb-10">
+          <div data-scroll-reveal className="text-center max-w-3xl mx-auto mb-10">
             <h3 className="font-serif text-3xl sm:text-4xl font-normal text-stone-900">
               {t.smeEnterprises.examplesTitle}
             </h3>
@@ -153,7 +141,7 @@ export function SMEEnterpriseSection({ onOpenModal }: SMEEnterpriseProps) {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div data-scroll-reveal data-scroll-stagger="0.08" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {t.smeEnterprises.examples.map((example, idx) => (
               <div
                 key={example.id}
@@ -184,7 +172,7 @@ export function SMEEnterpriseSection({ onOpenModal }: SMEEnterpriseProps) {
 
         {/* 5 Core Learning Areas Bento Grid */}
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-10">
+          <div data-scroll-reveal className="text-center mb-10">
             <h3 className="font-serif text-3xl font-normal text-stone-900">
               {t.smeEnterprises.learningOutcomesTitle}
             </h3>
@@ -197,14 +185,10 @@ export function SMEEnterpriseSection({ onOpenModal }: SMEEnterpriseProps) {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div data-scroll-reveal data-scroll-stagger="0.08" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {t.smeEnterprises.learningOutcomes.map((outcome, idx) => (
-              <motion.div
+              <div
                 key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.5, delay: idx * 0.08 }}
                 className="sand-card p-6 flex flex-col justify-between"
               >
                 <div>
@@ -220,13 +204,13 @@ export function SMEEnterpriseSection({ onOpenModal }: SMEEnterpriseProps) {
                     {outcome.desc}
                   </p>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
 
         {/* Bottom Action Strip */}
-        <div className="mt-16 text-center">
+        <div data-scroll-reveal className="mt-16 text-center">
           <button
             onClick={() => onOpenModal?.("campus-visit")}
             className="btn-amber-arrow cursor-pointer group inline-flex"

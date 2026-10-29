@@ -11,7 +11,7 @@ export function WhatOurStudentsDo() {
   return (
     <section id="what-our-students-do" className="py-20 md:py-28 bg-[#f4efea] text-[#1c1917] border-b border-[#eae3db]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-4xl mx-auto mb-16">
+        <div data-scroll-reveal className="text-center max-w-4xl mx-auto mb-16">
           <div className="flex items-center justify-center gap-2 text-[11px] font-semibold tracking-widest text-[#d97706] uppercase mb-2">
             <span className="w-1.5 h-1.5 rounded-full bg-[#d97706]" />
             <span>{t.whatStudentsDo.badge}</span>
@@ -25,7 +25,7 @@ export function WhatOurStudentsDo() {
         </div>
 
         {/* 6 Sand Cards Ladder */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+        <div data-scroll-reveal data-scroll-stagger="0.09" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           {t.whatStudentsDo.ladder.map((step, idx) => (
             <button
               type="button"
@@ -57,7 +57,7 @@ export function WhatOurStudentsDo() {
         </div>
 
         {/* Comparison Matrix in Sand Card */}
-        <div className="sand-card p-8 sm:p-12 max-w-5xl mx-auto">
+        <div data-scroll-reveal className="sand-card p-8 sm:p-12 max-w-5xl mx-auto">
           <div className="text-center mb-8">
             <h3 className="font-serif text-2xl sm:text-3xl font-normal text-stone-900">
               {t.common.systemComparisonMatrix}

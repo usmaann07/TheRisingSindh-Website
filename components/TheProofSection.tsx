@@ -2,7 +2,6 @@
 
 import React from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
 import { useLanguage } from "@/lib/language-context";
 
 export function TheProofSection() {
@@ -11,11 +10,8 @@ export function TheProofSection() {
   return (
     <section id="the-proof" className="py-20 md:py-28 bg-[#f4efea] text-[#1c1917] border-b border-[#eae3db] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.7 }}
+        <div
+          data-scroll-reveal
           className="text-center max-w-4xl mx-auto mb-16"
         >
           <div className="flex items-center justify-center gap-2 text-[11px] font-semibold tracking-widest text-[#d97706] uppercase mb-2">
@@ -38,14 +34,12 @@ export function TheProofSection() {
               t.theProof.intro
             )}
           </p>
-        </motion.div>
+        </div>
 
         {/* Investor Precedent Strip */}
-        <motion.div
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.7, delay: 0.1 }}
+        <div
+          data-scroll-reveal
+          data-scroll-delay="0.1"
           className="sand-card p-8 sm:p-12 mb-16 max-w-4xl mx-auto text-center"
         >
           <span className="text-[11px] font-semibold uppercase tracking-wider text-[#d97706]">
@@ -57,15 +51,13 @@ export function TheProofSection() {
           <p className="text-xs sm:text-sm text-stone-600 max-w-xl mx-auto leading-relaxed">
             {t.theProof.investorDesc}
           </p>
-        </motion.div>
+        </div>
 
         {/* Founder Story Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-16">
-          <motion.div
-            initial={{ opacity: 0, x: -35 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.75 }}
+          <div
+            data-scroll-reveal
+            data-scroll-direction="left"
             className="lg:col-span-5 relative"
           >
             <div className="rounded-[24px] overflow-hidden shadow-2xl border border-stone-300/80 bg-white p-2">
@@ -83,13 +75,12 @@ export function TheProofSection() {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 35 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.75, delay: 0.15 }}
+          <div
+            data-scroll-reveal
+            data-scroll-direction="right"
+            data-scroll-delay="0.15"
             className="lg:col-span-7 space-y-4"
           >
             <div className="sand-card p-8">
@@ -117,15 +108,12 @@ export function TheProofSection() {
                 </div>
               ))}
             </div>
-          </motion.div>
+          </div>
         </div>
 
         {/* Founder Quote Band */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.75 }}
+        <div
+          data-scroll-reveal
           className="sand-card p-8 sm:p-12 max-w-4xl mx-auto text-center border-2 border-amber-200/60 shadow-xl bg-gradient-to-b from-[#fdfbf9] to-[#f7f2ed]"
         >
           <p className="font-serif text-xl sm:text-2xl font-normal text-stone-900 leading-relaxed">
@@ -142,7 +130,7 @@ export function TheProofSection() {
               {t.theProof.founderQuote.role}
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

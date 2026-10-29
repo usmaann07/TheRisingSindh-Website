@@ -16,7 +16,7 @@ export function TheMovementSection({ onOpenModal }: TheMovementProps) {
     <section id="the-movement" className="py-20 md:py-28 bg-[#f4efea] text-[#1c1917] border-b border-[#eae3db]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center max-w-4xl mx-auto mb-16">
+        <div data-scroll-reveal className="text-center max-w-4xl mx-auto mb-16">
           <div className="flex items-center justify-center gap-2 text-[11px] font-semibold tracking-widest text-[#d97706] uppercase mb-2">
             <span className="w-1.5 h-1.5 rounded-full bg-[#d97706]" />
             <span>{t.theMovement.badge}</span>
@@ -27,7 +27,7 @@ export function TheMovementSection({ onOpenModal }: TheMovementProps) {
         </div>
 
         {/* 3 Core Manifestos */}
-        <div className="space-y-6 max-w-4xl mx-auto mb-16">
+        <div data-scroll-reveal data-scroll-stagger="0.1" className="space-y-6 max-w-4xl mx-auto mb-16">
           {/* 1: The Inheritance */}
           <div className="sand-card p-8 sm:p-10">
             <div className="flex items-center gap-3 mb-3">
@@ -69,7 +69,7 @@ export function TheMovementSection({ onOpenModal }: TheMovementProps) {
         </div>
 
         {/* 10-Year Picture */}
-        <div className="sand-card p-8 sm:p-12 max-w-4xl mx-auto mb-16">
+        <div data-scroll-reveal className="sand-card p-8 sm:p-12 max-w-4xl mx-auto mb-16">
           <div className="text-center mb-8">
             <h3 className="font-serif text-2xl sm:text-3xl font-normal text-stone-900">
               {t.theMovement.tenYearPicture.title}
@@ -100,7 +100,7 @@ export function TheMovementSection({ onOpenModal }: TheMovementProps) {
         </div>
 
         {/* Invitation CTA */}
-        <div className="text-center max-w-2xl mx-auto">
+        <div data-scroll-reveal className="text-center max-w-2xl mx-auto">
           <p className="font-serif text-xl sm:text-2xl font-normal text-stone-900 mb-6 leading-relaxed">
             “{t.theMovement.invitation}”
           </p>

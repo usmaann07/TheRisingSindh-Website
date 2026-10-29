@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { MessageSquare, ShieldCheck, Mountain, Users, Flame, Check } from "lucide-react";
-import { motion } from "framer-motion";
 import { useLanguage } from "@/lib/language-context";
 
 export function HeroTrackSection() {
@@ -31,11 +30,9 @@ export function HeroTrackSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Column */}
-          <motion.div
-            initial={{ opacity: 0, x: -35 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.75 }}
+          <div
+            data-scroll-reveal
+            data-scroll-direction="left"
             className="lg:col-span-7 space-y-6"
           >
             <div className="flex items-center gap-2 text-[11px] font-semibold tracking-widest text-[#d97706] uppercase">
@@ -91,14 +88,13 @@ export function HeroTrackSection() {
                 {t.heroTrack.heroOath.text}
               </p>
             </div>
-          </motion.div>
+          </div>
 
           {/* Right Column: Clean Framed Photo */}
-          <motion.div
-            initial={{ opacity: 0, x: 35 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ duration: 0.75, delay: 0.15 }}
+          <div
+            data-scroll-reveal
+            data-scroll-direction="right"
+            data-scroll-delay="0.15"
             className="lg:col-span-5 relative"
           >
             <div className="rounded-[24px] overflow-hidden shadow-xl border border-stone-300/80 bg-white p-2">
@@ -114,7 +110,7 @@ export function HeroTrackSection() {
                 <span className="text-[#d97706] font-mono text-[11px] font-semibold">{t.common.elevation5688}</span>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

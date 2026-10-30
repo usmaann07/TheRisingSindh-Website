@@ -45,7 +45,7 @@ export function JoinUsDoors({ onOpenModal }: JoinUsDoorsProps) {
         </div>
 
         {/* 2 Primary Doors (Sand & Espresso luxury cards) */}
-        <div data-scroll-reveal data-scroll-stagger="0.1" className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-12">
+        <div data-scroll-reveal data-scroll-stagger="0.1" data-scroll-opacity-only className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-12">
           {/* Door 1: Parents (Warm white sand card) */}
           <motion.button
             type="button"

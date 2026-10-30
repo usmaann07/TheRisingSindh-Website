@@ -33,7 +33,7 @@ export function FourEngines() {
         </div>
 
         {/* 4 Step Numbered Cards */}
-        <div data-scroll-reveal data-scroll-stagger="0.15" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-6">
+        <div data-scroll-reveal data-scroll-stagger="0.15" data-scroll-opacity-only className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-6">
           {t.fourEngines.engines.map((engine, idx) => (
             <motion.div
               key={engine.id || idx}

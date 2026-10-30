@@ -23,6 +23,7 @@ import { useLanguage } from "@/lib/language-context";
 
 export default function Home() {
   const animationRootRef = useRef<HTMLDivElement>(null);
+  const refreshAnimationsRef = useRef<() => void>(() => {});
   const { language } = useLanguage();
   const [modalType, setModalType] = useState<"campus-visit" | "build-day" | "teach" | "lab-bench" | null>(null);
 
@@ -33,12 +34,21 @@ export default function Home() {
     let active = true;
     let cleanupAnimations = () => {};
     let refreshScrollTriggers = () => {};
-    let animationFrame = 0;
+    let refreshFrame = 0;
     const refresh = () => {
-      if (active) refreshScrollTriggers();
+      if (!active || refreshFrame) return;
+
+      refreshFrame = requestAnimationFrame(() => {
+        refreshFrame = 0;
+        if (active) refreshScrollTriggers();
+      });
     };
-    const resizeObserver = new ResizeObserver(refresh);
-    resizeObserver.observe(root);
+    refreshAnimationsRef.current = refresh;
+
+    const resizeObserver = typeof ResizeObserver !== "undefined"
+      ? new ResizeObserver(refresh)
+      : null;
+    resizeObserver?.observe(root);
 
     const initializeScrollAnimations = async () => {
       const { gsap, ScrollTrigger } = await import("@/lib/gsap");
@@ -49,71 +59,84 @@ export default function Home() {
       cleanupAnimations = () => matchMedia.revert();
 
       matchMedia.add("(prefers-reduced-motion: no-preference)", () => {
-        const context = gsap.context(() => {
-          root.querySelectorAll<HTMLElement>("[data-scroll-reveal]").forEach((element) => {
-            const targets: HTMLElement[] = element.hasAttribute("data-scroll-stagger")
-              ? Array.from(element.children).filter(
-                  (child): child is HTMLElement => child instanceof HTMLElement
-                )
-              : [element];
-            const direction = element.dataset.scrollDirection;
+        const context = gsap.context(() => {}, root);
+        try {
+          context.add(() => {
+            root.querySelectorAll<HTMLElement>("[data-scroll-reveal]").forEach((element) => {
+              const targets: HTMLElement[] = element.hasAttribute("data-scroll-stagger")
+                ? Array.from(element.children).filter(
+                    (child): child is HTMLElement => child instanceof HTMLElement
+                  )
+                : [element];
+              const direction = element.dataset.scrollDirection;
+              const animateTransform = !element.hasAttribute("data-scroll-opacity-only");
 
-            if (targets.length === 0) return;
+              if (targets.length === 0) return;
 
-            gsap.fromTo(
-              targets,
-              {
-                autoAlpha: 0,
-                x: direction === "left" ? -24 : direction === "right" ? 24 : 0,
-                y: direction === "up" ? 24 : direction === "down" ? -24 : direction === "none" ? 0 : 24,
-                scale: 0.985
-              },
-              {
-                autoAlpha: 1,
-                x: 0,
-                y: 0,
-                scale: 1,
-                duration: Number(element.dataset.scrollDuration) || 0.7,
-                delay: Number(element.dataset.scrollDelay) || 0,
-                stagger: Number(element.dataset.scrollStagger) || 0,
-                ease: "power3.out",
-                onComplete: () => gsap.set(targets, { clearProps: "transform" }),
-                onReverseComplete: () => gsap.set(targets, { clearProps: "transform" }),
-                scrollTrigger: {
-                  trigger: element,
-                  start: "top 88%",
-                  end: "bottom 12%",
-                  toggleActions: "play reverse play reverse",
-                  invalidateOnRefresh: true
+              gsap.fromTo(
+                targets,
+                {
+                  autoAlpha: 0,
+                  ...(animateTransform && {
+                    x: direction === "left" ? -24 : direction === "right" ? 24 : 0,
+                    y: direction === "up" ? 24 : direction === "down" ? -24 : direction === "none" ? 0 : 24,
+                    scale: 0.985
+                  })
+                },
+                {
+                  autoAlpha: 1,
+                  ...(animateTransform && { x: 0, y: 0, scale: 1 }),
+                  duration: Number(element.dataset.scrollDuration) || 0.7,
+                  delay: Number(element.dataset.scrollDelay) || 0,
+                  stagger: Number(element.dataset.scrollStagger) || 0,
+                  ease: "power3.out",
+                  ...(animateTransform && {
+                    onComplete: () => gsap.set(targets, { clearProps: "transform" }),
+                    onReverseComplete: () => gsap.set(targets, { clearProps: "transform" })
+                  }),
+                  scrollTrigger: {
+                    trigger: element,
+                    start: "top 88%",
+                    end: "bottom 12%",
+                    toggleActions: "play reverse play reverse",
+                    invalidateOnRefresh: true
+                  }
                 }
-              }
-            );
+              );
+            });
           });
-        }, root);
+        } catch (error) {
+          context.revert();
+          throw error;
+        }
 
-        requestAnimationFrame(refresh);
         return () => context.revert();
       });
 
-      animationFrame = requestAnimationFrame(refresh);
+      refresh();
     };
 
     void initializeScrollAnimations().catch((error: unknown) => {
-      console.error("Failed to initialize scroll animations", error);
+      cleanupAnimations();
+      if (active) console.error("Failed to initialize scroll animations", error);
     });
 
     document.addEventListener("load", refresh, true);
-    window.addEventListener("load", refresh);
     document.fonts.ready.then(refresh);
+    if (document.readyState === "complete") refresh();
 
     return () => {
       active = false;
-      cancelAnimationFrame(animationFrame);
+      refreshAnimationsRef.current = () => {};
+      if (refreshFrame) cancelAnimationFrame(refreshFrame);
       document.removeEventListener("load", refresh, true);
-      window.removeEventListener("load", refresh);
-      resizeObserver.disconnect();
+      resizeObserver?.disconnect();
       cleanupAnimations();
     };
+  }, []);
+
+  useEffect(() => {
+    refreshAnimationsRef.current();
   }, [language]);
 
   const handleOpenModal = (type: "campus-visit" | "build-day" | "teach" | "lab-bench") => {

@@ -60,11 +60,11 @@ export function ProblemStrip() {
             </div>
 
             <div className="sand-card-inset w-full py-6 px-8 flex items-center justify-center gap-8">
-              <div className="w-16 h-16 rounded-2xl bg-[#161412] text-white flex items-center justify-center font-bold text-sm shadow-md">
+              <div className="proof-metric-label w-16 h-16 rounded-2xl bg-[#161412] text-white flex items-center justify-center font-bold text-sm shadow-md max-sm:!px-0.5 max-sm:!text-[9px] max-sm:!leading-[1.35] max-sm:!whitespace-nowrap">
                 {t.common.aiLab}
               </div>
               <ArrowLeftRight className="w-7 h-7 text-[#d97706]" />
-              <div className="w-16 h-16 rounded-2xl bg-[#d97706] text-white flex items-center justify-center text-center font-bold text-sm shadow-md">
+              <div className="proof-metric-label w-16 h-16 rounded-2xl bg-[#d97706] text-white flex items-center justify-center text-center font-bold text-sm shadow-md max-sm:!px-0.5 max-sm:!text-[9px] max-sm:!leading-[1.35] max-sm:!whitespace-nowrap">
                 {t.common.biseMetric}
               </div>
             </div>

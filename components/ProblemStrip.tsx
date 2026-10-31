@@ -50,7 +50,7 @@ export function ProblemStrip() {
           <div
             className="md:col-span-7 sand-card p-8 sm:p-10 flex flex-col gap-8 hover:shadow-xl transition-all"
           >
-            <div>
+            <div className="problem-proof-copy">
               <h3 className="font-serif text-2xl sm:text-3xl font-normal text-stone-900">
                 {t.common.instantProofTitle}
               </h3>

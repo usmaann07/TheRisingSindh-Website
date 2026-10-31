@@ -218,6 +218,12 @@
   text-align: start;
 }
 
+@media (max-width: 639px) {
+  :root[lang="ur"][dir="rtl"] .problem-proof-copy {
+    text-align: center;
+  }
+}
+
 :root[dir="rtl"] :is(.tracking-tighter, .tracking-tight, .tracking-normal, .tracking-wide, .tracking-wider, .tracking-widest) {
   letter-spacing: normal;
 }

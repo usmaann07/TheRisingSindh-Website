@@ -39,7 +39,7 @@ export function FourEngines() {
               key={engine.id || idx}
               transition={{ duration: 0.65, delay: idx * 0.15 }}
               whileHover={{ y: -6, borderColor: "rgba(217, 119, 6, 0.45)" }}
-              className="p-7 rounded-2xl bg-white/[0.03] border border-white/10 transition-all flex flex-col justify-between group"
+              className="sand-card-dark p-7 flex flex-col justify-between group"
             >
               <div>
                 <div className="font-serif text-4xl sm:text-5xl font-light text-[#d97706]/60 group-hover:text-[#d97706] transition-colors mb-4">

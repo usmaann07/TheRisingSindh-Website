@@ -52,7 +52,7 @@ export function CustomCursor() {
 
     window.addEventListener("mousemove", onMouseMove);
 
-    const interactiveElements = document.querySelectorAll("button, a, input, select, .sand-card, .btn-amber-arrow");
+    const interactiveElements = document.querySelectorAll("button, a, input, select, .sand-card, .sand-card-dark, .sand-card-inset, .btn-amber-arrow");
     interactiveElements.forEach((el) => {
       el.addEventListener("mouseenter", onMouseEnterInteractive);
       el.addEventListener("mouseleave", onMouseLeaveInteractive);

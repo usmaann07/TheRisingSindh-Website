@@ -75,7 +75,7 @@ export function ActionModal({ isOpen, onClose, type }: ModalProps) {
         role="dialog"
         aria-modal="true"
         aria-labelledby="action-modal-title"
-        className="relative w-full max-w-lg max-h-[calc(100dvh-2rem)] overflow-y-auto bg-[#161412] text-white border border-white/10 rounded-3xl shadow-2xl p-6 sm:p-8"
+        className="sand-card-dark relative w-full max-w-lg max-h-[calc(100dvh-2rem)] overflow-y-auto text-white p-6 sm:p-8"
         dir={isRTL ? "rtl" : "ltr"}
       >
         <button

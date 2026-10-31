@@ -124,7 +124,7 @@ export function GlobalBridgeSection({ onOpenModal }: GlobalBridgeProps) {
                   </div>
                 </div>
 
-                <div className="mt-8 pt-4 border-t border-stone-200/80 bg-amber-50/60 p-4 rounded-xl">
+                <div className="sand-card-inset mt-8 pt-4 p-4">
                   <p className="font-serif text-xs sm:text-sm italic text-stone-800">
                     “{t.globalBridge.scholarshipHighlight.valueProposition}”
                   </p>
@@ -167,7 +167,7 @@ export function GlobalBridgeSection({ onOpenModal }: GlobalBridgeProps) {
                   </div>
                 </div>
 
-                <div className="mt-8 pt-4 border-t border-stone-200/80 bg-amber-50/60 p-4 rounded-xl">
+                <div className="sand-card-inset mt-8 pt-4 p-4">
                   <p className="font-serif text-xs sm:text-sm italic text-stone-800">
                     “{t.globalBridge.internationalTripsHighlight.valueProposition}”
                   </p>

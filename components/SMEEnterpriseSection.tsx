@@ -145,7 +145,7 @@ export function SMEEnterpriseSection({ onOpenModal }: SMEEnterpriseProps) {
             {t.smeEnterprises.examples.map((example, idx) => (
               <div
                 key={example.id}
-                className="w-full text-start p-6 rounded-2xl transition-all flex flex-col justify-between border bg-[#f4efea] border-stone-200/90 hover:border-[#d97706]/40 hover:bg-stone-50/50"
+                className="sand-card p-6 flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-center justify-between mb-3">

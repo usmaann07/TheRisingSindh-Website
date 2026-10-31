@@ -171,7 +171,7 @@ export function Navbar({ onOpenModal }: NavbarProps) {
               </button>
 
               {modelDropdownOpen && (
-                <div className={`absolute top-full ${isRTL ? "right-0" : "left-0"} w-64 bg-[#1c1917] border border-white/10 rounded-2xl p-2 shadow-2xl text-xs space-y-1 animate-in fade-in slide-in-from-top-2 duration-150 z-50`}>
+                <div className={`sand-card-dark absolute top-full ${isRTL ? "right-0" : "left-0"} w-64 p-2 text-xs space-y-1 animate-in fade-in slide-in-from-top-2 duration-150 z-50`}>
                   <a
                     href="#the-model"
                     onClick={() => setModelDropdownOpen(false)}

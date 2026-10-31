@@ -30,7 +30,7 @@ export function SehwanCampusSection({ onOpenModal }: SehwanCampusProps) {
         {/* Campus Photo & Details */}
         <div data-scroll-reveal data-scroll-stagger="0.12" className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-20">
           <div className="lg:col-span-5 relative">
-            <div className="rounded-[24px] overflow-hidden shadow-xl border border-stone-300/80 bg-white p-2">
+            <div className="sand-card overflow-hidden p-2">
               <Image
                 src="/images/sehwan-lab.jpg"
                 alt="Sehwan Campus Innovation Hub"
@@ -71,7 +71,7 @@ export function SehwanCampusSection({ onOpenModal }: SehwanCampusProps) {
               </h4>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-stone-700">
                 {t.sehwanCampus.campusSpine.map((item, idx) => (
-                  <div key={idx} className="flex items-center gap-2 p-2.5 rounded-xl bg-white border border-stone-200/80 shadow-xs">
+                  <div key={idx} className="sand-card-inset flex items-center gap-2 p-2.5">
                     <CheckCircle2 className="w-3.5 h-3.5 text-[#d97706] shrink-0" />
                     <span>{item}</span>
                   </div>
@@ -102,7 +102,7 @@ export function SehwanCampusSection({ onOpenModal }: SehwanCampusProps) {
                 aria-pressed={selectedTrack === idx}
                 key={idx}
                 onClick={() => setSelectedTrack(selectedTrack === idx ? null : idx)}
-                className={`w-full text-start p-6 rounded-2xl bg-[#f4efea] border border-stone-200/80 hover:border-[#d97706]/40 transition-all cursor-pointer ${
+                className={`sand-card w-full text-start p-6 cursor-pointer ${
                   selectedTrack === idx ? "border-[#d97706] shadow-sm bg-amber-50/20" : ""
                 }`}
               >
@@ -148,7 +148,7 @@ export function SehwanCampusSection({ onOpenModal }: SehwanCampusProps) {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
             {t.sehwanCampus.innovationLab.benches.map((b, idx) => (
-              <div key={idx} className="p-3.5 rounded-xl bg-[#f4efea] border border-stone-200/80 text-xs text-stone-700">
+              <div key={idx} className="sand-card-inset p-3.5 text-xs text-stone-700">
                 <span className="text-[#d97706] font-mono font-bold block mb-0.5">0{idx + 1}.</span>
                 {b}
               </div>
@@ -163,7 +163,7 @@ export function SehwanCampusSection({ onOpenModal }: SehwanCampusProps) {
           </span>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
             {t.sehwanCampus.partners.map((partner, idx) => (
-              <div key={idx} className="p-4 rounded-xl bg-white border border-stone-200 shadow-xs text-center">
+              <div key={idx} className="sand-card-inset p-4 text-center">
                 <div className="font-serif text-base font-normal text-stone-900">{partner.name}</div>
                 <div className="text-[11px] text-stone-500 mt-0.5 font-normal">{partner.role}</div>
               </div>

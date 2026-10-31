@@ -60,7 +60,7 @@ export function TheProofSection() {
             data-scroll-direction="left"
             className="lg:col-span-5 relative"
           >
-            <div className="rounded-[24px] overflow-hidden shadow-2xl border border-stone-300/80 bg-white p-2">
+            <div className="sand-card overflow-hidden p-2">
               <div className="relative rounded-[18px] overflow-hidden">
                 <Image
                   src="/images/founder-evidence.jpg"
@@ -96,7 +96,7 @@ export function TheProofSection() {
               {t.theProof.milestones.map((m, idx) => (
                 <div
                   key={idx}
-                  className="p-3.5 rounded-xl bg-white border border-stone-200/80 flex items-start gap-3 text-xs hover:border-[#d97706]/40 transition-colors"
+                  className="sand-card-inset p-3.5 flex items-start gap-3 text-xs"
                 >
                   <span className="px-2 py-0.5 rounded bg-amber-50 text-[#d97706] font-mono font-bold shrink-0">
                     {m.year}

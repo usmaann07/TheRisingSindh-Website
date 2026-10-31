@@ -68,7 +68,7 @@ export function HeroSection({ onOpenModal }: HeroSectionProps) {
             <div
               className="hero-entrance hero-entrance-visual lg:col-span-5 relative flex justify-center"
             >
-              <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl max-w-md w-full group">
+              <div className="sand-card-dark relative overflow-hidden max-w-md w-full group">
                 <Image
                   src="/images/hero-students.jpg"
                   alt="Students building AI prototypes in Sehwan"
@@ -103,7 +103,7 @@ export function HeroSection({ onOpenModal }: HeroSectionProps) {
             <div data-scroll-reveal data-scroll-stagger="0.1" className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-3 gap-8">
               {/* Stat 1 */}
               <div
-                className="border-s border-stone-300/80 ps-6 group"
+                className="sand-card-inset p-4 sm:p-5 group"
               >
                 <div className="font-serif text-3xl sm:text-4xl font-normal text-stone-900 tracking-tight group-hover:text-[#d97706] transition-colors">
                   10.9%
@@ -118,7 +118,7 @@ export function HeroSection({ onOpenModal }: HeroSectionProps) {
 
               {/* Stat 2 */}
               <div
-                className="border-s border-stone-300/80 ps-6 group"
+                className="sand-card-inset p-4 sm:p-5 group"
               >
                 <div className="font-serif text-3xl sm:text-4xl font-normal text-stone-900 tracking-tight group-hover:text-[#d97706] transition-colors">
                   3rd / 30
@@ -133,7 +133,7 @@ export function HeroSection({ onOpenModal }: HeroSectionProps) {
 
               {/* Stat 3 */}
               <div
-                className="border-s border-stone-300/80 ps-6 group"
+                className="sand-card-inset p-4 sm:p-5 group"
               >
                 <div className="font-serif text-3xl sm:text-4xl font-normal text-stone-900 tracking-tight group-hover:text-[#d97706] transition-colors">
                   100%

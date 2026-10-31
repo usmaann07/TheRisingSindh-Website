@@ -19,7 +19,7 @@ export function TheTurnSection() {
             data-scroll-direction="left"
             className="lg:col-span-6 relative"
           >
-            <div className="rounded-[24px] overflow-hidden shadow-2xl border border-stone-300/80 bg-white p-2 group">
+            <div className="sand-card overflow-hidden p-2 group">
               <Image
                 src="/images/sehwan-lab.jpg"
                 alt="Student building at modern wooden desk with tech hardware"

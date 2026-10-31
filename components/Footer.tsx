@@ -11,7 +11,7 @@ export function Footer() {
     <footer className="bg-[#161412] text-stone-400 pt-16 pb-12 border-t border-white/10">
       {/* Proof Strip */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
-        <div data-scroll-reveal className="bg-white/[0.03] border border-white/10 rounded-2xl p-4 sm:p-5">
+        <div data-scroll-reveal className="sand-card-dark p-4 sm:p-5">
           <div className="flex flex-wrap items-center justify-around gap-4 text-center">
             {t.proofStrip.items.map((item, idx) => (
               <div key={idx} className="flex items-center gap-2 text-xs font-semibold text-stone-300">

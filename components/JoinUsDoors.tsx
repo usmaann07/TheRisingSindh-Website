@@ -77,7 +77,7 @@ export function JoinUsDoors({ onOpenModal }: JoinUsDoorsProps) {
             aria-haspopup="dialog"
             whileHover={{ y: -5 }}
             onClick={() => onOpenModal("build-day")}
-            className="w-full text-start p-8 sm:p-10 rounded-[20px] bg-[#161412] text-white cursor-pointer flex flex-col justify-between min-h-[260px] group shadow-xl hover:border-[#d97706]/40 border border-transparent transition-all"
+            className="sand-card-dark w-full text-start p-8 sm:p-10 text-white cursor-pointer flex flex-col justify-between min-h-[260px] group"
           >
             <div>
               <span className="text-[11px] font-semibold text-[#d97706] uppercase tracking-wider block mb-2">{t.common.forStudentsBadge}</span>
@@ -180,7 +180,7 @@ export function JoinUsDoors({ onOpenModal }: JoinUsDoorsProps) {
         </div>
 
         {/* Content Governance Transparency */}
-        <div data-scroll-reveal className="max-w-3xl mx-auto p-5 rounded-2xl bg-white border border-stone-200 text-xs text-stone-500 flex items-start gap-3">
+        <div data-scroll-reveal className="sand-card max-w-3xl mx-auto p-5 text-xs text-stone-500 flex items-start gap-3">
           <ShieldCheck className="w-5 h-5 text-[#d97706] shrink-0 mt-0.5" />
           <p>
             <strong>{t.common.bindingGovernanceTitle}</strong> {t.common.bindingGovernanceDesc}

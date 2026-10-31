@@ -97,7 +97,7 @@ export function HeroTrackSection() {
             data-scroll-delay="0.15"
             className="lg:col-span-5 relative"
           >
-            <div className="rounded-[24px] overflow-hidden shadow-xl border border-stone-300/80 bg-white p-2">
+            <div className="sand-card overflow-hidden p-2">
               <Image
                 src="/images/hero-track.jpg"
                 alt="Students on mountain trekking expedition across Sindh"

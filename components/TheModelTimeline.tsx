@@ -112,7 +112,7 @@ export function TheModelTimeline({ onOpenModal }: TheModelTimelineProps) {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-6">
-            <div className="p-6 rounded-2xl bg-[#f4efea] border border-stone-200/80">
+            <div className="sand-card-inset p-6">
               <div className="flex items-center gap-2 text-stone-900 font-semibold text-sm mb-2">
                 <Cpu className="w-4 h-4 text-[#d97706]" />
                 <span>{t.common.computingPillarTitle}</span>
@@ -122,7 +122,7 @@ export function TheModelTimeline({ onOpenModal }: TheModelTimelineProps) {
               </p>
             </div>
 
-            <div className="p-6 rounded-2xl bg-[#f4efea] border border-stone-200/80">
+            <div className="sand-card-inset p-6">
               <div className="flex items-center gap-2 text-stone-900 font-semibold text-sm mb-2">
                 <Briefcase className="w-4 h-4 text-[#d97706]" />
                 <span>{t.common.entrepreneurshipPillarTitle}</span>

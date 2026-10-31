@@ -59,7 +59,7 @@ export function ProblemStrip() {
               </p>
             </div>
 
-            <div className="w-full py-6 px-8 rounded-2xl bg-[#f4efea] border border-stone-200/80 flex items-center justify-center gap-8">
+            <div className="sand-card-inset w-full py-6 px-8 flex items-center justify-center gap-8">
               <div className="w-16 h-16 rounded-2xl bg-[#161412] text-white flex items-center justify-center font-bold text-sm shadow-md">
                 {t.common.aiLab}
               </div>
@@ -92,7 +92,7 @@ export function ProblemStrip() {
                 </div>
               </div>
 
-              <div className="lg:col-span-7 p-6 rounded-2xl bg-[#f4efea] border border-stone-200/80">
+              <div className="sand-card-inset lg:col-span-7 p-6">
                 <div className="flex items-center justify-between pb-3 border-b border-stone-200 text-xs">
                   <div>
                     <span className="text-[10px] text-stone-500 font-semibold uppercase">{t.common.curriculumTrajectory}</span>

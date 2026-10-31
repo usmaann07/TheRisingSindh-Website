@@ -26,7 +26,7 @@ export function WhatsAppButton() {
     <div className={`fixed bottom-6 ${isRTL ? "left-6 items-start" : "right-6 items-end"} z-40 flex flex-col`}>
       {isOpen && (
         <div 
-          className="mb-3 w-72 bg-[#161412] border border-white/10 rounded-2xl shadow-2xl p-4 text-white animate-in fade-in slide-in-from-bottom-2 duration-150"
+          className="sand-card-dark mb-3 w-72 p-4 text-white animate-in fade-in slide-in-from-bottom-2 duration-150"
           dir={isRTL ? "rtl" : "ltr"}
         >
           <div className="flex items-center justify-between pb-2 border-b border-white/10">

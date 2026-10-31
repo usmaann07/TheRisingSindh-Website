@@ -83,7 +83,7 @@ export function TheMovementSection({ onOpenModal }: TheMovementProps) {
             {t.theMovement.tenYearPicture.points.map((point, idx) => (
               <div
                 key={idx}
-                className="p-3.5 rounded-xl bg-[#f4efea] border border-stone-200/80 flex items-start gap-2.5 text-xs text-stone-700"
+                className="sand-card-inset p-3.5 flex items-start gap-2.5 text-xs text-stone-700"
               >
                 <CheckCircle2 className="w-4 h-4 text-[#d97706] shrink-0 mt-0.5" />
                 <span>{point}</span>

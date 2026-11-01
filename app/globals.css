@@ -380,6 +380,34 @@
     box-shadow 300ms ease;
 }
 
+.footer-link {
+  position: relative;
+  display: inline-flex;
+  width: fit-content;
+  text-decoration: none;
+}
+
+.footer-link::after {
+  position: absolute;
+  inset-inline: 0;
+  bottom: -3px;
+  height: 1px;
+  background: #d97706;
+  content: "";
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 550ms cubic-bezier(0.2, 0.75, 0.25, 1);
+}
+
+.footer-link:hover::after,
+.footer-link:focus-visible::after {
+  transform: scaleX(1);
+}
+
+:root[dir="rtl"] .footer-link::after {
+  transform-origin: right center;
+}
+
 @supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
   .sand-card {
     background: linear-gradient(145deg, rgba(255, 255, 255, 0.76), rgba(255, 255, 255, 0.58));

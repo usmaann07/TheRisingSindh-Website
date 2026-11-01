@@ -52,12 +52,12 @@ export function Footer() {
               {t.common.exploreTitle}
             </h4>
             <ul className="space-y-2 text-xs text-stone-400">
-              <li><a href="#why-we-exist" className="hover:text-white transition-colors">{t.nav.whyWeExist}</a></li>
-              <li><a href="#the-model" className="hover:text-white transition-colors">{t.nav.theModel}</a></li>
-              <li><a href="#what-our-students-do" className="hover:text-white transition-colors">{t.nav.whatStudentsDo}</a></li>
-              <li><a href="#the-proof" className="hover:text-white transition-colors">{t.nav.theProof}</a></li>
-              <li><a href="#global-bridge" className="hover:text-white transition-colors">{t.nav.globalBridge}</a></li>
-              <li><a href="#sehwan-campus" className="hover:text-white transition-colors">{t.nav.sehwanCampus}</a></li>
+              <li><a href="#why-we-exist" className="footer-link hover:text-white transition-colors">{t.nav.whyWeExist}</a></li>
+              <li><a href="#the-model" className="footer-link hover:text-white transition-colors">{t.nav.theModel}</a></li>
+              <li><a href="#what-our-students-do" className="footer-link hover:text-white transition-colors">{t.nav.whatStudentsDo}</a></li>
+              <li><a href="#the-proof" className="footer-link hover:text-white transition-colors">{t.nav.theProof}</a></li>
+              <li><a href="#global-bridge" className="footer-link hover:text-white transition-colors">{t.nav.globalBridge}</a></li>
+              <li><a href="#sehwan-campus" className="footer-link hover:text-white transition-colors">{t.nav.sehwanCampus}</a></li>
             </ul>
           </div>
 
@@ -67,12 +67,12 @@ export function Footer() {
               {t.common.programsTitle}
             </h4>
             <ul className="space-y-2 text-xs text-stone-400">
-              <li><a href="#the-model" className="hover:text-white transition-colors">{t.common.nurseryMatricBise}</a></li>
-              <li><a href="#personality-grooming" className="hover:text-white transition-colors">{t.common.heroTrackGorakhTreks}</a></li>
-              <li><a href="#student-incubator" className="hover:text-white transition-colors">{t.nav.studentIncubator}</a></li>
-              <li><a href="#sehwan-campus" className="hover:text-white transition-colors">{t.common.eveningCommunityAcademy}</a></li>
-              <li><a href="#sehwan-campus" className="hover:text-white transition-colors">{t.common.innovationLabBuilders}</a></li>
-              <li><a href="#join-us" className="hover:text-white transition-colors">{t.common.saturdayBuildDays}</a></li>
+              <li><a href="#the-model" className="footer-link hover:text-white transition-colors">{t.common.nurseryMatricBise}</a></li>
+              <li><a href="#personality-grooming" className="footer-link hover:text-white transition-colors">{t.common.heroTrackGorakhTreks}</a></li>
+              <li><a href="#student-incubator" className="footer-link hover:text-white transition-colors">{t.nav.studentIncubator}</a></li>
+              <li><a href="#sehwan-campus" className="footer-link hover:text-white transition-colors">{t.common.eveningCommunityAcademy}</a></li>
+              <li><a href="#sehwan-campus" className="footer-link hover:text-white transition-colors">{t.common.innovationLabBuilders}</a></li>
+              <li><a href="#join-us" className="footer-link hover:text-white transition-colors">{t.common.saturdayBuildDays}</a></li>
             </ul>
           </div>
 
@@ -93,7 +93,7 @@ export function Footer() {
                 href="https://www.facebook.com/DICSEHWAN"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-stone-400 transition-colors hover:text-white"
+                className="footer-link flex items-center gap-2 text-stone-400 transition-colors hover:text-white"
               >
                 <svg aria-hidden="true" viewBox="0 0 16 16" className="h-4 w-4 shrink-0 fill-[#1877F2]">
                   <path d="M9.1 15V8.7h2.1l.3-2.5H9.1V4.6c0-.7.2-1.2 1.2-1.2h1.3V1.2C11.3 1.1 10.6 1 9.8 1 7.7 1 6.3 2.3 6.3 4.4v1.8H4v2.5h2.3V15z" />
@@ -104,7 +104,7 @@ export function Footer() {
                 href="https://www.instagram.com/therisingsindh/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-stone-400 transition-colors hover:text-white"
+                className="footer-link flex items-center gap-2 text-stone-400 transition-colors hover:text-white"
               >
                 <svg aria-hidden="true" viewBox="0 0 16 16" className="h-4 w-4 shrink-0 fill-none stroke-current" strokeWidth="1.5">
                   <defs>
@@ -128,7 +128,7 @@ export function Footer() {
                 href="https://www.linkedin.com/company/therisingsindh/posts/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-stone-400 transition-colors hover:text-white"
+                className="footer-link flex items-center gap-2 text-stone-400 transition-colors hover:text-white"
               >
                 <svg aria-hidden="true" viewBox="0 0 16 16" className="h-4 w-4 shrink-0 fill-[#0A66C2]">
                   <path d="M3.3 5.7H1V15h2.3zM2.2 1a1.3 1.3 0 1 0 0 2.6 1.3 1.3 0 0 0 0-2.6M15 9.7c0-2.5-1.3-3.7-3.1-3.7a2.7 2.7 0 0 0-2.4 1.3V6H7.2v9h2.3v-4.5c0-1.2.2-2.3 1.7-2.3s1.5 1.3 1.5 2.4V15H15z" />

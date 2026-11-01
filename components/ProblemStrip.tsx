@@ -1,11 +1,84 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { ArrowLeftRight, TrendingUp } from "lucide-react";
 import { useLanguage } from "@/lib/language-context";
 
 export function ProblemStrip() {
   const { t } = useLanguage();
+  const metricsRef = useRef<HTMLDivElement>(null);
+  const unemploymentRef = useRef<HTMLSpanElement>(null);
+  const boardCoverageRef = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    const metrics = metricsRef.current;
+    const unemployment = unemploymentRef.current;
+    const boardCoverage = boardCoverageRef.current;
+    if (!metrics || !unemployment || !boardCoverage) return;
+
+    const duration = 1000;
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let active = false;
+    let animationFrame = 0;
+
+    const resetCounters = () => {
+      unemployment.textContent = "0%";
+      boardCoverage.textContent = "0%";
+    };
+
+    const showFinalValues = () => {
+      unemployment.textContent = "32.8%";
+      boardCoverage.textContent = "100%";
+    };
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !active) {
+          active = true;
+          resetCounters();
+
+          if (reducedMotion) {
+            showFinalValues();
+            return;
+          }
+
+          const startedAt = performance.now();
+          const tick = (timestamp: number) => {
+            if (!active) return;
+
+            const progress = Math.min((timestamp - startedAt) / duration, 1);
+            const easedProgress = 1 - Math.pow(1 - progress, 3);
+            const unemploymentValue = 32.8 * easedProgress;
+            const boardCoverageValue = Math.floor(100 * easedProgress);
+
+            unemployment.textContent = `${unemploymentValue.toFixed(2).replace(/0+$/, "").replace(/\.$/, "")}%`;
+            boardCoverage.textContent = `${boardCoverageValue}%`;
+
+            if (progress < 1) {
+              animationFrame = requestAnimationFrame(tick);
+            } else {
+              showFinalValues();
+            }
+          };
+
+          animationFrame = requestAnimationFrame(tick);
+        } else if (!entry.isIntersecting && active) {
+          active = false;
+          cancelAnimationFrame(animationFrame);
+          resetCounters();
+        }
+      },
+      { threshold: 0.15 }
+    );
+
+    observer.observe(metrics);
+
+    return () => {
+      active = false;
+      cancelAnimationFrame(animationFrame);
+      observer.disconnect();
+    };
+  }, []);
 
   return (
     <section className="py-20 md:py-28 bg-[#f4efea] text-[#1c1917] border-b border-[#eae3db] overflow-hidden">
@@ -25,14 +98,14 @@ export function ProblemStrip() {
         </div>
 
         {/* 3 Sand Cards Bento Grid */}
-        <div data-scroll-reveal data-scroll-stagger="0.1" className="grid grid-cols-1 md:grid-cols-12 gap-6 mb-12">
+        <div ref={metricsRef} data-scroll-reveal data-scroll-stagger="0.1" className="grid grid-cols-1 md:grid-cols-12 gap-6 mb-12">
           {/* Card 1 */}
           <div
             className="md:col-span-5 sand-card p-8 sm:p-10 flex flex-col justify-between hover:shadow-xl transition-all"
           >
             <div>
               <div className="font-serif text-5xl sm:text-6xl font-normal text-[#d97706] tracking-tight">
-                32.8%
+                <span ref={unemploymentRef} className="inline-block whitespace-nowrap tabular-nums">0%</span>
               </div>
               <h3 className="font-serif text-2xl font-normal text-stone-900 mt-4">
                 {t.common.youthUnemploymentTitle}
@@ -65,7 +138,10 @@ export function ProblemStrip() {
               </div>
               <ArrowLeftRight className="w-7 h-7 text-[#d97706]" />
               <div className="proof-metric-label w-16 h-16 rounded-2xl bg-[#d97706] text-white flex items-center justify-center text-center font-bold text-sm shadow-md max-sm:!px-0.5 max-sm:!text-[9px] max-sm:!leading-[1.35] max-sm:!whitespace-nowrap">
-                {t.common.biseMetric}
+                <span dir="ltr">
+                  {t.common.biseMetric.replace(/\s*100%$/, "")}{" "}
+                  <span ref={boardCoverageRef} className="inline-block whitespace-nowrap tabular-nums">0%</span>
+                </span>
               </div>
             </div>
 

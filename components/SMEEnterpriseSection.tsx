@@ -84,16 +84,16 @@ export function SMEEnterpriseSection({ onOpenModal }: SMEEnterpriseProps) {
         </div>
 
         {/* 2 Core Concept Explainer Cards: What is an SME & Why Connect Education */}
-        <div data-scroll-reveal data-scroll-stagger="0.1" className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-16">
+        <div data-scroll-reveal data-scroll-stagger="0.1" className="sme-concept-grid grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-16">
           <div
-            className="sand-card p-8 flex flex-col justify-between"
+            className="sme-concept-card sand-card p-8 flex flex-col justify-between"
           >
             <div>
-              <div className="flex items-center gap-2.5 mb-3">
-                <div className="p-2 rounded-xl bg-amber-500/10 border border-[#d97706]/20">
+              <div className="sme-concept-heading flex items-center gap-2.5 mb-3">
+                <div className="sme-concept-icon p-2 rounded-xl bg-amber-500/10 border border-[#d97706]/20">
                   <Building2 className="w-5 h-5 text-[#d97706]" />
                 </div>
-                <h3 className="font-serif text-2xl font-normal text-stone-900">
+                <h3 className="sme-concept-title font-serif text-2xl font-normal text-stone-900">
                   {t.smeEnterprises.whatIsSmeTitle}
                 </h3>
               </div>
@@ -101,21 +101,21 @@ export function SMEEnterpriseSection({ onOpenModal }: SMEEnterpriseProps) {
                 {t.smeEnterprises.whatIsSmeDesc}
               </p>
             </div>
-            <div className="mt-6 pt-4 border-t border-stone-200/80 flex items-center justify-between text-xs text-stone-500">
-              <span className="font-mono text-[#d97706] font-semibold">{t.common.smallMediumEnterprises}</span>
-              <span>{t.common.sindhLocalEconomy}</span>
+            <div className="sme-concept-footer mt-6 pt-4 border-t border-stone-200/80 flex items-center justify-between text-xs text-stone-500">
+              <span className="sme-concept-footer-primary font-mono text-[#d97706] font-semibold">{t.common.smallMediumEnterprises}</span>
+              <span className="sme-concept-footer-secondary">{t.common.sindhLocalEconomy}</span>
             </div>
           </div>
 
           <div
-            className="sand-card p-8 flex flex-col justify-between"
+            className="sme-concept-card sand-card p-8 flex flex-col justify-between"
           >
             <div>
-              <div className="flex items-center gap-2.5 mb-3">
-                <div className="p-2 rounded-xl bg-amber-500/10 border border-[#d97706]/20">
+              <div className="sme-concept-heading flex items-center gap-2.5 mb-3">
+                <div className="sme-concept-icon p-2 rounded-xl bg-amber-500/10 border border-[#d97706]/20">
                   <Factory className="w-5 h-5 text-[#d97706]" />
                 </div>
-                <h3 className="font-serif text-2xl font-normal text-stone-900">
+                <h3 className="sme-concept-title font-serif text-2xl font-normal text-stone-900">
                   {t.smeEnterprises.whyConnectTitle}
                 </h3>
               </div>
@@ -123,9 +123,9 @@ export function SMEEnterpriseSection({ onOpenModal }: SMEEnterpriseProps) {
                 {t.smeEnterprises.whyConnectDesc}
               </p>
             </div>
-            <div className="mt-6 pt-4 border-t border-stone-200/80 flex items-center justify-between text-xs text-stone-500">
-              <span className="font-mono text-[#d97706] font-semibold">{t.common.realWorldPractice}</span>
-              <span>{t.common.vocationalCareerPathways}</span>
+            <div className="sme-concept-footer mt-6 pt-4 border-t border-stone-200/80 flex items-center justify-between text-xs text-stone-500">
+              <span className="sme-concept-footer-primary font-mono text-[#d97706] font-semibold">{t.common.realWorldPractice}</span>
+              <span className="sme-concept-footer-secondary">{t.common.vocationalCareerPathways}</span>
             </div>
           </div>
         </div>

@@ -3,6 +3,7 @@
 import React from "react";
 import { Users, Plane, FileCheck, ArrowUpRight, GraduationCap, Globe, CheckCircle2 } from "lucide-react";
 import { useLanguage } from "@/lib/language-context";
+import { MobileCarousel } from "@/components/MobileCarousel";
 
 interface GlobalBridgeProps {
   onOpenModal: (type: "lab-bench" | "campus-visit") => void;
@@ -48,7 +49,13 @@ export function GlobalBridgeSection({ onOpenModal }: GlobalBridgeProps) {
         </div>
 
         {/* 3 Global Lanes */}
-        <div data-scroll-reveal data-scroll-stagger="0.12" className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+        <MobileCarousel
+          data-scroll-reveal
+          data-scroll-stagger="0.12"
+          tabIndex={0}
+          aria-label={t.globalBridge.badge}
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16"
+        >
           {t.globalBridge.lanes.map((lane, idx) => (
             <div
               key={idx}
@@ -81,12 +88,18 @@ export function GlobalBridgeSection({ onOpenModal }: GlobalBridgeProps) {
               </div>
             </div>
           ))}
-        </div>
+        </MobileCarousel>
 
         {/* Prominent Highlighting: Scholarships & International Educational Trips Showcase */}
         {t.globalBridge.scholarshipHighlight && t.globalBridge.internationalTripsHighlight && (
           <div className="mb-16">
-            <div data-scroll-reveal data-scroll-stagger="0.12" className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <MobileCarousel
+              data-scroll-reveal
+              data-scroll-stagger="0.12"
+              tabIndex={0}
+              aria-label={t.globalBridge.title}
+              className="grid grid-cols-1 lg:grid-cols-2 gap-8"
+            >
               
               {/* Highlight Card 1: Scholarships for Deserving & Talented Students */}
               <div
@@ -174,7 +187,7 @@ export function GlobalBridgeSection({ onOpenModal }: GlobalBridgeProps) {
                 </div>
               </div>
 
-            </div>
+            </MobileCarousel>
           </div>
         )}
 

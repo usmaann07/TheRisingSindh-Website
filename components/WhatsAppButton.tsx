@@ -23,7 +23,7 @@ export function WhatsAppButton() {
   const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${getWhatsAppMessage()}`;
 
   return (
-    <div className={`fixed bottom-6 ${isRTL ? "left-6 items-start" : "right-6 items-end"} z-40 flex flex-col`}>
+    <div className={`whatsapp-contact fixed bottom-6 ${isRTL ? "left-6 items-start" : "right-6 items-end"} z-40 flex flex-col`}>
       {isOpen && (
         <div 
           className="sand-card-dark mb-3 w-72 p-4 text-white animate-in fade-in slide-in-from-bottom-2 duration-150"

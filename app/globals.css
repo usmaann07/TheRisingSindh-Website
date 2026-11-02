@@ -138,6 +138,10 @@
 }
 
 /* Grow Tailwind text utilities gently with the viewport, with bounded sizes. */
+.mobile-carousel-arrow {
+  display: none;
+}
+
 .max-w-7xl {
   max-width: min(90rem, calc(100% - clamp(2rem, 6vw, 5rem)));
 }
@@ -468,5 +472,567 @@
     box-shadow:
       0 10px 24px rgba(58, 42, 27, 0.08),
       inset 0 1px 0 rgba(255, 255, 255, 0.86);
+  }
+}
+
+@media (max-width: 1023px) {
+  html {
+    scroll-padding-top: 5.5rem;
+  }
+
+  main section[id] {
+    scroll-margin-top: 5.5rem;
+    padding-block: 3.5rem;
+  }
+
+  main section[id] > .max-w-7xl {
+    max-width: calc(100% - 1rem);
+    padding-inline: 0.75rem;
+  }
+
+  main section[id] [class~="mb-16"],
+  main section[id] [class~="mb-20"] {
+    margin-bottom: 2rem;
+  }
+
+  main section[id] [class~="mb-14"] {
+    margin-bottom: 1.75rem;
+  }
+
+  main section[id] .sand-card[class~="p-8"],
+  main section[id] .sand-card-dark[class~="p-8"] {
+    padding: 1.25rem;
+  }
+
+  main section[id] .sand-card[class~="p-10"],
+  main section[id] .sand-card-dark[class~="p-10"] {
+    padding: 1.5rem;
+  }
+
+  main section[id] .sand-card[class~="p-12"],
+  main section[id] .sand-card-dark[class~="p-12"] {
+    padding: 1.5rem;
+  }
+
+  #home {
+    min-height: auto;
+    padding-block: 8rem 3.25rem;
+  }
+
+  #home + section {
+    padding-block: 2.5rem;
+  }
+
+  .mobile-carousel-shell {
+    position: relative;
+    min-width: 0;
+  }
+
+  [data-mobile-carousel] {
+    display: flex;
+    grid-template-columns: none;
+    gap: 1rem;
+    margin-inline: -0.25rem;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    padding: 0.25rem 0.25rem 0.75rem;
+    scroll-padding-inline: 0.25rem;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  [data-mobile-carousel]::-webkit-scrollbar {
+    display: none;
+  }
+
+  [data-mobile-carousel] > * {
+    flex: 0 0 min(72vw, 22rem);
+    min-width: 0;
+    margin-block-start: 0;
+    scroll-snap-align: start;
+  }
+
+  [data-mobile-carousel]:focus-visible {
+    border-radius: 1rem;
+    outline: 2px solid rgba(217, 119, 6, 0.75);
+    outline-offset: 3px;
+  }
+
+  .mobile-carousel-arrow {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    inset-inline-end: 0.25rem;
+    display: inline-flex;
+    width: 2.75rem;
+    min-height: 2.75rem;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    transform: translateY(-50%);
+    border: 1px solid rgba(217, 119, 6, 0.2);
+    border-radius: 9999px;
+    background: linear-gradient(145deg, #fffdf8, #fff2d6);
+    color: #92400e;
+    box-shadow: 0 5px 16px rgba(90, 45, 7, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    animation: carousel-arrow-glow 2.4s ease-in-out infinite;
+  }
+
+  .mobile-carousel-arrow svg {
+    width: 1rem;
+    height: 1rem;
+    flex: none;
+    stroke-width: 2.5;
+    translate: 3px 0;
+    animation: carousel-arrow-nudge 1.2s ease-in-out infinite;
+  }
+
+  .mobile-carousel-arrow.is-at-end svg {
+    transform: rotate(180deg);
+  }
+
+  :root[dir="rtl"] .mobile-carousel-arrow:not(.is-at-end) svg {
+    transform: scaleX(-1);
+    translate: -3px 0;
+  }
+
+  :root[dir="rtl"] .mobile-carousel-arrow.is-at-end svg {
+    transform: rotate(180deg) scaleX(-1);
+    translate: 3px 0;
+  }
+
+  .mobile-carousel-arrow:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 3px;
+  }
+
+  .mobile-carousel-arrow:active {
+    transform: translateY(-50%) scale(0.94);
+  }
+
+  .mobile-navigation-drawer {
+    max-height: calc(100dvh - 5.5rem);
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+  }
+
+  .mobile-menu-toggle {
+    display: grid;
+    min-width: 2.75rem;
+    min-height: 2.75rem;
+    place-items: center;
+  }
+}
+
+@keyframes carousel-arrow-nudge {
+  0%,
+  100% {
+    translate: 3px 0;
+  }
+
+  50% {
+    translate: 0 0;
+  }
+}
+
+@keyframes carousel-arrow-glow {
+  0%,
+  100% {
+    box-shadow: 0 5px 16px rgba(90, 45, 7, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  }
+
+  50% {
+    box-shadow: 0 7px 20px rgba(217, 119, 6, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  }
+}
+
+@media (max-width: 1023px) {
+  :root[dir="rtl"] .mobile-carousel-arrow svg {
+    animation-name: carousel-arrow-nudge-rtl;
+  }
+}
+
+@keyframes carousel-arrow-nudge-rtl {
+  0%,
+  100% {
+    translate: -3px 0;
+  }
+
+  50% {
+    translate: 0 0;
+  }
+}
+
+@media (max-width: 767px) {
+  html {
+    scroll-padding-top: 5rem;
+  }
+
+  main section[id] {
+    padding-block: 2.75rem;
+  }
+
+  main section[id] > .max-w-7xl {
+    max-width: calc(100% - 0.5rem);
+    padding-inline: 0.5rem;
+  }
+
+  main section[id] [class~="mb-16"],
+  main section[id] [class~="mb-20"] {
+    margin-bottom: 1.5rem;
+  }
+
+  main section[id] [class~="mb-14"] {
+    margin-bottom: 1.25rem;
+  }
+
+  main section[id] .sand-card[class~="p-8"],
+  main section[id] .sand-card-dark[class~="p-8"] {
+    padding: 1rem;
+    border-radius: 1rem;
+  }
+
+  main section[id] .sand-card[class~="p-10"],
+  main section[id] .sand-card-dark[class~="p-10"],
+  main section[id] .sand-card[class~="p-12"],
+  main section[id] .sand-card-dark[class~="p-12"] {
+    padding: 1.125rem;
+    border-radius: 1rem;
+  }
+
+  main section[id] .sand-card[class~="p-6"],
+  main section[id] .sand-card-dark[class~="p-6"] {
+    padding: 1rem;
+  }
+
+  main section[id] .sand-card-inset[class~="p-6"] {
+    padding: 0.875rem;
+  }
+
+  main section[id] [data-scroll-reveal].text-center[class~="mb-16"] {
+    margin-bottom: 1.5rem;
+  }
+
+  main section[id] h2 {
+    font-size: clamp(1.75rem, 8vw, 2.5rem);
+    line-height: 1.12;
+  }
+
+  #home {
+    padding-block: 7rem 2.5rem;
+  }
+
+  #home h1 {
+    font-size: clamp(2.5rem, 10.5vw, 3.5rem);
+    line-height: 1.04;
+  }
+
+  #home .grid.grid-cols-1 {
+    gap: 2rem;
+  }
+
+  #home + section [data-scroll-stagger].grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.625rem;
+  }
+
+  #home + section [data-scroll-stagger].grid > :last-child {
+    grid-column: 1 / -1;
+  }
+
+  #problem-strip [data-mobile-carousel] {
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+
+  #problem-strip [data-mobile-carousel] > * {
+    flex-basis: min(86vw, 22rem);
+  }
+
+  #problem-strip .problem-unemployment-card {
+    justify-content: flex-start;
+  }
+
+  #problem-strip .problem-unemployment-source {
+    margin-top: 1.25rem;
+    padding-top: 0.75rem;
+  }
+
+  #problem-strip .problem-proof-card {
+    gap: 1rem;
+  }
+
+  #problem-strip .problem-proof-metrics {
+    gap: 1rem;
+    padding: 0.875rem 1rem;
+  }
+
+  #problem-strip .problem-proof-metric {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 0.875rem;
+  }
+
+  #problem-strip .problem-market-layout {
+    gap: 1rem;
+  }
+
+  #problem-strip .problem-market-chart {
+    padding: 0.875rem;
+  }
+
+  #problem-strip .problem-market-chart-heading {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  #problem-strip .problem-market-chart-heading > div {
+    flex: 1 1 100%;
+  }
+
+  #problem-strip .problem-market-chart-heading .font-serif {
+    font-size: 1.25rem;
+    line-height: 1.2;
+  }
+
+  #problem-strip .problem-market-chart-heading > span {
+    font-size: 0.625rem;
+  }
+
+  #problem-strip .problem-market-chart-plot {
+    height: 5rem;
+    margin-top: 0.625rem;
+  }
+
+  #problem-strip [data-mobile-carousel] .sand-card-inset {
+    gap: 1rem;
+    padding-inline: 0.75rem;
+  }
+
+  #four-engines [data-mobile-carousel] > * {
+    flex-basis: min(80vw, 20rem);
+  }
+
+  #global-bridge [data-mobile-carousel] > * {
+    flex-basis: min(84vw, 21rem);
+  }
+
+  #the-proof [data-mobile-carousel] > * {
+    flex-basis: min(78vw, 19rem);
+  }
+
+  #sehwan-campus [data-mobile-carousel] > * {
+    flex-basis: min(84vw, 22rem);
+  }
+
+  #join-us [data-mobile-carousel] > * {
+    flex-basis: min(84vw, 22rem);
+  }
+
+  #what-our-students-do [data-scroll-stagger].grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.625rem;
+    margin-bottom: 1.5rem;
+  }
+
+  #what-our-students-do [data-scroll-stagger].grid > button {
+    min-width: 0;
+    padding: 0.875rem;
+  }
+
+  #what-our-students-do [data-scroll-stagger].grid > button h4 {
+    font-size: 1rem;
+  }
+
+  #the-model [data-scroll-stagger].grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.625rem;
+  }
+
+  #the-model .teaching-pillars-grid > :last-child {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: min(100%, calc((100% - 0.625rem) / 2));
+  }
+
+  #student-incubator [data-scroll-stagger].grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  #student-incubator [data-scroll-stagger].sme-concept-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  #student-incubator .sme-concept-card {
+    min-width: 0;
+    width: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+
+  #student-incubator .sme-concept-heading {
+    display: grid;
+    grid-template-columns: 2.25rem minmax(0, 1fr);
+    align-items: start;
+    gap: 0.625rem;
+    margin-bottom: 0.75rem;
+  }
+
+  #student-incubator .sme-concept-icon {
+    display: grid;
+    width: 2.25rem;
+    height: 2.25rem;
+    place-items: center;
+    padding: 0.375rem;
+    border-radius: 0.75rem;
+  }
+
+  #student-incubator .sme-concept-icon svg {
+    width: 1.125rem;
+    height: 1.125rem;
+  }
+
+  #student-incubator .sme-concept-title {
+    min-width: 0;
+    font-size: clamp(1rem, 4.5vw, 1.2rem);
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+  }
+
+  #student-incubator .sme-concept-card p {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  #student-incubator .sme-concept-footer {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: start;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    padding-top: 0.75rem;
+    font-size: 0.6875rem;
+    line-height: 1.4;
+  }
+
+  #student-incubator .sme-concept-footer-primary,
+  #student-incubator .sme-concept-footer-secondary {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  #student-incubator .sme-concept-footer-secondary {
+    text-align: end;
+  }
+
+  #sehwan-campus [class~="sm:grid-cols-2"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  #sehwan-campus [class~="md:grid-cols-3"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  #sehwan-campus [class~="md:grid-cols-3"] > :last-child {
+    grid-column: 1 / -1;
+  }
+
+  #join-us [class~="min-h-[260px]"] {
+    min-height: 0;
+  }
+
+  #join-us [class~="min-h-[260px]"] > div:last-child {
+    padding-top: 1rem;
+  }
+
+  .mobile-navigation-drawer {
+    max-height: calc(100dvh - 5rem);
+    margin-top: 0.625rem;
+    padding: 1rem;
+    border-radius: 1.5rem;
+  }
+
+  .mobile-navigation-drawer > div {
+    font-size: 0.875rem;
+  }
+
+  .mobile-navigation-drawer > div > * + * {
+    margin-top: 0.4rem;
+  }
+
+  .mobile-navigation-drawer a,
+  .mobile-navigation-drawer > div > div > button {
+    display: flex;
+    min-height: 2.75rem;
+    align-items: center;
+    padding-block: 0.55rem;
+  }
+
+  .mobile-navigation-drawer > div > div > div a {
+    min-height: 2.5rem;
+  }
+
+  .mobile-navigation-drawer button {
+    touch-action: manipulation;
+  }
+
+  .mobile-navigation-drawer [class~="grid-cols-2"] {
+    gap: 0.5rem;
+  }
+
+  .mobile-navigation-drawer [class~="grid-cols-2"] button {
+    min-height: 2.75rem;
+    padding-inline: 0.5rem;
+  }
+
+  .whatsapp-contact {
+    bottom: max(0.75rem, env(safe-area-inset-bottom));
+    inset-inline-end: max(0.75rem, env(safe-area-inset-right));
+    left: auto;
+    right: auto;
+  }
+
+  .whatsapp-contact > button {
+    min-height: 2.75rem;
+    padding: 0.7rem 0.9rem;
+  }
+}
+
+@media (max-width: 380px) {
+  #what-our-students-do [data-scroll-stagger].grid {
+    grid-template-columns: 1fr;
+  }
+
+  #what-our-students-do [data-scroll-stagger].grid > button {
+    min-height: 0;
+  }
+
+  #the-model .teaching-pillars-grid > :last-child {
+    width: 100%;
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .sand-card:active,
+  .sand-card-dark:active,
+  .sand-card-inset:active {
+    transform: scale(0.99);
+  }
+}
+
+@media (min-width: 1024px) {
+  .mobile-carousel-arrow {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mobile-carousel-arrow,
+  .mobile-carousel-arrow svg {
+    animation: none;
   }
 }

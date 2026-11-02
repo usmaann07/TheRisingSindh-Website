@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { CheckCircle2, ArrowUpRight, Check } from "lucide-react";
 import { useLanguage } from "@/lib/language-context";
+import { MobileCarousel } from "@/components/MobileCarousel";
 
 interface SehwanCampusProps {
   onOpenModal: (type: "campus-visit" | "lab-bench") => void;
@@ -95,7 +96,11 @@ export function SehwanCampusSection({ onOpenModal }: SehwanCampusProps) {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <MobileCarousel
+            tabIndex={0}
+            aria-label={t.sehwanCampus.eveningAcademy.title}
+            className="grid grid-cols-1 md:grid-cols-2 gap-6"
+          >
             {t.sehwanCampus.eveningAcademy.tracks.map((track, idx) => (
               <button
                 type="button"
@@ -121,7 +126,7 @@ export function SehwanCampusSection({ onOpenModal }: SehwanCampusProps) {
                 </div>
               </button>
             ))}
-          </div>
+          </MobileCarousel>
         </div>
 
         {/* Innovation Lab Benches Card */}

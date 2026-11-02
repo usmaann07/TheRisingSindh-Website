@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { ArrowUpRight, ChevronDown, PhoneCall, ShieldCheck } from "lucide-react";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/lib/language-context";
+import { MobileCarousel } from "@/components/MobileCarousel";
 
 const WHATSAPP_NUMBER = "923468204081";
 
@@ -45,7 +46,14 @@ export function JoinUsDoors({ onOpenModal }: JoinUsDoorsProps) {
         </div>
 
         {/* 2 Primary Doors (Sand & Espresso luxury cards) */}
-        <div data-scroll-reveal data-scroll-stagger="0.1" data-scroll-opacity-only className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-12">
+        <MobileCarousel
+          data-scroll-reveal
+          data-scroll-stagger="0.1"
+          data-scroll-opacity-only
+          tabIndex={0}
+          aria-label={t.common.fourDoorsSubtitle}
+          className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-12"
+        >
           {/* Door 1: Parents (Warm white sand card) */}
           <motion.button
             type="button"
@@ -95,7 +103,7 @@ export function JoinUsDoors({ onOpenModal }: JoinUsDoorsProps) {
               </div>
             </div>
           </motion.button>
-        </div>
+        </MobileCarousel>
 
         {/* Secondary Doors */}
         <div data-scroll-reveal data-scroll-stagger="0.1" className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-5xl mx-auto mb-16">

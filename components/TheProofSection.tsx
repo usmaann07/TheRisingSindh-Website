@@ -3,6 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { useLanguage } from "@/lib/language-context";
+import { MobileCarousel } from "@/components/MobileCarousel";
 
 export function TheProofSection() {
   const { t } = useLanguage();
@@ -92,7 +93,11 @@ export function TheProofSection() {
               </p>
             </div>
 
-            <div className="space-y-2">
+            <MobileCarousel
+              tabIndex={0}
+              aria-label={t.theProof.title}
+              className="space-y-2"
+            >
               {t.theProof.milestones.map((m, idx) => (
                 <div
                   key={idx}
@@ -107,7 +112,7 @@ export function TheProofSection() {
                   </div>
                 </div>
               ))}
-            </div>
+            </MobileCarousel>
           </div>
         </div>
 

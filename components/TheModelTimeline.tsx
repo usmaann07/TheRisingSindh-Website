@@ -160,7 +160,7 @@ export function TheModelTimeline({ onOpenModal }: TheModelTimelineProps) {
             <p className="text-xs text-stone-500 mt-1">{t.common.howWeTeachSub}</p>
           </div>
 
-          <div data-scroll-reveal data-scroll-stagger="0.1" className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div data-scroll-reveal data-scroll-stagger="0.1" className="teaching-pillars-grid grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {t.theModel.teachingPillars.map((pillar, idx) => (
               <div
                 key={idx}

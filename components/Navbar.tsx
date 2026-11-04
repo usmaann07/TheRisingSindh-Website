@@ -365,7 +365,6 @@ export function Navbar({ onOpenModal }: NavbarProps) {
             </div>
             <a
               href="#why-we-exist"
-              onClick={() => setMobileMenuOpen(false)}
               aria-current={isSectionActive("why-we-exist") ? "location" : undefined}
               className={mobileNavLinkClass("why-we-exist")}
             >
@@ -385,7 +384,6 @@ export function Navbar({ onOpenModal }: NavbarProps) {
                 <div className="flex flex-col ps-4 pb-2 space-y-3 text-[13px]">
                   <a
                     href="#the-model"
-                    onClick={() => setMobileMenuOpen(false)}
                     aria-current={isSectionActive("the-model") ? "location" : undefined}
                     className={`rounded-sm transition-colors duration-200 ${isSectionActive("the-model") ? "bg-[#d97706]/10 text-[#f59e0b]" : "text-stone-400 hover:text-white"}`}
                   >
@@ -393,7 +391,6 @@ export function Navbar({ onOpenModal }: NavbarProps) {
                   </a>
                   <a
                     href="#evening-academy"
-                    onClick={() => setMobileMenuOpen(false)}
                     aria-current={isSectionActive("evening-academy") ? "location" : undefined}
                     className={`flex items-center gap-2 rounded-sm transition-colors duration-200 ${isSectionActive("evening-academy") ? "bg-[#d97706]/10 text-[#f59e0b]" : "text-stone-400 hover:text-white"}`}
                   >
@@ -402,7 +399,6 @@ export function Navbar({ onOpenModal }: NavbarProps) {
                   </a>
                   <a
                     href="#student-incubator"
-                    onClick={() => setMobileMenuOpen(false)}
                     aria-current={isSectionActive("student-incubator") ? "location" : undefined}
                     className={`flex items-center gap-2 rounded-sm transition-colors duration-200 ${isSectionActive("student-incubator") ? "bg-[#d97706]/10 text-[#f59e0b]" : "text-stone-400 hover:text-white"}`}
                   >
@@ -411,7 +407,6 @@ export function Navbar({ onOpenModal }: NavbarProps) {
                   </a>
                   <a
                     href="#global-bridge"
-                    onClick={() => setMobileMenuOpen(false)}
                     aria-current={isSectionActive("global-bridge") ? "location" : undefined}
                     className={`rounded-sm transition-colors duration-200 ${isSectionActive("global-bridge") ? "bg-[#d97706]/10 text-[#f59e0b]" : "text-stone-400 hover:text-white"}`}
                   >
@@ -422,7 +417,6 @@ export function Navbar({ onOpenModal }: NavbarProps) {
             </div>
             <a
               href="#personality-grooming"
-              onClick={() => setMobileMenuOpen(false)}
               aria-current={isSectionActive("personality-grooming") ? "location" : undefined}
               className={mobileNavLinkClass("personality-grooming")}
             >
@@ -430,7 +424,6 @@ export function Navbar({ onOpenModal }: NavbarProps) {
             </a>
             <a
               href="#what-our-students-do"
-              onClick={() => setMobileMenuOpen(false)}
               aria-current={isSectionActive("what-our-students-do") ? "location" : undefined}
               className={mobileNavLinkClass("what-our-students-do")}
             >
@@ -438,7 +431,6 @@ export function Navbar({ onOpenModal }: NavbarProps) {
             </a>
             <a
               href="#the-proof"
-              onClick={() => setMobileMenuOpen(false)}
               aria-current={isSectionActive("the-proof") ? "location" : undefined}
               className={mobileNavLinkClass("the-proof")}
             >
@@ -446,7 +438,6 @@ export function Navbar({ onOpenModal }: NavbarProps) {
             </a>
             <a
               href="#sehwan-campus"
-              onClick={() => setMobileMenuOpen(false)}
               aria-current={isSectionActive("sehwan-campus") ? "location" : undefined}
               className={mobileNavLinkClass("sehwan-campus")}
             >
@@ -454,7 +445,6 @@ export function Navbar({ onOpenModal }: NavbarProps) {
             </a>
             <a
               href="#the-movement"
-              onClick={() => setMobileMenuOpen(false)}
               aria-current={isSectionActive("the-movement") ? "location" : undefined}
               className={mobileNavLinkClass("the-movement")}
             >

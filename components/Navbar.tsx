@@ -31,9 +31,10 @@ export function Navbar({ onOpenModal }: NavbarProps) {
   const [mobileModelOpen, setMobileModelOpen] = useState(false);
   const [modelDropdownOpen, setModelDropdownOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<string | null>(null);
-  const [brandSweepKey, setBrandSweepKey] = useState(0);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const navbarPillRef = useRef<HTMLDivElement>(null);
+  const brandSweepRef = useRef<HTMLSpanElement>(null);
+  const brandSweepAnimationRef = useRef<Animation | null>(null);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -109,7 +110,20 @@ export function Navbar({ onOpenModal }: NavbarProps) {
   const handleLangChange = (lang: Language) => {
     setLanguage(lang);
   };
-  const playBrandSweep = () => setBrandSweepKey((key) => key + 1);
+  const playBrandSweep = () => {
+    const sweep = brandSweepRef.current;
+    if (!sweep || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    brandSweepAnimationRef.current?.cancel();
+    brandSweepAnimationRef.current = sweep.animate(
+      [
+        { opacity: 0, transform: "translate3d(-140%, 0, 0) skewX(-18deg)" },
+        { opacity: 0.72, offset: 0.45, transform: "translate3d(120%, 0, 0) skewX(-18deg)" },
+        { opacity: 0, transform: "translate3d(400%, 0, 0) skewX(-18deg)" }
+      ],
+      { duration: 1050, easing: "cubic-bezier(0.22, 1, 0.36, 1)" }
+    );
+  };
   const isSectionActive = (id: string) => activeSection === id;
   const isModelActive = activeSection !== null && modelSectionIds.includes(activeSection);
   const desktopNavLinkClass = (id: string) =>
@@ -138,62 +152,20 @@ export function Navbar({ onOpenModal }: NavbarProps) {
             onFocus={playBrandSweep}
             className="navbar-brand-link relative flex items-center gap-2.5 sm:gap-3 group shrink-0"
           >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.85, y: 5 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.72, ease: [0.22, 1, 0.36, 1] }}
-              className="navbar-brand-mark w-9 h-9 rounded-xl bg-gradient-to-br from-[#d97706] to-[#b45309] flex items-center justify-center text-white font-bold text-xs sm:text-sm shadow-md shrink-0"
-            >
+            <div className="navbar-brand-mark w-9 h-9 rounded-xl bg-gradient-to-br from-[#d97706] to-[#b45309] flex items-center justify-center text-white font-bold text-xs sm:text-sm shadow-md shrink-0">
               TRS
-            </motion.div>
+            </div>
             <div className="flex flex-col">
               <span aria-hidden="true" className="navbar-brand-name font-serif text-base sm:text-lg font-normal tracking-tight text-white leading-none whitespace-nowrap">
-                <motion.span
-                  aria-hidden="true"
-                  initial={{ opacity: 0, y: 6, filter: "blur(4px)" }}
-                  animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                  transition={{ duration: 0.56, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
-                  className="navbar-brand-word"
-                >
-                  The
-                </motion.span>{" "}
-                <motion.span
-                  aria-hidden="true"
-                  initial={{ opacity: 0, y: 6, filter: "blur(4px)" }}
-                  animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                  transition={{ duration: 0.56, delay: 0.24, ease: [0.22, 1, 0.36, 1] }}
-                  className="navbar-brand-word"
-                >
-                  Rising
-                </motion.span>{" "}
-                <motion.span
-                  aria-hidden="true"
-                  initial={{ opacity: 0, y: 6, filter: "blur(4px)" }}
-                  animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                  transition={{ duration: 0.56, delay: 0.36, ease: [0.22, 1, 0.36, 1] }}
-                  className="navbar-brand-word"
-                >
-                  Sindh
-                </motion.span>
+                <span className="navbar-brand-word navbar-brand-word-first" aria-hidden="true">The</span>{" "}
+                <span className="navbar-brand-word navbar-brand-word-second" aria-hidden="true">Rising</span>{" "}
+                <span className="navbar-brand-word navbar-brand-word-third" aria-hidden="true">Sindh</span>
               </span>
-              <motion.span
-                initial={{ opacity: 0, y: 4 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.48, ease: [0.22, 1, 0.36, 1] }}
-                className="navbar-brand-subtitle text-[9px] uppercase tracking-widest text-[#d97706] font-mono mt-0.5 hidden 2xl:block whitespace-nowrap"
-              >
+              <span className="navbar-brand-subtitle text-[9px] uppercase tracking-widest text-[#d97706] font-mono mt-0.5 hidden 2xl:block whitespace-nowrap">
                 {t.common.brandSubtitle}
-              </motion.span>
+              </span>
             </div>
-            <motion.span
-              key={brandSweepKey}
-              initial={{ x: "-140%", opacity: 0 }}
-              animate={{ x: ["-140%", "120%", "400%"], opacity: [0, 0.78, 0] }}
-              transition={{ duration: 1.15, delay: brandSweepKey === 0 ? 0.55 : 0, ease: [0.22, 1, 0.36, 1] }}
-              className="navbar-brand-light-sweep"
-              aria-hidden="true"
-            />
+            <span ref={brandSweepRef} className="navbar-brand-light-sweep" aria-hidden="true" />
           </Link>
 
           {/* Desktop Center Navigation Links - Fully Multilingual */}

@@ -168,7 +168,7 @@ export function Navbar({ onOpenModal }: NavbarProps) {
                 className={`flex items-center gap-1 px-1.5 2xl:px-2 py-1.5 rounded-lg transition-colors duration-200 cursor-pointer whitespace-nowrap ${isModelActive ? "bg-[#d97706]/15 text-[#f59e0b]" : "text-stone-300 hover:text-[#f59e0b] hover:bg-[#d97706]/10"}`}
               >
                 <span>{t.nav.theModel}</span>
-                <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${modelDropdownOpen || isModelActive ? "rotate-180 text-[#fbbf24]" : "text-stone-400"}`} />
+                <ChevronDown data-scroll-static className={`w-3.5 h-3.5 shrink-0 opacity-100 ${isModelActive ? "text-[#fbbf24]" : "text-stone-400"}`} />
               </button>
 
               {modelDropdownOpen && (
@@ -378,7 +378,7 @@ export function Navbar({ onOpenModal }: NavbarProps) {
                 className={`w-full py-1 rounded-sm flex items-center justify-between transition-colors duration-200 ${isModelActive ? "bg-[#d97706]/15 text-[#f59e0b]" : "text-stone-300 hover:text-white"}`}
               >
                 <span>{t.nav.theModel}</span>
-                <ChevronDown className={`w-4 h-4 text-[#d97706] transition-transform ${mobileModelOpen ? "rotate-180" : ""}`} />
+                <ChevronDown data-scroll-static className={`w-4 h-4 text-[#d97706] transition-transform ${mobileModelOpen ? "rotate-180" : ""}`} />
               </button>
               {mobileModelOpen && (
                 <div className="flex flex-col ps-4 pb-2 space-y-3 text-[13px]">

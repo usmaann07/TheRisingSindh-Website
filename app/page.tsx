@@ -146,7 +146,7 @@ export default function Home() {
             root
               .querySelectorAll<SVGSVGElement>("svg.lucide, svg.site-social-icon")
               .forEach((icon) => {
-                if (animatedIcons.has(icon)) return;
+                if (animatedIcons.has(icon) || icon.hasAttribute("data-scroll-static")) return;
 
                 gsap.fromTo(
                   icon,

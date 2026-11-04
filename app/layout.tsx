@@ -139,7 +139,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaJsonLd) }}
         />
       </head>
-      <body className="antialiased min-h-screen bg-[#161412] text-[#1c1917] selection:bg-[#d97706] selection:text-white font-sans">
+      <body className="antialiased min-h-screen text-[#1c1917] selection:bg-[#d97706] selection:text-white font-sans">
         <LanguageProvider>
           <MotionConfig reducedMotion="user">{children}</MotionConfig>
         </LanguageProvider>

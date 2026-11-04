@@ -9,7 +9,7 @@ export function FourEngines() {
   const { t } = useLanguage();
 
   return (
-    <section id="four-engines" className="py-20 md:py-28 bg-[#161412] text-white overflow-hidden">
+    <section id="four-engines" className="school-background school-background--innovation py-20 md:py-28 text-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
           data-scroll-reveal

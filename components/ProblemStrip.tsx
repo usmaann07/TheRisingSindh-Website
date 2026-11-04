@@ -82,7 +82,7 @@ export function ProblemStrip() {
   }, []);
 
   return (
-    <section id="problem-strip" className="py-20 md:py-28 bg-[#f4efea] text-[#1c1917] border-b border-[#eae3db] overflow-hidden">
+    <section id="problem-strip" className="school-background school-background--blue py-20 md:py-28 text-[#1c1917] border-b border-[#eae3db] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
           data-scroll-reveal

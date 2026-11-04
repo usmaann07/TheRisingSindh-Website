@@ -26,7 +26,7 @@ export function GlobalBridgeSection({ onOpenModal }: GlobalBridgeProps) {
   };
 
   return (
-    <section id="global-bridge" className="py-20 md:py-28 bg-[#f4efea] text-[#1c1917] border-b border-[#eae3db] overflow-hidden relative">
+    <section id="global-bridge" className="school-background school-background--blue py-20 md:py-28 text-[#1c1917] border-b border-[#eae3db] overflow-hidden relative">
       <span id="scholarships" className="sr-only" aria-hidden="true">Scholarships</span>
       <span id="international-trips" className="sr-only" aria-hidden="true">International Educational Trips</span>
 

@@ -220,7 +220,7 @@ export default function Home() {
   };
 
   return (
-    <div ref={animationRootRef} className="min-h-screen bg-[#f4efea] text-[#1c1917] selection:bg-[#d97706] selection:text-white relative">
+    <div ref={animationRootRef} className="site-background min-h-screen text-[#1c1917] selection:bg-[#d97706] selection:text-white relative">
       {/* GSAP Mouse Cursor Follower */}
       <CustomCursor />
 

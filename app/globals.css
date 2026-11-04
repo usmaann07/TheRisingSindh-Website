@@ -1140,3 +1140,103 @@ svg.site-social-icon:is(:hover, :focus-visible) {
     animation: none;
   }
 }
+
+/* Section backgrounds are attached directly to their components to avoid utility conflicts. */
+:root {
+  --school-ivory: #f8f4ec;
+  --school-pearl: #edf1f3;
+  --school-blue-wash: #e6eef4;
+  --school-warm-stone: #f1e9dd;
+  --school-ink: #171c21;
+}
+
+body,
+.site-background {
+  background-color: var(--school-ivory);
+  background-image:
+    radial-gradient(ellipse at 5% 8%, rgb(176 199 216 / 25%), transparent 42rem),
+    linear-gradient(180deg, #f8f4ec 0%, #edf1f3 42%, #f2ece3 100%);
+}
+
+.school-background {
+  background-color: var(--school-ivory);
+  background-repeat: no-repeat;
+}
+
+.school-background--hero {
+  background-color: var(--school-ink);
+  background-image:
+    radial-gradient(ellipse at 12% 10%, rgb(101 139 171 / 35%), transparent 46%),
+    radial-gradient(ellipse at 88% 82%, rgb(217 119 6 / 18%), transparent 42%),
+    linear-gradient(128deg, #202a32 0%, #171c21 58%, #111619 100%);
+}
+
+.school-background--results {
+  background-color: #f4f1ea;
+  background-image:
+    radial-gradient(ellipse at 87% 0%, rgb(164 191 211 / 38%), transparent 38rem),
+    linear-gradient(155deg, #fbf7ef 0%, #eaf0f3 100%);
+}
+
+.school-background--warm {
+  background-color: var(--school-warm-stone);
+  background-image:
+    radial-gradient(ellipse at 2% 16%, rgb(217 119 6 / 10%), transparent 36rem),
+    linear-gradient(145deg, #f8f1e6 0%, #eee9e1 60%, #f3efe9 100%);
+}
+
+.school-background--blue {
+  background-color: var(--school-blue-wash);
+  background-image:
+    radial-gradient(ellipse at 92% 6%, rgb(105 145 176 / 23%), transparent 38rem),
+    linear-gradient(150deg, #f2f5f5 0%, #e4edf3 58%, #eff1ef 100%);
+}
+
+.school-background--innovation {
+  background-color: #171d22;
+  background-image:
+    radial-gradient(ellipse at 82% 4%, rgb(86 130 163 / 28%), transparent 40%),
+    radial-gradient(ellipse at 8% 100%, rgb(217 119 6 / 12%), transparent 38%),
+    repeating-linear-gradient(0deg, transparent 0 55px, rgb(204 220 234 / 5%) 56px),
+    repeating-linear-gradient(90deg, transparent 0 55px, rgb(204 220 234 / 5%) 56px),
+    linear-gradient(135deg, #202a32, #14191d 74%);
+}
+
+.school-background--pearl {
+  background-color: var(--school-pearl);
+  background-image:
+    radial-gradient(ellipse at 12% 0%, rgb(116 151 177 / 18%), transparent 36rem),
+    linear-gradient(150deg, #f5f6f4 0%, #e8eef1 56%, #f2efe9 100%);
+}
+
+.school-background--ivory {
+  background-color: #f8f4ec;
+  background-image:
+    radial-gradient(ellipse at 90% 14%, rgb(217 119 6 / 9%), transparent 34rem),
+    linear-gradient(145deg, #fbf7ef 0%, #f1ede5 58%, #f7f3eb 100%);
+}
+
+.school-background--incubator {
+  background-color: #e9eff1;
+  background-image:
+    radial-gradient(ellipse at 88% 12%, rgb(91 135 168 / 21%), transparent 40rem),
+    radial-gradient(ellipse at 5% 90%, rgb(217 119 6 / 9%), transparent 30rem),
+    repeating-linear-gradient(135deg, transparent 0 72px, rgb(111 139 159 / 3.5%) 73px),
+    linear-gradient(155deg, #f5f4ee 0%, #e7eef1 60%, #f1ede6 100%);
+}
+
+.school-background--footer {
+  background-color: #171c21;
+  background-image:
+    radial-gradient(ellipse at 84% 0%, rgb(88 126 157 / 27%), transparent 42rem),
+    linear-gradient(160deg, #222b32 0%, #14191d 76%);
+}
+
+@media (max-width: 767px) {
+  .school-background--innovation {
+    background-image:
+      radial-gradient(ellipse at 82% 4%, rgb(86 130 163 / 22%), transparent 38%),
+      repeating-linear-gradient(0deg, transparent 0 64px, rgb(204 220 234 / 3.5%) 65px),
+      linear-gradient(145deg, #202a32, #14191d 72%);
+  }
+}

@@ -9,7 +9,7 @@ export function TheTurnSection() {
   const { t } = useLanguage();
 
   return (
-    <section id="why-we-exist" className="py-20 md:py-28 bg-[#f4efea] text-[#1c1917] border-b border-[#eae3db] overflow-hidden">
+    <section id="why-we-exist" className="school-background school-background--warm py-20 md:py-28 text-[#1c1917] border-b border-[#eae3db] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Editorial Split Showcase (Exact Webflow Inspo Screenshot Lower Half) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">

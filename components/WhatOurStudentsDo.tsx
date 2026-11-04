@@ -9,7 +9,7 @@ export function WhatOurStudentsDo() {
   const [activeStep, setActiveStep] = useState(0);
 
   return (
-    <section id="what-our-students-do" className="py-20 md:py-28 bg-[#f4efea] text-[#1c1917] border-b border-[#eae3db]">
+    <section id="what-our-students-do" className="school-background school-background--pearl py-20 md:py-28 text-[#1c1917] border-b border-[#eae3db]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div data-scroll-reveal className="text-center max-w-4xl mx-auto mb-16">
           <div className="flex items-center justify-center gap-2 text-[11px] font-semibold tracking-widest text-[#d97706] uppercase mb-2">

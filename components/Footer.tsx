@@ -8,7 +8,7 @@ export function Footer() {
   const { t, isRTL } = useLanguage();
 
   return (
-    <footer className="bg-[#161412] text-stone-400 pt-16 pb-12 border-t border-white/10">
+    <footer className="school-background school-background--footer text-stone-400 pt-16 pb-12 border-t border-white/10">
       {/* Proof Strip */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
         <div data-scroll-reveal className="sand-card-dark p-4 sm:p-5">

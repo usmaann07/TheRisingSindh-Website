@@ -140,9 +140,9 @@ export function HeroSection({ onOpenModal }: HeroSectionProps) {
   }, []);
 
   return (
-    <div className="relative bg-[#161412] text-white overflow-hidden">
+    <div className="relative text-white overflow-hidden">
       {/* Hero Architectural Area - Clean Solid Dark Background Without Overhead Shades */}
-      <section id="home" className="relative min-h-[85vh] pt-32 pb-20 sm:pt-40 sm:pb-28 flex items-center bg-[#161412]">
+      <section id="home" className="school-background school-background--hero relative min-h-[85vh] pt-32 pb-20 sm:pt-40 sm:pb-28 flex items-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left Content (Exact Webflow Inspo Typography & CTA) */}
@@ -215,7 +215,7 @@ export function HeroSection({ onOpenModal }: HeroSectionProps) {
       </section>
 
       {/* Asymmetric Notched Stat Strip ("Results that speak for themselves" - Exact Screenshot 1 & 2) */}
-      <section ref={resultsSectionRef} className="relative bg-[#f4efea] text-[#1c1917] pt-12 pb-14 border-t border-[#eae3db]">
+      <section ref={resultsSectionRef} className="school-background school-background--results relative text-[#1c1917] pt-12 pb-14 border-t border-[#eae3db]">
         {/* Architectural Chamfer Notch on Top Right */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">

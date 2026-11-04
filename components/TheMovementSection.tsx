@@ -13,7 +13,7 @@ export function TheMovementSection({ onOpenModal }: TheMovementProps) {
   const { t } = useLanguage();
 
   return (
-    <section id="the-movement" className="py-20 md:py-28 bg-[#f4efea] text-[#1c1917] border-b border-[#eae3db]">
+    <section id="the-movement" className="school-background school-background--warm py-20 md:py-28 text-[#1c1917] border-b border-[#eae3db]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div data-scroll-reveal className="text-center max-w-4xl mx-auto mb-16">

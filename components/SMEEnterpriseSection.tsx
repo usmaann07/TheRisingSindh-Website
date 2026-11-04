@@ -62,7 +62,7 @@ export function SMEEnterpriseSection({ onOpenModal }: SMEEnterpriseProps) {
   };
 
   return (
-    <section id="student-incubator" className="py-20 md:py-28 bg-[#f4efea] text-[#1c1917] border-b border-[#eae3db] overflow-hidden relative">
+    <section id="student-incubator" className="school-background school-background--incubator py-20 md:py-28 text-[#1c1917] border-b border-[#eae3db] overflow-hidden relative">
       <span id="sme-enterprises" className="sr-only" aria-hidden="true">SMEs and Real Enterprises</span>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         

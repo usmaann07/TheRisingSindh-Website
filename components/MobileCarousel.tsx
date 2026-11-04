@@ -1,7 +1,7 @@
 "use client";
 
 import React, { forwardRef, HTMLAttributes, useCallback, useEffect, useRef, useState } from "react";
-import { ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface MobileCarouselProps extends HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
@@ -15,6 +15,7 @@ export const MobileCarousel = forwardRef<HTMLDivElement, MobileCarouselProps>(
   const [isReversing, setIsReversing] = useState(false);
 
   const setDirection = (reversing: boolean) => {
+    if (isReversingRef.current === reversing) return;
     isReversingRef.current = reversing;
     setIsReversing(reversing);
   };
@@ -42,13 +43,29 @@ export const MobileCarousel = forwardRef<HTMLDivElement, MobileCarouselProps>(
   const updatePosition = useCallback(() => {
     const carousel = carouselRef.current;
     if (!carousel || carousel.children.length < 2) {
-      setDirection(true);
+      setDirection(false);
       return;
     }
 
     const nearestIndex = getNearestCardIndex(carousel);
-    if (nearestIndex === 0) setDirection(false);
-    else if (nearestIndex === carousel.children.length - 1) setDirection(true);
+    if (nearestIndex === 0) {
+      setDirection(false);
+      return;
+    }
+
+    const lastCard = carousel.children[carousel.children.length - 1];
+    if (!lastCard) return;
+
+    const isRTL = getComputedStyle(carousel).direction === "rtl";
+    const carouselBounds = carousel.getBoundingClientRect();
+    const lastCardBounds = lastCard.getBoundingClientRect();
+    const isAtEnd = isRTL
+      ? lastCardBounds.left >= carouselBounds.left - 20
+      : lastCardBounds.right <= carouselBounds.right + 20;
+
+    if (nearestIndex === carousel.children.length - 1 || isAtEnd) {
+      setDirection(true);
+    }
   }, []);
 
   useEffect(() => {
@@ -121,7 +138,9 @@ export const MobileCarousel = forwardRef<HTMLDivElement, MobileCarouselProps>(
         onClick={scrollToAdjacentCard}
         aria-label={isReversing ? "Show previous cards" : "Show next cards"}
       >
-        <ChevronRight aria-hidden="true" />
+        {isReversing
+          ? <ChevronLeft aria-hidden="true" />
+          : <ChevronRight aria-hidden="true" />}
       </button>
     </div>
   );

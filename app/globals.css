@@ -662,6 +662,11 @@ svg.site-social-icon:is(:hover, :focus-visible) {
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
     animation: carousel-arrow-glow 2.4s ease-in-out infinite;
+    transition: inset-inline-end 320ms cubic-bezier(0.22, 1, 0.36, 1), inset-inline-start 320ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .mobile-carousel-arrow.is-at-end {
+    inset-inline: 0.25rem auto;
   }
 
   .mobile-carousel-arrow svg {
@@ -673,17 +678,13 @@ svg.site-social-icon:is(:hover, :focus-visible) {
     animation: carousel-arrow-nudge 1.2s ease-in-out infinite;
   }
 
-  .mobile-carousel-arrow.is-at-end svg {
-    transform: rotate(180deg);
-  }
-
   :root[dir="rtl"] .mobile-carousel-arrow:not(.is-at-end) svg {
     transform: scaleX(-1);
     translate: -3px 0;
   }
 
   :root[dir="rtl"] .mobile-carousel-arrow.is-at-end svg {
-    transform: rotate(180deg) scaleX(-1);
+    transform: none;
     translate: 3px 0;
   }
 

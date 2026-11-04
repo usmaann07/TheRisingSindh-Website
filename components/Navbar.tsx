@@ -33,8 +33,6 @@ export function Navbar({ onOpenModal }: NavbarProps) {
   const [activeSection, setActiveSection] = useState<string | null>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const navbarPillRef = useRef<HTMLDivElement>(null);
-  const brandSweepRef = useRef<HTMLSpanElement>(null);
-  const brandSweepAnimationRef = useRef<Animation | null>(null);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -110,20 +108,6 @@ export function Navbar({ onOpenModal }: NavbarProps) {
   const handleLangChange = (lang: Language) => {
     setLanguage(lang);
   };
-  const playBrandSweep = () => {
-    const sweep = brandSweepRef.current;
-    if (!sweep || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-
-    brandSweepAnimationRef.current?.cancel();
-    brandSweepAnimationRef.current = sweep.animate(
-      [
-        { opacity: 0, transform: "translate3d(-140%, 0, 0) skewX(-18deg)" },
-        { opacity: 0.72, offset: 0.45, transform: "translate3d(120%, 0, 0) skewX(-18deg)" },
-        { opacity: 0, transform: "translate3d(400%, 0, 0) skewX(-18deg)" }
-      ],
-      { duration: 1050, easing: "cubic-bezier(0.22, 1, 0.36, 1)" }
-    );
-  };
   const isSectionActive = (id: string) => activeSection === id;
   const isModelActive = activeSection !== null && modelSectionIds.includes(activeSection);
   const desktopNavLinkClass = (id: string) =>
@@ -145,27 +129,18 @@ export function Navbar({ onOpenModal }: NavbarProps) {
         {/* Floating Centered Pill Navbar with Perfect Internal Alignment & Clean Subtle Shadow */}
         <div ref={navbarPillRef} className="w-full bg-[#161412]/92 backdrop-blur-xl border border-white/12 rounded-full px-3.5 sm:px-5 2xl:px-6 py-2 sm:py-2.5 shadow-lg shadow-black/25 flex items-center justify-between gap-2 xl:gap-2.5 2xl:gap-4 text-white transition-all duration-200">
           {/* Logo - Sized & Aligned */}
-          <Link
-            href="#home"
-            aria-label="The Rising Sindh"
-            onMouseEnter={playBrandSweep}
-            onFocus={playBrandSweep}
-            className="navbar-brand-link relative flex items-center gap-2.5 sm:gap-3 group shrink-0"
-          >
-            <div className="navbar-brand-mark w-9 h-9 rounded-xl bg-gradient-to-br from-[#d97706] to-[#b45309] flex items-center justify-center text-white font-bold text-xs sm:text-sm shadow-md shrink-0">
+          <Link href="#home" className="flex items-center gap-2.5 sm:gap-3 shrink-0">
+            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#d97706] to-[#b45309] flex items-center justify-center text-white font-bold text-xs sm:text-sm shadow-md shrink-0">
               TRS
             </div>
             <div className="flex flex-col">
-              <span aria-hidden="true" className="navbar-brand-name font-serif text-base sm:text-lg font-normal tracking-tight text-white leading-none whitespace-nowrap">
-                <span className="navbar-brand-word navbar-brand-word-first" aria-hidden="true">The</span>{" "}
-                <span className="navbar-brand-word navbar-brand-word-second" aria-hidden="true">Rising</span>{" "}
-                <span className="navbar-brand-word navbar-brand-word-third" aria-hidden="true">Sindh</span>
+              <span className="font-serif text-base sm:text-lg font-normal tracking-tight text-white leading-none whitespace-nowrap">
+                The Rising Sindh
               </span>
-              <span className="navbar-brand-subtitle text-[9px] uppercase tracking-widest text-[#d97706] font-mono mt-0.5 hidden 2xl:block whitespace-nowrap">
+              <span className="text-[9px] uppercase tracking-widest text-[#d97706] font-mono mt-0.5 hidden 2xl:block whitespace-nowrap">
                 {t.common.brandSubtitle}
               </span>
             </div>
-            <span ref={brandSweepRef} className="navbar-brand-light-sweep" aria-hidden="true" />
           </Link>
 
           {/* Desktop Center Navigation Links - Fully Multilingual */}

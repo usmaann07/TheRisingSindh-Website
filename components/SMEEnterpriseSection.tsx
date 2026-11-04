@@ -185,7 +185,7 @@ export function SMEEnterpriseSection({ onOpenModal }: SMEEnterpriseProps) {
             </p>
           </div>
 
-          <div data-scroll-reveal data-scroll-stagger="0.08" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div data-scroll-reveal data-scroll-stagger="0.08" className="learning-outcomes-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {t.smeEnterprises.learningOutcomes.map((outcome, idx) => (
               <div
                 key={idx}

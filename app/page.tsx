@@ -62,6 +62,8 @@ export default function Home() {
         const context = gsap.context(() => {}, root);
         try {
           context.add(() => {
+            const animatedIcons = new Set<SVGSVGElement>();
+
             root.querySelectorAll<HTMLElement>("[data-scroll-reveal]").forEach((element) => {
               const targets: HTMLElement[] = element.hasAttribute("data-scroll-stagger")
                 ? Array.from(element.children).filter(
@@ -72,6 +74,11 @@ export default function Home() {
               const animateTransform = !element.hasAttribute("data-scroll-opacity-only");
 
               if (targets.length === 0) return;
+
+              const icons = Array.from(
+                element.querySelectorAll<SVGSVGElement>("svg.lucide, svg.site-social-icon")
+              ).filter((icon) => icon.closest("[data-scroll-reveal]") === element);
+              icons.forEach((icon) => animatedIcons.add(icon));
 
               gsap.fromTo(
                 targets,
@@ -103,7 +110,72 @@ export default function Home() {
                   }
                 }
               );
+
+              if (icons.length > 0) {
+                gsap.fromTo(
+                  icons,
+                  {
+                    autoAlpha: 0,
+                    scale: 0.78,
+                    y: 7,
+                    rotate: -7,
+                    transformOrigin: "50% 50%"
+                  },
+                  {
+                    autoAlpha: 1,
+                    scale: 1,
+                    y: 0,
+                    rotate: 0,
+                    duration: 0.52,
+                    stagger: 0.045,
+                    ease: "back.out(1.35)",
+                    onComplete: () => gsap.set(icons, { clearProps: "transform,transformOrigin" }),
+                    onReverseComplete: () => gsap.set(icons, { clearProps: "transform,transformOrigin" }),
+                    scrollTrigger: {
+                      trigger: element,
+                      start: "top 88%",
+                      end: "bottom 12%",
+                      toggleActions: "play reverse play reverse",
+                      invalidateOnRefresh: true
+                    }
+                  }
+                );
+              }
             });
+
+            root
+              .querySelectorAll<SVGSVGElement>("svg.lucide, svg.site-social-icon")
+              .forEach((icon) => {
+                if (animatedIcons.has(icon)) return;
+
+                gsap.fromTo(
+                  icon,
+                  {
+                    autoAlpha: 0,
+                    scale: 0.82,
+                    y: 5,
+                    rotate: -5,
+                    transformOrigin: "50% 50%"
+                  },
+                  {
+                    autoAlpha: 1,
+                    scale: 1,
+                    y: 0,
+                    rotate: 0,
+                    duration: 0.48,
+                    ease: "power3.out",
+                    onComplete: () => gsap.set(icon, { clearProps: "transform,transformOrigin" }),
+                    onReverseComplete: () => gsap.set(icon, { clearProps: "transform,transformOrigin" }),
+                    scrollTrigger: {
+                      trigger: icon,
+                      start: "top 92%",
+                      end: "bottom 8%",
+                      toggleActions: "play reverse play reverse",
+                      invalidateOnRefresh: true
+                    }
+                  }
+                );
+              });
           });
         } catch (error) {
           context.revert();

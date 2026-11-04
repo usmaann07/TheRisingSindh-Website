@@ -105,6 +105,42 @@
   animation-delay: 60ms;
 }
 
+.navbar-brand-link {
+  isolation: isolate;
+}
+
+.navbar-brand-mark {
+  transition: box-shadow 360ms ease;
+}
+
+.navbar-brand-link:is(:hover, :focus-visible, :focus-within) .navbar-brand-mark {
+  box-shadow: 0 0 0 1px rgb(245 158 11 / 25%), 0 0 18px rgb(217 119 6 / 28%);
+}
+
+.navbar-brand-word {
+  display: inline-block;
+}
+
+.navbar-brand-light-sweep {
+  position: absolute;
+  z-index: 1;
+  inset-block: -18%;
+  left: 0;
+  width: 38%;
+  pointer-events: none;
+  clip-path: polygon(30% 0, 100% 0, 70% 100%, 0 100%);
+  background: linear-gradient(
+    105deg,
+    transparent 0%,
+    rgb(255 255 255 / 5%) 28%,
+    rgb(255 225 160 / 48%) 49%,
+    rgb(255 255 255 / 20%) 57%,
+    transparent 84%
+  );
+  filter: blur(1.25px);
+  mix-blend-mode: screen;
+}
+
 svg.lucide,
 svg.site-social-icon {
   transform-box: fill-box;
@@ -197,6 +233,12 @@ svg.site-social-icon:is(:hover, :focus-visible) {
 @media (prefers-reduced-motion: reduce) {
   .hero-entrance {
     animation: none;
+  }
+
+  .navbar-brand-mark,
+  .navbar-brand-link:is(:hover, :focus-visible, :focus-within) .navbar-brand-mark {
+    box-shadow: none;
+    transition: none;
   }
 
   svg.lucide,

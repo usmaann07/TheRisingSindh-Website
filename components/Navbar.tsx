@@ -31,6 +31,7 @@ export function Navbar({ onOpenModal }: NavbarProps) {
   const [mobileModelOpen, setMobileModelOpen] = useState(false);
   const [modelDropdownOpen, setModelDropdownOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<string | null>(null);
+  const [brandSweepKey, setBrandSweepKey] = useState(0);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const navbarPillRef = useRef<HTMLDivElement>(null);
 
@@ -108,6 +109,7 @@ export function Navbar({ onOpenModal }: NavbarProps) {
   const handleLangChange = (lang: Language) => {
     setLanguage(lang);
   };
+  const playBrandSweep = () => setBrandSweepKey((key) => key + 1);
   const isSectionActive = (id: string) => activeSection === id;
   const isModelActive = activeSection !== null && modelSectionIds.includes(activeSection);
   const desktopNavLinkClass = (id: string) =>
@@ -129,18 +131,69 @@ export function Navbar({ onOpenModal }: NavbarProps) {
         {/* Floating Centered Pill Navbar with Perfect Internal Alignment & Clean Subtle Shadow */}
         <div ref={navbarPillRef} className="w-full bg-[#161412]/92 backdrop-blur-xl border border-white/12 rounded-full px-3.5 sm:px-5 2xl:px-6 py-2 sm:py-2.5 shadow-lg shadow-black/25 flex items-center justify-between gap-2 xl:gap-2.5 2xl:gap-4 text-white transition-all duration-200">
           {/* Logo - Sized & Aligned */}
-          <Link href="#home" className="flex items-center gap-2.5 sm:gap-3 group shrink-0">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#d97706] to-[#b45309] flex items-center justify-center text-white font-bold text-xs sm:text-sm shadow-md group-hover:scale-105 transition-transform shrink-0">
+          <Link
+            href="#home"
+            aria-label="The Rising Sindh"
+            onMouseEnter={playBrandSweep}
+            onFocus={playBrandSweep}
+            className="navbar-brand-link relative flex items-center gap-2.5 sm:gap-3 group shrink-0"
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.85, y: 5 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.72, ease: [0.22, 1, 0.36, 1] }}
+              className="navbar-brand-mark w-9 h-9 rounded-xl bg-gradient-to-br from-[#d97706] to-[#b45309] flex items-center justify-center text-white font-bold text-xs sm:text-sm shadow-md shrink-0"
+            >
               TRS
-            </div>
+            </motion.div>
             <div className="flex flex-col">
-              <span className="font-serif text-base sm:text-lg font-normal tracking-tight text-white leading-none whitespace-nowrap">
-                The Rising Sindh
+              <span aria-hidden="true" className="navbar-brand-name font-serif text-base sm:text-lg font-normal tracking-tight text-white leading-none whitespace-nowrap">
+                <motion.span
+                  aria-hidden="true"
+                  initial={{ opacity: 0, y: 6, filter: "blur(4px)" }}
+                  animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                  transition={{ duration: 0.56, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
+                  className="navbar-brand-word"
+                >
+                  The
+                </motion.span>{" "}
+                <motion.span
+                  aria-hidden="true"
+                  initial={{ opacity: 0, y: 6, filter: "blur(4px)" }}
+                  animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                  transition={{ duration: 0.56, delay: 0.24, ease: [0.22, 1, 0.36, 1] }}
+                  className="navbar-brand-word"
+                >
+                  Rising
+                </motion.span>{" "}
+                <motion.span
+                  aria-hidden="true"
+                  initial={{ opacity: 0, y: 6, filter: "blur(4px)" }}
+                  animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                  transition={{ duration: 0.56, delay: 0.36, ease: [0.22, 1, 0.36, 1] }}
+                  className="navbar-brand-word"
+                >
+                  Sindh
+                </motion.span>
               </span>
-              <span className="text-[9px] uppercase tracking-widest text-[#d97706] font-mono mt-0.5 hidden 2xl:block whitespace-nowrap">
+              <motion.span
+                initial={{ opacity: 0, y: 4 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.48, ease: [0.22, 1, 0.36, 1] }}
+                className="navbar-brand-subtitle text-[9px] uppercase tracking-widest text-[#d97706] font-mono mt-0.5 hidden 2xl:block whitespace-nowrap"
+              >
                 {t.common.brandSubtitle}
-              </span>
+              </motion.span>
             </div>
+            <motion.span
+              key={brandSweepKey}
+              initial={{ x: "-140%", opacity: 0 }}
+              animate={{ x: ["-140%", "120%", "400%"], opacity: [0, 0.78, 0] }}
+              transition={{ duration: 1.15, delay: brandSweepKey === 0 ? 0.55 : 0, ease: [0.22, 1, 0.36, 1] }}
+              className="navbar-brand-light-sweep"
+              aria-hidden="true"
+            />
           </Link>
 
           {/* Desktop Center Navigation Links - Fully Multilingual */}
